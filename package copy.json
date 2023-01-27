@@ -1,0 +1,21 @@
+{
+  "name": "Vanilla Project",
+  "version": "1.0.0",
+  "description": "멋쟁이 사자처럼 바닐라 프로젝트",
+  "main": "main.js",
+  "scripts": {
+    "all":"run-p serve start",
+    "start": "npx live-server client --host=localhost --port=5050",
+    "serve": "npx json-server server/db/data.json"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "javascript",
+    "시맨틱 마크업",
+    "웹표준",
+    "함수형 프로그래밍"
+  ],
+  "author": "담당자",
+  "license": "ISC"
+}
