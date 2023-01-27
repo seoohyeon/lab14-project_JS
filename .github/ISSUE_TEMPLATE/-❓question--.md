@@ -1,7 +1,7 @@
 ---
 name: "[❓question] "
 about: Suggest an idea for this project
-title: ''
+title: "[❓question]"
 labels: "❓question"
 assignees: ''
 
