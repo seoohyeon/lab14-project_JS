@@ -82,7 +82,7 @@ module.exports = {
         defaultAssignment: false,
       },
     ],
-    
+
     // // 문자열 선언에는 홑따옴표를 사용한다
     // quotes: [
     //   'error',
