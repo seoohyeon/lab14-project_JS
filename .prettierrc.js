@@ -13,7 +13,7 @@
   "trailingComma": "all",
   //객체 리터럴 사용시 괄호에 공백 삽입 여부
   "bracketSpacing": true,
-  // JSX의 마지막 `>`를 다음 줄로 내릴지 여부
+  // JSX의 마지막 >를 다음 줄로 내릴지 여부
   "jsxBracketSameLine": true,
   //화살표 함수 괄호 사용 방식
   "arrowParens": "avoid",
