@@ -32,11 +32,16 @@ video {
   height: auto;
 }
 
+
 .header,
 .main,
 .footer {
   width: var(--container-width);
   margin: 0 auto;
+}
+
+em {
+  font-weight: bolder;
 }
 
 
