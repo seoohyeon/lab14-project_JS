@@ -6,91 +6,190 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./client/css/style.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   <script src="./js/main.js" type="module"></script>
   <title>Document</title>
 </head>
 
 <body>
-  <main>
-    <section>
-      <!-- <h2>[풀무원] 탱탱쫄면 제품 상세페이지</h2> -->
-      <figure>
-        <!-- <figcaption>탱탱쫄면 product-detail</figcaption> -->
-        <img src="./client/assets/tangtang/detail_view.jpg" alt="탱탱쫄면" />
+  <div class="wrapper">
+  <main class="main">
+    <section class="detail-order">
+      <h2 class="a11y-hidden">[풀무원] 탱탱쫄면 제품 상세페이지</h2>
+      <figure class="order-img">
+        <figcaption class="a11y-hidden">[풀무원] 탱탱쫄면 product-detail</figcaption>
+        <img src="./client/assets/tangtang/detail_view.jpg" alt="[풀무원] 탱탱쫄면" />
       </figure>
-      <div>
-        <p>샛별배송</p>
-        <h3>[풀무원] 탱탱쫄면 (4개입)</h3>
+      <div class="order-details">
+        <p class="order-details_deliver">샛별배송</p>
+        <h3 class="order-details_title">[풀무원] 탱탱쫄면 (4개입)</h3>
         <detail>튀기지 않아 부담 없는 매콤함</detail>
-        <p>4,980원</p>
-        <p>로그인 후, 적립 혜택이 제공됩니다.</p>
-        <div>
-          <p>배송</p>
+        <p class="order-details_price">4,980<span>원</span></p>
+        <p class="order-details_after-login">로그인 후, 적립 혜택이 제공됩니다.</p>
+        <div class="order-details_lists">
+          <p class="order-details_lists_title">배송</p>
           <div>
             <p>샛별배송</p>
-            <p>23시 전 주문 시 내일 아침 7시 전 도착</p>
-            <p>(대구 부산 울산 샛별배송 운영시간 별도 확인</p>
+            <p class="order-details_lists_light">23시 전 주문 시 내일 아침 7시 전 도착</p>
+            <p class="order-details_lists_light">(대구 부산 울산 샛별배송 운영시간 별도 확인</p>
           </div>
         </div>
-        <div>
-          <p>판매자</p>
+        <div class="order-details_lists">
+          <p class="order-details_lists_title">판매자</p>
           <p>칼리</p>
         </div>
-        <div>
-          <p>포장타입</p>
+        <div class="order-details_lists">
+          <p class="order-details_lists_title">포장타입</p>
           <div> 
             <p>상온 (종이포장)</p>
-            <p>택배배송은 에코 포장이 스티로폼으로 대체됩니다.</p>
+            <p class="order-details_lists_light">택배배송은 에코 포장이 스티로폼으로 대체됩니다.</p>
           </div>
         </div>
-        <div>
-          <p>판매단위</p>
+        <div class="order-details_lists">
+          <p class="order-details_lists_title">판매단위</p>
           <p>1봉</p>
         </div>
-        <div>
-          <p>중량/용량</p>
+        <div class="order-details_lists">
+          <p class="order-details_lists_title">중량/용량</p>
           <p>123g*4봉</p>
         </div>
-        <div>
-          <p>원산지</p>
+        <div class="order-details_lists">
+          <p class="order-details_lists_title">원산지</p>
           <p>상세페이지 별도표기</p>
         </div>
-        <div>
-          <p>알레르기정보</p>
-          <p>-대두, 밀, 쇠고기 함유</p>
-          <p>-계란, 우유, 메밀, 땅콩, 고등어, 게, 돼지고기, 새우, 복숭아, 
-            토마토, 호두, 닭고기, 쇠고기, 오징어, 조개류(굴, 전복, 홍합 포함)를 사용한 제품과 같은 제조시설에서 제조 </p>
-        </div>
-        <div>
+        <div class="order-details_lists">
+          <p class="order-details_lists_title">알레르기정보</p>
           <div>
-            <p>상품선택</p>
-            <div>
-              <p>[풀무원] 탱탱쫄면 (4개입)</p>
-              <div>
-                <div>-</div>
-                <div>1</div>
-                <div>+</div>
+            <p class="order-details_lists_thin">-대두, 밀, 쇠고기 함유</p>
+            <p class="order-details_lists_thin">-계란, 우유, 메밀, 땅콩, 고등어, 게, 돼지고기, 새우, 복숭아, 
+            토마토, 호두, 닭고기, 조개류(굴, 전복, 홍합 포함)를 사용한 제품과 같은 제조시설에서 제조 </p>
+          </div>
+        </div>
+          <div class="order-details_lists order-details_lists_last">
+            <p class="order-details_lists_title">상품선택</p>
+            <div class="order-details_lists_content_box">
+              <p class="order-details_lists_content_box_title">[풀무원] 탱탱쫄면 (4개입)</p>
+              <div class="order-details_lists_counter_box">
+                <div class="order-details_lists_counter">
+                  <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 14V16H10V14H20Z" fill="#A6A6A6"/>
+                    </svg>    
+                  <span>1</span>
+                  <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16 10V14H20V16H16V20H14V16H10V14H14V10H16Z" fill="#333333"/>
+                    </svg>
+                </div>
+                  <p>4,980원</p>
               </div>
-              <p>4,980원</p>
           </div>
-          <p>총 상품금액: <span>4,980원</span></p>  
-          <div>
-            <div>적립</div>
-            <p>로그인 후, 적립 혜택 제공</p>
-          </div>
-          <div>
-            <button></button>
-            <button></button>
-            <button>장바구니 담기</button>
-          </div>  
         </div>
-        </div>
-        
 
+        <div class="order-details_total-price">
+          <p>총 상품금액: <span>4,980</span>원</p>  
+        </div>
+        <div class="order-details_pointletter">
+          <div class="order-details_pointletter_point">적립</div>
+          <p>로그인 후, 적립 혜택 제공</p>
+        </div>
+        <div class="order-details_buttons">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M28.9269 8.89295C28.3269 8.29261 27.6146 7.81636 26.8305 7.49144C26.0465 7.16651 25.2061 6.99927 24.3574 6.99927C23.5086 6.99927 22.6682 7.16651 21.8842 7.49144C21.1001 7.81636 20.3878 8.29261 19.7879 8.89295L17.9589 10.7209L16.1319 8.89295C14.9201 7.68091 13.2765 6.99989 11.5626 6.9997C9.84867 6.99951 8.2049 7.68017 6.99286 8.89195C5.78082 10.1037 5.0998 11.7473 5.09961 13.4612C5.09942 15.1751 5.78008 16.8189 6.99186 18.0309L8.81986 19.8599L17.2519 28.2939C17.4394 28.4814 17.6937 28.5867 17.9589 28.5867C18.224 28.5867 18.4783 28.4814 18.6659 28.2939L27.0989 19.8599L28.9269 18.0319C29.5271 17.432 30.0032 16.7198 30.328 15.9358C30.6528 15.1518 30.82 14.3115 30.82 13.4629C30.82 12.6144 30.6528 11.7741 30.328 10.9901C30.0032 10.2061 29.5271 9.49386 28.9269 8.89395V8.89295Z" stroke="#333333" stroke-width="1.7" stroke-linecap="round"/>
+            </svg>
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14.249 25.875C14.249 26.8695 14.6441 27.8232 15.3473 28.5264C16.0505 29.2296 17.0042 29.6246 17.9986 29.6246C18.9931 29.6246 19.9468 29.2296 20.65 28.5264C21.3532 27.8232 21.7483 26.8695 21.7483 25.875" stroke="#E1E1E1" stroke-width="1.6"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M29.2477 25.5803H6.75L6.76463 25.5465C6.85013 25.3946 7.2945 24.7545 8.09887 23.6239L8.94262 22.4426V14.9783C8.94262 9.93262 12.8104 5.82075 17.6512 5.63175L18 5.625C23.0018 5.625 27.0562 9.81225 27.0562 14.9783V22.4415L28.9766 25.1539C29.1712 25.4385 29.2624 25.5814 29.2489 25.5814L29.2477 25.5803Z" stroke="#E1E1E1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <button>장바구니 담기</button>
+        </div>  
+        </div>
       </div>
     </section>
+    
+    <section class="product-details">
+      <div>
+        <span>상품설명</span>
+        <span>상세정보</span>
+        <span>후기 (num)</span>
+        <span>문의</span>
+      </div>
+      <figure>
+        <figcaption>[풀무원] 탱탱쫄면 product-banner</figcaption>
+        <img src="./client/assets/tangtang/detail_banner.jpg" alt="[풀무원] 탱탱쫄면" />
+      </figure>
+      <p>튀기지 않아 부담 없는 매콤함</p>
+      <h3>[풀무원] 탱탱쫄면</h3>
+      <p></p>
+      <h3>Karly's Check Point</h3>
+      <ul>
+        <li>
+          <img src="./client/assets/tangtang/process.png" alt="생산유통과정" />
+          <p>생산 유통 과정 Process</p>
+          <p>·튀기지 않고 바람으로 말린 면</p>
+        </li>
+        <li>
+          <img src="./client/assets/tangtang/recommendation.png" alt="활용법" />
+          <p>활용법 Recommendation</p>
+          <p>·온 가족이 즐기기 좋은 4개입 포장</p>
+          <p>·간편한 조리로 완성하는 쫄면</p>
+        </li>
+        <li>
+          <img src="./client/assets/tangtang/brand.png" alt="브랜드" />
+          <p>브랜드와 생산자 Brand & Artisan</p>
+          <p>·내 가족의 건강을 위한 바른먹거리 전문기업, 풀무원</p>
+        </li>
+      </ul>
+      <figure>
+        <figcaption>[풀무원] 탱탱쫄면 product-detail</figcaption>
+        <img src="./client/assets/tangtang/detail_info.jpg" alt="쫄면 성분표" />
+      </figure>
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 40C31.0457 40 40 31.0457 40 20C40 8.9543 31.0457 0 20 0C8.9543 0 0 8.9543 0 20C0 31.0457 8.9543 40 20 40Z" fill="#5F0080"/>
+          <path d="M27.8002 9.6001H12.2002C11.6479 9.6001 11.2002 10.0478 11.2002 10.6001V29.4001C11.2002 29.9524 11.6479 30.4001 12.2002 30.4001H27.8002C28.3525 30.4001 28.8002 29.9524 28.8002 29.4001V10.6001C28.8002 10.0478 28.3525 9.6001 27.8002 9.6001Z" stroke="white"/>
+          <path d="M14.4004 14.5308L15.6305 16.0001L17.6004 13.6001" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M20 14.8H25.6" stroke="white" stroke-linecap="round"/>
+          <path d="M14.4004 19.7307L15.6305 21.2L17.6004 18.8" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M20 20H25.6" stroke="white" stroke-linecap="round"/>
+          <path d="M14.4004 24.9307L15.6305 26.4L17.6004 24" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M20 25.2H25.6" stroke="white" stroke-linecap="round"/>
+        </svg>
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 40C31.0457 40 40 31.0457 40 20C40 8.9543 31.0457 0 20 0C8.9543 0 0 8.9543 0 20C0 31.0457 8.9543 40 20 40Z" fill="#5F0080"/>
+          <path d="M29.3996 11.2H10.5996C10.0473 11.2 9.59961 11.6477 9.59961 12.2V13.4C9.59961 13.9522 10.0473 14.4 10.5996 14.4H29.3996C29.9519 14.4 30.3996 13.9522 30.3996 13.4V12.2C30.3996 11.6477 29.9519 11.2 29.3996 11.2Z" stroke="white" stroke-linejoin="round"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M10.4004 14.3999H29.6004V27.9999C29.6004 28.4417 29.2422 28.7999 28.8004 28.7999H11.2004C10.7586 28.7999 10.4004 28.4417 10.4004 27.9999V14.3999Z" stroke="white" stroke-linejoin="round"/>
+          <path d="M18 18.3999V24.3999" stroke="white" stroke-linecap="round"/>
+          <path d="M19.2998 21.0398L22.2998 24.2398" stroke="white" stroke-linecap="round"/>
+          <path d="M22 18.6399L18 21.7512" stroke="white" stroke-linecap="round"/>
+        </svg>
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 40C31.0457 40 40 31.0457 40 20C40 8.9543 31.0457 0 20 0C8.9543 0 0 8.9543 0 20C0 31.0457 8.9543 40 20 40Z" fill="#5F0080"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M8.0002 12H24.0002C24.442 12 24.8002 12.3582 24.8002 12.8V25.6H8.0002C7.55837 25.6 7.2002 25.2418 7.2002 24.8V12.8C7.2002 12.3582 7.55837 12 8.0002 12Z" stroke="white" stroke-linejoin="round"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M24.7998 18.3999H34.3998V24.7999C34.3998 25.2417 34.0416 25.5999 33.5998 25.5999H24.7998V18.3999Z" stroke="white" stroke-linejoin="round"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M24.7998 15.2H31.4025C31.6425 15.2 31.8697 15.3077 32.0217 15.4934L34.3998 18.4H24.7998V15.2Z" stroke="white" stroke-linejoin="round"/>
+          <path d="M11.9996 28.8C13.3251 28.8 14.3996 27.7255 14.3996 26.4C14.3996 25.0745 13.3251 24 11.9996 24C10.6741 24 9.59961 25.0745 9.59961 26.4C9.59961 27.7255 10.6741 28.8 11.9996 28.8Z" fill="#5F0080" stroke="white"/>
+          <path d="M29.6002 28.8C30.9257 28.8 32.0002 27.7255 32.0002 26.4C32.0002 25.0745 30.9257 24 29.6002 24C28.2747 24 27.2002 25.0745 27.2002 26.4C27.2002 27.7255 28.2747 28.8 29.6002 28.8Z" fill="#5F0080" stroke="white"/>
+        </svg>
+        <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20.5 40C31.5457 40 40.5 31.0457 40.5 20C40.5 8.9543 31.5457 0 20.5 0C9.4543 0 0.5 8.9543 0.5 20C0.5 31.0457 9.4543 40 20.5 40Z" fill="#5F0080"/>
+          <path d="M19.6998 28.8C25.4436 28.8 30.0998 24.1438 30.0998 18.4C30.0998 12.6562 25.4436 8 19.6998 8C13.956 8 9.2998 12.6562 9.2998 18.4C9.2998 24.1438 13.956 28.8 19.6998 28.8Z" fill="#5F0080" stroke="white"/>
+          <path d="M14.8994 15.2L17.2994 22.4L19.6994 15.2L22.0994 22.4L24.4994 15.2" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M15.1998 17.5999H13.7998C13.5237 17.5999 13.2998 17.8237 13.2998 18.0999C13.2998 18.376 13.5237 18.5999 13.7998 18.5999H15.1998C15.4759 18.5999 15.6998 18.376 15.6998 18.0999C15.6998 17.8237 15.4759 17.5999 15.1998 17.5999Z" fill="white"/>
+          <path d="M25.6002 17.5999H24.2002C23.9241 17.5999 23.7002 17.8237 23.7002 18.0999C23.7002 18.376 23.9241 18.5999 24.2002 18.5999H25.6002C25.8763 18.5999 26.1002 18.376 26.1002 18.0999C26.1002 17.8237 25.8763 17.5999 25.6002 17.5999Z" fill="white"/>
+          <path d="M26.9971 25.3657L31.6254 29.9941C31.881 30.2497 31.9616 30.5835 31.8054 30.7397L31.2397 31.3054C31.0835 31.4616 30.7497 31.381 30.494 31.1254L25.8657 26.4971" stroke="white" stroke-linejoin="round"/>
+        </svg>
+        <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20.5 40C31.5457 40 40.5 31.0457 40.5 20C40.5 8.9543 31.5457 0 20.5 0C9.4543 0 0.5 8.9543 0.5 20C0.5 31.0457 9.4543 40 20.5 40Z" fill="#5F0080"/>
+          <path d="M20.4996 22.4001C21.8251 22.4001 22.8996 21.3256 22.8996 20.0001C22.8996 18.6746 21.8251 17.6001 20.4996 17.6001C19.1741 17.6001 18.0996 18.6746 18.0996 20.0001C18.0996 21.3256 19.1741 22.4001 20.4996 22.4001Z" stroke="white"/>
+          <path d="M14.167 16.4951L18.463 9.0551C19.583 7.1151 21.4158 7.1151 22.535 9.0551L25.5206 14.2255" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M25.6014 11.1284V12.746V14.3636L24.2006 13.5548L22.7998 12.746" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M20.0053 28.3185H11.4141C9.17413 28.3185 8.25733 26.7313 9.37733 24.7913L12.3629 19.6208" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M9.64062 21.1L11.0414 20.2912L12.4422 19.4824V21.1V22.7176" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M27.3263 17.3533L31.6223 24.7941C32.7423 26.7341 31.8255 28.3205 29.5855 28.3205H23.6143" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M26.2567 29.9388L24.8559 29.13L23.4551 28.3212L24.8559 27.5124L26.2567 26.7036" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+            
+    </section>
   </main>
+</div>
 </body>
 </html>
