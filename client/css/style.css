@@ -4,18 +4,4 @@
 @import url(./theme.css);
 @import url(./base.css);
 
-* {
-  /* Text */
-  position: absolute;
-  width: 0px;
-  height: 26px;
-  /* Paragraph/Medium */
-  font-family: 'Pretendard';
-  font-style: normal;
-  
-  font-size: 16px;
-  line-height: 160%;
-  /* identical to box height, or 26px */
-  }
-  
-  
+
