@@ -1,4 +1,6 @@
-.main {
+.main-wrapper {
+  width: var(--container-width);
+  margin: 0 auto;
   margin-top: 100px;
 }
 

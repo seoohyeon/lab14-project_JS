@@ -34,13 +34,6 @@ video {
   height: auto;
 }
 
-
-header,
-main,
-footer {
-  width: var(--container-width);
-  margin: 0 auto;
-}
 main{
   overflow: hidden;
 }
