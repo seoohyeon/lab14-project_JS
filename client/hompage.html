@@ -8,11 +8,10 @@
   <title>컬리 - 마켓컬리/뷰티컬리</title>
 </head>
 <body>
-  <header>
+  <header class="header">
     <aside class="top-banner">
      <a href="" class="top-banner_inner">
       <span>지금 가입하고 인기상품 <em>100원</em>에 받아가세요!</span>
-      <button class="close-button"><img src="./assets/icons/web-icons/Close.svg" alt="닫기 버튼" /></button>
      </a>
     </aside>
     <div class="header_inner">
@@ -25,35 +24,47 @@
           <a href="">고객센터  ▼</a>
         </nav>
       </div>
-      <h1>
-          <a href="">
-            <img src="./assets/icons/logo.svg" alt="마켓컬리 로고 이미지" /> 마켓칼리<span aria-hidden="true"> | </span>뷰티칼리<sup>N</sup>
-          </a>
-      </h1>
-      <form method="" action="" class="search-form">
-          <fieldset>
-            <legend aria-hidden="true">검색 폼</legend>
-            <div class="search-form-inner">
-              <div class="form-group">
-                <label for="search" class="form-group-label" ><span class="icon-search"aria-hidden="true"></span></label>
-                <input type="search" class="form-group-input" placeholder="검색어를 입력해주세요." />
+      <div class="header_inner_main">
+        <h1>
+          <a href=""><img src="./assets/icons/logo.svg" alt="마켓컬리 로고 이미지" /></a>
+          <a href="">마켓칼리</a>
+          <span class="contents-border" aria-hidden="true"> | </span>
+          <span class="beauty-karly-wrapper">
+            <a href="">뷰티칼리</a>
+            <sup> N</sup>
+          </span>
+        </h1>
+        <form method="" action="" class="search-form">
+            <fieldset>
+              <legend aria-hidden="true">검색 폼</legend>
+              <div class="search-form-inner">
+                <div class="form-group">
+                  <label for="main-search" class="form-group-label" ><span class="icon-search" aria-hidden="true"></span></label>
+                  <input type="search" class="form-group-input" id="main-search" placeholder="검색어를 입력해주세요" />
+                </div>
               </div>
-            </div>
-          </fieldset>
-      </form>
-      <ul>
-        <li><a href=""><img src="./assets/icons/web-icons/Location.svg" alt="핀 모양의 아이콘" /></a></li>
-        <li><a href=""><img src="./assets/icons/web-icons/Heart.svg" alt="하트 모양의 아이콘" /></a></li>
-        <li><a href=""><img src="./assets/icons/web-icons/Cart-1.svg" alt="카트 모양의 아이콘" /></a></li>
-      </ul>
-      <ul class="menu">
-          <li><a href=""> <img src="./assets/icons/web-icons/Hamburger.svg" alt="햄버거 모양의 아이콘" /> 카테고리</a></li>
-          <li><a href="">신상품</a></li>
-          <li><a href="">베스트</a></li>
-          <li><a href="">알뜰쇼핑</a></li>
-          <li><a href="">특가/혜택</a></li>
-          <li><a href=""><button>샛별-택배 배송안내</button></a></li>
-      </ul>
+            </fieldset>
+        </form>
+        <ul>
+          <li><a href=""><img src="./assets/icons/web-icons/Location.svg" alt="핀 모양의 아이콘" /></a></li>
+          <li><a href=""><img src="./assets/icons/web-icons/Heart.svg" alt="하트 모양의 아이콘" /></a></li>
+          <li><a href=""><img src="./assets/icons/web-icons/Cart-1.svg" alt="카트 모양의 아이콘" /></a></li>
+        </ul>
+      </div>
+      <div>
+        <ul class="header_menu">
+          <div class="header_menu_category">
+            <li><a href=""><img src="./assets/icons/web-icons/Hamburger.svg" alt="햄버거 모양의 아이콘" />카테고리</a></li>
+          </div>
+          <div class="header_menu_wrapper">
+            <li><a href="">신상품</a></li>
+            <li><a href="">베스트</a></li>
+            <li><a href="">알뜰쇼핑</a></li>
+            <li><a href="">특가/혜택</a></li>
+          </div>  
+            <li><button><b>샛별·낮</b> 배송안내</button></li>
+        </ul>
+      </div>
     </div>
   </header>
 
@@ -63,19 +74,17 @@
 
   <footer class="footer"> 
     <div class="footer_inner">
-      <span>
-        <h3>고객행복센터</h3>
-        <span>1644-1107</span>
-        <span>월~토요일 오전 7시 -오후 6시</span>
-        
-        <ul>
-          <li>
-            <button>카카오톡 문의</button>
-            <span>
-              월~토요일<span aria-hidden="true"> | </span>오전 7시 ~ 오후 6시<br>
-              일/공휴일<span aria-hidden="true"> | </span>오전 7시 ~ 오후 1시
-            </span>  
-          </li>
+      <h3>고객행복센터</h3>
+      <span>1644-1107</span>
+      <span>월~토요일 오전 7시 -오후 6시</span>
+      <ul>
+        <li>
+          <button>카카오톡 문의</button>
+          <span>
+            월~토요일<span aria-hidden="true"> | </span>오전 7시 ~ 오후 6시<br>
+            일/공휴일<span aria-hidden="true"> | </span>오전 7시 ~ 오후 1시
+          </span>  
+        </li>
           <li>
             <button>1:1 문의</button>
             <span>
@@ -90,15 +99,12 @@
               점심시간<span aria-hidden="true"> | </span>낮 12시 ~ 오후 1시
             </span>
           </li>
-        </ul>
-        <ul>
-          <li>비회원 문의 : help@karlycorp.com</li>
-          <li>비회원 대량주문 문의 : help@karlycorp.com</li>
-        </ul>
-  
-  
-      </span>
-      <span>
+      </ul>
+      <ul>
+        <li>비회원 문의 : help@karlycorp.com</li>
+        <li>비회원 대량주문 문의 : help@karlycorp.com</li>
+      </ul> 
+      <div>
         <ul>
           <li><a href="">칼리소개</a></li>
           <li><a href="">칼리소개영상</a></li>
@@ -107,7 +113,7 @@
           <li><a href="">개인정보처리방침</a></li>
           <li><a href="">이용안내</a></li>
         </ul>
-      <address>
+        <address>
           법인명 (상호) : 주식회사 컬리<span aria-hidden="true"> | </span>사업자등록번호 : 261-81-23567<span aria-hidden="true"> | </span><a href="">사업자정보 확인</a>
           <br>통신판매업 : 제 2018-서울강남-01646 호<span aria-hidden="true"> | </span>개인정보보호책임자 : 이원준
           <br>주소 : 서울특별시 강남구 테헤란로 133,18층(역삼동)<span aria-hidden="true"> | </span>대표이사 : 김슬아
@@ -121,8 +127,8 @@
             <a href=""> <img src="./assets/icons/web-icons/NaverPost.svg" alt="네이버 포스트 아이콘" /> </a>
             <a href=""> <img src="./assets/icons/web-icons/Youtube.svg" alt="유튜브 아이콘" /> </a>
           </div>
-      </address>
-      </span>
+        </address>
+      </div>
       <div>
         <ul>
           <li>
