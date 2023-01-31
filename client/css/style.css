@@ -4,7 +4,7 @@
 @import url(./theme.css);
 @import url(./base.css);
 
-.wrapper {
+.main {
   margin-top: 100px;
 }
 
@@ -109,9 +109,10 @@
   height: 30px;
   border: 1px solid var(--gray-200);
 }
-.order-details_lists_counter > svg {
+.order-details_lists_counter .order-details_minus, .order-details_plus {
   cursor: pointer;
 }
+
 .order-details_lists_counter > span {
   text-align: center;
   padding: 0 10px;
@@ -162,7 +163,6 @@
 .order-details_pointletter > p {
   font-weight: 600;
   font-size: 16px;
-  letter-spacing: -1.3px;
   color: var(--black);
 }
 
@@ -180,6 +180,14 @@
   padding: 10px;
   margin-right: 12px;
 }
+.button_heart_active {
+  fill: red;
+}
+.button_heart_path_active {
+  stroke: red;
+}
+
+
 .order-details_buttons > svg:first-child {
   cursor: pointer;
 }
@@ -194,10 +202,45 @@
   font-weight: 600;
   font-size: 16px;
 }
+.cart_bubble_wrapper {
+  display: none;
+  position: fixed;
+  right: 20px;
+  top: 30px;
+}
 
+.cart_bubble_triangle {
+  padding-right: 28px;
+}
 
-
-
+.cart_bubble {
+  background-color: var(--white);
+  font-size: 12.003px;
+  position: absolute;
+  width: 256px;
+  height: 100px;
+  padding: 20px;
+  right: 0px;
+  top: 13px;
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--gray-200);
+  box-sizing: border-box;
+}
+.cart_bubble > img {
+  width: 46px;
+  height: 60px;
+  margin-right: 24px;
+}
+.cart_bubble_title {
+  font-weight: 600;
+  color: var(--gray-300);
+  margin-bottom: 8px;
+}
+.cart_bubble p:last-child {
+  font-weight: 400;
+  color: var(--content);
+}
 
 
 
