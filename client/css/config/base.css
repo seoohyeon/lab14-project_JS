@@ -1,5 +1,4 @@
 /* Base Style */
-
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css');
 
 body,
@@ -35,12 +34,8 @@ video {
   height: auto;
 }
 
-.header,
-.main,
-.login,
-.footer {
-  width: var(--container-width);
-  margin: 0 auto;
+main{
+  overflow: hidden;
 }
 
 
