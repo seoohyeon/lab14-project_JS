@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script src="./js/main.js" type="module"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <header>
+    <div class="topbanner">
+      지금 가입하고 인기상품 100원에 받아가세요!
+    </div>
+    <div class="header">
+      헤더 상단바
+    </div>
+  </header>
+
+<section>
+  <div class="swiper-1 product-swiper">
+    <div class="login">
+        <h2 class="signin-title">
+          로그인
+        </h2>
+          <div class="signin">
+            <form class="signin-form">
+              <fieldset>
+                <legend>회원 로그인 폼</legend>
+                  <div class="user-email">
+                    <input type="email" class="userEmail" name="userEmail" placeholder="아이디를 입력해주세요." required>
+                  </div>
+                  <div class="user-pw">
+                  <input type="password" class="userPw" name="userPw" placeholder="비밀번호를 입력해주세요." required>
+                  </div>
+                  <div class="finder">
+                    <a href="" class="idfind">아이디 찾기</a>
+                    <span></span>
+                    <a href="" class="pwfind">비밀번호 찾기</a>
+                  </div>
+              </fieldset>
+                  <div class="sign-button">
+                  <button class="sign-in"><span>로그인</span></button>
+                  <button onclick="location.href='signup.html'" class="sign-up">
+                    <span>
+                      회원가입
+                    </span>
+                  </button>
+                  </div>
+            </form>
+          </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer">푸터</div>
+</footer>
+</body>
+</html>

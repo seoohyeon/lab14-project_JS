@@ -1,0 +1,292 @@
+@import url(./normalize.css);
+@import url(./reset.css);
+@import url(./a11y.css);
+@import url(./theme.css);
+@import url(./base.css);
+
+
+/* 로그인 영역 */
+
+.login {
+  /* 로그인 전체 레이아웃 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 0px;
+  gap: 44px;
+  width: 1920px;
+  height: 527px;
+  /* Inside auto layout */
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+  background-color: yellow;
+  }
+  
+  
+.signin-title {
+  /* 로그인 상단 글씨체 */
+  width: 56px;
+  height: 32px;
+  /*여기부터는 폰트적용*/
+  font-weight: 600;
+  font-size: 1.333rem;
+  line-height: 150%;
+  color: var(--black);
+  /* background-color: var(--accent-yellow); */
+  }
+  
+.signin-form{
+  /* 로그인 Form 레이아웃 */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* flex-start는 기본 설정으로, 플렉스 요소는 플렉스 컨테이너의 앞쪽부터 배치 */
+  gap: 28px;
+  width: 340px;
+  height: 291px;
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  }
+  
+.signin-form fieldset{
+  /* 로그인 Form 내 fieldset 레이아웃 */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  /* flex-end = 플렉스 요소는 플렉스 컨테이너의 뒤쪽부터 배치 */
+  padding: 0px;
+  gap: 12px;
+  width: 340px;
+  height: 143px;
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+  }
+  
+  .user-email {
+  /* 유저이메일 */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 340px;
+  height: 50px;
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+  }
+  
+  .user-email input{
+  /* 유저이메일 내부 글씨체 */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 12px 20px;
+  width: 340px;
+  height: 50px;
+  /* 글씨체 굵기 및 색깔, radius 수정 */
+  border: 1px solid var(--gray-300);
+  border-radius: 4px;
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+  }
+  
+  .user-pw {
+  /* 유저 패스워드 */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 340px;
+  height: 50px;
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+  }
+  
+  .user-pw input {
+  /* 유저 패스워드 내부 글씨체 */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 12px 20px;
+  width: 340px;
+  height: 50px;
+  /* 글씨체 굵기 및 색깔, radius 수정 */
+  border: 1px solid var(--gray-300);
+  border-radius: 4px;
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+  }
+  
+  .finder {
+  /* 아이디 - 비밀번호 찾기 레이아웃 */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 4px;
+  width: 130px;
+  height: 19px;
+  /* Inside auto layout */
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+  }
+  
+  .idfind {
+  /* 아이디 찾기 */
+  width: 55px;
+  height: 19px;
+  /* 아이디 찾기 글씨체 수정 */
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12.003px;
+  line-height: 160%;
+  color: var(--black);
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  }
+  
+  .pwfind {
+  /* 비밀번호 찾기 */
+  width: 66px;
+  height: 19px;
+  /* Paragraph/Small */
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12.003px;
+  line-height: 160%;
+  color: var(--black);
+  /* Inside auto layout */
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+  }
+  
+  .sign-button {
+  /* 로그인-회원가입 버튼 레이아웃 */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 12px;
+  width: 340px;
+  height: 120px;
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+  }
+  
+  .sign-in {
+  /* 로그인 버튼 */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 340px;
+  height: 54px;
+  /* 버튼 디자인 수정 */
+  background-color: var(--primary);
+  border-radius: 4px;
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+  }
+  
+  .sign-in span{
+  /* 로그인 버튼 글씨체 */
+  width: 42px;
+  height: 24px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--white);
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  }
+  
+  .sign-up {
+  /* 회원가입 버튼 */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 340px;
+  height: 54px;
+  /* 버튼 디자인 수정 */
+  border: 1px solid var(--primary);
+  border-radius: 4px;
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+  }
+  
+  .sign-up span {
+  /* 회원가입 버튼 글씨체 */
+  width: 56px;
+  height: 24px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;  
+  color: var(--primary);
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
