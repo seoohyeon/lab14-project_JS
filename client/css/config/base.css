@@ -1,4 +1,6 @@
 /* Base Style */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css');
+
 body,
 body::before,
 body::after,
@@ -30,6 +32,10 @@ img {
 video {
   width: 100%;
   height: auto;
+}
+
+main{
+  overflow: hidden;
 }
 
 

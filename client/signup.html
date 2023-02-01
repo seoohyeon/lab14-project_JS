@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script src="./js/main.js" type="module"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <header>
+    <div class="topbanner">
+      지금 가입하고 인기상품 100원에 받아가세요!
+    </div>
+    <div class="header">
+      헤더 상단바
+    </div>
+  </header>
+
+    <section>
+            <div class="registration">
+                <h2 class="signup-title">
+                    회원가입
+                </h2>
+                    <div class="signup">
+                        <div class="line-starter">
+                            <span class="star">*</span>
+                            필수입력사항
+                        </div>
+                        <div class="signup-form">
+                            <fieldset>
+                                <legend>회원가입 폼</legend>
+                                    <div class="form-tr">
+                                        <span class="form-list">
+                                            <span class="label-id">
+                                                <label class="id-detail">아이디</label>
+                                                <span class="startag">*</span>
+                                            </span>
+                                        </span>
+                                        <div class="input-text">
+                                            <div class="field">
+                                                <input type="text" required class="signup-input" placeholder="아이디를 입력해주세요." >
+                                            </div>
+                                        </div>
+                                        <button class="doublecheck">
+                                            <span class="jungbok">중복확인</span>
+                                        </button>
+                                    </div>
+                                    <div class="form-tr">
+                                        <span class="form-list">
+                                            <span class="label-pw">
+                                                <label class="pw-detail">비밀번호</label>
+                                                <span class="startag">*</span>
+                                            </span>
+                                        </span>
+                                        <div class="input-text">
+                                            <div class="field">
+                                                <input type="text" required class="signup-input" placeholder="비밀번호를 입력해주세요.">
+                                            </div>
+                                        </div>
+                                    </div>
+                    
+                                    <div class="form-tr">
+                                        <span class="form-list">
+                                            <span class="label-pwcheck">
+                                                <label class="pwcheck-detail">비밀번호 확인</label>
+                                                <span class="startag">*</span>
+                                            </span>
+                                        </span>
+                                        <div class="input-text">
+                                            <div class="field">
+                                                <input type="text" required class="signup-input" placeholder="비밀번호를 한번 더 입력해주세요.">
+                                            </div>
+                                        </div>
+                                    </div>
+                    
+                                    <div class="form-tr">
+                                        <span class="form-list">
+                                            <span class="label-name">
+                                                <label class="name-detail">이름</label>
+                                                <span class="startag">*</span>
+                                            </span>
+                                        </span>
+                                        <div class="input-text">
+                                            <div class="field">
+                                                <input type="text" required class="signup-input" placeholder="이름을 입력해주세요.">
+                                            </div>
+                                        </div>
+                                    </div>
+                    
+                                    <div class="form-tr">
+                                        <span class="form-list">
+                                            <span class="label-email">
+                                                <label class="email-detail">이메일</label>
+                                                <span class="startag">*</span>
+                                            </span>
+                                        </span>
+                                        <div class="input-text">
+                                            <div class="field">
+                                                <input type="text" required class="signup-input" placeholder="예: marketkurly@kurly.com">
+                                            </div>
+                                        </div>
+                                        <button class="doublecheck">
+                                            <span class="jungbok">중복확인</span>
+                                        </button>
+                                    </div>
+                    
+                                    <div class="form-tr">
+                                        <span class="form-list">
+                                            <span class="label-phone">
+                                                <label class="phone-detail">휴대폰</label>
+                                                <span class="startag">*</span>
+                                            </span>
+                                        </span>
+                                        <div class="input-text">
+                                            <div class="field">
+                                                <input type="text" class="signup-input" placeholder="예: 숫자만 입력해주세요.">
+                                            </div>
+                                        </div>
+                                        <button class="doublecheck">
+                                            <span class="phone-jungbok">인증번호 받기</span>
+                                        </button>
+                                    </div>
+                    
+                                    <div class="address-form-tr">
+                                        <span class="form-list">
+                                            <span class="label-address">
+                                                <div class="address-detail">주소</div>
+                                                <span class="startag">*</span>
+                                            </span>
+                                        </span>
+                                        <div class="address-container">
+                                            <button class="address-button">
+                                                <span class="address-search">주소 검색</span>
+                                            </button>
+                                            <span class="address-text">배송지에 따라 상품 정보가 달라질 수 있습니다.</span>
+                                        </div>
+                                    </div>
+                    
+                                    <div class="sub-form-tr">
+                                        <span class="form-list">
+                                            <span class="label-gender">
+                                                <div class="gender-detail">성별</div>
+                                            </span>
+                                        </span>
+                                        <div class="gender-check">
+                                            <div class="gender-container">
+                                                <label class="radio-button">
+                                                    <input type="radio" name="gender">
+                                                    <span class="gender-text">남자</span>
+                                                </label>
+                                            </div>
+                                            
+                                            <div class="gender-container">
+                                                <label class="radio-button">
+                                                    <input type="radio" name="gender">
+                                                    <span class="gender-text">여자</span>
+                                                </label>
+                                            </div>
+                                            
+                                            <div class="no-select-container">
+                                                <label class="radio-button">
+                                                    <input type="radio" name="gender" checked>
+                                                    <span class="gender-no-select">선택안함</span>
+                                                </label>
+                                            </div>  
+                                        </div>
+                                    </div>
+                    
+                                    <div class="sub-form-tr">
+                                        <span class="form-list">
+                                            <span class="label-birth">
+                                                <label class="birth-detail">
+                                                    생년월일
+                                                </label>
+                                            </span>
+                                        </span>
+                                        <div class="birth-container">
+                                            <div class="birth-year">
+                                                <input type="text" placeholder="YYYY / MM / DD">
+                                            </div>
+                                        </div>
+                                    </div>
+                    
+                                    <div class="sub-form-tr">
+                                        <span class="form-list">
+                                            <span class="label-plus">
+                                                <label class="plus-detail">
+                                                    추가입력 사항
+                                                </label>
+                                            </span>
+                                        </span>
+                                        <div class="extra-input">
+                                            <label class="radio-button">
+                                                <input type="radio" name="extra">
+                                                <span>친구초대 추천인 아이디</span>
+                                            </label>
+                                            <label class="radio-button">
+                                                <input type="radio" name="extra">
+                                                <span>참여 이벤트명</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                            </fieldset>
+                            <div class="agreement-form">
+                                <span class="form-list">
+                                    <label class="agreement-detail">이용약관동의</label>
+                                    <span class="startag">*</span>
+                                </span>
+
+                                <div class="extra-agree">
+                                    <div class="allagree">
+                                        <div class="allagree-radio">
+                                                <input type="radio" name="agree">
+                                                <span class="allagree-text">전체 동의합니다</span>
+                                                <p class="exception-text">선택항목에 동의하지 않은 경우도 회원가입 및 일반적인 서비스를 이용할 수 있습니다</p>
+                                        </div>
+                                    </div>
+                                    <div class="extra-normal-agree">
+                                        <div class="normal-agree">
+                                            <div class="set">
+                                                <input type="radio" name="agree">
+                                                    <span class="agree-text">이용약관 동의(필수)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="extra-normal-agree">
+                                        <div class="normal-agree">
+                                            <div class="set2">
+                                                <input type="radio" name="agree">
+                                                    <span class="agree-text">개인정보 수집ㆍ이용 동의(필수)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="extra-normal-agree">
+                                        <div class="normal-agree">
+                                            <div class="set3">
+                                                <input type="radio" name="agree">
+                                                    <span class="agree-text">무료배송, 할인쿠폰 등 혜택/정보 수신 동의(선택)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="extra-normal-agree">
+                                        <div class="normal-agree">
+                                            <div class="set4">
+                                                <input type="radio" name="agree">
+                                                    <span class="agree-text">본인은 만 14세 이상입니다.(필수)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="signup-button">
+                                <button class="button-normal">
+                                    <span class="signup-text">회원가입</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+    </section>
+
+
+  <footer>
+    <div class="footer">
+      푸터
+    </div>
+  </footer>
+</body>
+</html>

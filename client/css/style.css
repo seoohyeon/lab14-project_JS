@@ -1,7 +1,7 @@
-@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css');
-@import url(./config/normalize.css);
-@import url(./config/reset.css);
-@import url(./config/a11y.css);
-@import url(./config/theme.css);
-@import url(./config/base.css);
+@import url(./config/main.css);
+@import url(./product-detail.css);
+@import url(./swiper-style.css);
+@import url(./main-page.css);
+@import url(./login.css);
+@import url(./signup.css);
 @import url(./basket.css)
