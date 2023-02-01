@@ -13,6 +13,7 @@
   align-items:center; /* 위아래 기준 중앙정렬 */
   justify-content:center; /* 좌우 기준 중앙정렬 */
 
+  min-width: 1068px;
 }
 
 
@@ -20,18 +21,19 @@
 /*                            product-display Block                           */
 /* -------------------------------------------------------------------------- */
 .product-display{
-  background-color: brown;
+  /* background-color: SpringGreen; */
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
   height: 601px;
+  padding: 40px 0;
 }
 
 .product-display_title{
+  /* background-color: aliceblue; */
   width: 1050px;
   height: 64px;
-  margin-top: 40px;
   text-align: center;
   display: inline-block;
   font-size: 28.43px;
@@ -42,15 +44,215 @@
 
 .product-display_wrapper{
   height: 429px;
-  width: 1050px;
+  width: 1100px;
+  padding: 0 30px;
   margin-top: 28px;
-  margin-bottom: 40px;
+  overflow: hidden;
+  
+  position: relative;
 }
+
+.product-display_slide-content{
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  /* align-content:space-between ; */
+}
+
+.product-display_product-img{
+  /* background: pink; */
+  width: 249px;
+  height: 320px;
+}
+
+.product-display_info-wrapper{
+  bottom: 0;
+  position: absolute;
+  min-height: 90px;
+  max-height: 100px;
+  /* background-color: #fff; */
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.product-display_info-wrapper mark{
+  display: block;
+  background-color: #fff;
+}
+
+.product-display_shipping-info{
+  width: 42px;
+  height: 18px;
+
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 150%;
+
+  color: #898989;
+ 
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.product-display_product-name{
+  /* [풀무원] 탱탱쫄면 (4개입) */
+  height: 26px;
+  
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 160%;
+  
+  color: #333333;
+}
+.product-display_price-wrapper{
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-start;
+  width: 47px;
+  height: 32px;
+  gap: 8px;
+  
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+}
+.product-display_discount-rate{
+  
+  display: inline-block;
+  width: 47px;
+  height: 32px;
+  font-weight: 600;
+  font-size: 21px;
+  line-height: 150%;
+  
+  color: #FA622F;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+
+}
+.product-display_sell-price{
+  width: 93px;
+  height: 32px;
+  
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 21.328px;
+  line-height: 150%;
+  
+  color: #333333;
+  
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  
+}
+
+.product-display_undiscounted-price{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  isolation: isolate;
+  width: 53px;
+  height: 19px;
+  flex: none;
+  order: 3;
+  flex-grow: 0;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 160%;
+  color: #898989;
+  text-decoration: line-through;
+}
+
+.product-display_product-detail{
+  width: 162px;
+  height: 19px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 160%;
+  color: #898989;
+  flex: none;
+  order: 4;
+  flex-grow: 0;
+}
+.product-display_badge-wrapper{
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  
+  width: 123px;
+  height: 26px;
+  
+  flex: none;
+  order: 5;
+  flex-grow: 0;
+}
+.product-display_badge-wrapper > mark{
+  display: flex;
+  align-items: flex-start;
+  padding: 4px;
+  gap: 4px;
+  
+  width: 65px;
+  height: 26px;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 150%;
+  background: #E1E1E1;
+  border-radius: 4px;
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.product-display_karly-only::after{
+  
+  color: #5F0080;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+
+  content: "Karly only";
+}
+
+.product-display_limited-products::after{
+  color: #333333;
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+
+  content: "한정수량";
+}
+/* -------------------------------------------------------------------------- */
+/*                              body-event-banner                             */
+/* -------------------------------------------------------------------------- */
 
 .body-event-banner{
   width: var(--container-width);
   margin: 0 auto;
-  background-color: chocolate;
+  /* background-color: Thistle; */
   display: flex;
   justify-content: center;
+  overflow: hidden;
 }
+
+.body-event-banner_img-wrapper{
+  margin: 40px 0;
+  width: 100%;
+}
+.body-event-banner_img-wrapper img{
+  width: 100%;
+  object-fit: cover;
+}
+

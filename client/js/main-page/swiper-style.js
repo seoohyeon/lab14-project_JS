@@ -4,7 +4,7 @@
 const mainBannerSwiper = new Swiper('.main-banner_swiper', { //eslint-disable-line 
   loop : true, // 무한 루프 슬라이드, 반복이 되며 슬라이드가 끝이 없다.
 	freeMode : false, // 슬라이드 넘길 때 위치 고정 여부
-  autoHeight : true, // true로 설정하면 슬라이더 래퍼가 현재 활성 슬라이드의 높이에 맞게 높이를 조정합니다.
+  // autoHeight : true, // true로 설정하면 슬라이더 래퍼가 현재 활성 슬라이드의 높이에 맞게 높이를 조정합니다.
   a11y : false, // 접근성 매개변수(접근성 관련 대체 텍스트 설정이 가능) - api문서 참고!
   resistance : false, // 슬라이드 터치에 대한 저항 여부 설정
   slideToClickedSlide : true, // 해당 슬라이드 클릭시 슬라이드 위치로 이동
@@ -29,11 +29,18 @@ const mainBannerSwiper = new Swiper('.main-banner_swiper', { //eslint-disable-li
 		prevEl : '.swiper-button-prev', // 이번 버튼 클래스명
   }
 });
+const productDisplaySwiper = new Swiper('.product-display_swiper', { //eslint-disable-line 
+  loop : false, // 무한 루프 슬라이드, 반복이 되며 슬라이드가 끝이 없다.
+	freeMode : false, // 슬라이드 넘길 때 위치 고정 여부
+  resistance : false, // 슬라이드 터치에 대한 저항 여부 설정
+  slideToClickedSlide : true, // 해당 슬라이드 클릭시 슬라이드 위치로 이동
+  centeredSlides : true, // true시에 슬라이드가 가운데로 배치
+  allowTouchMove : true, // false시에 스와이핑이 되지 않으며 버튼으로만 슬라이드 조작이 가능
+  slidesOffsetBefore : 0, // 슬라이드 시작 부분 여백
+  slidesOffsetAfter : 0, // 슬라이드 시작 부분 여백
 
-// swiper2
-const s2 = new Swiper('.swiper2', { //eslint-disable-line 
-	loop : true, // 무한 루프 슬라이드, 반복이 되며 슬라이드가 끝이 없다.
-	pagination : {
-		el : '.swiper-pagination',
-	},
+  navigation : {
+		nextEl : '.swiper-button-next', // 다음 버튼 클래스명
+		prevEl : '.swiper-button-prev', // 이번 버튼 클래스명
+  }
 });

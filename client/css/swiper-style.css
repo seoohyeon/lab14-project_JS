@@ -30,7 +30,6 @@
 /* -------------------------------------------------------------------------- */
 
 .main-banner_swiper {
-  min-width: 1068px;
   max-width: 1920px;
   width: 100%;
   display: flex;
@@ -91,13 +90,83 @@
   align-items: center; */
 }
 .main-banner_swiper-button-prev{
-  left: calc(50% - 534px);
+  left: calc(50% - 594px);
   /* margin-right: 590px; */
 }
 .main-banner_swiper-button-next{
-  right:calc(50% - 534px);
+  right:calc(50% - 594px);
   /* margin-left: 590px; */
 }
 .main-banner_swiper-button-next img{
   transform: scaleX(-1);
 }
+
+
+
+/* -------------------------------------------------------------------------- */
+/*                         product-display swiper  클래스 속성                 */
+/* -------------------------------------------------------------------------- */
+
+.product-display_swiper {
+  width: 100%;
+  
+  height: 429px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  /* background-color: aquamarine; */
+}
+
+.product-display_swiper-wrapper{
+  display: flex;
+  align-items: center; 
+  width: 100%;
+  height: 428px;
+}
+
+.product-display_swiper-slide{
+  width: 100%;
+  
+  height: 429px;
+}
+
+.product-display_swiper-slide ul{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+
+.product-display_swiper-slide li{
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 249px;
+  height: 429px;
+
+  /* background-color: coral; */
+}
+
+.product-display_swiper-button-prev,.product-display_swiper-button-next{
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: 167px;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+  background-color: blue;
+  flex: none;
+  order: 4;
+  flex-grow: 0;
+  z-index: 4;
+}
+ 
+.product-display_swiper-button-prev{
+  left: -30px;
+}
+.product-display_swiper-button-next{
+  right:-30px;
+}
+.product-display_swiper-button-next img{
+  transform: scaleX(-1);
+} 
