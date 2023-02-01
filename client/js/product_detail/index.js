@@ -3,6 +3,10 @@
 
 import { getNode } from '../../lib/index.js'
 
+//-----------------------------------------------------------
+// section 1
+//-----------------------------------------------------------
+
 let minus = getNode(".order-details_minus");
 let plus = getNode(".order-details_plus");
 let orderNumber = getNode(".order-details_number");
@@ -11,7 +15,7 @@ let number = +getNode(".order-details_number").textContent;
 let totalPrice = getNode(".total-price");
 let totalNum = +totalPrice.textContent.replace(",","");
 
-let heartButton = getNode(".order-details_button_heart");
+let heartButton = getNode(".button_heart_svg");
 
 let productTitle = getNode(".order-details_title")
 
@@ -42,7 +46,6 @@ plus.addEventListener("click", () => {
     getNode(".order-details_minus_path").style.fill = "var(--content)";
   }
 })
-
 // 하트 찜
 heartButton.addEventListener("click", () =>{
 
@@ -60,3 +63,20 @@ getNode(".button_add_cart").addEventListener("click", () =>{
     getNode(".cart_bubble_wrapper").style.display = "none";
   }, 3000);
 })
+
+//-----------------------------------------------------------
+// section 2
+//-----------------------------------------------------------
+
+
+let productMenu = document.querySelectorAll(".product-menu_nav");
+
+ productMenu.forEach(index => {
+  index.addEventListener("click", () =>{
+    for(let i=0; i<4; i++){
+      productMenu[i].className = "product-menu_nav";
+    }
+    index.className = "product-menu_nav-active";
+  })
+ })
+

@@ -15,6 +15,8 @@
 <body>
   <main>
     <div class="main-wrapper">
+
+      <!-- section 1 = 상품구매창 -->
       <section class="detail-order">
         <h2 class="a11y-hidden">[풀무원] 탱탱쫄면 제품 상세페이지</h2>
         <figure class="order-img">
@@ -72,11 +74,11 @@
                 <p class="order-details_lists_content_box_title">[풀무원] 탱탱쫄면 (4개입)</p>
                 <div class="order-details_lists_counter_box">
                   <div class="order-details_lists_counter">
-                    <svg class="order-details_minus" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg tabindex="0" class="order-details_minus" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path class="order-details_minus_path" d="M20 14V16H10V14H20Z" fill="#A6A6A6"/>
                       </svg>    
                     <span class="order-details_number">1</span>
-                    <svg class="order-details_plus" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg tabindex="0" class="order-details_plus" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M16 10V14H20V16H16V20H14V16H10V14H14V10H16Z" fill="#333333"/>
                       </svg>
                   </div>
@@ -93,14 +95,20 @@
             <p>로그인 후, 적립 혜택 제공</p>
           </div>
           <div class="order-details_buttons">
-            <svg class="order-details_button_heart" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <button type="button" class="order-details_button_heart">
+            <svg class="button_heart_svg" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path class="button_heart_path" fill-rule="evenodd" clip-rule="evenodd" d="M28.9269 8.89295C28.3269 8.29261 27.6146 7.81636 26.8305 7.49144C26.0465 7.16651 25.2061 6.99927 24.3574 6.99927C23.5086 6.99927 22.6682 7.16651 21.8842 7.49144C21.1001 7.81636 20.3878 8.29261 19.7879 8.89295L17.9589 10.7209L16.1319 8.89295C14.9201 7.68091 13.2765 6.99989 11.5626 6.9997C9.84867 6.99951 8.2049 7.68017 6.99286 8.89195C5.78082 10.1037 5.0998 11.7473 5.09961 13.4612C5.09942 15.1751 5.78008 16.8189 6.99186 18.0309L8.81986 19.8599L17.2519 28.2939C17.4394 28.4814 17.6937 28.5867 17.9589 28.5867C18.224 28.5867 18.4783 28.4814 18.6659 28.2939L27.0989 19.8599L28.9269 18.0319C29.5271 17.432 30.0032 16.7198 30.328 15.9358C30.6528 15.1518 30.82 14.3115 30.82 13.4629C30.82 12.6144 30.6528 11.7741 30.328 10.9901C30.0032 10.2061 29.5271 9.49386 28.9269 8.89395V8.89295Z" stroke="#333333" stroke-width="1.7" stroke-linecap="round"/>
               </svg>
+            </button>
+            <button type="button" class="order-details_button_bell">
               <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M14.249 25.875C14.249 26.8695 14.6441 27.8232 15.3473 28.5264C16.0505 29.2296 17.0042 29.6246 17.9986 29.6246C18.9931 29.6246 19.9468 29.2296 20.65 28.5264C21.3532 27.8232 21.7483 26.8695 21.7483 25.875" stroke="#E1E1E1" stroke-width="1.6"/>
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M29.2477 25.5803H6.75L6.76463 25.5465C6.85013 25.3946 7.2945 24.7545 8.09887 23.6239L8.94262 22.4426V14.9783C8.94262 9.93262 12.8104 5.82075 17.6512 5.63175L18 5.625C23.0018 5.625 27.0562 9.81225 27.0562 14.9783V22.4415L28.9766 25.1539C29.1712 25.4385 29.2624 25.5814 29.2489 25.5814L29.2477 25.5803Z" stroke="#E1E1E1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-                <button class="button_add_cart">장바구니 담기</button>
+            </button>
+            <button type="button" class="button_add_cart">
+              장바구니 담기
+            </button>
                 <div class="cart_bubble_wrapper">
                   <img class="cart_bubble_triangle" src="./assets/tangtang/cart_triangle.png" alt="" />
                   <div class="cart_bubble">
@@ -115,48 +123,35 @@
           </div>
         </section>
 
-          
+      <!-- section 2 = 상품설명 -->    
       <section class="product-details">
-        <div class="product-menu">
-          <span class="product-menu_1 product-menu_nav">상품설명</span>
-          <span class="product-menu_2 product-menu_nav">상세정보</span>
-          <span class="product-menu_3 product-menu_nav">후기 (num)</span>
-          <span class="product-menu_4 product-menu_nav">문의</span>
-        </div>
-        <figure>
+        <ul id="details" class="product-menu">
+          <a href="#details"><li class="product-menu_nav">상품설명</li></a>
+          <a href="#details"><li class="product-menu_nav">상세정보</li></a>
+          <a href="#details"><li class="product-menu_nav">후기 (num)</li></a>
+          <a href="#details"><li class="product-menu_nav">문의</li></a>
+        </ul>
+        <figure class="product-img">
           <figcaption class="a11y-hidden">[풀무원] 탱탱쫄면 product-banner</figcaption>
           <img src="./assets/tangtang/detail_banner.jpg" alt="[풀무원] 탱탱쫄면" />
         </figure>
-        <p>튀기지 않아 부담 없는 매콤함</p>
-        <h3>[풀무원] 탱탱쫄면</h3>
-        <p></p>
-        <h4>Karly's Check Point</h4>
-        <ul>
-          <li>
-            <img src="./assets/tangtang/process.png" alt="생산유통과정" />
-            <p>생산 유통 과정 Process</p>
-            <p>·튀기지 않고 바람으로 말린 면</p>
-          </li>
-          <li>
-            <img src="./assets/tangtang/recommendation.png" alt="활용법" />
-            <p>활용법 Recommendation</p>
-            <p>·온 가족이 즐기기 좋은 4개입 포장</p>
-            <p>·간편한 조리로 완성하는 쫄면</p>
-          </li>
-          <li>
-            <img src="./assets/tangtang/brand.png" alt="브랜드" />
-            <p>브랜드와 생산자 Brand & Artisan</p>
-            <p>·내 가족의 건강을 위한 바른먹거리 전문기업, 풀무원</p>
-          </li>
-        </ul>
-        <figure>
-          <figcaption>[풀무원] 탱탱쫄면 product-detail</figcaption>
+        <p class="product-detail_title-p">튀기지 않아 부담 없는 매콤함</p>
+        <h3 class="product-detail_title">[풀무원] 탱탱쫄면</h3>
+        <p class="product-detail_content">쫄면의 진가는 매콤새콤한 양념과 탱탱한 면발에서 찾을 수 있지요. 풀무원은 이 맛을 더 부담 없이 즐길 수 있도록 튀기지 않고 만든 탱탱쫄면을 선보입니다. 밀가루와 감자 전분을 적절히 배합해 탄력이 좋고, 입에 넣었을 때는 찰지게 씹히죠. 고추장을 넣어 숙성한 비빔장은 자연스럽고 깊은 맛을 냅니다. 간단하게 조리해 마지막 한 가닥까지 탱탱한 식감을 즐겨보세요. 취향에 따라 다양한 고명을 올려 드셔도 좋아요.</p>
+        <h4 class="a11y-hidden">Karly's Check Point</h4>
+        <hr class="product-detail_checkpoint-hr"/>
+        <figure class="product-detail_checkpoint-pic">
+          <figcaption class="a11y-hidden">생산 유통 과정, 활용법, 브랜드와 생산자</figcaption>
+          <img src="./assets/tangtang/karly_check_point.png" alt="karly's check point" />
+        </figure>
+        <figure id="information" class="product-detail_nutrient-table">
+          <figcaptio class="a11y-hidden">[풀무원] 탱탱쫄면 product-detail</figcaptio>
           <img src="./assets/tangtang/detail_info.jpg" alt="쫄면 성분표" />
         </figure>
-        <hr />
-        <h4>Why Karly</h4>
-        <ul>
-          <li>
+
+        <h4 class="product-detail_whykarly">Why Karly</h4>
+        <ul class="product-detail_whykarly_lists">
+          <li class="product-detail_whykarly_list">
             <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M20 40C31.0457 40 40 31.0457 40 20C40 8.9543 31.0457 0 20 0C8.9543 0 0 8.9543 0 20C0 31.0457 8.9543 40 20 40Z" fill="#5F0080"/>
             <path d="M27.8002 9.6001H12.2002C11.6479 9.6001 11.2002 10.0478 11.2002 10.6001V29.4001C11.2002 29.9524 11.6479 30.4001 12.2002 30.4001H27.8002C28.3525 30.4001 28.8002 29.9524 28.8002 29.4001V10.6001C28.8002 10.0478 28.3525 9.6001 27.8002 9.6001Z" stroke="white"/>
@@ -167,10 +162,10 @@
             <path d="M14.4004 24.9307L15.6305 26.4L17.6004 24" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M20 25.2H25.6" stroke="white" stroke-linecap="round"/>
           </svg>
-          <p>깐깐한 상품위원회</p>
-          <p>나와 내 가족이 먹고 쓸 상품을 고르는 마음으로 매주 상품을 직접 먹어보고, 경험해보고 성분, 맛 안정성 등 다각도의 기준을 통과한 상품만을 판매합니다.</p>
+          <p class="product-detail_whykarly_list_title">깐깐한 상품위원회</p>
+          <p class="product-detail_whykarly_list_p">나와 내 가족이 먹고 쓸 상품을 고르는 마음으로 매주 상품을 직접 먹어보고, 경험해보고 성분, 맛 안정성 등 다각도의 기준을 통과한 상품만을 판매합니다.</p>
           </li>
-          <li>
+          <li class="product-detail_whykarly_list">
             <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M20 40C31.0457 40 40 31.0457 40 20C40 8.9543 31.0457 0 20 0C8.9543 0 0 8.9543 0 20C0 31.0457 8.9543 40 20 40Z" fill="#5F0080"/>
               <path d="M29.3996 11.2H10.5996C10.0473 11.2 9.59961 11.6477 9.59961 12.2V13.4C9.59961 13.9522 10.0473 14.4 10.5996 14.4H29.3996C29.9519 14.4 30.3996 13.9522 30.3996 13.4V12.2C30.3996 11.6477 29.9519 11.2 29.3996 11.2Z" stroke="white" stroke-linejoin="round"/>
@@ -179,10 +174,10 @@
               <path d="M19.2998 21.0398L22.2998 24.2398" stroke="white" stroke-linecap="round"/>
               <path d="M22 18.6399L18 21.7512" stroke="white" stroke-linecap="round"/>
             </svg>
-            <p>차별화된 karly Only 상품</p>
-            <p>전국 각지와 해외의 훌륭한 생산자가 믿고 선택하는 파트너, 마켓칼리. 3천여 개가 넘는 칼리 단독 브랜드, 스펙의 Karly Only 상품을 믿고 만나보세요.</p>
+            <p class="product-detail_whykarly_list_title">차별화된 karly Only 상품</p>
+            <p class="product-detail_whykarly_list_p">전국 각지와 해외의 훌륭한 생산자가 믿고 선택하는 파트너, 마켓칼리. 3천여 개가 넘는 칼리 단독 브랜드, 스펙의 Karly Only 상품을 믿고 만나보세요.</p>
           </li>
-          <li>
+          <li class="product-detail_whykarly_list">
             <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M20 40C31.0457 40 40 31.0457 40 20C40 8.9543 31.0457 0 20 0C8.9543 0 0 8.9543 0 20C0 31.0457 8.9543 40 20 40Z" fill="#5F0080"/>
               <path fill-rule="evenodd" clip-rule="evenodd" d="M8.0002 12H24.0002C24.442 12 24.8002 12.3582 24.8002 12.8V25.6H8.0002C7.55837 25.6 7.2002 25.2418 7.2002 24.8V12.8C7.2002 12.3582 7.55837 12 8.0002 12Z" stroke="white" stroke-linejoin="round"/>
@@ -191,10 +186,10 @@
               <path d="M11.9996 28.8C13.3251 28.8 14.3996 27.7255 14.3996 26.4C14.3996 25.0745 13.3251 24 11.9996 24C10.6741 24 9.59961 25.0745 9.59961 26.4C9.59961 27.7255 10.6741 28.8 11.9996 28.8Z" fill="#5F0080" stroke="white"/>
               <path d="M29.6002 28.8C30.9257 28.8 32.0002 27.7255 32.0002 26.4C32.0002 25.0745 30.9257 24 29.6002 24C28.2747 24 27.2002 25.0745 27.2002 26.4C27.2002 27.7255 28.2747 28.8 29.6002 28.8Z" fill="#5F0080" stroke="white"/>
             </svg>
-            <p>신선한 풀콜드체인 배송</p>
-            <p>온라인 업계 최초로 산지에서 문 앞까지 상온, 냉장, 냉동 상품을 분리 포장 후 최적의 온도를 유지하는 냉장 배송 시스템, 풀콜드체인으로 상품을 신선하게 전해드립니다.</p>
+            <p class="product-detail_whykarly_list_title">신선한 풀콜드체인 배송</p>
+            <p class="product-detail_whykarly_list_p">온라인 업계 최초로 산지에서 문 앞까지 상온, 냉장, 냉동 상품을 분리 포장 후 최적의 온도를 유지하는 냉장 배송 시스템, 풀콜드체인으로 상품을 신선하게 전해드립니다.</p>
           </li>
-          <li>
+          <li class="product-detail_whykarly_list">
             <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M20.5 40C31.5457 40 40.5 31.0457 40.5 20C40.5 8.9543 31.5457 0 20.5 0C9.4543 0 0.5 8.9543 0.5 20C0.5 31.0457 9.4543 40 20.5 40Z" fill="#5F0080"/>
               <path d="M19.6998 28.8C25.4436 28.8 30.0998 24.1438 30.0998 18.4C30.0998 12.6562 25.4436 8 19.6998 8C13.956 8 9.2998 12.6562 9.2998 18.4C9.2998 24.1438 13.956 28.8 19.6998 28.8Z" fill="#5F0080" stroke="white"/>
@@ -203,11 +198,11 @@
               <path d="M25.6002 17.5999H24.2002C23.9241 17.5999 23.7002 17.8237 23.7002 18.0999C23.7002 18.376 23.9241 18.5999 24.2002 18.5999H25.6002C25.8763 18.5999 26.1002 18.376 26.1002 18.0999C26.1002 17.8237 25.8763 17.5999 25.6002 17.5999Z" fill="white"/>
               <path d="M26.9971 25.3657L31.6254 29.9941C31.881 30.2497 31.9616 30.5835 31.8054 30.7397L31.2397 31.3054C31.0835 31.4616 30.7497 31.381 30.494 31.1254L25.8657 26.4971" stroke="white" stroke-linejoin="round"/>
             </svg>
-            <p>코객, 생산자를 위한 최선의 가격</p>
-            <p>매주 대형 마트와 주요 온라인 마트의 가격
+            <p class="product-detail_whykarly_list_title">고객, 생산자를 위한 최선의 가격</p>
+            <p class="product-detail_whykarly_list_p">매주 대형 마트와 주요 온라인 마트의 가격
 변동 상황을 확인해 신선식품은 품질을 타협하지 않는 선에서 최선의 가격으로, 가공식품은 언제나 합리적인 가격으로  정기 조정합니다.</p>
           </li>
-          <li>
+          <li class="product-detail_whykarly_list">
             <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M20.5 40C31.5457 40 40.5 31.0457 40.5 20C40.5 8.9543 31.5457 0 20.5 0C9.4543 0 0.5 8.9543 0.5 20C0.5 31.0457 9.4543 40 20.5 40Z" fill="#5F0080"/>
               <path d="M20.4996 22.4001C21.8251 22.4001 22.8996 21.3256 22.8996 20.0001C22.8996 18.6746 21.8251 17.6001 20.4996 17.6001C19.1741 17.6001 18.0996 18.6746 18.0996 20.0001C18.0996 21.3256 19.1741 22.4001 20.4996 22.4001Z" stroke="white"/>
@@ -218,25 +213,336 @@
               <path d="M27.3263 17.3533L31.6223 24.7941C32.7423 26.7341 31.8255 28.3205 29.5855 28.3205H23.6143" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
               <path d="M26.2567 29.9388L24.8559 29.13L23.4551 28.3212L24.8559 27.5124L26.2567 26.7036" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
-            <p>환경을 생각하는 지속 가능한 유통</p>
-            <p>친환경 포장재부터 생산자가 상품에만 집중할 수 있는 직매입 유통구조까지, 지속 가능한 유통을 고민하며 컬리를 있게
+            <p class="product-detail_whykarly_list_title">환경을 생각하는 지속 가능한 유통</p>
+            <p class="product-detail_whykarly_list_p">친환경 포장재부터 생산자가 상품에만 집중할 수 있는 직매입 유통구조까지, 지속 가능한 유통을 고민하며 컬리를 있게
 하는 모든 환경(생산자,커뮤니티,직원)이 더 나아질 수 있도록 노력합니다.</p>
           </li>
         </ul>    
       </section>
   
-      <section>
-        <div>
-          <h3>상품후기</h3>
-          <button>후기 작성하기</button>
+      <!-- section 3 = 상품후기 -->
+      <section id="review" class="product-review">
+        <div class="product-review_header">
+          <h3 class="product-review_title">상품후기</h3>
+          <button type="button" class="product-review_register">후기 작성하기</button>
         </div>
-        <p>글 후기 50원 적립금 혜택이 있어요.</p>
-        <ul>
+        <p class="product-review_p-title">글 후기 50원 적립금 혜택이 있어요.</p>
+        <ul class="product-review_p-lists">
           <li>퍼플, 더퍼플은 2배 적립 (100원) / 주간 베스트 후기로 선정 시 5,000원 추가 적립</li>
           <li>후기 작성은 배송완료일로부터 30일 이내 가능합니다.</li>
           <li>작성하신 후기는 확인 후 적립금이 지급됩니다. (영업일 기준 평균 1-2일 소요)</li>
         </ul>
-  
+        <div class="product-review_mini-nav">
+          <span class="product-review_total-number">총0개</span>
+          <div class="product-review_sort">
+            <span tabindex="0" class="product-review_sort_recommend">추천순</span>
+            <div class="product-review_sort_bar"></div>
+            <span tabindex="0" class="product-review_sort_new">최신 등록순</span>
+          </div>
+        </div>
+        <ul class="product-review_lists">
+          <li tabindex="0" class="product-review_list-notice">
+            <span class="product-review_list-notice_box">공지</span>
+            <p class="product-review_list-notice_p">금주의 베스트 후기 안내</p>
+          </li>
+          <pre class="product-review_list-notice_text">
+■ 베스트 후기 당첨자 안내
+
+고객님 안녕하세요, 컬리입니다.
+            
+[ 2023년 01월 16일 ~ 2023년 01월 22일 ]의 베스트 후기 당첨자 공지드립니다.
+            
+컬리는 상품에 대한 고객 여러분의 생생한 의견을 듣고 더 나은 상품을 준비하기 위해 상품 후기 게시판을 운영하고 있습니다.
+            
+실제로 상품의 후기가 구매 결정에 있어 큰 도움이 된 베스트 후기를 아래로 공유드립니다.
+            
+정성껏 후기를 작성해주신 모든 고객님께 감사드립니다.
+            
+[CLOOP] 제로소다 3종 (6캔) (포도/파인애플/복숭아)
+[마마리] 바질페스토 파스타 샐러드
+[마요라] 코피코 커피 10개입 4종
+[마리반점] 바지락 마라 볶음면
+[마이셰프] 감바스알아히요 &amp; 파스타
+[만선] 채낚 손질오징어 250g (생물)
+[만전김X마켓컬리] 갓구운 파래김 16봉
+[말리] 코코넛 워터 100% 2종
+[맥케인] 케이준 후라이 700g
+[멘푸소] 유기농 찹드 토마토 (다이스드 토마토)2개입/ 번들
+[멜릭서] 비건 립 버터 8종
+[명인식품관] 간장 게장
+[선물세트] 미국산 초이스 LA 꽃갈비 세트 2kg(냉동) / 양념 (1kg)
+[모나리자] PET 보블리 바디&amp;페이셜 티슈 (20매x10개입)
+[모현상회] 명란 알탕
+           
+            
+컬리 드림.
+            </pre>
+          <li tabindex="0" class="product-review_list-notice">
+            <span class="product-review_list-notice_box">공지</span>
+            <p class="product-review_list-notice_p">상품 후기 적립금 정책 안내</p>
+          </li>
+          <pre class="product-review_list-notice_text">
+[ 금주의 베스트 후기 및 상품 후기 적립금 정책 변경 안내 ]
+
+고객님 안녕하세요. 컬리 입니다.
+적립금 지급 정책을 안내드리니 컬리 이용에 참고 부탁드립니다.
+
+■ 적립금 지급 정책 ■
+
+1. 일반 후기
+-글 후기 50원/건
+-사진 후기 100원/건
+*퍼플/더퍼플 러버스 고객님께는 더블 후기 적립금이 지급됩니다.
+*지급에 영업일 기준 1~2일 소요됩니다.
+  → 금~일 작성 시, 월요일 지급
+
+2. 베스트 후기
+1) 선정 건 수 : 일주일 최대 100건
+2) 혜택 : 선정 시 적립금 5,000원
+3) 지급 일시 : 매주 수요일 (지급일이 공휴일의 경우 전 영업일)
+*당첨 상품 및 그 주의 Best 후기는 후기 게시판에서 확인하실 수 있습니다.
+
+3. 후기 적립금 지급 유의 사항
+컬리는 믿을 수 있는 후기문화를 함께 만들어가고자 합니다. 따라서 후기 내용이 아래에 해당하는 경우에는 검토 후 삭제 및 적립금 회수 조치될 수 있습니다.
+
+1. 욕설, 폭력성, 음란성, 상업성 등 업체나 타인에게 불쾌한 내용을 작성한 경우
+2. 구매한 상품과 무관한 내용이나 동일 문자/단순 초성의 반복 등 부적합한 내용을 작성한 경우
+3. 상품의 기능이나 효과 등에 오해의 소지가 있는 내용을 작성한 경우
+4. 저작권, 초상권 등 타인의 권리를 침해하는 이미지, 동영상을 사용한 경우
+5. 구매한 상품이 아닌 캡쳐 사진, 포장 박스 사진 등 상품과 관련 없는 이미지, 동영상을 사용한 경우
+
+또한, 비정상적인 방법을 통해 후기를 작성하고 적립금을 취득한 경우 작성자에 법적 책임의 소지가 있음을 알려드립니다.
+
+          </pre>
+
+          <!-- 후기 없을 경우 UI -->
+          <li class="product-review_list-notice product-review_list-ifnothing">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_61_3806)">
+              <path d="M24 47C36.7025 47 47 36.7025 47 24C47 11.2975 36.7025 1 24 1C11.2975 1 1 11.2975 1 24C1 36.7025 11.2975 47 24 47Z" stroke="#E2E2E2" stroke-width="2"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M24 13C25.1046 13 26 13.8954 26 15V26C26 27.1046 25.1046 28 24 28C22.8954 28 22 27.1046 22 26V15C22 13.8954 22.8954 13 24 13ZM24 31C25.1046 31 26 31.8954 26 33C26 34.1046 25.1046 35 24 35C22.8954 35 22 34.1046 22 33C22 31.8954 22.8954 31 24 31Z" fill="#E2E2E2"/>
+              </g>
+              <defs>
+              <clipPath id="clip0_61_3806">
+              <rect width="48" height="48" fill="white"/>
+              </clipPath>
+              </defs>
+              </svg>
+            <p>따끈한 첫 후기를 기다리고있어요.</p>
+          </li>
+
+          <!-- 후기 있을 경우 UI -->
+          <li class="product-review_list-customer">
+            <div class="product-review_list-customer_boxes">
+              <span class="product-review_list-customer_box-best">베스트</span>
+              <span class="product-review_list-customer_box-level">퍼플</span>
+              <span class="product-review_list-customer_name">김*현</span>
+            </div>
+            <div>
+              <p class="product-review_list-customer_product">[풀무원] 탱탱쫄면 (4개입)</p>
+              <pre class="product-review_list-customer_product-text">
+              너무 맛있어여~
+              면이 쫄깃하고 양념도 짱맛나요!!</pre>
+              <p class="product-review_list-customer_product">2022.11.10</p>
+            </div>
+          </li>
+          <li class="product-review_list-customer">
+            <div class="product-review_list-customer_boxes">
+              <span class="product-review_list-customer_box-best">베스트</span>
+              <span class="product-review_list-customer_box-level">퍼플</span>
+              <span class="product-review_list-customer_name">김*현</span>
+            </div>
+            <div>
+              <p class="product-review_list-customer_product">[풀무원] 탱탱쫄면 (4개입)</p>
+              <pre class="product-review_list-customer_product-text">
+              너무 맛있어여~
+              면이 쫄깃하고 양념도 짱맛나요!!</pre>
+              <p class="product-review_list-customer_product">2022.11.10</p>
+            </div>
+          </li>
+        </ul>
+        <div class="product-review_arrow">
+          <button type="button" class="product-review_arrow-left"></button>
+          <button type="button" class="product-review_arrow-right"></button>
+        </div>
+      </section>
+
+      <!-- section 4 = 상품문의 -->
+      <section id="qna" class="product-answer">
+        <div class="product-answer_header">
+          <h3 class="product-answer_title">상품문의</h3>
+          <button type="button" class="product-answer_register">문의하기</button>
+        </div>
+        <ul class="product-answer_p-lists">
+          <li>상품에 대한 문의를 남기는 공간입니다. 해당 게시판의 성격과 다른 글은 사정동의 없이 담당 게시판으로 이동될 수 있습니다.</li>
+          <li>배송관련, 주문(취소/교환/환불)관련 문의 및 요청사항은 마이컬리 내1:1문의에 남겨주세요.</li>
+        </ul>
+        <ul class="product-answer_lists">
+          <li class="product-answer_list-nav">
+            <ul class="product-answer_nav-title">
+              <li class="product-answer_nav-li">제목</li>
+              <li class="product-answer_nav-li">작성자</li>
+              <li class="product-answer_nav-li">작성일</li>
+              <li class="product-answer_nav-li">답변상태</li>
+            </ul>
+          </li>
+          <li class="product-answer_question">
+            <ul class="product-answer_question-list">
+              <li class="product-answer_question-li">
+                <span class="product-answer_question_list-notice_box">공지</span>
+                <p class="product-answer_question-title">판매(일시)중단 제품 안내 (23.02.01 업데이트)</p>
+              </li>
+              <li class="product-answer_question-li">칼리</li>
+              <li class="product-answer_question-li">2017.02.01</li>
+              <li class="product-answer_question-li">-</li>
+            </ul>
+          </li>
+          <li class="product-answer_question">
+            <ul class="product-answer_question-list">
+              <li class="product-answer_question-li">팩이 터져서 왔어요</li>
+              <li class="product-answer_question-li">김*석</li>
+              <li class="product-answer_question-li">2023.01.29</li>
+              <li class="product-answer_question-li">답변대기</li>
+            </ul>
+          </li>
+          
+          <!-- 아코디언 창(open/close) -->
+          <li class="product-answer_question-accordian">
+            <div class="product-answer_question-accordian_qna">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_61_2691)">
+              <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#A864D8"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M11.946 7.5C14.402 7.5 16.392 9.49 16.392 11.946C16.392 12.853 16.121 13.696 15.655 14.399L16.5 15.242L15.242 16.5L14.399 15.655C13.696 16.121 12.853 16.392 11.946 16.392C9.491 16.392 7.5 14.402 7.5 11.946C7.5 9.491 9.49 7.5 11.946 7.5ZM11.946 9.278C10.473 9.278 9.278 10.473 9.278 11.946C9.278 13.419 10.473 14.614 11.946 14.614C12.358 14.614 12.748 14.52 13.096 14.354L12.727 13.984L13.985 12.727L14.354 13.096C14.52 12.748 14.614 12.358 14.614 11.946C14.614 10.473 13.419 9.278 11.946 9.278V9.278Z" fill="white"/>
+              </g>
+              <defs>
+              <clipPath id="clip0_61_2691">
+              <rect width="24" height="24" fill="white"/>
+              </clipPath>
+              </defs>
+              </svg>
+              <div class="product-answer_question-accordian_text">
+                <p>스티로폼 박스도 손상되어 있어 포장이 터져 엉망이네요</p>
+                <p>환불 요청합니다.</p>
+              </div>
+            </div>
+            <div class="product-answer_question-accordian_qna">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_61_2690)">
+                <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#5F0080"/>
+                <path d="M9.7601 15.708L10.3001 14.304H13.7561L14.3081 15.708H16.4561L13.0001 7.5H11.0681L7.6001 15.708H9.7601ZM13.0841 12.576H10.9721L12.0281 9.864L13.0841 12.576Z" fill="white"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_61_2690">
+                <rect width="24" height="24" fill="white"/>
+                </clipPath>
+                </defs>
+                </svg>
+              <pre class="product-answer_question-accordian_text">
+안녕하세요. 칼리입니다.
+믿고 찾아주신 상품에 불편을 드려 정말 죄송합니다.
+
+더불어, 해당 게시판은 실시간으로 상담이 어려워 순차적으로 답변드리고 있는 관계로 신속하게 답변 드리지 못하여 대단히 죄송합니다.
+
+다행히도 고객님의 불편하셨던 사항은 고객행복센터를 통해 안내 받으신 점 확인하였습니다.
+
+불편을 드려 정말 죄송할 따름이며, 고객님께 늘 신선하고 최상의 상품을 불편 없이 전달드리기 위해 최선을 다하는 칼리가 되겠습니다.
+
+칼리 드림.
+
+<span>2023.01.31</span>
+              </pre>
+            </div>
+          </li> 
+          
+          <li tabindex="0" class="product-answer_question">
+            <ul class="product-answer_question-list">
+              <li class="product-answer_question-li product-answer_question-lock">
+                <span>비밀글입니다.</span>
+                <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_61_3096)">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M11.043 12.575C11.0425 12.6432 11.0151 12.7084 10.9668 12.7565C10.9185 12.8046 10.8532 12.8317 10.785 12.832H1.214C1.14583 12.8317 1.08051 12.8046 1.03221 12.7565C0.983908 12.7084 0.956526 12.6432 0.956 12.575V5.42C0.956 5.278 1.073 5.162 1.214 5.162H10.784C10.928 5.162 11.044 5.278 11.044 5.42V12.575H11.043ZM3.685 3.237C3.68579 2.63238 3.9264 2.05276 4.35403 1.62532C4.78165 1.19788 5.36138 0.957529 5.966 0.957C6.5707 0.957265 7.15058 1.19753 7.57826 1.62503C8.00595 2.05253 8.24647 2.6323 8.247 3.237V4.205H3.685V3.237ZM10.785 4.205H9.205V3.237C9.20394 2.3783 8.86215 1.55512 8.25467 0.948206C7.6472 0.341294 6.8237 0.000264295 5.965 0C5.10708 0.00132358 4.28472 0.342852 3.67826 0.949678C3.07181 1.5565 2.73079 2.37908 2.73 3.237V4.205H1.214C0.544 4.205 0 4.75 0 5.42V12.575C0 13.244 0.545 13.789 1.214 13.789H10.784C11.455 13.789 12 13.244 12 12.575V5.42C12 4.75 11.455 4.205 10.785 4.205Z" fill="#B5B5B5"/>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M5 8.19995C5 8.54295 5.184 8.83195 5.448 9.01195V10.342H6.551V9.01195C6.68673 8.92384 6.79868 8.80368 6.87698 8.66207C6.95529 8.52046 6.99754 8.36175 7 8.19995C7 7.93473 6.89464 7.68038 6.70711 7.49284C6.51957 7.30531 6.26522 7.19995 6 7.19995C5.73478 7.19995 5.48043 7.30531 5.29289 7.49284C5.10536 7.68038 5 7.93473 5 8.19995Z" fill="#B5B5B5"/>
+                  </g>
+                  <defs>
+                  <clipPath id="clip0_61_3096">
+                  <rect width="12" height="14" fill="white"/>
+                  </clipPath>
+                  </defs>
+                  </svg>
+              </li>
+              <li class="product-answer_question-li">김*석</li>
+              <li class="product-answer_question-li">2023.01.29</li>
+              <li class="product-answer_question-li">답변대기</li>
+            </ul>
+          </li>
+          <li tabindex="0" class="product-answer_question">
+            <ul class="product-answer_question-list">
+              <li class="product-answer_question-li product-answer_question-lock">
+                <span>비밀글입니다.</span>
+                <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_61_3096)">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M11.043 12.575C11.0425 12.6432 11.0151 12.7084 10.9668 12.7565C10.9185 12.8046 10.8532 12.8317 10.785 12.832H1.214C1.14583 12.8317 1.08051 12.8046 1.03221 12.7565C0.983908 12.7084 0.956526 12.6432 0.956 12.575V5.42C0.956 5.278 1.073 5.162 1.214 5.162H10.784C10.928 5.162 11.044 5.278 11.044 5.42V12.575H11.043ZM3.685 3.237C3.68579 2.63238 3.9264 2.05276 4.35403 1.62532C4.78165 1.19788 5.36138 0.957529 5.966 0.957C6.5707 0.957265 7.15058 1.19753 7.57826 1.62503C8.00595 2.05253 8.24647 2.6323 8.247 3.237V4.205H3.685V3.237ZM10.785 4.205H9.205V3.237C9.20394 2.3783 8.86215 1.55512 8.25467 0.948206C7.6472 0.341294 6.8237 0.000264295 5.965 0C5.10708 0.00132358 4.28472 0.342852 3.67826 0.949678C3.07181 1.5565 2.73079 2.37908 2.73 3.237V4.205H1.214C0.544 4.205 0 4.75 0 5.42V12.575C0 13.244 0.545 13.789 1.214 13.789H10.784C11.455 13.789 12 13.244 12 12.575V5.42C12 4.75 11.455 4.205 10.785 4.205Z" fill="#B5B5B5"/>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M5 8.19995C5 8.54295 5.184 8.83195 5.448 9.01195V10.342H6.551V9.01195C6.68673 8.92384 6.79868 8.80368 6.87698 8.66207C6.95529 8.52046 6.99754 8.36175 7 8.19995C7 7.93473 6.89464 7.68038 6.70711 7.49284C6.51957 7.30531 6.26522 7.19995 6 7.19995C5.73478 7.19995 5.48043 7.30531 5.29289 7.49284C5.10536 7.68038 5 7.93473 5 8.19995Z" fill="#B5B5B5"/>
+                  </g>
+                  <defs>
+                  <clipPath id="clip0_61_3096">
+                  <rect width="12" height="14" fill="white"/>
+                  </clipPath>
+                  </defs>
+                  </svg>
+              </li>
+              <li class="product-answer_question-li">김*석</li>
+              <li class="product-answer_question-li">2022.01.29</li>
+              <li class="product-answer_question-li product-answer_question-solved">답변완료</li>
+            </ul>
+          </li>
+          <li tabindex="0" class="product-answer_question">
+            <ul class="product-answer_question-list">
+              <li class="product-answer_question-li product-answer_question-lock">
+                <span>비밀글입니다.</span>
+                <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_61_3096)">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M11.043 12.575C11.0425 12.6432 11.0151 12.7084 10.9668 12.7565C10.9185 12.8046 10.8532 12.8317 10.785 12.832H1.214C1.14583 12.8317 1.08051 12.8046 1.03221 12.7565C0.983908 12.7084 0.956526 12.6432 0.956 12.575V5.42C0.956 5.278 1.073 5.162 1.214 5.162H10.784C10.928 5.162 11.044 5.278 11.044 5.42V12.575H11.043ZM3.685 3.237C3.68579 2.63238 3.9264 2.05276 4.35403 1.62532C4.78165 1.19788 5.36138 0.957529 5.966 0.957C6.5707 0.957265 7.15058 1.19753 7.57826 1.62503C8.00595 2.05253 8.24647 2.6323 8.247 3.237V4.205H3.685V3.237ZM10.785 4.205H9.205V3.237C9.20394 2.3783 8.86215 1.55512 8.25467 0.948206C7.6472 0.341294 6.8237 0.000264295 5.965 0C5.10708 0.00132358 4.28472 0.342852 3.67826 0.949678C3.07181 1.5565 2.73079 2.37908 2.73 3.237V4.205H1.214C0.544 4.205 0 4.75 0 5.42V12.575C0 13.244 0.545 13.789 1.214 13.789H10.784C11.455 13.789 12 13.244 12 12.575V5.42C12 4.75 11.455 4.205 10.785 4.205Z" fill="#B5B5B5"/>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M5 8.19995C5 8.54295 5.184 8.83195 5.448 9.01195V10.342H6.551V9.01195C6.68673 8.92384 6.79868 8.80368 6.87698 8.66207C6.95529 8.52046 6.99754 8.36175 7 8.19995C7 7.93473 6.89464 7.68038 6.70711 7.49284C6.51957 7.30531 6.26522 7.19995 6 7.19995C5.73478 7.19995 5.48043 7.30531 5.29289 7.49284C5.10536 7.68038 5 7.93473 5 8.19995Z" fill="#B5B5B5"/>
+                  </g>
+                  <defs>
+                  <clipPath id="clip0_61_3096">
+                  <rect width="12" height="14" fill="white"/>
+                  </clipPath>
+                  </defs>
+                  </svg>
+              </li>
+              <li class="product-answer_question-li">하*원</li>
+              <li class="product-answer_question-li">2022.01.29</li>
+              <li class="product-answer_question-li product-answer_question-solved">답변완료</li>
+            </ul>
+          </li>
+          <li tabindex="0" class="product-answer_question">
+            <ul class="product-answer_question-list">
+              <li class="product-answer_question-li product-answer_question-lock">
+                <span>비밀글입니다.</span>
+                <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_61_3096)">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M11.043 12.575C11.0425 12.6432 11.0151 12.7084 10.9668 12.7565C10.9185 12.8046 10.8532 12.8317 10.785 12.832H1.214C1.14583 12.8317 1.08051 12.8046 1.03221 12.7565C0.983908 12.7084 0.956526 12.6432 0.956 12.575V5.42C0.956 5.278 1.073 5.162 1.214 5.162H10.784C10.928 5.162 11.044 5.278 11.044 5.42V12.575H11.043ZM3.685 3.237C3.68579 2.63238 3.9264 2.05276 4.35403 1.62532C4.78165 1.19788 5.36138 0.957529 5.966 0.957C6.5707 0.957265 7.15058 1.19753 7.57826 1.62503C8.00595 2.05253 8.24647 2.6323 8.247 3.237V4.205H3.685V3.237ZM10.785 4.205H9.205V3.237C9.20394 2.3783 8.86215 1.55512 8.25467 0.948206C7.6472 0.341294 6.8237 0.000264295 5.965 0C5.10708 0.00132358 4.28472 0.342852 3.67826 0.949678C3.07181 1.5565 2.73079 2.37908 2.73 3.237V4.205H1.214C0.544 4.205 0 4.75 0 5.42V12.575C0 13.244 0.545 13.789 1.214 13.789H10.784C11.455 13.789 12 13.244 12 12.575V5.42C12 4.75 11.455 4.205 10.785 4.205Z" fill="#B5B5B5"/>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M5 8.19995C5 8.54295 5.184 8.83195 5.448 9.01195V10.342H6.551V9.01195C6.68673 8.92384 6.79868 8.80368 6.87698 8.66207C6.95529 8.52046 6.99754 8.36175 7 8.19995C7 7.93473 6.89464 7.68038 6.70711 7.49284C6.51957 7.30531 6.26522 7.19995 6 7.19995C5.73478 7.19995 5.48043 7.30531 5.29289 7.49284C5.10536 7.68038 5 7.93473 5 8.19995Z" fill="#B5B5B5"/>
+                  </g>
+                  <defs>
+                  <clipPath id="clip0_61_3096">
+                  <rect width="12" height="14" fill="white"/>
+                  </clipPath>
+                  </defs>
+                  </svg>
+              </li>
+              <li class="product-answer_question-li">김*석</li>
+              <li class="product-answer_question-li">2022.01.29</li>
+              <li class="product-answer_question-li product-answer_question-solved">답변완료</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="product-review_arrow">
+          <button type="button" class="product-review_arrow-left"></button>
+          <button type="button" class="product-review_arrow-right"></button>
+        </div>
       </section>
 
     </div>
