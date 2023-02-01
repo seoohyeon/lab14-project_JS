@@ -4,9 +4,11 @@
 @import url(./theme.css);
 @import url(./base.css);
 
+*{
+  margin: 0 auto;
+}
 
 /* 로그인 영역 */
-
 .login {
   /* 로그인 전체 레이아웃 */
   display: flex;
@@ -20,7 +22,6 @@
   flex: none;
   order: 2;
   flex-grow: 0;
-  background-color: yellow;
   }
   
   

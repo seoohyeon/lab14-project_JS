@@ -189,56 +189,22 @@ order: 1;
 flex-grow: 0;
 }
 
-.field {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 0px 20px;
-  gap: 31px;
-
+.input-text input {
 width: 333px;
 height: 44px;
 
-/* gray/300 */
-
-border: 1px solid #A6A6A6;
+box-sizing: border-box;
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 12px 20px;
+/* 글씨체 굵기 및 색깔, radius 수정 */
+border: 1px solid var(--gray-300);
 border-radius: 4px;
-
 /* Inside auto layout */
-
 flex: none;
 order: 0;
 align-self: stretch;
-flex-grow: 0;
-}
-
-.signup-input {
-  /* PlaceHolder */
-
-
-width: 143px;
-height: 26px;
-
-/* Paragraph/Medium */
-
-font-family: 'Pretendard';
-font-style: normal;
-font-weight: 400;
-font-size: 16px;
-line-height: 160%;
-/* identical to box height, or 26px */
-
-
-/* gray/400 */
-
-color: #898989;
-
-
-/* Inside auto layout */
-
-flex: none;
-order: 0;
 flex-grow: 0;
 }
 
@@ -859,122 +825,100 @@ z-index: 0;
 
 .gender-check {
 /* gender */
-
-
-/* Auto layout */
-
 display: flex;
 flex-direction: row;
 justify-content: space-between;
 align-items: flex-start;
 padding: 0px;
 gap: 8px;
-
 width: 333px;
 height: 24px;
-
-
 /* Inside auto layout */
-
 flex: none;
 order: 1;
 flex-grow: 0;
 }
 
 .gender-container {
-  /* Radio */
-
-
+/* Radio */
 /* Auto layout */
-
 display: flex;
 flex-direction: row;
 align-items: center;
 padding: 0px;
 gap: 8px;
-
 width: 60px;
 height: 24px;
-
-
 /* Inside auto layout */
-
 flex: none;
 order: 1;
 flex-grow: 0;
 }
 
+.gender-container [type="radio"] {
+  vertical-align: middle;
+  appearance: none;
+  border: max(2px, 0.1em) solid gray;
+  border-radius: 50%;
+  width: 1.25em;
+  height: 1.25em;
+}
+
+.gender-container [type="radio"]:checked {
+  border: 0.4em solid #5f0080;
+}
+
 .no-select-container{
-  /* Radio */
-
-
-/* Auto layout */
-
 display: flex;
 flex-direction: row;
 align-items: center;
 padding: 0px;
 gap: 8px;
-
 width: 88px;
 height: 24px;
-
-
 /* Inside auto layout */
-
 flex: none;
 order: 2;
 flex-grow: 0;
 }
 
+.no-select-container [type="radio"] {
+  vertical-align: middle;
+  appearance: none;
+  border: max(2px, 0.1em) solid gray;
+  border-radius: 50%;
+  width: 1.25em;
+  height: 1.25em;
+}
+
+.no-select-container [type="radio"]:checked {
+  border: 0.4em solid #5f0080;
+}
+
 .label-birth {
-  /* Label */
-
-
-/* Auto layout */
-
 display: flex;
 flex-direction: row;
 align-items: flex-start;
 padding: 4px;
 gap: 4px;
 isolation: isolate;
-
 width: 64px;
 height: 32px;
-
-
 /* Inside auto layout */
-
 flex: none;
 order: 0;
 flex-grow: 0;
 }
 
 .birth-detail {
-  /* Label */
-
-
 width: 56px;
 height: 24px;
-
-/* Label/Medium */
-
-font-family: 'Pretendard';
 font-style: normal;
 font-weight: 600;
 font-size: 16px;
 line-height: 150%;
-/* identical to box height, or 24px */
-
-
-/* content */
-
 color: #333333;
-
-
 /* Inside auto layout */
-
 flex: none;
 order: 0;
 flex-grow: 0;
@@ -982,113 +926,66 @@ z-index: 0;
 }
 
 .birth-container {
-/* field */
-
-
 box-sizing: border-box;
-
-/* Auto layout */
-
 display: flex;
 flex-direction: row;
 justify-content: center;
 align-items: center;
 padding: 0px 20px;
 gap: 31px;
-
 width: 333px;
 height: 44px;
-
-/* gray/300 */
-
 border: 1px solid #A6A6A6;
 border-radius: 4px;
-
 /* Inside auto layout */
-
 flex: none;
 order: 1;
 flex-grow: 0;
 }
 
-.birth-year{
+.birth-container input {
 /* YYYY / MM / DD */
-
-
-width: 149px;
-height: 26px;
-
-/* Paragraph/Medium */
-
-font-family: 'Pretendard';
-font-style: normal;
-font-weight: 400;
-font-size: 16px;
-line-height: 160%;
-/* identical to box height, or 26px */
-
+width: 333px;
+height: 44px;
+box-sizing: border-box;
+display: flex;
+flex-direction: row;
 text-align: center;
-
-/* gray/400 */
-
-color: #898989;
-
-
+padding: 12px 20px;
+/* 글씨체 굵기 및 색깔, radius 수정 */
+border: 1px solid var(--gray-300);
+border-radius: 4px;
 /* Inside auto layout */
-
 flex: none;
 order: 0;
+align-self: stretch;
 flex-grow: 0;
 }
 
 .label-plus{
-/* Label */
-
-
-/* Auto layout */
-
 display: flex;
 flex-direction: row;
 align-items: flex-start;
 padding: 4px;
 gap: 4px;
 isolation: isolate;
-
 width: 95px;
 height: 32px;
-
-
 /* Inside auto layout */
-
 flex: none;
 order: 0;
 flex-grow: 0;
 }
 
 .plus-detail{
-/* Label */
-
-
 width: 87px;
 height: 24px;
-
-/* Label/Medium */
-
-font-family: 'Pretendard';
 font-style: normal;
 font-weight: 600;
 font-size: 16px;
 line-height: 150%;
-/* identical to box height, or 24px */
-
-
-/* content */
-
 color: #333333;
-
-
 /* Inside auto layout */
-
 flex: none;
 order: 0;
 flex-grow: 0;
@@ -1096,35 +993,80 @@ z-index: 0;
 }
 
 .extra-input {
-  /* gender */
-
-
-/* Auto layout */
-
 display: flex;
 flex-direction: row;
 justify-content: space-between;
 align-items: flex-start;
 padding: 0px;
 gap: 8px;
-
 width: 333px;
 height: 24px;
-
-
 /* Inside auto layout */
-
 flex: none;
 order: 1;
 flex-grow: 0;
 }
 
+.friend-invite-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 8px;
+  width: 178px;
+  height: 24px;
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.friend-invite-container [type="radio"] {
+  vertical-align: middle;
+  appearance: none;
+  border: max(2px, 0.1em) solid gray;
+  border-radius: 50%;
+  width: 1.25em;
+  height: 1.25em;
+}
+
+.friend-invite-container [type="radio"]:checked {
+  border: 0.4em solid #5f0080;
+}
+
+.event-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 8px;
+  width: 119px;
+  height: 24px;
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+.event-container [type="radio"] {
+  vertical-align: middle;
+  appearance: none;
+  border: max(2px, 0.1em) solid gray;
+  border-radius: 50%;
+  width: 1.25em;
+  height: 1.25em;
+}
+
+.event-container [type="radio"]:checked {
+  border: 0.4em solid #5f0080;
+}
+
+
+
 /* ///회원가입 fieldset과 이용약관동의 구분선////////////////////// */
 
 .agreement-form {
 /* Agreement */
-
-
 box-sizing: border-box;
 
 /* Auto layout */
@@ -1250,10 +1192,78 @@ flex-grow: 0;
 z-index: 0;
 }
 
+
+.allagree-radio [type="radio"] {
+  vertical-align: middle;
+  appearance: none;
+  border: max(2px, 0.1em) solid gray;
+  border-radius: 50%;
+  width: 1.25em;
+  height: 1.25em;
+}
+
+.allagree-radio [type="radio"]:checked {
+  border: 0.4em solid #5f0080;
+}
+
+
+.set1 [type="radio"] {
+  vertical-align: middle;
+  appearance: none;
+  border: max(2px, 0.1em) solid gray;
+  border-radius: 50%;
+  width: 1.25em;
+  height: 1.25em;
+}
+
+.set1 [type="radio"]:checked {
+  border: 0.4em solid #5f0080;
+}
+
+.set2  [type="radio"] {
+  vertical-align: middle;
+  appearance: none;
+  border: max(2px, 0.1em) solid gray;
+  border-radius: 50%;
+  width: 1.25em;
+  height: 1.25em;
+}
+
+.set2 [type="radio"]:checked {
+  border: 0.4em solid #5f0080;
+}
+
+.set3 [type="radio"] {
+  vertical-align: middle;
+  appearance: none;
+  border: max(2px, 0.1em) solid gray;
+  border-radius: 50%;
+  width: 1.25em;
+  height: 1.25em;
+}
+
+.set3 [type="radio"]:checked {
+  border: 0.4em solid #5f0080;
+}
+
+.set4 [type="radio"] {
+  vertical-align: middle;
+  appearance: none;
+  border: max(2px, 0.1em) solid gray;
+  border-radius: 50%;
+  width: 1.25em;
+  height: 1.25em;
+}
+
+.set4 [type="radio"]:checked {
+  border: 0.4em solid #5f0080;
+}
+
+
+
+
 .allagree-text {
-  /* 전체 동의합니다. */
-
-
+/* 전체 동의합니다. */
 width: 140px;
 height: 32px;
 
@@ -1280,28 +1290,15 @@ flex-grow: 0;
 }
 
 .exception-text {
-width: 397px;
+width: 450px;
 height: 19px;
 left: 32px;
 bottom: 0px;
 
 /* Paragraph/Small */
-
-font-family: 'Pretendard';
-font-style: normal;
-font-weight: 400;
-font-size: 12.003px;
-line-height: 160%;
-/* or 19px */
-
-
-/* gray/400 */
-
-color: #898989;
-
-
-/* Inside auto layout */
-
+font-size: 12px;
+color: rgb(102, 102, 102);
+padding-left: 36px;
 flex: none;
 order: 1;
 flex-grow: 0;
@@ -1356,7 +1353,7 @@ align-self: stretch;
 flex-grow: 0;
 }
 
-.set {
+.set1 {
   /* set */
 
 
