@@ -1,8 +1,9 @@
-@import url(./grid.css);
-@import url(./normalize.css);
-@import url(./a11y.css);
-@import url(./theme.css);
-@import url(./base.css);
+@import url(./config/normalize.css);
+@import url(./config/reset.css);
+@import url(./config/a11y.css);
+@import url(./config/theme.css);
+@import url(./config/base.css);
+@import url(./product_list.css);
 
 
 
