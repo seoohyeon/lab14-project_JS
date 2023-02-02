@@ -39,4 +39,17 @@ main{
 }
 
 
+em {
+  font-weight: 600;
+  color:var(--white);
+}
+
+b {
+  color:var(--primary);
+}
+
+
+
+
+
 
