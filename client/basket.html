@@ -74,11 +74,12 @@
         <section>
           <h3 class="a11y-hidden">장바구니 목록</h3>
           <ul>
-            <li class="list-bar select-all">전체선택(/) <span aria-hidden="true">|</span> 선택삭제</li>
-            <li class="list-bar refrigerated-food">냉장 식품</li>
+            <li class="list-bar select-all">전체선택 (0/0) <span aria-hidden="true">|</span> 선택삭제</li>
+            <p class="no-option">장바구니에 담긴 상품이 없습니다</p>
+            <!-- <li class="list-bar refrigerated-food">냉장 식품</li>
             <li class="list-bar frozen-food">냉동 식품</li>
-            <li class="list-bar normal-food">상온 식품</li>
-            <li class="select-all">전체선택(/) <span aria-hidden="true">|</span> 선택삭제</li>
+            <li class="list-bar normal-food">상온 식품</li> -->
+            <li class="select-all">전체선택 (0/0) <span aria-hidden="true">|</span> 선택삭제</li>
           </ul>
         </section>
         <section class="basket-info">
@@ -86,9 +87,11 @@
           <ul>
             <div class="location-info">
               <li class="location-map">배송지</li>
-              <li>주소 정보</li>
+              <li><b>배송지를 등록</b>하고<br>구매 가능한 상품을 확인하세요!</li>
               <li class="star-delivery">샛별배송</li>
-              <li><button class="location-change-button">배송지 변경</button></li>
+              <li>
+                <button class="location-change-button"><span><b>주소 검색</b></span></button>
+              </li>
             </div>
             <div class="amount-info">
               
@@ -103,7 +106,7 @@
               </div> 
             </div>
             <div class="order-button-wrapper">
-              <button class="order-button">주문하기</button>
+              <button class="order-button">상품을 담아주세요</button>
             </div>
             <div class="add-info">
               <span>쿠폰/적립금은 주문서에서 사용 가능합니다.</span>

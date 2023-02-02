@@ -325,12 +325,35 @@ background-size: 42px;
   font-size: 16px;
 } 
 
+.no-option{
+  padding:114px 0;
+  text-align: center;
+  font-weight: 400;
+  color:var(--gray-300);
+  border-bottom: 1px solid var(--gray-100);
+}
+
 .select-all{
   height: 56px;
   width: 742px;
   padding: 16px 0px;
   font-weight: 600;
   font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.select-all::before{
+  content: "";
+  background-image: url(/client/assets/icons/web-icons/check.png);
+  display:inline-block;
+  width: 24px; height: 24px;
+  background-position:-10px -10px;
+  background-repeat: no-repeat;
+  margin-right:8px;
+
+ 
+  /* background-color: red; */
 }
 
 .select-all span{
@@ -354,14 +377,45 @@ background-size: 42px;
   padding: 20px;
   gap: 12px;
   border: 1px solid var(--gray-100);
+  font-weight: 600;
+  font-size: 16px;
 
 }
 
 .location-change-button{
   width:244px;
   height: 44px;
+  border: 1px solid var(--primary);
+  border-radius: 4px;
+  background-color: transparent;
+  font-size: var(--text-base);
+  padding:10px ;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content:center;
+  /* background-color: yellow; */
+ 
+ }
+ .location-change-button span{
+  display:inline-block;
+  /* background-color: blue; */
+  vertical-align:baseline;
+  margin-right: 12px;
+ 
+ }
 
+.location-change-button::before{
+  content: "";
+  display:inline-block;
+  width: 24px; height: 24px;
+  background-image: url(/client/assets/icons/web-icons/Search-small.svg);
+  display:inline-block;
+  background-repeat: no-repeat;
 }
+
+
+
 
 .amount-info{
   display: flex;
@@ -414,6 +468,11 @@ background-size: 42px;
 .order-button{
   width:284px;
   height:44px;
+  color:var(--white);
+  border:none;
+  border-radius: 4px;
+  font-weight: bolder;
+  background-color: var(--gray-200);
 }
 
 .add-info{
