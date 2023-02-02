@@ -6,42 +6,124 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" type="text/css" href="./css/style.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   <script src="./js/main.js" type="module"></script>
-  <title>Document</title>
+  <title>경부선</title>
 </head>
 
 <body>
   <header>
-
   </header>
 
-  <section>
-    <div class="swiper-1 product-swiper">
-      <div class="swiper-wrapper">
-          <a href="./text.html">ddd</a>
-        </div>
-    </div>
-  </section>
-  <section>
-    <div class="swiper-2 product-swiper">
-      <div class="swiper-wrapper">
+  <main>
+    <nav class="main-banner">
+      <div class="swiper main-banner_swiper">
+        <div class="swiper-wrapper main-banner_swiper-wrapper">
+          <div class="swiper-slide main-banner_swiper-slide">
+            <a href="http://">
+              <img src="./assets/banner/banner03.png" alt="" />
+            </a>
+          </div>
+          
+          <div class="swiper-slide main-banner_swiper-slide"><a href="http://">
+            <img src="./assets/banner/banner02.png" alt="" />
+          </a></div>
+          
+          <div class="swiper-slide main-banner_swiper-slide"><a href="http://">
+            <img src="./assets/banner/banner01.png" alt="" />
+          </a></div>
           
         </div>
-    </div>
-  </section>
-  <section>
-    <div class="swiper-3 product-swiper">
-      <div class="swiper-wrapper">
-          
+  
+        <div class="swiper-button-prev main-banner_swiper-button-prev">
+          <img src="./assets/icons/web-icons/Arrow.svg" alt="왼쪽 회살표" />
         </div>
-    </div>
-  </section>
+        <div class="swiper-button-next main-banner_swiper-button-next">
+          <img src="./assets/icons/web-icons/Arrow.svg" alt="오른쪽 회살표" />
+        </div>
+        <div class="swiper-pagination main-banner_swiper-pagination">
+        </div>
+      </div>
+    </nav>
+  
+  
+    <section class="product-display">
+      <h3 class="product-display_title">
+        이 상품 어때요?
+      </h3>
+      <nav class="product-display_wrapper">
+        <div class="swiper product-display_swiper">
+          <div class="swiper-wrapper product-display_wrapper">
+            <div class="swiper-slide product-display_swiper-slide">
+              <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+            </div>
+            <div class="swiper-slide product-display_swiper-slide">
+              <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+            </div>
+            <div class="swiper-slide product-display_swiper-slide">
+              <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+            </div>
+            <div class="swiper-slide product-display_swiper-slide">
+              <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+          </div>
+      </nav>
+    </section>
+  
+    <aside class="body-event-banner">
+      <figure class="body-event-banner_img-wrapper">
+        <img src="./assets/banner/banner04.png" alt="" />
+        <figcaption class="a11y-hidden">더 풍성해진 10월의 퍼플위크</figcaption>
+      </figure>
+    </aside>
+  
+    <section class="product-display">
+      <h3 class="product-display_title">
+        놓치면 후회할 가격
+      </h3>
+      <nav class="product-display_wrapper">
+        <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">Slide 1</div>
+          <div class="swiper-slide">Slide 2</div>
+          <div class="swiper-slide">Slide 3</div>
+          <div class="swiper-slide">Slide 4</div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        </div>
+      </nav>
+    </section>
 
+  </main>
 
-  <footer>
-    
+  <footer>   
   </footer>
 </body>
 </html>

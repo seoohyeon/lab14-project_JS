@@ -1,6 +1,8 @@
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css');
 
 /* Base Style */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css');
+
 body,
 body::before,
 body::after,
@@ -34,6 +36,23 @@ video {
   height: auto;
 }
 
+main{
+  overflow: hidden;
+}
+
+
+em {
+  font-weight: 600;
+  color:var(--white);
+}
+
+b {
+  color:var(--primary);
+}
 
 
 
+
+
+
+`
