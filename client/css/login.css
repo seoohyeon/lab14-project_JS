@@ -1,16 +1,5 @@
-@import url(./normalize.css);
-@import url(./reset.css);
-@import url(./a11y.css);
-@import url(./theme.css);
-@import url(./base.css);
-
-*{
-  margin: 0 auto;
-}
-
-/* 로그인 영역 */
-.login {
-  /* 로그인 전체 레이아웃 */
+/* main-login TAGUP START*/
+.main-login {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,21 +12,21 @@
   order: 2;
   flex-grow: 0;
   }
+/* main-login TAGUP END*/
   
   
+/* signin TAGUP START*/
 .signin-title {
   /* 로그인 상단 글씨체 */
   width: 56px;
   height: 32px;
-  /*여기부터는 폰트적용*/
   font-weight: 600;
   font-size: 1.333rem;
   line-height: 150%;
   color: var(--black);
-  /* background-color: var(--accent-yellow); */
   }
   
-.signin-form{
+.signin-form {
   /* 로그인 Form 레이아웃 */
   display: flex;
   flex-direction: column;
@@ -68,7 +57,9 @@
   align-self: stretch;
   flex-grow: 0;
   }
-  
+/* signin TAGUP END */
+
+/* user - TAGUP START*/  
   .user-email {
   /* 유저이메일 */
   display: flex;
@@ -134,7 +125,10 @@
   align-self: stretch;
   flex-grow: 0;
   }
-  
+
+/* user - TAGUP END */  
+
+/* FIND TAGUP START */
   .finder {
   /* 아이디 - 비밀번호 찾기 레이아웃 */
   display: flex;
@@ -181,8 +175,10 @@
   order: 2;
   flex-grow: 0;
   }
-  
-  .sign-button {
+/* FIND TAGUP START */
+
+/* SIGN TAGUP START */
+  .sign-button-size {
   /* 로그인-회원가입 버튼 레이아웃 */
   display: flex;
   flex-direction: column;
@@ -264,7 +260,7 @@
   order: 0;
   flex-grow: 0;
   }
-
+/* SIGN TAGUP END */
 
 
 
