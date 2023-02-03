@@ -1,9 +1,4 @@
-/* import { getNode } from "../../lib";
-
-let allCheck = getNode('.select-all')
- */
-
-let checkAll = document.getElementById('chk-all');
+  let checkAll = document.getElementById('chk-all');
   let checkList = document.querySelectorAll('.check');
   let check1 = document.getElementById('chk01');
   let check2 = document.getElementById('chk02');
@@ -27,3 +22,4 @@ let checkAll = document.getElementById('chk-all');
       });
     });
   });
+
