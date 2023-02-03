@@ -1,28 +1,29 @@
-//회원가입 전체선택
-/* function selectAll(event)  {
-  const checkboxes = document.getElementsByName('agree');
-  let curT = event.currentTarget;
-  // curT.checked = true;
-  // let checkBoxes = Array.from(checkboxes);
-  // checkBoxes.forEach((checkbox) => {
-  //   console.log('curT',curT);
-  //   console.log('curT-checked',curT.checked);
-  //   console.log(checkbox);
-  //   console.log(checkbox.checked);
-  //   checkbox.checked = true;
-  // })
-  console.log(checkboxes);
-  for(let i=0; i<checkboxes.length;i++){
-    console.log(checkboxes[i]);
-    console.log('checked',checkboxes[i].checked);
-    checkboxes[i].checked = true;
-  }
-  console.log("dddd");
-}
+/* import { getNode } from "../../lib";
 
-const c = document.getElementsByName('agree');
-c[2].checked = true;
+let allCheck = getNode('.select-all')
+ */
 
-let agreeAllInput = document.querySelector('.allagree-radio input');
-
-agreeAllInput.addEventListener('click',selectAll); */
+let checkAll = document.getElementById('chk-all');
+  let checkList = document.querySelectorAll('.check');
+  let check1 = document.getElementById('chk01');
+  let check2 = document.getElementById('chk02');
+  let check3 = document.getElementById('chk03');
+  let check4 = document.getElementById('chk04');
+  document.addEventListener('DOMContentLoaded', function () {
+    checkAll.addEventListener('change', function () {
+      check1.checked = checkAll.checked;
+      check2.checked = checkAll.checked;
+      check3.checked = checkAll.checked;
+      check4.checked = checkAll.checked;
+    });
+    
+    checkList.forEach(function (check) {
+      check.addEventListener('change', function () {
+        if (check1.checked && check2.checked && check3.checked && check4.checked) {
+          checkAll.checked = true;
+        } else {
+          checkAll.checked = false;
+        }
+      });
+    });
+  });
