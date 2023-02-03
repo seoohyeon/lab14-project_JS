@@ -198,6 +198,8 @@ input[type="checkbox"]:checked+label::before {
 .product > li {
   height: 538px;
 }
+
+/* 원준 주석 */
 .card {
   position: relative;
   width: 249px;
@@ -296,6 +298,8 @@ input[type="checkbox"]:checked+label::before {
   width: 45px;
   height: 45px;
 }
+/* 원준 주석 */
+
 .bottom {
   display: flex;
   justify-content: center;
