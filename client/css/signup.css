@@ -1,11 +1,12 @@
-/*회원가입*/
+/* 수정 */
+/* registration TAG START*/
 .registration {
+  /*회원가입*/
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 80px 0px 40px;
   gap: 44px;
-  width: 1920px;
   height: 1489px;
   /* Inside auto layout */
   flex: none;
@@ -13,8 +14,8 @@
   flex-grow: 0;
 }
 
-/* 회원가입 글꼴 */
-.signup-title{
+.registration-title{
+  /* 상단바 회원가입 글씨체 */
 width: 74px;
 height: 32px;
 font-style: normal;
@@ -28,8 +29,9 @@ order: 0;
 flex-grow: 0;
 }
 
-/* 회원가입 폼 */
-.signup-form {
+
+.registration-form {
+  /* 회원가입 폼 */
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -42,8 +44,8 @@ flex-grow: 0;
 }
 
 
+.registration-form fieldset {
 /* 회원가입 폼 필드셋 */
-.signup-form fieldset {
 box-sizing: border-box;
 display: flex;
 flex-direction: column;
@@ -62,72 +64,22 @@ order: 0;
 flex-grow: 0;
 }
 
-/* FormField > input = 공통 폼 테이블 영역 */
-.form-tr {
-display: flex;
-flex-direction: row;
-align-items: flex-end;
-padding: 20px 0px;
-gap: 8px;
-width: 640px;
-height: 84px;
-/* Inside auto layout */
-flex: none;
-order: 0;
-align-self: stretch;
-flex-grow: 0;
-z-index: 0;
-}
+.registration-text {
+/* 맨 밑 회원가입 버튼 안에 있는 글씨체 */
+  width: 56px;
+  height: 24px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+  /* white */
+  color: #FFFFFF;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  }
 
-/* FormField > input > Label = 공통 폼 리스트 영역 */
-.form-list {
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 4px;
-gap: 4px;
-width: 139px;
-height: 44px;
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
-}
-
-/* input > Label > id부분의 라벨 */
-.label-id {
-display: flex;
-flex-direction: row;
-align-items: flex-start;
-padding: 4px;
-gap: 4px;
-isolation: isolate;
-width: 50px;
-height: 32px;
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
-}
-
-/* id부분의 라벨의 글꼴 크기 수정 */
-.id-detail {
-width: 42px;
-height: 24px;
-/* Label/Medium */
-font-style: normal;
-font-weight: 600;
-font-size: 16px;
-line-height: 150%;
-/* identical to box height, or 24px */
-/* content */
-color: #333333;
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
-z-index: 0;
-}
+/* registration TAG END*/
 
 /* 상단 필수입력사항 별 및 글씨체 */
 .line-starter{
@@ -151,13 +103,10 @@ width: 9px;
 height: 24px;
 right: -10px;
 top: -3px;
-/* Label/Medium */
 font-style: normal;
 font-weight: 600;
 font-size: 16px;
 line-height: 150%;
-/* identical to box height, or 24px */
-/* Info/Error */
 color: #F03F40;
 /* Inside auto layout */
 flex: none;
@@ -165,393 +114,297 @@ order: 1;
 flex-grow: 0;
 z-index: 1;
 }
+/* 상단 필수입력사항 별 및 글씨체 */
 
-.input-text {
-/* Input / Text */
+.form-tr {
+/* FormField > input = 아이디 ~ 휴대폰 영역 */
 display: flex;
-position: inherit;
+flex-direction: row;
+align-items: flex-end;
+padding: 20px 0px;
+gap: 8px;
+width: 640px;
+height: 84px;
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+z-index: 0;
+}
+
+
+.form-tr-list {
+/* FormField > input > Label = 공통 폼 리스트 영역 */
+display: flex;
 flex-direction: column;
 align-items: flex-start;
-padding: 0px;
-width: 333px;
+padding: 4px;
+gap: 4px;
+width: 139px;
 height: 44px;
 /* Inside auto layout */
 flex: none;
-order: 1;
+order: 0;
 flex-grow: 0;
 }
 
-.field {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 0px 20px;
-  gap: 31px;
+.form-tr-label-id {
+/* Label > id부분의 라벨 */
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 4px;
+gap: 4px;
+isolation: isolate;
+width: 50px;
+height: 32px;
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+}
 
+.form-tr-id-detail {
+/* id부분의 라벨의 글꼴 크기 수정 */
+width: 42px;
+height: 24px;
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 150%;
+color: #333333;
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+z-index: 0;
+}
+
+.form-tr-input-text input {
+/* form 크기(text 크기 조정) */
 width: 333px;
 height: 44px;
-
-/* gray/300 */
-
-border: 1px solid #A6A6A6;
+box-sizing: border-box;
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 12px 20px;
+/* 글씨체 굵기 및 색깔, radius 수정 */
+border: 1px solid var(--gray-300);
 border-radius: 4px;
-
 /* Inside auto layout */
-
 flex: none;
 order: 0;
 align-self: stretch;
 flex-grow: 0;
 }
 
-.signup-input {
-  /* PlaceHolder */
-
-
-width: 143px;
-height: 26px;
-
-/* Paragraph/Medium */
-
-font-family: 'Pretendard';
-font-style: normal;
-font-weight: 400;
-font-size: 16px;
-line-height: 160%;
-/* identical to box height, or 26px */
-
-
-/* gray/400 */
-
-color: #898989;
-
-
-/* Inside auto layout */
-
-flex: none;
-order: 0;
-flex-grow: 0;
-}
-
-.doublecheck {
-/* Button / Normal */
+.doublecheck-button {
+/* 로그인 중복확인버튼 조절 */
 box-sizing: border-box;
-
-/* Auto layout */
-
 display: flex;
 flex-direction: row;
 justify-content: center;
 align-items: center;
 padding: 0px;
-
 width: 143px;
 height: 44px;
-
 /* primary */
-
 border: 1px solid #5F0080;
 border-radius: 4px;
-
-/* Inside auto layout */
-
 flex: none;
 order: 2;
 flex-grow: 0;
 }
 
+.phonecheck-button {
+  /* 핸드폰 인증번호 받기 버튼 조절 */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  width: 143px;
+  height: 44px;
+  /* primary */
+  border: 1px solid #5F0080;
+  border-radius: 4px;
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+  }
+
 .jungbok {
-  width: 56px;
-height: 24px;
-
-/* Label/Medium */
-
-font-family: 'Pretendard';
-font-style: normal;
-font-weight: 600;
-font-size: 16px;
-line-height: 150%;
-/* identical to box height, or 24px */
-
-
-/* primary */
-
-color: #5F0080;
-
-
-/* Inside auto layout */
-
-flex: none;
-order: 0;
-flex-grow: 0;
-}
-
-.label-pw {
-  /* Label */
-
-
-/* Auto layout */
-
-display: flex;
-flex-direction: row;
-align-items: flex-start;
-padding: 4px;
-gap: 4px;
-isolation: isolate;
-
-width: 64px;
-height: 32px;
-
-
-/* Inside auto layout */
-
-flex: none;
-order: 0;
-flex-grow: 0;
-}
-
-.pw-detail{
-  /* Label */
-
-
+/* 중복확인 글씨체 */
 width: 56px;
 height: 24px;
-
-/* Label/Medium */
-
-font-family: 'Pretendard';
 font-style: normal;
 font-weight: 600;
 font-size: 16px;
 line-height: 150%;
-/* identical to box height, or 24px */
-
-
-/* content */
-
-color: #333333;
-
-
+color: #5F0080;
 /* Inside auto layout */
-
 flex: none;
 order: 0;
 flex-grow: 0;
-z-index: 0;
 }
 
-.label-pwcheck {
-  /* Label */
-
-
-/* Auto layout */
-
+.form-tr-label-pw {
+/* Label > pw부분의 라벨 */
 display: flex;
 flex-direction: row;
 align-items: flex-start;
 padding: 4px;
 gap: 4px;
 isolation: isolate;
+width: 64px;
+height: 32px;
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+}
 
+.form-tr-pw-detail{
+/* pw부분의 라벨의 글꼴 크기 수정 */
+width: 56px;
+height: 24px;
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 150%;
+color: #333333;
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+z-index: 0;
+}
+
+.form-tr-label-pwcheck {
+/* Label > 비밀번호 확인 부분의 라벨 */
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 4px;
+gap: 4px;
+isolation: isolate;
 width: 95px;
 height: 32px;
-
-
 /* Inside auto layout */
-
 flex: none;
 order: 0;
 flex-grow: 0;
 }
 
-.pwcheck-detail {
-  /* Label */
-
-
+.form-tr-pwcheck-detail {
+/* 비밀번호 확인 부분의 라벨의 글꼴 크기 수정 */
 width: 87px;
 height: 24px;
-
-/* Label/Medium */
-
-font-family: 'Pretendard';
 font-style: normal;
 font-weight: 600;
 font-size: 16px;
 line-height: 150%;
-/* identical to box height, or 24px */
-
-
-/* content */
-
 color: #333333;
-
-
 /* Inside auto layout */
-
 flex: none;
 order: 0;
 flex-grow: 0;
 z-index: 0;
 }
 
-.label-name {
-  /* Label */
-
-
-/* Auto layout */
-
+.form-tr-label-name {
+/* Label > 이름 부분의 라벨 */
 display: flex;
 flex-direction: row;
 align-items: flex-start;
 padding: 4px;
 gap: 4px;
 isolation: isolate;
-
 width: 36px;
 height: 32px;
-
-
 /* Inside auto layout */
-
 flex: none;
 order: 0;
 flex-grow: 0;
 }
 
-.name-detail {
-  /* Label */
-
-
+.form-tr-name-detail {
+/* 이름 부분의 라벨의 글꼴 크기 수정 */
 width: 28px;
 height: 24px;
-
-/* Label/Medium */
-
-font-family: 'Pretendard';
 font-style: normal;
 font-weight: 600;
 font-size: 16px;
 line-height: 150%;
-/* identical to box height, or 24px */
-
-
-/* content */
-
 color: #333333;
-
-
 /* Inside auto layout */
-
 flex: none;
 order: 0;
 flex-grow: 0;
 z-index: 0;
 }
 
-.label-email {
-  /* Label */
-
-
-/* Auto layout */
-
+.form-tr-label-email {
+/* Label > 이메일 부분의 라벨 */
 display: flex;
 flex-direction: row;
 align-items: flex-start;
 padding: 4px;
 gap: 4px;
 isolation: isolate;
-
 width: 50px;
 height: 32px;
-
-
 /* Inside auto layout */
-
 flex: none;
 order: 0;
 flex-grow: 0;
 }
 
-.email-detail {
-  /* Label */
-
-
+.form-tr-email-detail {
+/* 이메일 부분의 라벨의 글꼴 크기 수정 */
 width: 42px;
 height: 24px;
-
-/* Label/Medium */
-
-font-family: 'Pretendard';
 font-style: normal;
 font-weight: 600;
 font-size: 16px;
 line-height: 150%;
-/* identical to box height, or 24px */
-
-
-/* content */
-
 color: #333333;
-
-
 /* Inside auto layout */
-
 flex: none;
 order: 0;
 flex-grow: 0;
 z-index: 0;
 }
 
-
-.label-phone {
-  /* Label */
-
-
-/* Auto layout */
-
+.form-tr-label-phone {
+/* Label > 휴대폰 번호 부분의 라벨 */
 display: flex;
 flex-direction: row;
 align-items: flex-start;
 padding: 4px;
 gap: 4px;
 isolation: isolate;
-
 width: 50px;
 height: 32px;
-
-
 /* Inside auto layout */
-
 flex: none;
 order: 0;
 flex-grow: 0;
 }
 
-.phone-detail {
-  /* Label */
-
-
+.form-tr-phone-detail {
+/* 핸드폰 번호 입력 부분의 라벨의 글꼴 크기 수정 */
 width: 42px;
 height: 24px;
-
-/* Label/Medium */
-
-font-family: 'Pretendard';
 font-style: normal;
 font-weight: 600;
 font-size: 16px;
 line-height: 150%;
-/* identical to box height, or 24px */
-
-
-/* content */
-
 color: #333333;
-
-
 /* Inside auto layout */
-
 flex: none;
 order: 0;
 flex-grow: 0;
@@ -559,414 +412,279 @@ z-index: 0;
 }
 
 .phone-jungbok {
-  /* 로그인 */
-
-
+/* 핸드폰 인증번호 받기 글꼴 */
 width: 87px;
 height: 24px;
-
-/* Label/Medium */
-
-font-family: 'Pretendard';
 font-style: normal;
 font-weight: 600;
 font-size: 16px;
 line-height: 150%;
-/* identical to box height, or 24px */
-
-
-/* primary */
-
 color: #5F0080;
-
-
 /* Inside auto layout */
-
 flex: none;
 order: 0;
 flex-grow: 0;
 }
 
-.label-address {
-  /* Label */
+.form-tr-address {
+  /* FormField > input = address 영역 */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px 0px;
+  gap: 8px;
+  width: 640px;
+  height: 107px;
+  /* Inside auto layout */
+  flex: none;
+  order: 6;
+  align-self: stretch;
+  flex-grow: 0;
+  z-index: 6;
+  }
 
-
-/* Auto layout */
-
+.form-tr-label-address {
+/* Label > 주소 부분의 라벨 */
 display: flex;
 flex-direction: row;
 align-items: flex-start;
 padding: 4px;
 gap: 4px;
 isolation: isolate;
-
 width: 36px;
 height: 32px;
-
-
 /* Inside auto layout */
-
 flex: none;
 order: 0;
 flex-grow: 0;
 }
 
-.address-form-tr {
-  /* Auto layout */
-
-display: flex;
-flex-direction: row;
-align-items: center;
-padding: 20px 0px;
-gap: 8px;
-
-width: 640px;
-height: 107px;
-
-
-/* Inside auto layout */
-
-flex: none;
-order: 6;
-align-self: stretch;
-flex-grow: 0;
-z-index: 6;
-}
-
-.address-detail {
-  /* Label */
-
-
+.form-tr-address-detail {
+/* 주소 입력 부분의 라벨의 글꼴 크기 수정 */
 width: 28px;
 height: 24px;
-
-/* Label/Medium */
-
-font-family: 'Pretendard';
 font-style: normal;
 font-weight: 600;
 font-size: 16px;
 line-height: 150%;
-/* identical to box height, or 24px */
-
-
-/* content */
-
 color: #333333;
-
-
 /* Inside auto layout */
-
 flex: none;
 order: 0;
 flex-grow: 0;
 z-index: 0;
 }
 
-.address-container {
-  /* Frame 38 */
-
-
-/* Auto layout */
-
+.address-container-button {
+/* 주소 검색 버튼 #1 */
 display: flex;
 flex-direction: column;
 justify-content: flex-end;
 align-items: flex-start;
 padding: 0px;
 gap: 4px;
-
 width: 333px;
 height: 67px;
-
-
 /* Inside auto layout */
-
 flex: none;
 order: 1;
 flex-grow: 0;
 }
 
-.address-button {
-  box-sizing: border-box;
-
-/* Auto layout */
-
+.address-container-button {
+/* 주소 검색 버튼 색상, 크기조절 */
+box-sizing: border-box;
 display: flex;
 flex-direction: row;
 justify-content: center;
 align-items: center;
 padding: 0px;
-
 width: 333px;
 height: 44px;
-
-/* primary */
-
 border: 1px solid #5F0080;
 border-radius: 4px;
-
 /* Inside auto layout */
-
 flex: none;
 order: 0;
 flex-grow: 0;
 }
 
-.address-search {
-  /* 로그인 */
-
-
+.address-container-search {
+/* 주소 검색 글꼴 */
 width: 60px;
 height: 24px;
-
-/* Label/Medium */
-
-font-family: 'Pretendard';
 font-style: normal;
 font-weight: 600;
 font-size: 16px;
 line-height: 150%;
-/* identical to box height, or 24px */
-
-
-/* primary */
-
 color: #5F0080;
-
-
 /* Inside auto layout */
-
 flex: none;
 order: 0;
 flex-grow: 0;
 }
 
-.address-text {
-  /* 배송지에 따라 상품 정보가 달라질 수 있습니다. */
-
-
+.address-container-text {
+/* 배송지에 따라 상품 정보가 달라질 수 있습니다. */
 width: 219px;
 height: 19px;
-
-/* Paragraph/Small */
-
-font-family: 'Pretendard';
 font-style: normal;
 font-weight: 400;
 font-size: 12.003px;
 line-height: 160%;
-/* or 19px */
-
-
 color: #000000;
-
-
 /* Inside auto layout */
-
 flex: none;
 order: 1;
 flex-grow: 0;
 }
 
-.sub-form-tr {
-  /* Input */
+.form-tr-sub {
+  /* FormField > input = 성별 ~ 추가사항 영역 */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px 0px;
+  gap: 8px;
+  width: 480px;
+  height: 84px;
+  /* Inside auto layout */
+  flex: none;
+  order: 7;
+  flex-grow: 0;
+  z-index: 7;
+  }
 
-
-/* Auto layout */
-
-display: flex;
-flex-direction: row;
-align-items: center;
-padding: 20px 0px;
-gap: 8px;
-
-width: 480px;
-height: 84px;
-
-
-/* Inside auto layout */
-
-flex: none;
-order: 7;
-flex-grow: 0;
-z-index: 7;
-}
-
-
-.label-gender {
-  /* Label */
-
-
-/* Auto layout */
-
+.form-tr-label-gender {
+/* Label > 주소 부분의 라벨 */
 display: flex;
 flex-direction: row;
 align-items: flex-start;
 padding: 4px;
 gap: 4px;
 isolation: isolate;
-
 width: 36px;
 height: 32px;
-
-
 /* Inside auto layout */
-
 flex: none;
 order: 0;
 flex-grow: 0;
 }
 
-.gender-detail {
-  /* Label */
-
-
+.form-tr-gender-detail {
+/* 성별 입력 부분의 라벨의 글꼴 크기 수정 */
 width: 28px;
 height: 24px;
-
-/* Label/Medium */
-
-font-family: 'Pretendard';
 font-style: normal;
 font-weight: 600;
 font-size: 16px;
 line-height: 150%;
-/* identical to box height, or 24px */
-
-
-/* content */
-
 color: #333333;
-
-
 /* Inside auto layout */
-
 flex: none;
 order: 0;
 flex-grow: 0;
 z-index: 0;
 }
 
-
-.gender-check {
-/* gender */
-
-
-/* Auto layout */
-
+.gender-container {
+/* 성별 선택 space-between을 이용해 구간나누기 */
 display: flex;
 flex-direction: row;
 justify-content: space-between;
 align-items: flex-start;
 padding: 0px;
 gap: 8px;
-
 width: 333px;
 height: 24px;
-
-
 /* Inside auto layout */
-
 flex: none;
 order: 1;
 flex-grow: 0;
 }
 
-.gender-container {
-  /* Radio */
-
-
-/* Auto layout */
-
+.gender-container-rd {
+/* 남 / 녀 성별 선택지 컨테이너 너비 설정 */
 display: flex;
 flex-direction: row;
 align-items: center;
 padding: 0px;
 gap: 8px;
-
 width: 60px;
 height: 24px;
-
-
 /* Inside auto layout */
-
 flex: none;
 order: 1;
 flex-grow: 0;
 }
 
-.no-select-container{
-  /* Radio */
+.gender-container-rd [type="radio"] {
+  vertical-align: middle;
+  appearance: none;
+  border: max(2px, 0.1em) solid gray;
+  border-radius: 50%;
+  width: 1.25em;
+  height: 1.25em;
+}
 
+.gender-container-rd [type="radio"]:checked {
+  border: 0.4em solid #5f0080;
+}
 
-/* Auto layout */
-
+.no-select-container-rd{
+/* 선택안함 선택지 컨테이너 너비 설정 */
 display: flex;
 flex-direction: row;
 align-items: center;
 padding: 0px;
 gap: 8px;
-
 width: 88px;
 height: 24px;
-
-
 /* Inside auto layout */
-
 flex: none;
 order: 2;
 flex-grow: 0;
 }
 
-.label-birth {
-  /* Label */
+.no-select-container-rd [type="radio"] {
+  vertical-align: middle;
+  appearance: none;
+  border: max(2px, 0.1em) solid gray;
+  border-radius: 50%;
+  width: 1.25em;
+  height: 1.25em;
+}
 
+.no-select-container-rd [type="radio"]:checked {
+  border: 0.4em solid #5f0080;
+}
 
-/* Auto layout */
-
+.form-tr-label-birth {
+/* Label > 생년월일 부분의 라벨 */
 display: flex;
 flex-direction: row;
 align-items: flex-start;
 padding: 4px;
 gap: 4px;
 isolation: isolate;
-
 width: 64px;
 height: 32px;
-
-
 /* Inside auto layout */
-
 flex: none;
 order: 0;
 flex-grow: 0;
 }
 
-.birth-detail {
-  /* Label */
-
-
+.form-tr-birth-detail {
+/* 생년월일 입력 부분의 라벨의 글꼴 크기 수정 */
 width: 56px;
 height: 24px;
-
-/* Label/Medium */
-
-font-family: 'Pretendard';
 font-style: normal;
 font-weight: 600;
 font-size: 16px;
 line-height: 150%;
-/* identical to box height, or 24px */
-
-
-/* content */
-
 color: #333333;
-
-
 /* Inside auto layout */
-
 flex: none;
 order: 0;
 flex-grow: 0;
@@ -974,268 +692,223 @@ z-index: 0;
 }
 
 .birth-container {
-/* field */
-
-
+/* 생일 입력칸 컨테이너 너비 설정 */
 box-sizing: border-box;
-
-/* Auto layout */
-
 display: flex;
 flex-direction: row;
 justify-content: center;
 align-items: center;
 padding: 0px 20px;
 gap: 31px;
-
 width: 333px;
 height: 44px;
-
-/* gray/300 */
-
 border: 1px solid #A6A6A6;
 border-radius: 4px;
-
 /* Inside auto layout */
-
 flex: none;
 order: 1;
 flex-grow: 0;
 }
 
-.birth-year{
+.birth-container input {
 /* YYYY / MM / DD */
-
-
-width: 149px;
-height: 26px;
-
-/* Paragraph/Medium */
-
-font-family: 'Pretendard';
-font-style: normal;
-font-weight: 400;
-font-size: 16px;
-line-height: 160%;
-/* identical to box height, or 26px */
-
-text-align: center;
-
-/* gray/400 */
-
-color: #898989;
-
-
-/* Inside auto layout */
-
-flex: none;
-order: 0;
-flex-grow: 0;
-}
-
-.label-plus{
-/* Label */
-
-
-/* Auto layout */
-
-display: flex;
-flex-direction: row;
-align-items: flex-start;
-padding: 4px;
-gap: 4px;
-isolation: isolate;
-
-width: 95px;
-height: 32px;
-
-
-/* Inside auto layout */
-
-flex: none;
-order: 0;
-flex-grow: 0;
-}
-
-.plus-detail{
-/* Label */
-
-
-width: 87px;
-height: 24px;
-
-/* Label/Medium */
-
-font-family: 'Pretendard';
-font-style: normal;
-font-weight: 600;
-font-size: 16px;
-line-height: 150%;
-/* identical to box height, or 24px */
-
-
-/* content */
-
-color: #333333;
-
-
-/* Inside auto layout */
-
-flex: none;
-order: 0;
-flex-grow: 0;
-z-index: 0;
-}
-
-.extra-input {
-  /* gender */
-
-
-/* Auto layout */
-
-display: flex;
-flex-direction: row;
-justify-content: space-between;
-align-items: flex-start;
-padding: 0px;
-gap: 8px;
-
 width: 333px;
-height: 24px;
-
-
-/* Inside auto layout */
-
-flex: none;
-order: 1;
-flex-grow: 0;
-}
-
-/* ///회원가입 fieldset과 이용약관동의 구분선////////////////////// */
-
-.agreement-form {
-/* Agreement */
-
-
+height: 44px;
 box-sizing: border-box;
-
-/* Auto layout */
-
 display: flex;
 flex-direction: row;
-align-items: flex-start;
-padding: 20px 0px;
-gap: 8px;
-
-width: 640px;
-height: 296px;
-
-/* gray/200 */
-
-border-bottom: 1px solid #C4C4C4;
-
+text-align: center;
+padding: 12px 20px;
+/* 글씨체 굵기 및 색깔, radius 수정 */
+border: 1px solid var(--gray-300);
+border-radius: 4px;
 /* Inside auto layout */
-
-flex: none;
-order: 1;
-flex-grow: 0;
-}
-
-.agreement-detail {
-  /* Label */
-
-
-width: 83px;
-height: 24px;
-
-/* Label/Medium */
-
-font-family: 'Pretendard';
-font-style: normal;
-font-weight: 600;
-font-size: 16px;
-line-height: 150%;
-/* identical to box height, or 24px */
-
-
-/* content */
-
-color: #333333;
-
-
-/* Inside auto layout */
-
-flex: none;
-order: 0;
-flex-grow: 0;
-z-index: 0;
-}
-
-.extra-agree {
-  /* Frame 39 */
-
-
-/* Auto layout */
-
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 0px;
-
-width: 429px;
-height: 256px;
-
-
-/* Inside auto layout */
-
-flex: none;
-order: 1;
-flex-grow: 0;
-}
-
-.allagree {
-  /* AllAgree */
-
-
-/* Auto layout */
-
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: flex-start;
-padding: 0px 0px 20px;
-isolation: isolate;
-
-width: 429px;
-height: 52px;
-
-
-/* Inside auto layout */
-
 flex: none;
 order: 0;
 align-self: stretch;
 flex-grow: 0;
 }
 
-.allagree-radio {
-  /* Radio */
+.form-tr-label-plus{
+/* Label > 추가입력 사항 부분의 라벨 */
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 4px;
+gap: 4px;
+isolation: isolate;
+width: 95px;
+height: 32px;
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+}
 
+.form-tr-plus-detail{
+/* 추가입력 사항 부분의 라벨의 글꼴 크기 수정 */
+width: 87px;
+height: 24px;
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 150%;
+color: #333333;
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+z-index: 0;
+}
 
-/* Auto layout */
+.form-tr-extra-input {
+/* 친구초대 추천인 ID / 참여 이벤트명 */
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: flex-start;
+padding: 0px;
+gap: 8px;
+width: 333px;
+height: 24px;
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+}
 
+.form-tr-friend-invite-container {
+/* 친구초대 추천인 ID 너비수정 */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 8px;
+  width: 178px;
+  height: 24px;
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.form-tr-friend-invite-container [type="radio"] {
+  vertical-align: middle;
+  appearance: none;
+  border: max(2px, 0.1em) solid gray;
+  border-radius: 50%;
+  width: 1.25em;
+  height: 1.25em;
+}
+
+.form-tr-friend-invite-container [type="radio"]:checked {
+  border: 0.4em solid #5f0080;
+}
+
+.form-tr-event-container{
+  /* 참여 이벤트명 너비수정 */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 8px;
+  width: 119px;
+  height: 24px;
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+.form-tr-event-container [type="radio"] {
+  vertical-align: middle;
+  appearance: none;
+  border: max(2px, 0.1em) solid gray;
+  border-radius: 50%;
+  width: 1.25em;
+  height: 1.25em;
+}
+
+.form-tr-event-container [type="radio"]:checked {
+  border: 0.4em solid #5f0080;
+}
+
+/* //////////////////////회원가입 fieldset과 이용약관동의 구분선////////////////////// */
+
+.form-tr-agreement {
+/* Agreement */
+box-sizing: border-box;
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 20px 0px;
+gap: 8px;
+width: 640px;
+height: 296px;
+border-bottom: 1px solid #C4C4C4;
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+}
+
+.form-tr-agreement-detail {
+/* 이용약관동의 부분의 라벨의 글꼴 크기 수정 */
+width: 83px;
+height: 24px;
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 150%;
+color: #333333;
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+z-index: 0;
+}
+
+.extra-checker {
+/* 전체 동의합니다 ~ 본인은.. 여기까지 폼 크기 조정 */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+width: 429px;
+height: 256px;
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+}
+
+.all-agree {
+/* 전체 동의합니다 칸 너비 조절 */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: flex-start;
+padding: 0px 0px 20px;
+isolation: isolate;
+width: 429px;
+height: 52px;
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+}
+
+.set0 {
+/* 전체 동의합니다 */
 display: flex;
 flex-direction: row;
 align-items: center;
 padding: 0px;
 gap: 8px;
-
 width: 172px;
 height: 32px;
-
-
 /* Inside auto layout */
-
 flex: none;
 order: 0;
 flex-grow: 0;
@@ -1243,57 +916,29 @@ z-index: 0;
 }
 
 .allagree-text {
-  /* 전체 동의합니다. */
-
-
+/* 전체 동의합니다 텍스트 크기 조절 */
 width: 140px;
 height: 32px;
-
-/* Label/Large */
-
-font-family: 'Pretendard';
 font-style: normal;
 font-weight: 600;
 font-size: 21.328px;
 line-height: 150%;
-/* identical to box height, or 32px */
-
-
-/* content */
-
 color: #333333;
-
-
 /* Inside auto layout */
-
 flex: none;
 order: 1;
 flex-grow: 0;
 }
 
 .exception-text {
-width: 397px;
+/* 선택항목에 동의하지 ~ 크기 조절 */
+width: 450px;
 height: 19px;
 left: 32px;
 bottom: 0px;
-
-/* Paragraph/Small */
-
-font-family: 'Pretendard';
-font-style: normal;
-font-weight: 400;
-font-size: 12.003px;
-line-height: 160%;
-/* or 19px */
-
-
-/* gray/400 */
-
-color: #898989;
-
-
-/* Inside auto layout */
-
+font-size: 12px;
+color: rgb(102, 102, 102);
+padding-left: 36px;
 flex: none;
 order: 1;
 flex-grow: 0;
@@ -1301,221 +946,128 @@ z-index: 1;
 }
 
 .extra-normal-agree {
-  /* Agree */
-
-
-/* Auto layout */
-
+/* 이용약관 동의 ~ 본인은 만 14세 이상입니다 폼 크기 조절*/
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: flex-start;
 padding: 12px 0px;
-
 width: 429px;
 height: 51px;
-
-
 /* Inside auto layout */
-
 flex: none;
 order: 1;
 flex-grow: 0;
 }
 
 .normal-agree{
-  /* Radio */
-
-
-/* Auto layout */
-
+/* 이용약관 동의 ~ 본인은 만 14세 이상입니다 Radio 크기 조절 */
 display: flex;
 flex-direction: row;
 justify-content: space-between;
 align-items: center;
 padding: 0px;
 gap: 8px;
-
 width: 429px;
 height: 27px;
-
-
 /* Inside auto layout */
-
 flex: none;
 order: 0;
 align-self: stretch;
 flex-grow: 0;
 }
 
-.set {
-  /* set */
-
-
-/* Auto layout */
-
+.set1 {
+/* set1 = 이용약관 동의(필수) 글꼴 내 박스 조절 */
 display: flex;
 flex-direction: row;
 align-items: center;
 padding: 0px;
 gap: 8px;
-
 width: 162px;
 height: 26px;
-
-
 /* Inside auto layout */
-
 flex: none;
 order: 0;
 flex-grow: 0;
 }
 
 .set2 {
-  /* set */
-
-
-/* Auto layout */
-
+/* set2 = 개인정보 수집 이용 동의(필수) 글꼴 내 박스 조절 */
 display: flex;
 flex-direction: row;
 align-items: center;
 padding: 0px;
 gap: 8px;
-
 width: 233px;
 height: 26px;
-
-
 /* Inside auto layout */
-
 flex: none;
 order: 0;
 flex-grow: 0;
 }
 
 .set3 {
-  /* set */
-
-
-/* Auto layout */
-
+/* set3 = 무료배송, 할인쿠폰 등 혜택/정보 수신 동의(선택) 글꼴 내 박스 조절 */
 display: flex;
 flex-direction: row;
 align-items: center;
 padding: 0px;
 gap: 8px;
-
 width: 340px;
 height: 26px;
-
-
 /* Inside auto layout */
-
 flex: none;
 order: 0;
 flex-grow: 0;
 }
 
 .set4 {
-  /* set */
-
-
-/* Auto layout */
-
+/* set4 = 본인은 만 14세 이상입니다.(필수) 글꼴 내 박스 조절 */
 display: flex;
 flex-direction: row;
 align-items: center;
 padding: 0px;
 gap: 8px;
-
 width: 246px;
 height: 26px;
-
-
 /* Inside auto layout */
-
 flex: none;
 order: 0;
 flex-grow: 0;
 }
 
-.signup-button {
+/* ///이용약관동의와 회원가입 버튼 css 구분선////////////////////// */
+
+.signup-button-size {
   /* button */
-
-
-/* Auto layout */
-
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
 padding: 40px 0px;
-
 width: 640px;
 height: 134px;
-
-
 /* Inside auto layout */
-
 flex: none;
 order: 2;
 align-self: stretch;
 flex-grow: 0;
 }
 
-.button-normal {
-  /* Button / Normal */
-
-
-/* Auto layout */
-
+.registration-button {
 display: flex;
 flex-direction: row;
 justify-content: center;
 align-items: center;
 padding: 0px;
-
 width: 340px;
 height: 54px;
-
-/* primary */
-
 background: #5F0080;
 border-radius: 4px;
-
 /* Inside auto layout */
-
 flex: none;
 order: 0;
 flex-grow: 0;
 }
 
-.signup-text {
-  /* 로그인 */
-
-
-width: 56px;
-height: 24px;
-
-/* Label/Medium */
-
-font-family: 'Pretendard';
-font-style: normal;
-font-weight: 600;
-font-size: 16px;
-line-height: 150%;
-/* identical to box height, or 24px */
-
-
-/* white */
-
-color: #FFFFFF;
-
-
-/* Inside auto layout */
-
-flex: none;
-order: 0;
-flex-grow: 0;
-}

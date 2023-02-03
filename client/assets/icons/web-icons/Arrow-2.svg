@@ -3,5 +3,5 @@
 <path d="M21 41L17 45L13 41" stroke="#999999" stroke-width="1.2"/>
 <path d="M19 73L15 69L19 65" stroke="#999999" stroke-width="1.2"/>
 <path d="M15 91L19 95L15 99" stroke="#999999" stroke-width="1.2"/>
-<rect x="0.5" y="0.5" width="33" height="111" rx="4.5" stroke="#9747FF" stroke-dasharray="10 5"/>
+<!-- <rect x="0.5" y="0.5" width="33" height="111" rx="4.5" stroke="#9747FF" stroke-dasharray="10 5"/> -->
 </svg>

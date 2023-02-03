@@ -30,7 +30,6 @@
 /* -------------------------------------------------------------------------- */
 
 .main-banner_swiper {
-  min-width: 1068px;
   max-width: 1920px;
   width: 100%;
   display: flex;
@@ -91,13 +90,143 @@
   align-items: center; */
 }
 .main-banner_swiper-button-prev{
-  left: calc(50% - 534px);
+  left: calc(50% - 594px);
   /* margin-right: 590px; */
 }
 .main-banner_swiper-button-next{
-  right:calc(50% - 534px);
+  right:calc(50% - 594px);
   /* margin-left: 590px; */
 }
 .main-banner_swiper-button-next img{
   transform: scaleX(-1);
+}
+
+/* -------------------------------------------------------------------------- */
+/*                            recent-product swiper                           */
+/* -------------------------------------------------------------------------- */
+
+.recent-product_swiper {
+  width: 78px;
+  
+  /* height: auto; */
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  order: 2;
+  position: static;
+}
+
+.recent-product_swiper-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  max-height: 209px;
+  width: 60px;
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+}
+
+.recent-product_swiper-slide{
+  margin-top: 2px;
+}
+
+.recent-product_swiper-slide img {
+  display: block;
+  width: 60px;
+  height: 80px;
+  object-fit: cover;
+}
+
+.recent-product_swiper-slide a {
+  display: inline-block;
+}
+
+.recent-product_swiper-button-prev,.recent-product_swiper-button-next{
+  width: 78px;
+  height: 22px;
+  /* flex: none; */
+  /* 자동상속 속성 제거용 margin */
+  margin: 0 0; 
+  flex-grow: 0;
+  transform: rotate(180deg);
+  position: static;
+  overflow: hidden;
+  /* background-color: aqua; */
+}
+.recent-product_swiper-button-prev{
+  background: no-repeat  url(../assets/icons/web-icons/Arrow-2.svg);
+  background-position: center -80px;
+  background-size: 70px;
+}
+.recent-product_swiper-button-next{
+  background: no-repeat  url(../assets/icons/web-icons/Arrow-2.svg) ;
+  background-position: center -20px;
+  background-size: 70px;
+  margin-top: 6px;
+  order: 4;
+}
+
+.swiper-button-lock { /* disable 되었을 때 스와이퍼에서 버튼에 넣는 속성*/
+  display: flex;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/*                         product-display swiper  클래스 속성                 */
+/* -------------------------------------------------------------------------- */
+
+.product-display_swiper {
+  width: 100%;
+  min-height: 429px;
+  max-height: 518px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  /* background-color: aquamarine; */
+}
+.product-display_swiper{
+  width: 1040px;
+}
+.product-display_swiper-wrapper{
+  display: flex;
+  align-items: flex-start; 
+  width: 1100px;
+  /* overflow: hidden; 절대주지말것*/
+}
+
+.product-display_swiper-slide{
+  width: 100%;
+  /* margin-right: 15px; */
+  /* background-color: antiquewhite; */
+}
+
+.product-display_swiper-button-prev,.product-display_swiper-button-next{
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 167px;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+  flex: none;
+  order: 4;
+  flex-grow: 0;
+  z-index: 4;
+  background: url(../assets/icons/web-icons/Arrow-black.svg) no-repeat;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.02), 0px 1px 4px rgba(0, 0, 0, 0.03), 0px 0px 4px rgba(0, 0, 0, 0.08);
+  border-radius: 50%;
+}
+
+ 
+.product-display_swiper-button-prev{
+  left: 0;
+}
+.product-display_swiper-button-next{
+  right: 0;
+  transform: scaleX(-1);
+}
+
+.swiper-button-disabled{
+  /* opacity: 0; */
 }
