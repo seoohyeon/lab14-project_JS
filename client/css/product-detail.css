@@ -465,6 +465,7 @@
   box-sizing: border-box;
   border-bottom: 1px solid var(--gray-100);
   display: flex;
+  cursor: pointer;
 }
 .product-review_list-notice_box {
   padding: 0px 8px;
@@ -609,6 +610,7 @@
   right: 34px;
   top: 289px;
   overflow-y: scroll;
+  cursor: auto;
 }
 .textarea-placeholder:last-child {
   top: 305px;
@@ -865,6 +867,7 @@
 }
 
 .product-answer_question-accordian {
+  display: none;
   padding: 20px;
   gap: 40px;
   width: 1050px;
