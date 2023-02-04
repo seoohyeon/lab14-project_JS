@@ -12,7 +12,7 @@
 
 .header{
   box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.1);
-  width:100vw;
+  
 }
 
 /* top banner style */
@@ -273,7 +273,6 @@ background-size: 42px;
 
 /* small style */
 .small-info {
-  width:100vw;
   height: 108px;
   text-align: center;
   line-height: 160%;
