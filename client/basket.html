@@ -52,23 +52,83 @@
         </ul>
       </div>
       <div>
-        <ul class="header_menu">
-          <div class="header_menu_category">
-            <li><a href=""><img src="./assets/icons/web-icons/Hamburger.svg" alt="햄버거 모양의 아이콘" />카테고리</a></li>
-          </div>
-          <div class="header_menu_wrapper">
+        <nav class="header_menu">
+          <a class="header_menu_category" href=""><img src="./assets/icons/web-icons/Hamburger.svg" alt="햄버거 모양의 아이콘" /><span>카테고리</span></a>
+          <ul class="header_menu_wrapper">
             <li><a href="">신상품</a></li>
             <li><a href="">베스트</a></li>
             <li><a href="">알뜰쇼핑</a></li>
             <li><a href="">특가/혜택</a></li>
-          </div>  
-            <li><button><b>샛별·낮</b> 배송안내</button></li>
-        </ul>
+          </ul>  
+          <button><b>샛별·낮</b> 배송안내</button>
+        </nav>
       </div>
     </div>
   </header>
 
-  <main class="main">
+  <main class="basket-main">
+    <h2>장바구니</h2>
+      <div class="basket-main-wrapper">
+        <section>
+          <h3 class="a11y-hidden">장바구니 목록</h3>
+          <ul>
+            <li class="list-bar select-all">
+              <input type="checkbox" name="basket-checker" id="basket-checker1">
+              <label for="basket-checker1"></label>
+              전체선택 (0/0) <span aria-hidden="true">|</span> 선택삭제
+            </li>
+            <li class="no-option">장바구니에 담긴 상품이 없습니다</li>
+            <!-- <li class="list-bar refrigerated-food">냉장 식품</li>
+            <li class="list-bar frozen-food">냉동 식품</li>
+            <li class="list-bar normal-food">상온 식품</li> -->
+            <li class="select-all">
+              <input type="checkbox" name="basket-checker" id="basket-checker2">
+              <label for="basket-checker2"></label>
+              전체선택 (0/0) <span aria-hidden="true">|</span> 선택삭제
+            </li>
+          </ul>
+        </section>
+
+        <section class="basket-info">
+          <h3 class="a11y-hidden">장바구니에 담긴 정보</h3>
+          <div>
+            <ul class="location-info">
+              <li class="location-map">배송지</li>
+              <li><b>배송지를 등록</b>하고<br>구매 가능한 상품을 확인하세요!</li>
+              <li class="star-delivery">샛별배송</li>
+              <li>
+                <button class="location-change-button"><span><b>주소 검색</b></span></button>
+              </li>
+            </ul>
+
+            <div class="amount-info">
+              <ul class="amount-sep">
+                <li>상품금액</li>
+                <li>상품할인금액</li>
+                <li>배송비</li>
+              </ul>
+              <ul class="amount-total">
+                <li>결제예정금액</li>
+                <li class="saving-info"><span>적립</span>최대 36원 적립 일반 0.1%</li>
+              </ul> 
+            </div>
+
+            <div class="order-button-wrapper">
+              <button class="order-button">상품을 담아주세요</button>
+            </div>
+            <div class="add-info">
+              <span>쿠폰/적립금은 주문서에서 사용 가능합니다.</span>
+              <span>[주문완료] 상태일 경우에만 주문 취소 가능합니다.</span>
+              <span>[마이컬리 > 주문내역 상세페이지] 에서 직접 취소하실 수 있습니다.</span>
+              <span>쿠폰, 적립금 사용 금액을 제외한 실 결제 금액 기준으로 최종 산정됩니다.</span>
+              <span>상품별로 적립금 지급 기준이 다를 수 있습니다. (상품 상세 페이지에서 확인 가능합니다)</span>
+            </div>
+
+          </div>
+
+        </section>
+      </div>
+
 
   </main>
 
@@ -152,7 +212,7 @@
         </li>
         <li>
           <img src="./assets/icons/web-icons/payments.svg" alt="toss payments 아이콘" />
-          <p>토스페이먼츠 구매안전(에스크로) 서비스를 이용하실 수 있습니다.</p>
+          <p class="toss-text">토스페이먼츠 구매안전(에스크로) 서비스를 이용하실 수 있습니다.</p>
         </li>
         <li>
           <img src="./assets/icons/web-icons/wooribank.svg" alt="우리은행 아이콘" />

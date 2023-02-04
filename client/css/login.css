@@ -1,12 +1,10 @@
- 6eea30c5291e3ff79160e50917845b639cd18338/* 로그인 영역 */
-.login {
-  /* 로그인 전체 레이아웃 */
+/* 수정 */
+.main-login {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 80px 0px;
   gap: 44px;
-  width: 1920px;
   height: 527px;
   /* Inside auto layout */
   flex: none;
@@ -19,15 +17,13 @@
   /* 로그인 상단 글씨체 */
   width: 56px;
   height: 32px;
-  /*여기부터는 폰트적용*/
   font-weight: 600;
   font-size: 1.333rem;
   line-height: 150%;
   color: var(--black);
-  /* background-color: var(--accent-yellow); */
   }
   
-.signin-form{
+.signin-form {
   /* 로그인 Form 레이아웃 */
   display: flex;
   flex-direction: column;
@@ -58,7 +54,8 @@
   align-self: stretch;
   flex-grow: 0;
   }
-  
+
+
   .user-email {
   /* 유저이메일 */
   display: flex;
@@ -124,8 +121,8 @@
   align-self: stretch;
   flex-grow: 0;
   }
-  
-  .finder {
+
+  .user-finder {
   /* 아이디 - 비밀번호 찾기 레이아웃 */
   display: flex;
   flex-direction: row;
@@ -140,7 +137,7 @@
   flex-grow: 0;
   }
   
-  .idfind {
+  .user-idfind {
   /* 아이디 찾기 */
   width: 55px;
   height: 19px;
@@ -156,7 +153,7 @@
   flex-grow: 0;
   }
   
-  .pwfind {
+  .user-pwfind {
   /* 비밀번호 찾기 */
   width: 66px;
   height: 19px;
@@ -171,8 +168,10 @@
   order: 2;
   flex-grow: 0;
   }
-  
-  .sign-button {
+
+
+
+  .signin-button-size {
   /* 로그인-회원가입 버튼 레이아웃 */
   display: flex;
   flex-direction: column;
@@ -188,7 +187,7 @@
   flex-grow: 0;
   }
   
-  .sign-in {
+  .signin-button {
   /* 로그인 버튼 */
   display: flex;
   flex-direction: row;
@@ -206,7 +205,7 @@
   flex-grow: 0;
   }
   
-  .sign-in span{
+  .signin-button span{
   /* 로그인 버튼 글씨체 */
   width: 42px;
   height: 24px;
@@ -221,7 +220,7 @@
   flex-grow: 0;
   }
   
-  .sign-up {
+  .signup-button {
   /* 회원가입 버튼 */
   box-sizing: border-box;
   display: flex;
@@ -240,7 +239,7 @@
   flex-grow: 0;
   }
   
-  .sign-up span {
+  .signup-button span {
   /* 회원가입 버튼 글씨체 */
   width: 56px;
   height: 24px;

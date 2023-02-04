@@ -90,7 +90,30 @@
   gap: 8px;
 }
 
-input[type="checkbox"] {
+.accordion-list input[type="checkbox"] {
+  display: none;
+}
+accordion-list input[type="checkbox"]+label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+accordion-list input[type="checkbox"]+label::before {
+  content: "";
+  cursor: pointer;
+  display: block;
+  align-items: center;
+  background: url(../assets//icons//Input/Check.svg) no-repeat -8px -8px;
+  height: 24px;
+  width: 24px;
+  margin-right: 4px;
+}
+
+accordion-list input[type="checkbox"]:checked+label::before {
+  background: url(../assets//icons//Input/Check.svg) no-repeat -8px -40px;
+}
+/* .input[type="checkbox"] {
   display: none;
 }
 input[type="checkbox"]+label {
@@ -110,11 +133,9 @@ input[type="checkbox"]+label::before {
   margin-right: 4px;
 }
 
-
 input[type="checkbox"]:checked+label::before {
   background: url(../assets//icons//Input/Check.svg) no-repeat -8px -40px;
-  
-}
+} */
 .checkbox-label {
   height: 26px;
 }
@@ -198,6 +219,8 @@ input[type="checkbox"]:checked+label::before {
 .product > li {
   height: 538px;
 }
+
+/* 원준 주석 */
 .card {
   position: relative;
   width: 249px;
@@ -296,6 +319,8 @@ input[type="checkbox"]:checked+label::before {
   width: 45px;
   height: 45px;
 }
+/* 원준 주석 */
+
 .bottom {
   display: flex;
   justify-content: center;
