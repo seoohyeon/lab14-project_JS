@@ -1,5 +1,5 @@
 .main-page-main{
-  width: 100vw;
+  position: relative;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -25,9 +25,10 @@
 
 
 .recent-product{
-  position: fixed;
+  position: absolute;
+  top: 505px;
   right: 20px;
-  top: 193px;
+  
   display: flex;
   flex-flow: column nowrap;
   /* align-content: space-between; */
@@ -39,6 +40,16 @@
   height:auto;
   overflow: hidden;
   border: 1px solid #C4C4C4;
+}
+
+.recent-product__meet-bottom{
+  top:unset;
+  bottom: 110px;
+}
+
+.recent-product__fixed{
+  position: fixed;
+  top: 193px;
 }
 
 .recent-product_title{
