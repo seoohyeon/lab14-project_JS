@@ -74,18 +74,45 @@
           <ul>
             <li class="list-bar select-all">
               <input type="checkbox" name="basket-checker" id="basket-checker1">
-              <label for="basket-checker1"></label>
-              전체선택 (0/0) <span aria-hidden="true">|</span> 선택삭제
+              <label for="basket-checker1">
+                전체선택 (0/0)
+                <a href=""> <span aria-hidden="true">|</span>선택삭제</a>
+              </label>
             </li>
             <li class="no-option">장바구니에 담긴 상품이 없습니다</li>
             <!-- <li class="list-bar refrigerated-food">냉장 식품</li>
             <li class="list-bar frozen-food">냉동 식품</li>
             <li class="list-bar normal-food">상온 식품</li> -->
+
+            <li class="select_list">
+              <input type="checkbox" name="basket-checker" id="select-list">
+              <label for="select-list"></label>
+              <a href="음식 상세페이지"><img class="food-picture" src="/lab14-project/client/assets/bacon/thumbnail.jpg" alt="음식이미지" /> 음식 이름</a>
+
+              <div class="product-counter_wrapper">
+                <div class="product-counter_box">
+                  <button class="minus-counter_button"></button>
+                  <span>1</span>                  
+                  <button class="plus-counter_button"></button>
+                </div>
+                
+                <p>
+                  4980 원
+                </p>
+                <button class="counter-delete_button"></button>
+              </div>
+         
+             
+            </li>
+
             <li class="select-all">
               <input type="checkbox" name="basket-checker" id="basket-checker2">
-              <label for="basket-checker2"></label>
-              전체선택 (0/0) <span aria-hidden="true">|</span> 선택삭제
+              <label for="basket-checker2">
+                전체선택 (0/0) 
+                <a href=""><span aria-hidden="true">|</span>선택삭제</a>
+              </label>
             </li>
+
           </ul>
         </section>
 
