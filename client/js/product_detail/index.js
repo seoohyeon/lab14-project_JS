@@ -268,10 +268,45 @@ let year = today.getFullYear();
 let month = today.getMonth() + 1
 // 일 getDate()
 let date = today.getDate(); // 일
+let clearIfNothing = getNode(".product-review_list-ifnothing");
 
 
-reviewSubmit.addEventListener("click", (e)=>{
-  e.preventDefault();
+function reviewListSaved(){
+  fetch("http://localhost:3000/reviews",{
+  method : 'GET',
+  headers: {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json'
+    }
+})
+.then(function (res){
+  // console.log(res.json);
+  return res.json()
+}).then(function (data){
+  data.forEach(obj =>{
+    getNode(".put-in").insertAdjacentHTML("beforeend",
+    `
+    <div class="product-review_list-customer">
+      <div class="product-review_list-customer_boxes">
+        <span class="product-review_list-customer_box-best">베스트</span>
+        <span class="product-review_list-customer_box-level">퍼플</span>
+        <span class="product-review_list-customer_name">김*현</span>
+      </div>
+      <div>
+        <p class="product-review_list-customer_product">${obj.title}</p>
+        <pre class="product-review_list-customer_product-text">
+        ${obj.content}</pre>
+        <p class="product-review_list-customer_product review-date">${year}.${month}.${date}</p>
+      </div>
+    </div>
+  `)
+  getNode(".product-review_arrow-1").display = "none"
+  })
+})
+}
+reviewListSaved();
+
+reviewSubmit.addEventListener("click", ()=>{
   // localStorage.setItem("reviewTitle", reviewTitle.value);
   // localStorage.setItem("reviewContent", reviewContent.value);
   getNode(".product-popup-wrapper").style.display = "none";
@@ -279,30 +314,65 @@ reviewSubmit.addEventListener("click", (e)=>{
   getNode(".product-review_list-ifnothing").style.display = "none";
   // getNode(".product-review_list-customer_product").textContent = localStorage.getItem("reviewTitle");
   // getNode(".product-review_list-customer_product-text").textContent = localStorage.getItem("reviewContent");
-  // getNode(".review-date").textContent = `${year}.${month}.${date}`;
-  // getNode(".product-review-lists").style.display = "block";
-  
 })
-
-let jsonObject = {
-  "title" : "",
-  "content" : "" 
-}
-jsonObject.title = reviewTitle.value;
-jsonObject.content = reviewContent.value;
 
 getNode(".form-1").addEventListener("submit", (e) => {
 
   e.preventDefault();
 
-  fetch('https://localhost:3000/reviews', {
+  fetch('http://localhost:3000/reviews', {
     method : "POST",
-    body : JSON.stringify(jsonObject)
+    body : JSON.stringify({
+      title : reviewTitle.value,
+      content : reviewContent.value,  
+    }),
+    // POST 할때 headers 형식 꼭 써주어야 함.
+    headers: {
+      'Content-Type': 'application/json',
+    },
   }).then(function (response){
-    response.text
+    return response.json();
+  }).then(function (data){
+      getNode(".put-in").insertAdjacentHTML("beforeend",
+      `
+      <div class="product-review_list-customer">
+        <div class="product-review_list-customer_boxes">
+          <span class="product-review_list-customer_box-best">베스트</span>
+          <span class="product-review_list-customer_box-level">퍼플</span>
+          <span class="product-review_list-customer_name">김*현</span>
+        </div>
+        <div>
+          <p class="product-review_list-customer_product">${data.title}</p>
+          <pre class="product-review_list-customer_product-text">
+          ${data.content}</pre>
+          <p class="product-review_list-customer_product review-date">${year}.${month}.${date}</p>
+        </div>
+      </div>
+    `)
   });
-})
+    // console.log(data.title)
+    // getNode(".product-review_list-customer_product").textContent = data.title;
+    // getNode(".product-review_list-customer_product-text").textContent = data.content;
+    // getNode(".review-date").textContent = `${year}.${month}.${date}`;
+  });
 
+
+  if(getNode(".put-in").innerHTML){
+    console.log(getNode(".put-in").innerHTM);
+    clearIfNothing.className = "product-review_list-notice product-review_list-ifnothing";
+  }
+
+// fetch("http://localhost:3000/reviews", {
+//   method : "GET"
+// })
+// .then((res) => {
+//   res.json();
+// }).then((data)=> {
+//   console.log(data)
+// })
+
+
+    
 
 
 reviewTitle.addEventListener("keyup", () => {

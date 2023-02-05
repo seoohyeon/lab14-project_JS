@@ -512,6 +512,9 @@
   justify-content: center;
   align-items: center;
 }
+.product-review_list-ifnothing-clear {
+  display: none;
+}
 .product-review_list-ifnothing > svg {
   display: block;
   width: 48px;
