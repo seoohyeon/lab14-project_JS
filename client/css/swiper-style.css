@@ -187,9 +187,7 @@
   position: relative;
   /* background-color: aquamarine; */
 }
-.product-display_swiper{
-  width: 1040px;
-}
+
 .product-display_swiper-wrapper{
   display: flex;
   align-items: flex-start; 
