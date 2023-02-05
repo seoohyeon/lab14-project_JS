@@ -284,7 +284,7 @@ reviewSubmit.addEventListener("click", (e)=>{
   
 })
 
-jsonObject = {
+let jsonObject = {
   "title" : "",
   "content" : "" 
 }
