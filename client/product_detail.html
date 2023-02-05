@@ -8,7 +8,7 @@
   href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
   <link rel="stylesheet" href="./css/style.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-  <script src="./js/main.js" type="module"></script>
+  <script src="./js/product_detail/index.js" type="module"></script>
   <title>Document</title>
 </head>
 
@@ -189,9 +189,9 @@
       <!-- section 2 = 상품설명 -->    
       <section class="product-details">
         <div id="details" class="product-menu">
-          <a class="product-menu_nav" href="#details">상품설명</a>
+          <a class="product-menu_nav product-menu_nav-1" href="#details">상품설명</a>
           <a class="product-menu_nav" href="#information">상세정보</a>
-          <a class="product-menu_nav" href="#review">후기 (num)</a>
+          <a class="product-menu_nav product-menu_nav-3" href="#review">후기 (num)</a>
           <a class="product-menu_nav" href="#qna">문의</a>
         </div>
         <figure class="product-img">
@@ -276,13 +276,13 @@
               <path d="M26.2567 29.9388L24.8559 29.13L23.4551 28.3212L24.8559 27.5124L26.2567 26.7036" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
             <p class="product-detail_whykarly_list_title">환경을 생각하는 지속 가능한 유통</p>
-            <p class="product-detail_whykarly_list_p">친환경 포장재부터 생산자가 상품에만 집중할 수 있는 직매입 유통구조까지, 지속 가능한 유통을 고민하며 컬리를 있게하는 모든 환경(생산자,커뮤니티,직원)이 더 나아질 수 있도록 노력합니다.</p>
+            <p id="review" class="product-detail_whykarly_list_p">친환경 포장재부터 생산자가 상품에만 집중할 수 있는 직매입 유통구조까지, 지속 가능한 유통을 고민하며 컬리를 있게하는 모든 환경(생산자,커뮤니티,직원)이 더 나아질 수 있도록 노력합니다.</p>
           </li>
         </ul>    
       </section>
   
       <!-- section 3 = 상품후기 -->
-      <section id="review" class="product-review">
+      <section class="product-review">
         <div class="product-review_header">
           <h3 class="product-review_title">상품후기</h3>
           <button type="button" class="product-review_register">후기 작성하기</button>
@@ -378,7 +378,7 @@
         
 
           <!-- 후기 없을 경우 UI -->
-          <div class="product-review_list-notice product-review_list-ifnothing product-review_list-ifnothing-clear">
+          <div class="product-review_list-notice product-review_list-ifnothing">
             <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g clip-path="url(#clip0_61_3806)">
               <path d="M24 47C36.7025 47 47 36.7025 47 24C47 11.2975 36.7025 1 24 1C11.2975 1 1 11.2975 1 24C1 36.7025 11.2975 47 24 47Z" stroke="#E2E2E2" stroke-width="2"/>
@@ -414,9 +414,9 @@
           <div class="put-in"></div>
 
         </div>
-        <div class="product-review_arrow product-review_arrow-1">
+        <div class="product-review_arrow">
           <button type="button" class="product-review_arrow-left"></button>
-          <button type="button" class="product-review_arrow-right"></button>
+          <button id="qna" type="button" class="product-review_arrow-right"></button>
         </div>
 
         <!-- 후기 작성 popup -->
@@ -488,7 +488,7 @@
       </section>
 
       <!-- section 4 = 상품문의 -->
-      <section id="qna" class="product-answer">
+      <section class="product-answer">
         <div class="product-answer_header">
           <h3 class="product-answer_title">상품문의</h3>
           <button type="button" class="product-answer_register">문의하기</button>

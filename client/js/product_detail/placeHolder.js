@@ -1,212 +1,12 @@
-// 나중에 여기는 export만 받아와야함
-// 다 비워야 함
+import { getNode } from './../../lib/dom/getNode';
+let TOGGLE = true;
 
-import { getNode } from '../../lib/index.js'
-import { attr } from './../../lib/dom/attr.js';
-
-
-//-----------------------------------------------------------
-// section 1 = 상품구매창
-//-----------------------------------------------------------
-
-let minus = getNode(".order-details_minus");
-let plus = getNode(".order-details_plus");
-let orderNumber = getNode(".order-details_number");
-let number = +getNode(".order-details_number").textContent;
-
-let totalPrice = getNode(".total-price_number");
-let totalNum = +totalPrice.textContent.replace(",","");
-
-let heartButton = getNode(".order-details_button_heart");
-
-let productTitle = getNode(".order-details_title")
-let productCount = 1;
-
-function haveMinus() {
-  if(number > 1){
-    minus.style.cursor = "pointer"
-    number -= 1;
-    totalNum = String(4980*number);
-    totalNum = `${totalNum.slice(0,-3)},${totalNum.slice(-3)}`
-    orderNumber.textContent = number;
-    totalPrice.textContent = totalNum;
-    productCount -= 1;
-  }
-  if(number === 1){
-    getNode(".order-details_minus_path").style.fill = "var(--gray-300)";
-    orderNumber.textContent = 1;
-    minus.style.cursor = "default"
-  }
-}
-
-function havePlus() {
-    number += 1;
-    totalNum = String(4980*number);
-    totalNum = `${totalNum.slice(0,-3)},${totalNum.slice(-3)}`
-    orderNumber.textContent = number;
-    totalPrice.textContent = totalNum;
-    productCount +=1;
-  
-    if(number >1){
-      getNode(".order-details_minus_path").style.fill = "var(--content)";
-    }
-}
-
-
-// 상품 갯수 선택에 따른 총 가격
-minus.addEventListener("click", haveMinus)
-
-minus.addEventListener("keyup", (e) => {
-  if(e.keyCode == 13){
-    haveMinus();
-  }
-})
-
-plus.addEventListener("click", havePlus);
-
-plus.addEventListener("keyup", (e) => {
-  if(e.keyCode == 13 ){
-    havePlus();
-  }
-})
-
-
-// 하트 찜 - tav키 enter, space가 적용이 안됨.(대상은 svg코드임)
-function coloringHeart(){
-  getNode(".button_heart_svg").classList.toggle("button_heart_active");
-  getNode(".button_heart_path").classList.toggle("button_heart_path_active")
-}
-
-heartButton.addEventListener("click", coloringHeart);
-
-// cart-bubble 창
-getNode(".cart_bubble_title").textContent = productTitle.textContent;
-
-getNode(".button_add_cart").addEventListener("click", () =>{
-  getNode(".cart_bubble_wrapper").style.display = "block";
-  setTimeout(() => {
-    getNode(".cart_bubble_wrapper").style.display = "none";
-  }, 3000);
-
-  fetch("http://localhost:3000/basket",{
-    method : "POST",
-    headers: {
-      'Content-Type': 'application/json'
-      },
-    body : JSON.stringify({
-      name: "[풀무원] 탱탱쫄면 (4개입)",
-      number : productCount,
-    })
-  }).then((res) =>{
-    return res.json();
-  })
-})
-
-//-----------------------------------------------------------
-// section 2 = 상품설명
-//-----------------------------------------------------------
-
-// 메뉴바
-let productMenu = document.querySelectorAll(".product-menu_nav");
-
- productMenu.forEach(item => {
-  item.addEventListener("click", () =>{
-    for(let i=0; i<4; i++){
-      productMenu[i].className = "product-menu_nav";
-    }
-    item.className = "product-menu_nav-active";
-  })
- })
-
- getNode(".product-menu_nav-1").addEventListener("click", () =>{
-  window.scrollTo({ top: 1340 });
- })
-
- let menuBar = getNode(".product-menu").offsetHeight;
-
- window.onscroll = function () {
-  let windowTop = window.scrollY;
-
-  if (windowTop >= menuBar+1340) {
-    getNode(".product-menu").classList.add("drop");
-  } else {
-    getNode(".product-menu").classList.remove("drop");
-  }
-};
 
 
 
 //-----------------------------------------------------------
 // section 3 = 상품후기
 //-----------------------------------------------------------
-
-let reviewNotice = document.querySelectorAll(".product-review_list-notice");
-let reviewNoticeText = document.querySelectorAll(".product-review_list-notice_text")
-let TOGGLE = true;
-
-// 공지 아코디언
-reviewNotice.forEach(item => {
-  item.addEventListener("click", () =>{
-    if(TOGGLE === true && item === reviewNotice[0]){
-      reviewNoticeText[0].style.display = "block"
-      TOGGLE = false;
-    }else if(TOGGLE === false && item === reviewNotice[0]) {
-      reviewNoticeText[0].style.display = "none"
-      TOGGLE = true;
-    }else if(TOGGLE === true && item === reviewNotice[1]){
-      reviewNoticeText[1].style.display = "block"
-      TOGGLE = false;
-    }else if(TOGGLE === false && item === reviewNotice[1]) {
-      reviewNoticeText[1].style.display = "none"
-      TOGGLE = true;
-    }
-  })
-})
-// tab키 웹접근성
-reviewNotice.forEach(item => {
-  item.addEventListener("keyup", (e) =>{
-    if(TOGGLE === true && item === reviewNotice[0] && e.keyCode == 13){
-      reviewNoticeText[0].style.display = "block"
-      TOGGLE = false;
-    }else if(TOGGLE === false && item === reviewNotice[0] && e.keyCode == 13) {
-      reviewNoticeText[0].style.display = "none"
-      TOGGLE = true;
-    }else if(TOGGLE === true && item === reviewNotice[1] && e.keyCode == 13){
-      reviewNoticeText[1].style.display = "block"
-      TOGGLE = false;
-    }else if(TOGGLE === false && item === reviewNotice[1] && e.keyCode == 13) {
-      reviewNoticeText[1].style.display = "none"
-      TOGGLE = true;
-    }
-  })
-})
-
-//추천순 | 최신등록순
-let recommendButton = getNode(".product-review_sort_recommend");
-let newButton = getNode(".product-review_sort_new");
-
-recommendButton.addEventListener("click", () => {
-    recommendButton.style.color = "var(--content)"
-    newButton.style.color = "var(--gray-300)"
-})
-newButton.addEventListener("click", () => {
-    newButton.style.color = "var(--content)"
-    recommendButton.style.color = "var(--gray-300)"
-})
-
-recommendButton.addEventListener("keyup", (e) => {
-  if(e.keyCode == 13){
-    recommendButton.style.color = "var(--content)"
-    newButton.style.color = "var(--gray-300)"
-  }
-  
-})
-newButton.addEventListener("keyup", (e) => {
-  if(e.keyCode == 13){
-    newButton.style.color = "var(--content)"
-    recommendButton.style.color = "var(--gray-300)"
-  }
-})
 
 
 // 후기 작성하기 -> popup
@@ -232,34 +32,7 @@ topCloseButton.addEventListener("click", () => {
 // section 4 = 상품문의
 //-----------------------------------------------------------
 
-let questionList = getNode(".product-answer_question-look");
-let questionListAccordian = getNode(".product-answer_question-accordian");
 
-// qna 아코디언
-questionList.addEventListener("click", () =>{
-  if(TOGGLE === true){
-    questionList.style.color = "var(--content)"
-    questionListAccordian.style.display = "block"
-    TOGGLE = false;
-  }else if(TOGGLE === false) {
-    questionList.style.color = "var(--gray-400)"
-    questionListAccordian.style.display = "none"
-    TOGGLE = true;
-  }
-})
-
-//qna tab키 웹접근성
-getNode(".product-answer_question-1").addEventListener("keyup", (e) =>{
-  if(TOGGLE === true && e.keyCode == 13){
-    questionList.style.color = "var(--content)"
-    questionListAccordian.style.display = "block"
-    TOGGLE = false;
-  }else if(TOGGLE === false && e.keyCode == 13) {
-    questionList.style.color = "var(--gray-400)"
-    questionListAccordian.style.display = "none"
-    TOGGLE = true;
-  }
-})
 
 
 
@@ -316,7 +89,6 @@ function reviewListSaved(){
   // console.log(res.json);
   return res.json()
 }).then(function (data){
-  getNode(".product-menu_nav-3").textContent = `후기 (${data.length})`
   data.forEach(obj =>{
     getNode(".put-in").insertAdjacentHTML("beforeend",
     `
@@ -354,6 +126,8 @@ reviewSubmit.addEventListener("click", ()=>{
   getNode(".product-popup-wrapper").style.display = "none";
   document.body.classList.remove("no-scroll");
   getNode(".product-review_list-ifnothing").style.display = "none";
+  // getNode(".product-review_list-customer_product").textContent = localStorage.getItem("reviewTitle");
+  // getNode(".product-review_list-customer_product-text").textContent = localStorage.getItem("reviewContent");
 })
 
 getNode(".form-1").addEventListener("submit", (e) => {
@@ -389,9 +163,7 @@ getNode(".form-1").addEventListener("submit", (e) => {
         </div>
       </div>
     `)
-    // console.log(data.id)
-    // getNode(".product-menu_nav-3").innerHTML = `후기 (${data.id})`;
-  })
+  });
     // console.log(data.title)
     // getNode(".product-review_list-customer_product").textContent = data.title;
     // getNode(".product-review_list-customer_product-text").textContent = data.content;
@@ -500,4 +272,3 @@ lockChecker.addEventListener("click", () =>{
     TOGGLE = true;
   }
 })
-
