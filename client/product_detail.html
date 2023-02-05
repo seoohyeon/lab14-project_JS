@@ -394,34 +394,23 @@
           </div>
 
           <!-- 후기 있을 경우 UI -->
-          <div class="product-review_list-customer">
-            <div class="product-review_list-customer_boxes">
-              <span class="product-review_list-customer_box-best">베스트</span>
-              <span class="product-review_list-customer_box-level">퍼플</span>
-              <span class="product-review_list-customer_name">김*현</span>
-            </div>
-            <div>
-              <p class="product-review_list-customer_product">[풀무원] 탱탱쫄면 (4개입)</p>
-              <pre class="product-review_list-customer_product-text">
-              너무 맛있어여~
-              면이 쫄깃하고 양념도 짱맛나요!!</pre>
-              <p class="product-review_list-customer_product">2022.11.10</p>
-            </div>
-          </div>
-          <div class="product-review_list-customer">
-            <div class="product-review_list-customer_boxes">
-              <span class="product-review_list-customer_box-best">베스트</span>
-              <span class="product-review_list-customer_box-level">퍼플</span>
-              <span class="product-review_list-customer_name">김*현</span>
-            </div>
-            <div>
-              <p class="product-review_list-customer_product">[풀무원] 탱탱쫄면 (4개입)</p>
-              <pre class="product-review_list-customer_product-text">
-              너무 맛있어여~
-              면이 쫄깃하고 양념도 짱맛나요!!</pre>
-              <p class="product-review_list-customer_product">2022.11.10</p>
+          <div class="product-review-lists">
+            <div class="product-review_list-customer">
+              <div class="product-review_list-customer_boxes">
+                <span class="product-review_list-customer_box-best">베스트</span>
+                <span class="product-review_list-customer_box-level">퍼플</span>
+                <span class="product-review_list-customer_name">김*현</span>
+              </div>
+              <div>
+                <p class="product-review_list-customer_product">[풀무원] 탱탱쫄면 (4개입)</p>
+                <pre class="product-review_list-customer_product-text">
+                너무 맛있어여~
+                면이 쫄깃하고 양념도 짱맛나요!!</pre>
+                <p class="product-review_list-customer_product review-date">2022.11.10</p>
+              </div>
             </div>
           </div>
+
         </div>
         <div class="product-review_arrow">
           <button type="button" class="product-review_arrow-left"></button>
@@ -448,11 +437,11 @@
               </div>
               </li>
               <li class="product-popup_contents_li">
-                  <form action="" method="">
+                  <form method="POST" class="form-1">
                     <div class="product-popup_contents_li">
                     <div class="forminput-title">
                       <label class="forminput-label" for="forminput-title_title">제목</label>
-                      <input id="forminput-title_title" name="forminput-title_title" class="forminput-input" type="text" placeholder="제목을 입력해 주세요" required/>
+                      <input id="forminput-title_title" name="forminput-title_title" class="review-title forminput-input" type="text" placeholder="제목을 입력해 주세요" required/>
                     </div>
                     <div class="textarea-placeholder">
                       <div tabindex="0" class="placeholder-1">
@@ -476,7 +465,7 @@
                     <div class="forminput-content">
                       <label class="forminput-label" for="forminput-content_title">내용</label>
                       <div class="textarea-wrapper">
-                        <textarea id="forminput-content_title" name="forminput-content_title" class="forminput-textarea" maxlength="4999" cols="30" rows="10" required></textarea>
+                        <textarea id="forminput-content_title" name="forminput-content_title" class="review-content forminput-textarea" maxlength="4999" cols="30" rows="10" required></textarea>
                         <span class="forminput-textarea_limit"><span class="forminput-textarea_limit-number">0</span> / 5000</span>
                     </div>
                     </div> 
@@ -485,7 +474,7 @@
                       <button type="button" class="forminput_cancel-button forminput-button">
                         취소
                       </button>
-                      <button type="submit" class="forminput_submit-button forminput-button">
+                      <button type="submit" class="review-submit-button forminput_submit-button forminput-button">
                         등록
                       </button>
                     </div>

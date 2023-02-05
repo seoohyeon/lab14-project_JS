@@ -69,7 +69,7 @@ plus.addEventListener("keyup", (e) => {
 
 // 하트 찜 - tav키 enter, space가 적용이 안됨.(대상은 svg코드임)
 function coloringHeart(){
-  document.querySelector(".button_heart_svg").classList.toggle("button_heart_active");
+  getNode(".button_heart_svg").classList.toggle("button_heart_active");
   getNode(".button_heart_path").classList.toggle("button_heart_path_active")
 }
 
@@ -179,18 +179,18 @@ newButton.addEventListener("keyup", (e) => {
 // 후기 작성하기 -> popup
 let reviewButton = getNode(".product-review_register");
 reviewButton.addEventListener("click", ()=>{
-  document.querySelector(".product-popup-wrapper").style.display = "block";
+  getNode(".product-popup-wrapper").style.display = "block";
   document.body.classList.add("no-scroll");
 })
 let cancelButton = getNode(".forminput_cancel-button");
 let topCloseButton = getNode(".product-popup-close-button");
 
 cancelButton.addEventListener("click", () => {
-  document.querySelector(".product-popup-wrapper").style.display = "none";
+  getNode(".product-popup-wrapper").style.display = "none";
   document.body.classList.remove("no-scroll");
 })
 topCloseButton.addEventListener("click", () => {
-  document.querySelector(".product-popup-wrapper").style.display = "none";
+  getNode(".product-popup-wrapper").style.display = "none";
   document.body.classList.remove("no-scroll");
 })
 
@@ -216,7 +216,7 @@ questionList.addEventListener("click", () =>{
 })
 
 //qna tab키 웹접근성
-document.querySelector(".product-answer_question-1").addEventListener("keyup", (e) =>{
+getNode(".product-answer_question-1").addEventListener("keyup", (e) =>{
   if(TOGGLE === true && e.keyCode == 13){
     questionList.style.color = "var(--content)"
     questionListAccordian.style.display = "block"
@@ -233,20 +233,20 @@ document.querySelector(".product-answer_question-1").addEventListener("keyup", (
 //review및 qna placeholder
 let reviewPlaceholder = getNode(".placeholder-1");
 let qnaPlaceholder = getNode(".placeholder-2")
-let textareaContent = document.querySelector(".forminput-textarea")
-let textareaContent2 = document.querySelector(".forminput-textarea-2")
+let textareaContent = getNode(".forminput-textarea")
+let textareaContent2 = getNode(".forminput-textarea-2")
 
 /*reviewPlaceholder.onfocus = (e) => {
   console.log("되라")
 }*/
 reviewPlaceholder.addEventListener("focus", () => {
-  document.querySelector(".textarea-placeholder").classList.add("a11y-hidden");
+  getNode(".textarea-placeholder").classList.add("a11y-hidden");
   textareaContent.focus()
   //attr(document.querySelector(".forminput-textarea"), 'focus', true)
-  document.querySelector(".textarea-wrapper").style.border = "1px solid black";
+  getNode(".textarea-wrapper").style.border = "1px solid black";
 
   textareaContent.addEventListener("focus", () => {
-    document.querySelector(".textarea-wrapper").style.border = "1px solid black";
+    getNode(".textarea-wrapper").style.border = "1px solid black";
   })
 })
 
@@ -254,34 +254,106 @@ textareaContent.addEventListener("focusout", () => {
   if(textareaContent.value.length === 0){
     getNode(".textarea-placeholder").classList.remove("a11y-hidden");
   }
-    document.querySelector(".textarea-wrapper").style.border = "1px solid var(--gray-300)";
+    getNode(".textarea-wrapper").style.border = "1px solid var(--gray-300)";
 })
+
+
+let reviewSubmit = getNode(".review-submit-button");
+let reviewTitle = getNode(".review-title");
+let reviewContent = getNode(".review-content");
+let today = new Date();
+// 년도 getFullYear()
+let year = today.getFullYear(); 
+// 월 getMonth() (0~11로 1월이 0으로 표현되기 때문에 + 1을 해주어야 원하는 월을 구할 수 있다.)
+let month = today.getMonth() + 1
+// 일 getDate()
+let date = today.getDate(); // 일
+
+
+reviewSubmit.addEventListener("click", (e)=>{
+  e.preventDefault();
+  // localStorage.setItem("reviewTitle", reviewTitle.value);
+  // localStorage.setItem("reviewContent", reviewContent.value);
+  getNode(".product-popup-wrapper").style.display = "none";
+  document.body.classList.remove("no-scroll");
+  getNode(".product-review_list-ifnothing").style.display = "none";
+  // getNode(".product-review_list-customer_product").textContent = localStorage.getItem("reviewTitle");
+  // getNode(".product-review_list-customer_product-text").textContent = localStorage.getItem("reviewContent");
+  // getNode(".review-date").textContent = `${year}.${month}.${date}`;
+  // getNode(".product-review-lists").style.display = "block";
+  
+})
+
+jsonObject = {
+  "title" : "",
+  "content" : "" 
+}
+jsonObject.title = reviewTitle.value;
+jsonObject.content = reviewContent.value;
+
+getNode(".form-1").addEventListener("submit", (e) => {
+
+  e.preventDefault();
+
+  fetch('https://localhost:3000/reviews', {
+    method : "POST",
+    body : JSON.stringify(jsonObject)
+  }).then(function (response){
+    response.text
+  });
+})
+
+
+
+reviewTitle.addEventListener("keyup", () => {
+  if(reviewTitle.value.length && reviewContent.value.length){
+    reviewSubmit.style.backgroundColor = "var(--primary)"
+    reviewSubmit.disabled = false;
+  }else {
+    reviewSubmit.style.backgroundColor = "var(--gray-100)"
+    reviewSubmit.disabled = true;
+  }
+})
+
+
+
+textareaContent.addEventListener("keyup", () => {
+  if(reviewTitle.value.length && reviewContent.value.length){
+    reviewSubmit.style.backgroundColor = "var(--primary)"
+    reviewSubmit.disabled = false;
+  }else {
+    reviewSubmit.style.backgroundColor = "var(--gray-100)"
+    reviewSubmit.disabled = true;
+  }
+})
+
 
 
 qnaPlaceholder.addEventListener("focus", () =>{
   qnaPlaceholder.classList.add("a11y-hidden")
-  document.querySelector(".forminput-textarea-2").focus()
-  document.querySelector(".textarea-wrapper-2").style.border = "1px solid black";
+  getNode(".forminput-textarea-2").focus()
+  getNode(".textarea-wrapper-2").style.border = "1px solid black";
 
   textareaContent2.addEventListener("focus", () => {
-    document.querySelector(".textarea-wrapper-2").style.border = "1px solid black";
+    getNode(".textarea-wrapper-2").style.border = "1px solid black";
   })
 })
 
-document.querySelector(".forminput-textarea-2").addEventListener("focusout", () =>{
+getNode(".forminput-textarea-2").addEventListener("focusout", () =>{
   if(textareaContent2.value.length === 0){
     qnaPlaceholder.classList.remove("a11y-hidden")
   }
-  document.querySelector(".textarea-wrapper-2").style.border = "1px solid var(--gray-300)";
+  getNode(".textarea-wrapper-2").style.border = "1px solid var(--gray-300)";
 })
 
 
 // placeholder에서 글자수세기
 
 textareaContent.addEventListener("keyup", (e) => {
-  console.log(textareaContent.value.length)
-  document.querySelector(".forminput-textarea_limit-number").textContent = e.target.value.length;
- 
+  getNode(".forminput-textarea_limit-number").textContent = e.target.value.length;
+})
+textareaContent2.addEventListener("keyup", (e) => {
+  getNode(".forminput-textarea_limit-number-2").textContent = e.target.value.length;
 })
 
 
@@ -289,7 +361,7 @@ textareaContent.addEventListener("keyup", (e) => {
 //문의하기 버튼 -> popup
 let answerButton = getNode(".product-answer_register");
 answerButton.addEventListener("click", ()=>{
-  document.querySelector(".product-popup-wrapper-2").style.display = "block";
+  getNode(".product-popup-wrapper-2").style.display = "block";
   document.body.classList.add("no-scroll");
 })
 
@@ -299,13 +371,13 @@ let lockChecker = getNode(".product-popup_contents_lock");
 let lockCheckButton = getNode(".product-popup_contents_lock_button");
 
 qnaCancel.addEventListener("click", () => {
-  document.querySelector(".product-popup-wrapper-2").style.display = "none";
+  getNode(".product-popup-wrapper-2").style.display = "none";
   document.body.classList.remove("no-scroll");
   lockCheckButton.style.fill = "none";
   textareaContent.value = "";
 })
 qnaClose.addEventListener("click", () => {
-  document.querySelector(".product-popup-wrapper-2").style.display = "none";
+  getNode(".product-popup-wrapper-2").style.display = "none";
   document.body.classList.remove("no-scroll");
   lockCheckButton.style.fill = "none";
 })

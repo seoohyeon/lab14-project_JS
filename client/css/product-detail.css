@@ -523,7 +523,9 @@
   font-size: 21.328px;
   color: var(--gray-400);
 }
-
+.product-review-lists {
+  display: none;
+}
 .product-review_list-customer {
   width: 1050px;
   padding: 20px 20px;
@@ -820,7 +822,6 @@
   border-radius: 4px;
   color: var(--white);
   margin-left: 12px;
-  cursor: default;
 }
 .product-popup_contents_lock {
   display: flex;
