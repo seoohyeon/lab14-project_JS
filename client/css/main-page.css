@@ -26,7 +26,7 @@
 
 .recent-product{
   position: absolute;
-  top: 505px;
+  top: 502px;
   right: 20px;
   
   display: flex;
@@ -123,12 +123,12 @@
   /* background-color: coral; */
 }
 
-.product-display_slide-card{
-  display: block;
+.product-display_product-card{
+  display: relative;
   width: 100%;
   height: 100%;
 }
-.product-display_slide-card figure{
+.product-display_product-card figure{
   overflow: hidden;
   position: relative;
   width: 249px;

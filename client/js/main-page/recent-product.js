@@ -1,13 +1,23 @@
 let recentProduct = document.querySelector('.recent-product');
 let footer = document.querySelector('footer');
+let prdw = document.querySelector('.product-display_wrapper');
 
 function getRelativeTop(targetElem){
   // const target = getNode(targetName); // 요소의 id 값이 target이라 가정
   const target = targetElem; // 요소의 id 값이 target이라 가정
   const clientRect = target.getBoundingClientRect(); // DomRect 구하기 (각종 좌표값이 들어있는 객체)
   const relativeTop = clientRect.top; // Viewport의 시작지점을 기준으로한 상대좌표 Y 값.
-
+  
   return relativeTop
+}
+
+function getRelativeLeft(targetElem){
+  // const target = getNode(targetName); // 요소의 id 값이 target이라 가정
+  const target = targetElem; // 요소의 id 값이 target이라 가정
+  const clientRect = target.getBoundingClientRect(); // DomRect 구하기 (각종 좌표값이 들어있는 객체)
+  const relativeLeft = clientRect.left; // Viewport의 시작지점을 기준으로한 상대좌표 Y 값.
+  
+  return relativeLeft
 }
 
 function keepYOfRecentProduct(){
@@ -29,14 +39,29 @@ function keepYOfRecentProduct(){
   // console.log('recentProduct.style.top',recentProduct.style.top);
 }
 
-// keepYOfRecentProduct();
+
+
+function vanishRecentProductWhenCrushed() {
+  if(getRelativeLeft(recentProduct)<1194){
+    recentProduct.classList.add('a11y-hidden');
+  }else{
+    recentProduct.classList.remove('a11y-hidden');
+
+  }
+}
 
 window.onscroll = function () {
   keepYOfRecentProduct();
+  
 };
 
 window.onload = function() {
   keepYOfRecentProduct();
+  vanishRecentProductWhenCrushed();
 }
 
+window.addEventListener(`resize`, function() {
+  // console.log(getRelativeLeft(prdw));
+  vanishRecentProductWhenCrushed();
+});
 
