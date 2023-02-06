@@ -2,7 +2,7 @@
 import { getInputValue, getNode } from '../../lib/index.js'
 
 
-//중복된 아이디 기능 말고,,, 그냥 alert를 이용해 중복확인 버튼을 눌렀을 때, 이벤트가 발생하게끔 한 것.
+//중복된 아이디 기능 말고,,, 그냥 alert를 이용해 중복확인 버튼을 눌렀을 때, 이벤트가 발생하게끔 한 것
 let idsubmitCheck = getNode('#curlyidsubmit')
 
 
