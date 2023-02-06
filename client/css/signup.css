@@ -538,6 +538,11 @@ flex: none;
 order: 1;
 flex-grow: 0;
 }
+#curlyaddrField_post,
+#curlyaddrField_addr,
+#curlyaddrField_detail {
+  display: none;
+}
 
 .form-tr-sub {
   /* FormField > input = 성별 ~ 추가사항 영역 */
