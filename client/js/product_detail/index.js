@@ -2,8 +2,31 @@
 // 다 비워야 함
 
 import { getNode } from '../../lib/index.js'
-import { attr } from './../../lib/dom/attr.js';
 
+// 헤더 menu, 상품설명 menu scroll동작 구현
+window.addEventListener("scroll", () =>{
+  let headerMenu = getNode(".header_menu").offsetHeight;
+  let menuBar = getNode(".product-menu").offsetHeight;
+  console.log(headerMenu)
+ 
+  window.onscroll = function () {
+   let windowTop = window.scrollY;
+ 
+   if (windowTop >= headerMenu+72) {
+     getNode(".header_menu").classList.add("drop");
+   } else {
+     getNode(".header_menu").classList.remove("drop");
+   }
+
+   if (windowTop >= menuBar+1340) {
+    getNode(".product-menu").classList.add("drop-2");
+  } else {
+    getNode(".product-menu").classList.remove("drop-2");
+  }
+ }
+})
+
+ 
 
 //-----------------------------------------------------------
 // section 1 = 상품구매창
@@ -21,6 +44,7 @@ let heartButton = getNode(".order-details_button_heart");
 
 let productTitle = getNode(".order-details_title")
 let productCount = 1;
+let productCountSum = 0;
 
 function haveMinus() {
   if(number > 1){
@@ -88,19 +112,64 @@ getNode(".button_add_cart").addEventListener("click", () =>{
     getNode(".cart_bubble_wrapper").style.display = "none";
   }, 3000);
 
-  fetch("http://localhost:3000/basket",{
-    method : "POST",
-    headers: {
-      'Content-Type': 'application/json'
-      },
-    body : JSON.stringify({
-      name: "[풀무원] 탱탱쫄면 (4개입)",
-      number : productCount,
-    })
-  }).then((res) =>{
+  fetch("http://localhost:3000/basket").then((res) => {
     return res.json();
+  }).then((data) => {
+    if(data.length < 1){
+      fetch("http://localhost:3000/basket",{
+      method : "POST",
+      headers: {
+        'Content-Type': 'application/json'
+        },
+      body : JSON.stringify({
+        id : "product-ekfk",
+        number : productCount,
+      })
+    }).then((res) =>{
+      return res.json();
+    })
+    }else {
+      productCountSum += productCount;
+      fetch("http://localhost:3000/basket/product-ekfk",{
+      method : "PUT",
+      headers: {
+        'Content-Type': 'application/json'
+        },
+      body : JSON.stringify({
+        id : "product-ekfk",
+        number : productCountSum,
+      })
+    }).then((res) =>{
+      return res.json();
+    })
+    }
   })
-})
+//   fetch("http://localhost:3000/basket",{
+//     method : "POST",
+//     headers: {
+//       'Content-Type': 'application/json'
+//       },
+//     body : JSON.stringify({
+//       id : "product-ekfk",
+//       number : productCount,
+//     })
+//   }).then((res) =>{
+//     return res.json();
+//   })
+
+//   fetch("http://localhost:3000/basket/product-ekfk",{
+//     method : "PUT",
+//     headers: {
+//       'Content-Type': 'application/json'
+//       },
+//     body : JSON.stringify({
+//       id : "product-ekfk",
+//       number : productCount,
+//     })
+//   }).then((res) =>{
+//     return res.json();
+//   })
+ })
 
 //-----------------------------------------------------------
 // section 2 = 상품설명
@@ -119,21 +188,8 @@ let productMenu = document.querySelectorAll(".product-menu_nav");
  })
 
  getNode(".product-menu_nav-1").addEventListener("click", () =>{
-  window.scrollTo({ top: 1340 });
+  window.scrollTo({ top: 1100 });
  })
-
- let menuBar = getNode(".product-menu").offsetHeight;
-
- window.onscroll = function () {
-  let windowTop = window.scrollY;
-
-  if (windowTop >= menuBar+1340) {
-    getNode(".product-menu").classList.add("drop");
-  } else {
-    getNode(".product-menu").classList.remove("drop");
-  }
-};
-
 
 
 //-----------------------------------------------------------
@@ -373,6 +429,7 @@ getNode(".form-1").addEventListener("submit", (e) => {
   }).then(function (response){
     return response.json();
   }).then(function (data){
+      // getNode(".product-menu_nav-3").textContent = `후기 (${data.length})`
       getNode(".put-in").insertAdjacentHTML("beforeend",
       `
       <div class="product-review_list-customer">
@@ -388,7 +445,7 @@ getNode(".form-1").addEventListener("submit", (e) => {
           <p class="product-review_list-customer_product review-date">${year}.${month}.${date}</p>
         </div>
       </div>
-    `)
+    `);
     // console.log(data.id)
     // getNode(".product-menu_nav-3").innerHTML = `후기 (${data.id})`;
   })

@@ -262,6 +262,12 @@
   top: 0;
   width: 100%;
 }
+.drop-2{
+  position: fixed;
+  margin: 0 auto;
+  top: 60px;
+  width: 100%;
+}
 
 
 .product-menu_nav {
