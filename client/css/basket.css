@@ -343,50 +343,156 @@ background-size: 42px;
 }
 
 .select-all{
-  height: 56px;
   width: 742px;
   padding: 16px 0px;
   font-weight: 600;
   font-size: 16px;
   display: flex;
   align-items: center;
-}
-
-.select-all input[type=checkbox]{
-  display:none;
-}
-
-.select-all input[type=checkbox]+label{
-  cursor: pointer;
-  background-image: url(../assets/icons//web-icons/check.png);
-  width: 24px; height: 24px;
-  background-position:-10px -10px;
-  background-repeat: no-repeat;
-  margin-right:8px;
-}
-
-.select-all input[type=checkbox]:checked+label{
-  background-image: url(../assets/icons/web-icons/check.png);
-  background-position:-10px -54px;
-}
-
-.select-all input[type=checkbox]:disabled+label{
-  background-image: url(../assets/icons//web-icons/check.png);
-  background-position:-10px -10px;
+  line-height: 24px;
 }
 
 .select-all span{
-  display:inline-block;
   font-size:10px;
-  line-height: 16px;
-  margin-right:4px;
-  margin-left:4px;
-  line-height: 24px;
+  margin:0 4px;
+}
+
+.select_list input[type=checkbox],
+.select-all input[type=checkbox]{
+  display:none;
+}
+.select_list input[type=checkbox]+label,
+.select-all input[type=checkbox]+label{
+  cursor: pointer;
+  background-image: url(/lab14-project/client/assets/icons/web-icons/check.png);
+  background-position:-10px -10px;
+  background-repeat: no-repeat;
+  padding-left: 32px;
+}
+.select_list input[type=checkbox]:checked+label,
+.select-all input[type=checkbox]:checked+label{
+  background-image: url(/lab14-project/client/assets/icons/web-icons/check.png);
+  background-position:-10px -54px;
+}
+.select_list input[type=checkbox]:disabled+label,
+.select-all input[type=checkbox]:disabled+label{
+  background-image: url(/lab14-project/client/assets/icons/web-icons/check.png);
+  background-position:-10px -10px;
+}
+
+.select_list label{
+
+  height: 24px;
+}
+
+.select_list{
+  display: flex;
+  align-items: center;
+  height: 118px;
+  width: 742px;
+  border-radius: 0px;
+  padding: 20px 0;
+}
+
+.select_list a{
+  display:flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 600;
+
+  width: 413px;
+  margin-right: 8px;
 
 }
 
+.food-picture{
+  width:60px;
+  height: 78px;
+  margin-right:8px;
+}
+
+
+/* product counter box style */
+
+.product-counter_wrapper{
+  display: flex;
+  align-items: center;
+  font-size: var(--text-base);
+  font-weight: 600;
+
+
+  
+}
+
+.product-counter_box{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px;
+  gap: 8px;
+  width: 84px;
+  height: 30px;
+  border: 1px solid var(--gray-200);
+}
+
+
+.product-counter_wrapper > p {
+  width:127px;
+  text-align: right;
+  margin-right: 8px;
+}
+
+
+
+.counter-delete_button{
+
+  width: 30px;
+  height: 30px;
+  padding:0px;
+  background-image: url(/lab14-project/client/assets/icons/web-icons/Close-dark.svg);
+  background-repeat: no-repeat;
+  background-position:50% 50%;
+  border:none;
+  background-color: transparent;
+  
+}
+
+.minus-counter_button{
+  width: 30px;
+  height: 30px;
+  padding:0px;
+  background-image: url(/lab14-project/client/assets/icons/web-icons/Minus.svg);
+  background-repeat: no-repeat;
+  background-position:-8px -8px;
+  border:none;
+  background-color: transparent;
+
+
+}
+.plus-counter_button{
+  width: 30px;
+  height: 30px;
+  padding:0px;
+  background-image: url(/lab14-project/client/assets/icons/web-icons/Plus.svg);
+  background-repeat: no-repeat;
+  background-position:-8px -8px;
+  border:none;
+  background-color: transparent;
+
+
+}
+
+
+
+
 .basket-info{
   width:284px;
+}
+
+.aside_sticky{
+  position: sticky;
+
 }
 
 .location-info{
@@ -421,17 +527,7 @@ background-size: 42px;
   /* background-color: blue; */
   vertical-align:baseline;
   margin-right: 12px;
- 
  }
-
-.location-change-button::before{
-  content: "";
-  display:inline-block;
-  width: 24px; height: 24px;
-  background-image: url(../assets/icons/web-icons/Search-small.svg);
-  display:inline-block;
-  background-repeat: no-repeat;
-}
 
 
 
@@ -510,7 +606,7 @@ background-size: 42px;
   content: "";
   display:inline-block;
   width: 30px; height: 30px;
-  background-image: url(../assets/icons/web-icons/basket_icon.png);
+  background-image: url(/lab14-project/client/assets/icons/web-icons/basket_icon.png);
   background-position:-10px -110px;
   vertical-align: middle;
   margin-right:12px;
