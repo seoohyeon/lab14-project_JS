@@ -1,8 +1,15 @@
-import { getNode } from '../../lib/index.js'
+import { getNode, getNodes } from '../../lib/index.js'
 
 let kakaoMap = getNode(".kakaomap_button");
 let basketAddress=getNode(".basket_address");
+let refrigeratedFood = getNode(".refrigerated-contents");
+let normalFood = getNode(".normal-contents");
+let frozenFood =getNode(".frozen-contents");
+let noOption=getNode(".no-option");
 
+let refToggleButton = refrigeratedFood.previousSibling.previousSibling;
+let normalToggleButton = normalFood.previousSibling.previousSibling;
+let frozenToggleButton = frozenFood.previousSibling.previousSibling;
 
 
 
@@ -24,106 +31,158 @@ function kakaoMapLoad(){
 }
 
 
-// basket 데이터 받아오기
-
-
-// json 데이터 받는 함수
 fetch("/lab14-project/server/db/data.json")
 .then(response => {
   return response.json();
 })
-.then(jsondata=>{
+.then(res=>{
+  let storedDataBasket=res.basket;
+  let storedDataProducts = res.products;
+  let storedData=checkBasketList(storedDataBasket,storedDataProducts); 
+  if(res.basket.length>=1){
+    noOption.className += ' a11y-hidden'
 
 
-  listUpdate(jsondata.basket,jsondata.products);
-
-  // addBasketList(jsondata.products);
-  // console.log(jsondata.basket);
+  }
 })
 
 
-function listUpdate(basketData,productsData){
-  // basket에 저장되있는 음식의 상세정보를 products에서 가져온 후 변수에 저장한다.
-  let storedData=checkBasketList(basketData,productsData); 
-  // 항목에 추가 시킨다. with sort 작업
-  addWithSort(storedData);
-}
-
-
 //basket obj에 저장되어있는 id를 이용하여 product에 저장되어있는 상세정보를 리턴해주는 함수.
-function checkBasketList(objOfBasket,objOfProducts){
-  let pullDataArr = new Array();
-  for(let key in objOfBasket){
+function checkBasketList(storedDataBasket,storedDataProducts){
+  for(let key in storedDataBasket){
     // console.log(key,objOfBasket[key].id,objOfBasket[key].number);
-    let pullData=objOfProducts.filter(function(e){
-      return e.id === objOfBasket[key].id
-    })
-    pullDataArr.push(pullData); 
+    let pullData=storedDataProducts.filter(function(e){
+      return e.id === storedDataBasket[key].id
+    }) 
+    // console.log(pullData[0].sort);
+    // console.log(pullData[0].name);
+    // console.log(pullData[0].price);
+    // console.log(pullData[0].image.thumbnail);
+
+    sortAndAdd(pullData[0].sort,pullData[0].name,pullData[0].price,pullData[0].image.thumbnail,pullData[0].id);
   }
-  return pullDataArr
 }
 
 
-// 음식 종류 분류 및 마크업에 추가하는 함수.
+function sortAndAdd(foodKind,foodName,foodPrice,foodThumbnail,foodId){
 
-function addWithSort(storedData){
-  
-  let lengthOfData=storedData.length;
+switch (foodKind){
+  case "normal" : addToNormal(foodName,foodPrice,foodThumbnail,foodId);
+    break;
 
-  for(let i = 0 ; i< lengthOfData; i++){
-    console.log(storedData[i][0].name);
-    console.log(storedData[i][0].price)
-    console.log(storedData[i][0].sort);
-    console.log(storedData[i][0].image.thumbnail);
+  case "frozen" : addToFrozen(foodName,foodPrice,foodThumbnail,foodId);
+    break; 
 
-    switch(storedData[i][0].sort){
-      case normal :
-        break;
-
-      case frozen :
-        break;
-
-      case refrigeration:
-        break;
-    }
-    
-
-
-  }
-
+   case "refrigeration": addToRefrigeration(foodName,foodPrice,foodThumbnail,foodId);
+    break;
+}
 }
 
 
+function addToNormal(foodName,foodPrice,foodThumbnail,foodId){
+  normalFood.insertAdjacentHTML("beforeend",`
+  <li>
+  <div class="select_list">
+    <input type="checkbox" name="basket-checker" id="${foodId}">
+    <label for="${foodId}"></label>
+    <a href="음식 상세페이지"><img class="food-picture" src="assets/${foodThumbnail}" alt="${foodName}이미지" /> ${foodName}</a>
+    <div class="product-counter_wrapper">
+      <div class="product-counter_box">
+        <button class="minus-counter_button"></button>
+        <span>1</span>                  
+        <button class="plus-counter_button"></button>
+      </div>
+      
+      <p>
+        ${foodPrice} 원
+      </p>
+      <button class="counter-delete_button"></button>
+    </div>
+  </div>
+  </li>
+  `)
+}
 
-
-
-
-
-
-
-
-
-// //json 에서 받은 데이터를 이용하여 html에 상품 리스트를 추가하는 함수
-// function addBasketList(objs){
-
-//  for(let obj of objs){
+function addToFrozen(foodName,foodPrice,foodThumbnail,foodId){
+  frozenFood.insertAdjacentHTML("beforeend",`
+  <li>
+  <div class="select_list">
+    <input type="checkbox" name="basket-checker" id="${foodId}">
+    <label for="${foodId}"></label>
+    <a href="음식 상세페이지"><img class="food-picture" src="assets/${foodThumbnail}" alt="${foodName}이미지" /> ${foodName}</a>
+    <div class="product-counter_wrapper">
+      <div class="product-counter_box">
+        <button class="minus-counter_button"></button>
+        <span>1</span>                  
+        <button class="plus-counter_button"></button>
+      </div>
+      
+      <p>
+        ${foodPrice} 원
+      </p>
+      <button class="counter-delete_button"></button>
+    </div>
+  </div>
+  </li>
+  `)
   
+}
 
+function addToRefrigeration(foodName,foodPrice,foodThumbnail,foodId){
+  refrigeratedFood.insertAdjacentHTML("beforeend",`
+  <li>
+  <div class="select_list">
+    <input type="checkbox" name="basket-checker" id="${foodId}">
+    <label for="${foodId}"></label>
+    <a href="음식 상세페이지"><img class="food-picture" src="assets/${foodThumbnail}" alt="${foodName}이미지" /> ${foodName}</a>
+    <div class="product-counter_wrapper">
+      <div class="product-counter_box">
+        <button class="minus-counter_button"></button>
+        <span>1</span>                  
+        <button class="plus-counter_button"></button>
+      </div>
+      
+      <p>
+        ${foodPrice} 원
+      </p>
+      <button class="counter-delete_button"></button>
+    </div>
+  </div>
+  </li>`)
+}
 
-//   // 음식종류 분류 후 html 마크업 추가.
-//   addAfterSort(obj.sort)
-//  }
+// // 
+
+// refToggle.addEventListener('click',foodToggle());
+
+// function foodToggle(){
+
+//   refToggle.classList.toggle('img_rotate');
+//   // refToggle.sibling.classList.toggle('a11y-hidden');
 // }
 
+// // let refToggle=getNode(".ref_toggle");
+// // let frozenToggle=getNode(".frozen_toggle");
+// // let normalToggle=getNode(".normal_toggle");
 
 
-// function addAfterSort(sort){
 
-//   switch(sort){
-//     case
-//   }
-  
+// let refToggleButton = refrigeratedFood.previousSibling.previousSibling;
+// let normalToggleButton = normalFood.previousSibling.previousSibling;
+// let frozenToggleButton = frozenFood.previousSibling.previousSibling;
+refToggleButton.addEventListener('click',()=>{
+  refToggleButton.classList.toggle('img_rotate');
+  refrigeratedFood.classList.toggle('a11y-hidden');
+});
 
+normalToggleButton.addEventListener('click',()=>{
+  normalToggleButton.classList.toggle('img_rotate');
+  normalFood.classList.toggle('a11y-hidden');
+});
 
-// }
+frozenToggleButton.addEventListener('click',()=>{
+  frozenToggleButton.classList.toggle('img_rotate');
+  frozenFood.classList.toggle('a11y-hidden');
+});
+
 
