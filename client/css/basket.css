@@ -136,7 +136,7 @@ background-size: 42px;
 /* 헤더 메뉴 */
 .header_menu{
   margin: 0;
-  width: 100vw;
+  width: 1050px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
