@@ -34,7 +34,7 @@ align-items: center;
 padding: 0px;
 gap: 72px;
 isolation: isolate;
-background-image:url(/client/assets/icons/web-icons/Close.svg);
+background-image:url(../assets/icons//web-icons/Close.svg);
 background-repeat: no-repeat;
 background-position: right;
 background-size: 42px;
@@ -125,7 +125,7 @@ background-size: 42px;
   border: solid var(--primary) 1px;
   border-radius: 4px;
   background-origin: content-box;
-  background-image:url(/client/assets/icons/web-icons/Search.svg);
+  background-image:url(../assets/icons//web-icons/Search.svg);
   background-repeat: no-repeat;
   background-position:right;
   color: var(--gray-400);
@@ -134,15 +134,17 @@ background-size: 42px;
 }
 
 /* 헤더 메뉴 */
-
 .header_menu{
+  margin: 0;
+  width: 100vw;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 0px;
+  padding: 10px 0px;
   font-weight:600 ;
-  margin-top:12px;
+  background-color: var(--white);
+  z-index: 20;
 }
 
 .header_menu_category{
@@ -356,7 +358,7 @@ background-size: 42px;
 
 .select-all input[type=checkbox]+label{
   cursor: pointer;
-  background-image: url(/client/assets/icons/web-icons/check.png);
+  background-image: url(../assets/icons//web-icons/check.png);
   width: 24px; height: 24px;
   background-position:-10px -10px;
   background-repeat: no-repeat;
@@ -364,12 +366,12 @@ background-size: 42px;
 }
 
 .select-all input[type=checkbox]:checked+label{
-  background-image: url(/client/assets/icons/web-icons/check.png);
+  background-image: url(../assets/icons/web-icons/check.png);
   background-position:-10px -54px;
 }
 
 .select-all input[type=checkbox]:disabled+label{
-  background-image: url(/client/assets/icons/web-icons/check.png);
+  background-image: url(../assets/icons//web-icons/check.png);
   background-position:-10px -10px;
 }
 
@@ -426,7 +428,7 @@ background-size: 42px;
   content: "";
   display:inline-block;
   width: 24px; height: 24px;
-  background-image: url(/client/assets/icons/web-icons/Search-small.svg);
+  background-image: url(../assets/icons/web-icons/Search-small.svg);
   display:inline-block;
   background-repeat: no-repeat;
 }
@@ -508,7 +510,7 @@ background-size: 42px;
   content: "";
   display:inline-block;
   width: 30px; height: 30px;
-  background-image: url(/client/assets/icons/web-icons/basket_icon.png);
+  background-image: url(../assets/icons/web-icons/basket_icon.png);
   background-position:-10px -110px;
   vertical-align: middle;
   margin-right:12px;
@@ -518,7 +520,7 @@ background-size: 42px;
   content: "";
   display: inline-block;
   width: 30px; height: 30px;
-  background-image: url(/client/assets/icons/web-icons/basket_icon.png);
+  background-image: url(../assets/icons/web-icons/basket_icon.png);
   background-position:-10px -10px;
   vertical-align: middle;
   margin-right:12px;
@@ -527,7 +529,7 @@ background-size: 42px;
   content: "";
   display: inline-block;
   width: 30px; height: 30px;
-  background-image: url(/client/assets/icons/web-icons/basket_icon.png);
+  background-image: url(../assets/icons/web-icons/basket_icon.png);
   background-position:-10px -60px;
   vertical-align: middle;
   margin-right:12px;
@@ -537,7 +539,7 @@ background-size: 42px;
   content: "";
   display: inline-block;
   width: 36px; height: 36px;
-  background-image: url(/client/assets/icons/web-icons/Location.svg);
+  background-image: url(../assets/icons/web-icons/Location.svg);
   vertical-align: middle;
 }
 

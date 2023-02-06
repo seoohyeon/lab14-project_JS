@@ -85,5 +85,33 @@
       },
       "stock": 13
     }
+  ],
+  "reviews": [
+    {
+      "title": "rr",
+      "content": "rr",
+      "id": 1
+    },
+    {
+      "title": "qq",
+      "content": "qq",
+      "id": 2
+    },
+    {
+      "title": "33",
+      "content": "333",
+      "id": 3
+    },
+    {
+      "title": "qq",
+      "content": "qqqqq",
+      "id": 4
+    }
+  ],
+  "basket": [
+    {
+      "id": "product-ekfk",
+      "number": 4
+    }
   ]
 }
