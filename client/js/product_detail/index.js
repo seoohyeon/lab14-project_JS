@@ -1,3 +1,4 @@
+export * from '../global.js'
 // 나중에 여기는 export만 받아와야함
 // 다 비워야 함
 
