@@ -24,43 +24,79 @@ function kakaoMapLoad(){
 }
 
 
-
-// 
-
+// basket 데이터 받아오기
 
 
+// json 데이터 받는 함수
+fetch("/lab14-project/server/db/data.json")
+.then(response => {
+  return response.json();
+})
+.then(jsondata=>{
 
 
+  listUpdate(jsondata.basket,jsondata.products);
+
+  // addBasketList(jsondata.products);
+  // console.log(jsondata.basket);
+})
 
 
+function listUpdate(basketData,productsData){
+  // basket에 저장되있는 음식의 상세정보를 products에서 가져온 후 변수에 저장한다.
+  let storedData=checkBasketList(basketData,productsData); 
+  // 항목에 추가 시킨다. with sort 작업
+  addWithSort(storedData);
+}
 
 
+//basket obj에 저장되어있는 id를 이용하여 product에 저장되어있는 상세정보를 리턴해주는 함수.
+function checkBasketList(objOfBasket,objOfProducts){
+  let pullDataArr = new Array();
+  for(let key in objOfBasket){
+    // console.log(key,objOfBasket[key].id,objOfBasket[key].number);
+    let pullData=objOfProducts.filter(function(e){
+      return e.id === objOfBasket[key].id
+    })
+    pullDataArr.push(pullData); 
+  }
+  return pullDataArr
+}
 
 
+// 음식 종류 분류 및 마크업에 추가하는 함수.
 
-
-
-
-
-
-// // json 데이터 받는 함수
-// fetch("/lab14-project/server/db/data.json")
-// .then(response => {
-//   return response.json();
-// })
-// .then(jsondata=>{
-//   checkBasketList(jsondata.basket,jsondata.products);
-//   addBasketList(jsondata.products);
-// })
-
-
-
-
-// // json 데이터 파일 에서 basket obj에 들어가있는 항목을 체크하는 함수
-// function checkBasketList(arrOfBasket,arrOfProducts){
-
+function addWithSort(storedData){
   
-// }
+  let lengthOfData=storedData.length;
+
+  for(let i = 0 ; i< lengthOfData; i++){
+    console.log(storedData[i][0].name);
+    console.log(storedData[i][0].price)
+    console.log(storedData[i][0].sort);
+    console.log(storedData[i][0].image.thumbnail);
+
+    switch(storedData[i][0].sort){
+      case normal :
+        break;
+
+      case frozen :
+        break;
+
+      case refrigeration:
+        break;
+    }
+    
+
+
+  }
+
+}
+
+
+
+
+
 
 
 

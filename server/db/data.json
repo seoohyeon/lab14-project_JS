@@ -112,6 +112,14 @@
     {
       "id": "product-ekfk",
       "number": 4
+    },
+    {
+      "id": "product-rksk",
+      "number" :3
+    },
+    {
+      "id": "product-ckzk",
+      "number" :2
     }
   ]
 }
