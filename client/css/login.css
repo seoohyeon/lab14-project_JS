@@ -56,7 +56,7 @@
   }
 
 
-  .user-email {
+  .user-id {
   /* 유저이메일 */
   display: flex;
   flex-direction: column;
@@ -70,7 +70,7 @@
   flex-grow: 0;
   }
   
-  .user-email input{
+  .user-id input{
   /* 유저이메일 내부 글씨체 */
   box-sizing: border-box;
   display: flex;

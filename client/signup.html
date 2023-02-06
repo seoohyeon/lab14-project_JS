@@ -7,12 +7,14 @@
   <link rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
   <link rel="stylesheet" href="./css/style.css" />
-  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script defer src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
   <script src="./js/signup/index.js" type="module"></script>
   <title>Document</title>
 </head>
 
 <body>
+    <!-- 수정 -->
     <header class="header">
         <aside class="top-banner">
          <a href="" class="top-banner_inner">
@@ -24,7 +26,7 @@
             <nav class="member-nav">
               <a href="" class="member-nav_sign">회원가입</a>
               <span aria-hidden="true">|</span>
-              <a href="">로그인</a>
+              <a href="" class="header_inner_login_logout">로그인</a>
               <span aria-hidden="true">|</span>
               <a href="">고객센터  ▼</a>
             </nav>
@@ -39,7 +41,7 @@
                 <sup> N</sup>
               </span>
             </h1>
-            <form method="" action="" class="search-form">
+            <form method="POST" class="search-form">
                 <fieldset>
                   <legend aria-hidden="true">검색 폼</legend>
                   <div class="search-form-inner">
@@ -82,7 +84,7 @@
                             <span class="star">*</span>
                             필수입력사항
                         </div>
-                        <form class="registration-form" action="">
+                        <form class="registration-form">
                             <fieldset>
                                 <legend>회원가입 폼</legend>
                                     <div class="form-tr">
@@ -95,7 +97,7 @@
                                         <div class="form-tr-input-text">
                                             <input id="curlyidField" type="text" required class="signup-input" placeholder="아이디를 입력해주세요." >
                                         </div>
-                                        <button id="curlyidsubmit" type="submit" class="doublecheck-button">
+                                        <button id="curlyidsubmit" type="button" class="doublecheck-button">
                                             <span class="jungbok">중복확인</span>
                                         </button>
                                     </div>
@@ -109,7 +111,7 @@
                                             </span>
                                         </span>
                                         <div class="form-tr-input-text">
-                                            <input id ="curlypwField" type="password" required class="signup-input" placeholder="비밀번호를 입력해주세요.">
+                                            <input id="curlypwField" type="password" required class="signup-input" placeholder="비밀번호를 입력해주세요.">
                                         </div>
                                     </div>
 
@@ -150,7 +152,7 @@
                                         <div class="form-tr-input-text">
                                             <input id="curlyemailField" type="text" required class="signup-input" placeholder="예: marketkurly@kurly.com">
                                         </div>
-                                        <button id="curlyemailsubmit" type="submit" class="doublecheck-button">
+                                        <button id="curlyemailsubmit" type="button"class="doublecheck-button">
                                             <span class="jungbok">중복확인</span>
                                         </button>
                                     </div>
@@ -165,7 +167,7 @@
                                         <div class="form-tr-input-text">
                                                 <input id="curlynumberField" type="text" required class="signup-input" placeholder="예: 숫자만 입력해주세요.">
                                         </div>
-                                        <button class="phonecheck-button">
+                                        <button type="button" class="phonecheck-button">
                                             <span class="phone-jungbok">인증번호 받기</span>
                                         </button>
                                     </div>
@@ -178,10 +180,13 @@
                                             </span>
                                         </span>
                                         <div class="address-container">
-                                            <button class="address-container-button">
+                                            <button type="button" class="address-container-button">
                                                 <span class="address-container-search">주소 검색</span>
                                             </button>
                                             <span class="address-container-text">배송지에 따라 상품 정보가 달라질 수 있습니다.</span>
+                                            <input id="curlyaddrField_post"  type="text" placeholder="Zip Code" readonly>
+                                            <input id="curlyaddrField_addr" type="text" placeholder="Address" readonly> <br>
+                                            <input id="curlyaddrField_detail" type="text" placeholder="Detailed Address">
                                         </div>
                                     </div>
                     
@@ -218,7 +223,7 @@
                                             </span>
                                         </span>
                                         <div class="birth-container">
-                                            <input id="curlybirthField" type="text" placeholder="YYYY / MM / DD">
+                                            <input type="text" placeholder="YYYY / MM / DD">
                                         </div>
                                     </div>
                     
@@ -251,8 +256,8 @@
                                 <div class="extra-checker">
                                     <div class="all-agree">
                                         <div class="set0">
-                                            <input id="curlycheckerField" type="checkbox" id="chk-all" />
-                                            <label class="allagree-text">전체 동의합니다</label>
+                                            <input type="checkbox" id="chk-all" />
+                                            <span class="allagree-text">전체 동의합니다</span>
                                         </div>
                                             <span class="exception-text">선택항목에 동의하지 않은 경우도 회원가입 및 일반적인 서비스를 이용할 수 있습니다</span>
                                     </div>
@@ -260,7 +265,7 @@
                                         <div class="normal-agree">
                                             <div class="set1">
                                                 <input class="check" type="checkbox" id="chk01" />
-                                                <label class="agree-text">이용약관 동의(필수)</label>
+                                                <span class="agree-text">이용약관 동의(필수)</span>
                                             </div>
                                         </div>
                                     </div>
@@ -268,7 +273,7 @@
                                         <div class="normal-agree">
                                             <div class="set2">
                                                 <input class="check" type="checkbox" id="chk02" />
-                                                <label class="agree-text">개인정보 수집ㆍ이용 동의(필수)</label>
+                                                <span class="agree-text">개인정보 수집ㆍ이용 동의(필수)</span>
                                             </div>
                                         </div>
                                     </div>
@@ -276,7 +281,7 @@
                                         <div class="normal-agree">
                                             <div class="set3">
                                                 <input class="check" type="checkbox" id="chk03" />
-                                                <label class="agree-text">무료배송, 할인쿠폰 등 혜택/정보 수신 동의(선택)</label>
+                                                <span class="agree-text">무료배송, 할인쿠폰 등 혜택/정보 수신 동의(선택)</span>
                                             </div>
                                         </div>
                                     </div>
@@ -284,14 +289,14 @@
                                         <div class="normal-agree">
                                             <div class="set4">
                                                 <input class="check" type="checkbox" id="chk04" />
-                                                <label class="agree-text">본인은 만 14세 이상입니다.(필수)</label>
+                                                <span class="agree-text">본인은 만 14세 이상입니다.(필수)</span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="signup-button-size">
-                                <button class="registration-button">
+                                <button type="submit" class="registration-button">
                                     <span class="registration-text">회원가입</span>
                                 </button>
                             </div>
