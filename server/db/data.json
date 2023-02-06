@@ -85,5 +85,15 @@
       },
       "stock": 13
     }
+  ],
+  "basket": [
+    {
+      "name":"",
+      "number":""
+    },
+    {
+      "name":"",
+      "number":""
+    }
   ]
 }

@@ -488,6 +488,11 @@ background-size: 42px;
   width:284px;
 }
 
+.aside_sticky{
+  position: sticky;
+
+}
+
 .location-info{
   display: flex;
   flex-direction: column;
@@ -520,17 +525,7 @@ background-size: 42px;
   /* background-color: blue; */
   vertical-align:baseline;
   margin-right: 12px;
- 
  }
-
-.location-change-button::before{
-  content: "";
-  display:inline-block;
-  width: 24px; height: 24px;
-  background-image: url(/lab14-project/client/assets/icons/web-icons/Search-small.svg);
-  display:inline-block;
-  background-repeat: no-repeat;
-}
 
 
 

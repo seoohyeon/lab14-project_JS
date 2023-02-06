@@ -3,8 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <link rel="stylesheet" href="./css/style.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script defer src="./js/basket/basket.js" type="module"></script>
+  <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
   <title>컬리 - 마켓컬리/뷰티컬리</title>
 </head>
 <body>
@@ -80,9 +85,9 @@
               </label>
             </li>
             <li class="no-option">장바구니에 담긴 상품이 없습니다</li>
-            <!-- <li class="list-bar refrigerated-food">냉장 식품</li>
+            <li class="list-bar refrigerated-food">냉장 식품</li>
             <li class="list-bar frozen-food">냉동 식품</li>
-            <li class="list-bar normal-food">상온 식품</li> -->
+            <li class="list-bar normal-food">상온 식품</li>
 
             <li class="select_list">
               <input type="checkbox" name="basket-checker" id="select-list">
@@ -118,13 +123,18 @@
 
         <section class="basket-info">
           <h3 class="a11y-hidden">장바구니에 담긴 정보</h3>
-          <div>
+          <div class="aside_sticky">
             <ul class="location-info">
               <li class="location-map">배송지</li>
-              <li><b>배송지를 등록</b>하고<br>구매 가능한 상품을 확인하세요!</li>
+              <li class="basket_address">
+                <b>배송지를 등록</b>하고<br>구매 가능한 상품을 확인하세요!
+              </li>
               <li class="star-delivery">샛별배송</li>
               <li>
-                <button class="location-change-button"><span><b>주소 검색</b></span></button>
+                <button class="location-change-button kakaomap_button">
+                  <img src="/lab14-project/client/assets/icons/web-icons/Search-small.svg" alt="돋보기 모양 아이콘" />                  
+                  <span><b>주소 검색</b></span>
+                </button> 
               </li>
             </ul>
 
