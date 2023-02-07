@@ -18,6 +18,25 @@ let productTitle = getNode(".order-details_title")
 let productCount = 1;
 let productCountSum = 0;
 
+// console.log(localStorage.getItem("id"))
+
+function Go(){
+  getNode(".order-img-tag").src = './assets/ubuho/detail_view.jpg'
+
+  fetch("http://localhost:3000/product", {
+    method : 'GET',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+      }
+  }).then((res) => {
+    return res.json();
+  }).then((data) => {
+    console.log(data)
+})
+}
+Go();
+
 
 // 헤더 menu, 상품설명 menu scroll동작 구현
 window.addEventListener("scroll", () =>{
@@ -125,6 +144,9 @@ getNode(".button_add_cart").addEventListener("click", () =>{
 //-----------------------------------------------------------
 // section 1 = 상품구매창
 //-----------------------------------------------------------
+
+
+
 
 
 
