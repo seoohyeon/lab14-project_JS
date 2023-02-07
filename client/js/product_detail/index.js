@@ -175,6 +175,142 @@ fetch("http://localhost:3000/basket")
 
   
 
+// console.log(localStorage.getItem("id"))
+
+
+let productsArr;
+
+function getProduct(){
+
+  fetch("http://localhost:3000/products", {
+    method : 'GET',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+      }
+  }).then((res) => {
+    return res.json();
+  }).then((data) => {
+
+    productsArr = data;
+    // console.log(data[1].image.view)
+    for(let i=0; i<data.length; i++){
+      let price = String(data[i].price);
+      let isExist = false;
+      if(localStorage.getItem("id") === price[i].id){
+        isExist = true;
+        getNode(".order-img-tag").src = `./assets/${price[i].image.view}`
+        getNode(".order-details_title").textContent = price[i].name
+        getNode(".order-details_title").textContent = price[i].name
+        getNode(".order-details_subtitle").textContent = price[i].description
+        getNode(".order-details_price").textContent = `${price.slice(0,1)+','+price.slice(1,)+'원'}`
+        getNode(".product-price").textContent = `${price.slice(0,1)+','+price.slice(1,)+'원'}`
+        totalPrice.textContent = `${price.slice(0,1)+','+price.slice(1,)}`
+
+        function haveMinus() {
+          if(number > 1){
+            minus.style.cursor = "pointer"
+            number -= 1;
+            totalNum = String(price[i].price*number);
+            totalNum = `${totalNum.slice(0,-3)},${totalNum.slice(-3)}`
+            orderNumber.textContent = number;
+            totalPrice.textContent = totalNum;
+            productCount -= 1;
+          }
+          if(number === 1){
+            getNode(".order-details_minus_path").style.fill = "var(--gray-300)";
+            orderNumber.textContent = 1;
+            minus.style.cursor = "default"
+          }
+        }
+        
+        function havePlus() {
+            number += 1;
+            totalNum = String(price[i].price*number);
+            totalNum = `${totalNum.slice(0,-3)},${totalNum.slice(-3)}`
+            orderNumber.textContent = number;
+            totalPrice.textContent = totalNum;
+            productCount +=1;
+          
+            if(number >1){
+              getNode(".order-details_minus_path").style.fill = "var(--content)";
+            }
+        }
+
+        // cart-bubble 창
+        getNode(".cart_bubble_title").textContent = price[i].name;
+
+        getNode(".button_add_cart").addEventListener("click", () =>{
+          getNode(".cart_bubble_wrapper").style.display = "block";
+          setTimeout(() => {
+            getNode(".cart_bubble_wrapper").style.display = "none";
+          }, 1000);
+          getNode(".cart_bubble_img").src = `./assets/${price[i].image.view}` 
+
+
+          fetch("http://localhost:3000/basket").then((res) => {
+            return res.json();
+          }).then((newData) => {
+            let TOGGLE = true;
+            for(let i=0; i<newData.length; i++){
+              newData[i].id === price[i].id ? TOGGLE = true : TOGGLE = false
+            }
+
+            TOGGLE ? { 
+              fetch("http://localhost:3000/basket",{
+              method : "POST",
+              headers: {
+                'Content-Type': 'application/json'
+                },
+              body : JSON.stringify({
+                id : price[i].id,
+                number : productCount,
+              })
+            }).then((res) =>{
+              return res.json();
+            }) 
+          }
+           : {
+              productCountSum += productCount;
+              fetch(`http://localhost:3000/basket/${price[i].id}`,{
+              method : "PUT",
+              headers: {
+                'Content-Type': 'application/json'
+                },
+              body : JSON.stringify({
+                id : price[i].id,
+                number : productCountSum,
+              })
+            }).then((res) =>{
+              return res.json();
+            })
+            }
+          })
+        })
+        
+        
+        // 상품 갯수 선택에 따른 총 가격
+        minus.addEventListener("click", haveMinus)
+        
+        minus.addEventListener("keyup", (e) => {
+          if(e.keyCode == 13){
+            haveMinus();
+          }
+        })
+        
+        plus.addEventListener("click", havePlus);
+        
+        plus.addEventListener("keyup", (e) => {
+          if(e.keyCode == 13 ){
+            havePlus();
+          }
+        })
+      }
+    }
+  })
+}
+getProduct();
+
 
 // 헤더 menu, 상품설명 menu scroll동작 구현
 window.addEventListener("scroll", () =>{
@@ -734,4 +870,3 @@ lockChecker.addEventListener("click", () =>{
     TOGGLE = true;
   }
 })
-
