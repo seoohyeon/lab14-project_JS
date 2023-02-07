@@ -7,7 +7,9 @@
   width: var(--container-width);
   margin: 0 auto;
 }
-
+/* .header_inner {
+  margin: 0 150px;
+} */
 
 
 .header{
@@ -136,7 +138,7 @@ background-size: 42px;
 /* 헤더 메뉴 */
 .header_menu{
   margin: 0;
-  width: 1050px;
+  width: 1150px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -177,6 +179,29 @@ background-size: 42px;
   border: 1px solid var(--gray-300);
   background-color:transparent;
   font-weight: 400;
+}
+.header_menu_delivery {
+}
+/* 스크롤 내릴때 생기는 메뉴바 */
+.header_menu_search {
+  width: 238px;
+  height: 36px;
+  display: none;
+}
+.header_menu_input {
+  width: 238px;
+  height: 36px;
+  padding-left: 14px;
+  margin-left: 30px;
+  box-sizing: border-box;
+  background-color: var(--gray-100);
+  border-color: var(--gray-100);
+  color: var(--black);
+  display: none;
+}
+.sticky-ul {
+  display: flex;
+  visibility: hidden;  
 }
 
 /* footer style */

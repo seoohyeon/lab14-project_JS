@@ -31,38 +31,41 @@ function clickIdHandler(e) {
   }else{
     alert('중복된 아이디가 없습니다.')
 
-    return
+    returne
   }
 }
 
 idsubmitCheck.addEventListener('click',clickIdHandler)
 
 
-//중복된 이메일 기능 말고,,, 그냥 alert를 이용해 중복확인 버튼을 눌렀을 때, 이벤트가 발생하게끔 한 것.
+  //#2. 정규 표현식 이벤트(이메일 체크)
 
+  const regex = new RegExp('[a-z0-9]+@[a-z]+.[a-z]{2,3}');
 
-function clickEmailHandler(e) {
-  e.preventDefault();
-  let curlyemail = getInputValue('#curlyemailField')
-
-  if (!curlyemail) {
-    alert('이메일을 입력해주세요')
-
-    return
-  } else
-
-  if (curlyemail.length<6) {
-    alert('정규표현식 홣용해서 올바른 이메일 방식이 아닙니다.')
-  }else{
-    alert('중복된 이메일이 없습니다.')
-  }
-
-    if(curlypw !== curlypwChecked){
-      alert('비밀번호가 일치하지 않습니다. 다시 작성하시오.')
+  function clickEmailHandler(e) {
+    e.preventDefault();
+    let curlyemail = getInputValue('#curlyemailField')
+    const regexget = document.getElementById('curlyemailField').value.match(regex)
+    console.log();
+  
+    if (!curlyemail) {
+      alert('이메일을 입력해주세요')
+  
+      return
+    } else
+  
+    if (!regexget) {
+  
+      alert('올바른 이메일 방식을 입력해주세요.')
+  
+    }else{
+      alert('중복된 이메일이 없습니다.')
+  
+      return
     }
-}
-
-emailsubmitCheck.addEventListener('click',clickEmailHandler)
+  }
+  
+  emailsubmitCheck.addEventListener('click',clickEmailHandler)
 
 
 //Checkbox 전체선택 / 전체선택 해제 함수

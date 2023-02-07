@@ -214,8 +214,8 @@
 .cart_bubble_wrapper {
   display: none;
   position: fixed;
-  right: 20px;
-  top: 30px;
+  right: 25px;
+  top: 60px;
 }
 
 .cart_bubble_triangle {
@@ -625,7 +625,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 10;
+  z-index: 20;
   background-color: rgba(0, 0, 0, 0.5);
   display: none;
 }
@@ -636,7 +636,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 10;
+  z-index: 20;
   background-color: rgba(0, 0, 0, 0.5);
   display: none;
 }
