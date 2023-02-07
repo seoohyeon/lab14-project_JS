@@ -150,6 +150,7 @@
   flex-flow: row nowrap;
 }
 .best-list_top-array > li {
+  cursor: pointer;
   position: relative;
   padding: 0px 8px;
   display: flex;
