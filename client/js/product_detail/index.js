@@ -178,36 +178,35 @@ fetch("http://localhost:3000/basket")
 
 // 헤더 menu, 상품설명 menu scroll동작 구현
 window.addEventListener("scroll", () =>{
-  let headerMenu = getNode(".header_menu").offsetHeight;
+  // let headerMenu = getNode(".header_menu").offsetHeight;
   let menuBar = getNode(".product-menu").offsetHeight;
-  console.log(headerMenu)
+  // console.log(headerMenu)
  
-  window.onscroll = function () {
-   let windowTop = window.scrollY;
+  // window.onscroll = function () {
+  //  let windowTop = window.scrollY;
  
-   if (windowTop >= headerMenu+72) {
-     getNode(".header_menu").classList.add("drop");
-     getNode(".header_menu_delivery").style.display = "none";
-     getNode(".header_menu_search").style.display = "block";
-     getNode(".header_menu_search").style.display = "block";
-     getNode(".header_menu_input").style.display = "block";
-     getNode(".sticky-ul").style.visibility = "visible";
-   } else {
-     getNode(".header_menu").classList.remove("drop");
-     getNode(".header_menu_delivery").style.disaplay = "block";
-     getNode(".header_menu_search").style.display = "none";
-     getNode(".header_menu_search").style.display = "none";
-     getNode(".header_menu_input").style.display = "none";
-     getNode(".sticky-ul").style.visibility = "hidden";
-   }
+  //  if (windowTop >= headerMenu+72) {
+  //    getNode(".header_menu").classList.add("drop");
+  //    getNode(".header_menu_delivery").style.display = "none";
+  //    getNode(".header_menu_search").style.display = "block";
+  //    getNode(".header_menu_search").style.display = "block";
+  //    getNode(".header_menu_input").style.display = "block";
+  //    getNode(".sticky-ul").style.visibility = "visible";
+  //  } else {
+  //    getNode(".header_menu").classList.remove("drop");
+  //    getNode(".header_menu_delivery").style.disaplay = "block";
+  //    getNode(".header_menu_search").style.display = "none";
+  //    getNode(".header_menu_search").style.display = "none";
+  //    getNode(".header_menu_input").style.display = "none";
+  //    getNode(".sticky-ul").style.visibility = "hidden";
+  //  }
 
    if (windowTop >= menuBar+1340) {
     getNode(".product-menu").classList.add("drop-2");
   } else {
     getNode(".product-menu").classList.remove("drop-2");
   }
- }
-})
+ })
 
 
  
