@@ -15,7 +15,10 @@
         "info": "ubuho/detail_info.jpg",
         "alt": "유부호 만두"
       },
-      "stock": 3
+      "stock": 3,
+      "shippingInfo":"",
+      "isKarlyOnly":true,
+      "isLimitedProduct":false
     },
     {
       "id": "product-ekfk",
@@ -32,7 +35,10 @@
         "info": "tangtang/detail_info.jpg",
         "alt": "풀무원 탱탱쫄면"
       },
-      "stock": 10
+      "stock": 10,
+      "shippingInfo":"샛별배송",
+      "isKarlyOnly":true,
+      "isLimitedProduct":false
     },
     {
       "id": "product-akqk",
@@ -49,7 +55,10 @@
         "info": "jukkumi/detail_info.jpg",
         "alt": "홍대 주꾸미"
       },
-      "stock": 8
+      "stock": 8,
+      "shippingInfo":"",
+      "isKarlyOnly":false,
+      "isLimitedProduct":true
     },
     {
       "id": "product-tkwk",
@@ -66,7 +75,10 @@
         "info": "kangnam/detail_info.jpg",
         "alt": "강남면옥 소갈비찜"
       },
-      "stock": 2
+      "stock": 2,
+      "shippingInfo":"",
+      "isKarlyOnly":false,
+      "isLimitedProduct":false
     },
     {
       "id": "product-ckzk",
@@ -83,7 +95,10 @@
         "info": "bacon/detail_info.jpg",
         "alt": "칼리 한돈 삼겹 베이컨"
       },
-      "stock": 13
+      "stock": 13,
+      "shippingInfo":"샛별배송",
+      "isKarlyOnly":true,
+      "isLimitedProduct":true
     }
   ],
   "reviews": [],
