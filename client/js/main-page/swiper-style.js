@@ -39,7 +39,7 @@ const mainBannerSwiper = new Swiper('.main-banner_swiper', { //eslint-disable-li
 let $slides = document.querySelector('.main-banner');
 $slides.addEventListener('mouseover', function(){
   mainBannerSwiper.autoplay.stop();
-  console.log('mouse over');
+  // console.log('mouse over');
 });
 $slides.addEventListener('mouseout', function(){
   mainBannerSwiper.autoplay.start();
