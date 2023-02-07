@@ -16,8 +16,15 @@ let frozenToggleButton = frozenFood.previousSibling.previousSibling;
 let priceInfo = getNode(".price-info");
 let discountInfo = getNode(".discount-info");
 let deliveryInfo = getNode(".delivery-info");
-let resultInfo= getNode("result-info");
+let resultInfo= getNode(".result-info");
+let deliveryExplain=getNode(".delivery-explain");
+let needAddMoney=getNode(".need-add");
 
+let resultPriceInfo=0;
+let resultDiscountInfo=0;
+let resulteDeliveryInfo=0;
+let resultTotalPriceInfo=0;
+let needAddPrice=0;
 
 
 
@@ -58,40 +65,54 @@ fetch("/lab14-project/server/db/data.json")
 function checkBasketList(storedDataBasket,storedDataProducts){
   for(let key in storedDataBasket){
     // console.log(key,objOfBasket[key].id,objOfBasket[key].number);
-    let i=0;
     let pullData=storedDataProducts.filter(function(e){
       return e.id === storedDataBasket[key].id
     })
-    // console.log(storedDataBasket[key].number)
-    // console.log(pullData[0].sort);
-    // console.log(pullData[0].name);
-    // console.log(pullData[0].price);
-    // console.log(pullData[0].image.thumbnail);
-
     sortAndAdd(pullData[0].sort,pullData[0].name,pullData[0].price,pullData[0].image.thumbnail,pullData[0].id,storedDataBasket[key].number,pullData[0].salePrice);
   }
+
+  // 가격 계산 함수
+  priceInfo.innerHTML=`${resultPriceInfo.toLocaleString()}`
+  discountInfo.innerHTML=`${resultDiscountInfo.toLocaleString()}`
+  if((resultPriceInfo-resultDiscountInfo)<40000){
+    resulteDeliveryInfo=3000;
+    deliveryInfo.innerHTML=`+ ${resulteDeliveryInfo.toLocaleString()}`;
+  }
+  resultTotalPriceInfo=resultPriceInfo-resultDiscountInfo+resulteDeliveryInfo;
+  resultInfo.innerHTML=`${resultTotalPriceInfo.toLocaleString()}`
+
+  if(resultTotalPriceInfo<40000){
+    needAddPrice=40000-resultTotalPriceInfo;
+    needAddMoney.innerHTML=`${needAddPrice.toLocaleString()}`;
+    deliveryExplain.classList.remove('a11y-hidden');
+
+
+  }
+
+  
 }
 
 
-function sortAndAdd(foodKind,foodName,foodPrice,foodThumbnail,foodId,foodNumber,salePrice){
-  // =moneyInfoUpdates(foodPrice,salePrice,foodNumber);
-  // let foodPriceAfterSale=foodPrice*(1-saleRatio);
+
+
+function sortAndAdd(foodKind,foodName,foodPrice,foodThumbnail,foodId,foodNumber,salePrice,num){
 
 switch (foodKind){
-  case "normal" : addToNormal(foodName,foodPrice,foodThumbnail,foodId,foodNumber);
+  case "normal" : addToNormal(foodName,foodPrice,foodThumbnail,foodId,foodNumber,salePrice);
     break;
 
-  case "frozen" : addToFrozen(foodName,foodPrice,foodThumbnail,foodId,foodNumber);
+  case "frozen" : addToFrozen(foodName,foodPrice,foodThumbnail,foodId,foodNumber,salePrice);
     break; 
 
-   case "refrigeration": addToRefrigeration(foodName,foodPrice,foodThumbnail,foodId,foodNumber);
+   case "refrigeration": addToRefrigeration(foodName,foodPrice,foodThumbnail,foodId,foodNumber,salePrice);
     break;
 }
 }
 
 
-function addToNormal(foodName,foodPrice,foodThumbnail,foodId,foodNumber){
+function addToNormal(foodName,foodPrice,foodThumbnail,foodId,foodNumber,salePrice){
   let mulPrice=foodPrice*foodNumber
+
   normalFood.insertAdjacentHTML("beforeend",`
   <li>
   <div class="select_list">
@@ -106,16 +127,18 @@ function addToNormal(foodName,foodPrice,foodThumbnail,foodId,foodNumber){
       </div>
       
       <p>
-        ${mulPrice} 원
+        ${mulPrice.toLocaleString()} 원
       </p>
       <button class="counter-delete_button"></button>
     </div>
   </div>
   </li>
   `)
+  resultPriceInfo += mulPrice;
+  resultDiscountInfo +=salePrice;
 }
 
-function addToFrozen(foodName,foodPrice,foodThumbnail,foodId,foodNumber){
+function addToFrozen(foodName,foodPrice,foodThumbnail,foodId,foodNumber,salePrice){
   let mulPrice=foodPrice*foodNumber
   frozenFood.insertAdjacentHTML("beforeend",`
   <li>
@@ -131,17 +154,18 @@ function addToFrozen(foodName,foodPrice,foodThumbnail,foodId,foodNumber){
       </div>
       
       <p>
-      ${mulPrice} 원
+      ${mulPrice.toLocaleString()} 원
       </p>
       <button class="counter-delete_button"></button>
     </div>
   </div>
   </li>
   `)
-  
+  resultPriceInfo += mulPrice;
+  resultDiscountInfo +=salePrice;
 }
 
-function addToRefrigeration(foodName,foodPrice,foodThumbnail,foodId,foodNumber){
+function addToRefrigeration(foodName,foodPrice,foodThumbnail,foodId,foodNumber,salePrice){
   let mulPrice=foodPrice*foodNumber
   refrigeratedFood.insertAdjacentHTML("beforeend",`
   <li>
@@ -157,12 +181,14 @@ function addToRefrigeration(foodName,foodPrice,foodThumbnail,foodId,foodNumber){
       </div>
       
       <p>
-      ${mulPrice} 원
+      ${mulPrice.toLocaleString()} 원
       </p>
       <button class="counter-delete_button"></button>
     </div>
   </div>
   </li>`)
+  resultPriceInfo += mulPrice;
+  resultDiscountInfo +=salePrice;
 }
 
 
@@ -180,24 +206,3 @@ frozenToggleButton.addEventListener('click',()=>{
   frozenToggleButton.classList.toggle('img_rotate');
   frozenFood.classList.toggle('a11y-hidden');
 });
-
-
-//가격 정보 업뎃
-
-function moneyInfoUpdates(foodPrice,salePrice,foodNumber){
-
-  return foodPrice
-
-}
-
-// let priceInfo = getNode(".price-info");
-// let discountInfo = getNode(".discount-info");
-// let deliveryInfo = getNode(".delivery-info");
-// let resultInfo= getNode("result-info");
-
-
-
-
-
-
-// 가격 버튼 기능

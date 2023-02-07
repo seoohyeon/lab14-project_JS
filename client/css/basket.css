@@ -263,6 +263,17 @@
   color:var(--content);
 }
 
+.result-info-li{
+  height: 40px;
+  line-height: 40px;
+}
+.result-info{
+
+  font-size:28px;
+  font-weight: 700;
+
+}
+
 .amount-sep{
   padding-bottom:8px;
   border-bottom: 1px dashed var(--gray-100);
@@ -299,6 +310,17 @@
   color:var(--white);
   margin-right:8px;
 }
+
+.delivery-explain{
+  float:right;
+  font-size: var(--text-xs);
+  font-weight: 600;
+}
+
+.delivery-explain strong{
+  font-weight: bolder;
+}
+
 
 .order-button-wrapper{
   margin:16px 0 16px 0;
