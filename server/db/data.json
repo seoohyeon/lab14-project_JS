@@ -102,17 +102,10 @@
     }
   ],
   "reviews": [
-    {
-      "title": "gfdf",
-      "content": "dfgdf",
-      "id": 1
-    }
+    
   ],
   "basket": [
-    {
-      "id": "product-ekfk",
-      "number": 3
-    }
+    
   ],
   "users": [
     {
@@ -123,15 +116,6 @@
       "userPhone": "d",
       "userAddress": "13480 경기 성남시 분당구 대왕판교로 477 ",
       "id": 1
-    },
-    {
-      "uniqueId": "adzBkZxduM",
-      "curlyId": "ddddddd",
-      "curlyPw": "d",
-      "userName": "d",
-      "userPhone": "d",
-      "userAddress": "05237 서울 강동구 아리수로 46 ",
-      "id": 2
     }
   ]
 }
