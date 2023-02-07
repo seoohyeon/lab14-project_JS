@@ -17,6 +17,163 @@ let heartButton = getNode(".order-details_button_heart");
 let productTitle = getNode(".order-details_title")
 let productCount = 1;
 let productCountSum = 0;
+let getProductItem = 0;
+let savedProductItem = 0;
+let flag = false;
+
+// console.log(localStorage.getItem("id"))
+
+await fetch("http://localhost:3000/products", {
+    method : 'GET',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+      }
+  }).then((res) => {
+    return res.json();
+  }).then((data) => {
+    let output = localStorage.getItem("key");
+    let arr = JSON.parse(output);
+    // console.log(arr[arr.length-1]) 
+
+    // console.log(data[1].image.view)
+    for(let i=0; i<data.length; i++){
+      let price = String(data[i].price);
+
+      if(arr[arr.length-1] === data[i].id){
+        getNode(".order-img-tag").src = `./assets/${data[i].image.view}`
+        getNode(".order-details_title").textContent = data[i].name
+        getNode(".order-details_title").textContent = data[i].name
+        getNode(".order-details_subtitle").textContent = data[i].description
+        getNode(".order-details_price").textContent = `${price.slice(0,-3)},${price.slice(-3)}원`
+        getNode(".product-price").textContent = `${price.slice(0,-3)},${price.slice(-3)}원`
+        totalPrice.textContent = `${price.slice(0,-3)},${price.slice(-3)}`
+
+        getNode(".review-popup").src = `./assets/${data[i].image.view}`
+        getNode(".review-popup-text").textContent = data[i].name
+
+
+        function haveMinus() {
+          if(number > 1){
+            minus.style.cursor = "pointer"
+            number -= 1;
+            totalNum = String(data[i].price*number);
+            totalNum = `${totalNum.slice(0,-3)},${totalNum.slice(-3)}`
+            orderNumber.textContent = number;
+            totalPrice.textContent = totalNum;
+            productCount -= 1;
+          }
+          if(number === 1){
+            getNode(".order-details_minus_path").style.fill = "var(--gray-300)";
+            orderNumber.textContent = 1;
+            minus.style.cursor = "default"
+          }
+        }
+        
+        function havePlus() {
+            number += 1;
+            totalNum = String(data[i].price*number);
+            totalNum = `${totalNum.slice(0,-3)},${totalNum.slice(-3)}`
+            orderNumber.textContent = number;
+            totalPrice.textContent = totalNum;
+            productCount +=1;
+          
+            if(number >1){
+              getNode(".order-details_minus_path").style.fill = "var(--content)";
+            }
+        }
+        
+        
+        // 상품 갯수 선택에 따른 총 가격
+        minus.addEventListener("click", haveMinus)
+        
+        minus.addEventListener("keyup", (e) => {
+          if(e.keyCode == 13){
+            haveMinus();
+          }
+        })
+        
+        plus.addEventListener("click", havePlus);
+        
+        plus.addEventListener("keyup", (e) => {
+          if(e.keyCode == 13 ){
+            havePlus();
+          }
+        })
+        getProductItem = data[i]
+      }
+    }
+  })
+
+ // cart-bubble 창
+ getNode(".cart_bubble_title").textContent = getProductItem.name;
+
+ getNode(".button_add_cart").addEventListener("click", async () =>{
+   getNode(".cart_bubble_wrapper").style.display = "block";
+   setTimeout(() => {
+     getNode(".cart_bubble_wrapper").style.display = "none";
+   }, 1000);
+   getNode(".cart_bubble_img").src = `./assets/${getProductItem.image.view}` 
+   
+
+   await fetch("http://localhost:3000/basket").then((res) => {
+     return res.json();
+   }).then((newData) => {
+     return savedProductItem = newData;
+   })
+
+   for(let i=0; i<savedProductItem.length; i++){
+    // console.log(savedProductItem[i].id) // 장부 2가지
+    // console.log(getProductItem.id) // 내가 가져온애
+
+
+    if(savedProductItem[i].id === getProductItem.id){
+      flag = true;
+    }  
+  }
+
+  console.log(flag)
+
+  if(flag){
+    productCountSum += productCount;
+    fetch(`http://localhost:3000/basket/${getProductItem.id}`,{
+    method : "PUT",
+    headers: {
+      'Content-Type': 'application/json'
+      },
+    body : JSON.stringify({
+      id : getProductItem.id,
+      number : productCountSum,
+    })
+   }).then((res) =>{
+    return res.json();
+   })
+  } else {
+    fetch("http://localhost:3000/basket",{
+      method : "POST",
+      headers: {
+        'Content-Type': 'application/json'
+        },
+      body : JSON.stringify({
+        id : getProductItem.id,
+        number : productCount,
+      })
+    }).then((res) =>{
+      return res.json();
+    })
+  } 
+ })
+
+fetch("http://localhost:3000/basket")
+ .then((res) => {
+  return res.json();
+}).then((data) => {
+  if(data){
+    getNode(".cart-bell").style.visibility = "visible";
+  }
+})
+
+  
 
 
 // 헤더 menu, 상품설명 menu scroll동작 구현
@@ -51,73 +208,7 @@ window.addEventListener("scroll", () =>{
   }
  }
 })
-// cart-bubble 창
-getNode(".cart_bubble_title").textContent = productTitle.textContent;
 
-getNode(".button_add_cart").addEventListener("click", () =>{
-  getNode(".cart_bubble_wrapper").style.display = "block";
-  setTimeout(() => {
-    getNode(".cart_bubble_wrapper").style.display = "none";
-  }, 3000);
-
-  fetch("http://localhost:3000/basket").then((res) => {
-    return res.json();
-  }).then((data) => {
-    if(data.length < 1){
-      fetch("http://localhost:3000/basket",{
-      method : "POST",
-      headers: {
-        'Content-Type': 'application/json'
-        },
-      body : JSON.stringify({
-        id : "product-ekfk",
-        number : productCount,
-      })
-    }).then((res) =>{
-      return res.json();
-    })
-    }else {
-      productCountSum += productCount;
-      fetch("http://localhost:3000/basket/product-ekfk",{
-      method : "PUT",
-      headers: {
-        'Content-Type': 'application/json'
-        },
-      body : JSON.stringify({
-        id : "product-ekfk",
-        number : productCountSum,
-      })
-    }).then((res) =>{
-      return res.json();
-    })
-    }
-  })
-//   fetch("http://localhost:3000/basket",{
-//     method : "POST",
-//     headers: {
-//       'Content-Type': 'application/json'
-//       },
-//     body : JSON.stringify({
-//       id : "product-ekfk",
-//       number : productCount,
-//     })
-//   }).then((res) =>{
-//     return res.json();
-//   })
-
-//   fetch("http://localhost:3000/basket/product-ekfk",{
-//     method : "PUT",
-//     headers: {
-//       'Content-Type': 'application/json'
-//       },
-//     body : JSON.stringify({
-//       id : "product-ekfk",
-//       number : productCount,
-//     })
-//   }).then((res) =>{
-//     return res.json();
-//   })
- })
 
  
 
@@ -127,53 +218,53 @@ getNode(".button_add_cart").addEventListener("click", () =>{
 
 
 
-function haveMinus() {
-  if(number > 1){
-    minus.style.cursor = "pointer"
-    number -= 1;
-    totalNum = String(4980*number);
-    totalNum = `${totalNum.slice(0,-3)},${totalNum.slice(-3)}`
-    orderNumber.textContent = number;
-    totalPrice.textContent = totalNum;
-    productCount -= 1;
-  }
-  if(number === 1){
-    getNode(".order-details_minus_path").style.fill = "var(--gray-300)";
-    orderNumber.textContent = 1;
-    minus.style.cursor = "default"
-  }
-}
+// function haveMinus() {
+//   if(number > 1){
+//     minus.style.cursor = "pointer"
+//     number -= 1;
+//     totalNum = String(4980*number);
+//     totalNum = `${totalNum.slice(0,-3)},${totalNum.slice(-3)}`
+//     orderNumber.textContent = number;
+//     totalPrice.textContent = totalNum;
+//     productCount -= 1;
+//   }
+//   if(number === 1){
+//     getNode(".order-details_minus_path").style.fill = "var(--gray-300)";
+//     orderNumber.textContent = 1;
+//     minus.style.cursor = "default"
+//   }
+// }
 
-function havePlus() {
-    number += 1;
-    totalNum = String(4980*number);
-    totalNum = `${totalNum.slice(0,-3)},${totalNum.slice(-3)}`
-    orderNumber.textContent = number;
-    totalPrice.textContent = totalNum;
-    productCount +=1;
+// function havePlus() {
+//     number += 1;
+//     totalNum = String(4980*number);
+//     totalNum = `${totalNum.slice(0,-3)},${totalNum.slice(-3)}`
+//     orderNumber.textContent = number;
+//     totalPrice.textContent = totalNum;
+//     productCount +=1;
   
-    if(number >1){
-      getNode(".order-details_minus_path").style.fill = "var(--content)";
-    }
-}
+//     if(number >1){
+//       getNode(".order-details_minus_path").style.fill = "var(--content)";
+//     }
+// }
 
 
-// 상품 갯수 선택에 따른 총 가격
-minus.addEventListener("click", haveMinus)
+// // 상품 갯수 선택에 따른 총 가격
+// minus.addEventListener("click", haveMinus)
 
-minus.addEventListener("keyup", (e) => {
-  if(e.keyCode == 13){
-    haveMinus();
-  }
-})
+// minus.addEventListener("keyup", (e) => {
+//   if(e.keyCode == 13){
+//     haveMinus();
+//   }
+// })
 
-plus.addEventListener("click", havePlus);
+// plus.addEventListener("click", havePlus);
 
-plus.addEventListener("keyup", (e) => {
-  if(e.keyCode == 13 ){
-    havePlus();
-  }
-})
+// plus.addEventListener("keyup", (e) => {
+//   if(e.keyCode == 13 ){
+//     havePlus();
+//   }
+// })
 
 
 // 하트 찜 - tav키 enter, space가 적용이 안됨.(대상은 svg코드임)
@@ -489,15 +580,15 @@ reviewSubmit.addEventListener("click", ()=>{
   // localStorage.setItem("reviewTitle", reviewTitle.value);
   // localStorage.setItem("reviewContent", reviewContent.value);
   getNode(".product-popup-wrapper").style.display = "none";
-  document.body.classList.remove("no-scroll");
   getNode(".product-review_list-ifnothing").style.display = "none";
+  document.body.classList.remove("no-scroll");
 })
 
-getNode(".form-1").addEventListener("submit", (e) => {
+getNode(".form-1").addEventListener("submit", async (e) => {
 
   e.preventDefault();
 
-  fetch('http://localhost:3000/reviews', {
+  await fetch('http://localhost:3000/reviews', {
     method : "POST",
     body : JSON.stringify({
       title : reviewTitle.value,
@@ -510,7 +601,6 @@ getNode(".form-1").addEventListener("submit", (e) => {
   }).then(function (response){
     return response.json();
   }).then(function (data){
-      // getNode(".product-menu_nav-3").textContent = `후기 (${data.length})`
       getNode(".put-in").insertAdjacentHTML("beforeend",
       `
       <div class="product-review_list-customer">
@@ -528,13 +618,20 @@ getNode(".form-1").addEventListener("submit", (e) => {
       </div>
     `);
     // console.log(data.id)
-    // getNode(".product-menu_nav-3").innerHTML = `후기 (${data.id})`;
+    // getNode(".product-menu_nav-3").innerHTML = `후기 (${data.id})`
+  })
+
+  fetch('http://localhost:3000/reviews').then((res) => { return res.json()})
+  .then((data) => {
+    console.log(data)
+    getNode(".product-menu_nav-3").textContent = `후기 (${data.length})`
   })
     // console.log(data.title)
     // getNode(".product-review_list-customer_product").textContent = data.title;
     // getNode(".product-review_list-customer_product-text").textContent = data.content;
     // getNode(".review-date").textContent = `${year}.${month}.${date}`;
   });
+
 
 
 
