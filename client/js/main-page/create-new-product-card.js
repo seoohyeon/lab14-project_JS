@@ -66,7 +66,7 @@ function loadCardsToList(option,selector,productIndex){
   .then(res => res.json())
   .then(data =>{
     productArr = data;
-    console.log(productArr);
+    // console.log(productArr);
 
 
     let newCard = makeCard(option,productArr[productIndex]);
