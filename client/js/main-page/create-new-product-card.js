@@ -2,8 +2,6 @@ const SERVER_URL = 'http://localhost:3000/';
 
 let productArr;
 
-
-
 //option 1 이면 메인페이지, 2면 product-list
 function makeCard(option,{image:imageUrl,name:productName,saleRatio,salePrice,price,description,shippingInfo,isKarlyOnly,isLimitedProduct}) {
   imageUrl = imageUrl.thumbnail;
@@ -34,6 +32,7 @@ function makeCard(option,{image:imageUrl,name:productName,saleRatio,salePrice,pr
         ${description}
       </div>          
       ${ 
+        option == 1 ?``:
         (isKarlyOnly && isLimitedProduct)?
           `<div class="product-display_badge-wrapper">
             <mark class="product-display_karly-only"></mark>
@@ -61,14 +60,6 @@ function putCard(selector,card){
   document.querySelector(selector).insertAdjacentHTML("beforeend",card)
 }
 
-// putCard('.product-display_product-cards-container',
-// makeCard(1,
-//   'tangtang/thumbnail.jpg',
-//   '쫄면입니다',
-//   '50%',
-//   '5000',
-//   '10000',
-//   '즉석밥이랍니다'));
 
 function loadCardsToList(option,selector,productIndex){
   fetch(`${SERVER_URL}products`)
@@ -83,7 +74,8 @@ function loadCardsToList(option,selector,productIndex){
   })
 }
 // 사용예시
-loadCardsToList(2,'.product-display_product-cards-container',4);
+loadCardsToList(1,'.product-display_product-cards-container',4);
+// loadCardsToList(2,'.product-display_product-cards-container',4);
 
 
 
