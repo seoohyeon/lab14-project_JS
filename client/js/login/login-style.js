@@ -40,7 +40,7 @@ signinButton.addEventListener("click", (e) => {
 
 if(localStorage.getItem('Unique ID')){
   getNode(".header_inner_login_logout").addEventListener("click", () => {
-    localStorage.remove("Unique ID");
+    localStorage.removeItem("Unique ID");
     alert("로그아웃 되었습니다.")
   })
 }

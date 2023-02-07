@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <link rel="stylesheet" href="./css/style.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/style.css" />
   <script defer src="./js/basket/basket.js" type="module"></script>
+  <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
   <title>컬리 - 마켓컬리/뷰티컬리</title>
 </head>
 <body>
@@ -27,11 +28,11 @@
       </div>
       <div class="header_inner_main">
         <h1>
-          <a href=""><img src="./assets/icons/logo.svg" alt="마켓컬리 로고 이미지" /></a>
-          <a href="">마켓칼리</a>
+          <a href="./index.html"><img src="./assets/icons/logo.svg" alt="마켓컬리 로고 이미지" /></a>
+          <a href="./index.html">마켓컬리</a>
           <span class="contents-border" aria-hidden="true"> | </span>
           <span class="beauty-karly-wrapper">
-            <a href="">뷰티칼리</a>
+            <a href="">뷰티컬리</a>
             <sup> N</sup>
           </span>
         </h1>
@@ -75,41 +76,63 @@
           <ul>
             <li class="list-bar select-all">
               <input type="checkbox" name="basket-checker" id="basket-checker1">
-              <label for="basket-checker1"></label>
-              전체선택 (0/0) <span aria-hidden="true">|</span> 선택삭제
+              <label for="basket-checker1">
+                전체선택 (<div class="selected-number">0</div>/<div class="total-number">0</div>)
+                <a href=""> <span aria-hidden="true">|</span>선택삭제</a>
+              </label>
             </li>
             <li class="no-option">장바구니에 담긴 상품이 없습니다</li>
-            <!-- <li class="list-bar refrigerated-food">냉장 식품</li>
-            <li class="list-bar frozen-food">냉동 식품</li>
-            <li class="list-bar normal-food">상온 식품</li> -->
+            
+            <li class="list-bar refrigerated-food">
+              냉장 식품<button class="list-toggle_button"></button>
+              <div class="refrigerated-contents"></div>
+            </li>
+            <li class="list-bar frozen-food">
+              냉동 식품<button class="list-toggle_button"></button>
+              <div class="frozen-contents"></div>
+            </li>
+            <li class="list-bar normal-food">
+              상온 식품<button class="list-toggle_button"></button>
+              <div class="normal-contents"></div>
+            </li>
+           
+
             <li class="select-all">
               <input type="checkbox" name="basket-checker" id="basket-checker2">
-              <label for="basket-checker2"></label>
-              전체선택 (0/0) <span aria-hidden="true">|</span> 선택삭제
+              <label for="basket-checker2">
+                전체선택 (<div class="selected-number">0</div>/<div class="total-number">0</div>)
+                <a href=""><span aria-hidden="true">|</span>선택삭제</a>
+              </label>
             </li>
+
           </ul>
         </section>
 
         <section class="basket-info">
           <h3 class="a11y-hidden">장바구니에 담긴 정보</h3>
-          <div>
+          <div class="aside_sticky">
             <ul class="location-info">
               <li class="location-map">배송지</li>
-              <li><b>배송지를 등록</b>하고<br>구매 가능한 상품을 확인하세요!</li>
+              <li class="basket_address">
+                <b>배송지를 등록</b>하고<br>구매 가능한 상품을 확인하세요!
+              </li>
               <li class="star-delivery">샛별배송</li>
               <li>
-                <button class="location-change-button"><span><b>주소 검색</b></span></button>
+                <button class="location-change-button kakaomap_button">
+                  <img src="/lab14-project/client/assets/icons/web-icons/Search-small.svg" alt="돋보기 모양 아이콘" />                  
+                  <span><b>주소 검색</b></span>
+                </button> 
               </li>
             </ul>
 
             <div class="amount-info">
               <ul class="amount-sep">
-                <li>상품금액</li>
-                <li>상품할인금액</li>
-                <li>배송비</li>
+                <li>상품금액<span class="money-info"><span class="price-info">0</span> 원</span></li>
+                <li>상품할인금액<span class="money-info"><span class="discount-info">0</span> 원</span></li>
+                <li>배송비<span class="money-info"><span class="delivery-info">0</span> 원</span></li>
               </ul>
               <ul class="amount-total">
-                <li>결제예정금액</li>
+                <li>결제예정금액<span class="money-info"><span class="result-info">0</span> 원</span></li>
                 <li class="saving-info"><span>적립</span>최대 36원 적립 일반 0.1%</li>
               </ul> 
             </div>

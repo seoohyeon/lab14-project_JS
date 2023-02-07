@@ -31,15 +31,15 @@
       </div>
       <div class="header_inner_main">
         <h1>
-          <a href=""><img src="./assets/icons/logo.svg" alt="마켓컬리 로고 이미지" /></a>
-          <a href="">마켓칼리</a>
+          <a href="./index.html"><img src="./assets/icons/logo.svg" alt="마켓컬리 로고 이미지" /></a>
+          <a href="./index.html">마켓컬리</a>
           <span class="contents-border" aria-hidden="true"> | </span>
           <span class="beauty-karly-wrapper">
-            <a href="">뷰티칼리</a>
+            <a href="">뷰티컬리</a>
             <sup> N</sup>
           </span>
         </h1>
-        <form method="" action="" class="search-form">
+        <form class="search-form">
             <fieldset>
               <legend aria-hidden="true">검색 폼</legend>
               <div class="search-form-inner">
@@ -67,7 +67,19 @@
             <li><a href="">알뜰쇼핑</a></li>
             <li><a href="">특가/혜택</a></li>
           </div>  
-            <li><button><b>샛별·낮</b> 배송안내</button></li>
+            <li class="header_menu_delivery"><button><b>샛별·낮</b> 배송안내</button></li>
+            <div class="header_menu_search">
+              <label for="main-search" class="form-group-label" ><span class="icon-search" aria-hidden="true"></span></label>
+              <input type="search" class="form-group-input header_menu_input" id="main-search" placeholder="검색어를 입력해주세요" />
+            </div>
+            <ul class="sticky-ul">
+              <li><a href=""><img src="./assets/icons/web-icons/Location.svg" alt="핀 모양의 아이콘" /></a></li>
+              <li><a href=""><img src="./assets/icons/web-icons/Heart.svg" alt="하트 모양의 아이콘" /></a></li>
+              <li><a href=""><img src="./assets/icons/web-icons/Cart-1.svg" alt="카트 모양의 아이콘" /></a></li>
+            </ul>
+            <svg class="cart-bell" width="24" height="24" viewBox="0 0 24 24" fill="#5F0080" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="11.5" stroke="#5F0080"/>
+              </svg>
         </ul>
       </div>
     </div>
@@ -81,7 +93,7 @@
         <h2 class="a11y-hidden">[풀무원] 탱탱쫄면 제품 상세페이지</h2>
         <figure class="order-img">
           <figcaption class="a11y-hidden">[풀무원] 탱탱쫄면 product-detail</figcaption>
-          <img src="./assets/tangtang/detail_view.jpg" alt="[풀무원] 탱탱쫄면" />
+          <img class="order-img-tag" alt="product name" />
         </figure>
         <div class="order-details">
           <p class="order-details_deliver">샛별배송</p>
@@ -142,7 +154,7 @@
                       <path d="M16 10V14H20V16H16V20H14V16H10V14H14V10H16Z" fill="#333333"/>
                       </svg>
                   </div>
-                    <p>4,980원</p>
+                    <p class="product-price">4,980원</p>
                 </div>
             </div>
           </div>
@@ -171,10 +183,12 @@
             <button type="button" class="button_add_cart">
               장바구니 담기
             </button>
+
+            <!-- 장바구니 미니팝업창 -->
                 <div class="cart_bubble_wrapper">
                   <img class="cart_bubble_triangle" src="./assets/tangtang/cart_triangle.png" alt="" />
                   <div class="cart_bubble">
-                    <img src="./assets/tangtang/thumbnail.jpg" alt="탱탱쫄면" />
+                    <img class="cart_bubble_img" src="./assets/tangtang/thumbnail.jpg" alt="탱탱쫄면" />
                     <div class="cart_bubble_title-form">
                       <p class="cart_bubble_title"></p>
                       <p>장바구니에 상품을 담았습니다.</p>
@@ -433,9 +447,9 @@
                 <div class="product-popup_contents_title">
                 <figure>
                   <figcaption class="a11y-hidden">[풀무원] 탱탱쫄면</figcaption>
-                  <img src="./assets/tangtang/thumbnail.jpg" alt="탱탱쫄면" />
+                  <img class="review-popup" src="./assets/tangtang/thumbnail.jpg" alt="탱탱쫄면" />
                 </figure>
-                <span>[풀무원] 탱탱쫄면 (4개입)</span>
+                <span class="review-popup-text">[풀무원] 탱탱쫄면 (4개입)</span>
               </div>
               </li>
               <li class="product-popup_contents_li">

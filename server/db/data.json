@@ -16,9 +16,9 @@
         "alt": "유부호 만두"
       },
       "stock": 3,
-      "shippingInfo":"",
-      "isKarlyOnly":true,
-      "isLimitedProduct":false
+      "shippingInfo": "",
+      "isKarlyOnly": true,
+      "isLimitedProduct": false
     },
     {
       "id": "product-ekfk",
@@ -36,9 +36,9 @@
         "alt": "풀무원 탱탱쫄면"
       },
       "stock": 10,
-      "shippingInfo":"샛별배송",
-      "isKarlyOnly":true,
-      "isLimitedProduct":false
+      "shippingInfo": "샛별배송",
+      "isKarlyOnly": true,
+      "isLimitedProduct": false
     },
     {
       "id": "product-akqk",
@@ -56,9 +56,9 @@
         "alt": "홍대 주꾸미"
       },
       "stock": 8,
-      "shippingInfo":"",
-      "isKarlyOnly":false,
-      "isLimitedProduct":true
+      "shippingInfo": "",
+      "isKarlyOnly": false,
+      "isLimitedProduct": true
     },
     {
       "id": "product-tkwk",
@@ -76,9 +76,9 @@
         "alt": "강남면옥 소갈비찜"
       },
       "stock": 2,
-      "shippingInfo":"",
-      "isKarlyOnly":false,
-      "isLimitedProduct":false
+      "shippingInfo": "",
+      "isKarlyOnly": false,
+      "isLimitedProduct": false
     },
     {
       "id": "product-ckzk",
@@ -96,62 +96,84 @@
         "alt": "칼리 한돈 삼겹 베이컨"
       },
       "stock": 13,
-      "shippingInfo":"샛별배송",
-      "isKarlyOnly":true,
-      "isLimitedProduct":true
+      "shippingInfo": "샛별배송",
+      "isKarlyOnly": true,
+      "isLimitedProduct": true
     }
   ],
   "reviews": [
     {
-      "title": "rr",
-      "content": "rr",
+      "title": "ㅇ",
+      "content": "ㅇ",
       "id": 1
     },
     {
-      "title": "qq",
-      "content": "qq",
+      "title": "d",
+      "content": "df",
       "id": 2
     },
     {
-      "title": "33",
-      "content": "333",
+      "title": "ss",
+      "content": "ss",
       "id": 3
     },
     {
-      "title": "qq",
-      "content": "qqqqq",
+      "title": "s",
+      "content": "d",
       "id": 4
     },
     {
-      "title": "we",
-      "content": "e",
+      "title": "r",
+      "content": "r",
       "id": 5
+    },
+    {
+      "title": "d",
+      "content": "d",
+      "id": 6
+    },
+    {
+      "title": "ss",
+      "content": "ss",
+      "id": 7
+    },
+    {
+      "title": "ss",
+      "content": "ss",
+      "id": 8
     }
   ],
   "basket": [
     {
+      "id": "product-rksk",
+      "number": 2
+    },
+    {
       "id": "product-ekfk",
       "number": 1
+    },
+    {
+      "id": "product-akqk",
+      "number": 22
+    },
+    {
+      "id": "product-ckzk",
+      "number": 1
+    },
+    {
+      "id": "product-tkwk",
+      "number": 51
     }
   ],
   "users": [
     {
-      "uniqueId": "gyEGEvxwmW",
-      "curlyId": "fltk0825",
+      "uniqueId": "feNnYHWfXo",
+      "curlyId": "hong12",
       "curlyPw": "d",
-      "userName": "d",
+      "userName": "홍길동",
       "userPhone": "d",
-      "userAddress": "05237 서울 강동구 아리수로 46",
+      "userAddress": "13480 경기 성남시 분당구 대왕판교로 477 ",
       "id": 1
-    },
-    {
-      "uniqueId": "uzOavhbHJy",
-      "curlyId": "aaa",
-      "curlyPw": "d",
-      "userName": "d",
-      "userPhone": "d",
-      "userAddress": "12513 경기 양평군 용문면 넓은내3길 5 ",
-      "id": 2
     }
   ]
 }
