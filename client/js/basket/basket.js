@@ -74,7 +74,7 @@ function checkBasketList(storedDataBasket,storedDataProducts){
 
 
 function sortAndAdd(foodKind,foodName,foodPrice,foodThumbnail,foodId,foodNumber,salePrice){
-  =moneyInfoUpdates(foodPrice,salePrice,foodNumber);
+  // =moneyInfoUpdates(foodPrice,salePrice,foodNumber);
   // let foodPriceAfterSale=foodPrice*(1-saleRatio);
 
 switch (foodKind){
