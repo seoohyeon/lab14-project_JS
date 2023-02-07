@@ -6,10 +6,19 @@ let refrigeratedFood = getNode(".refrigerated-contents");
 let normalFood = getNode(".normal-contents");
 let frozenFood =getNode(".frozen-contents");
 let noOption=getNode(".no-option");
+let selectedNumber=getNodes(".selected-number");
+let totalNumber=getNodes(".total-number");
 
 let refToggleButton = refrigeratedFood.previousSibling.previousSibling;
 let normalToggleButton = normalFood.previousSibling.previousSibling;
 let frozenToggleButton = frozenFood.previousSibling.previousSibling;
+
+let priceInfo = getNode(".price-info");
+let discountInfo = getNode(".discount-info");
+let deliveryInfo = getNode(".delivery-info");
+let resultInfo= getNode("result-info");
+
+
 
 
 
@@ -36,14 +45,12 @@ fetch("/lab14-project/server/db/data.json")
   return response.json();
 })
 .then(res=>{
-  let storedDataBasket=res.basket;
-  let storedDataProducts = res.products;
-  let storedData=checkBasketList(storedDataBasket,storedDataProducts); 
+ 
+  let storedData=checkBasketList(res.basket,res.products);  // 데이터 받아서 상품 분류 및 추가
   if(res.basket.length>=1){
     noOption.className += ' a11y-hidden'
-
-
   }
+
 })
 
 
@@ -51,35 +58,40 @@ fetch("/lab14-project/server/db/data.json")
 function checkBasketList(storedDataBasket,storedDataProducts){
   for(let key in storedDataBasket){
     // console.log(key,objOfBasket[key].id,objOfBasket[key].number);
+    let i=0;
     let pullData=storedDataProducts.filter(function(e){
       return e.id === storedDataBasket[key].id
-    }) 
+    })
+    // console.log(storedDataBasket[key].number)
     // console.log(pullData[0].sort);
     // console.log(pullData[0].name);
     // console.log(pullData[0].price);
     // console.log(pullData[0].image.thumbnail);
 
-    sortAndAdd(pullData[0].sort,pullData[0].name,pullData[0].price,pullData[0].image.thumbnail,pullData[0].id);
+    sortAndAdd(pullData[0].sort,pullData[0].name,pullData[0].price,pullData[0].image.thumbnail,pullData[0].id,storedDataBasket[key].number,pullData[0].salePrice);
   }
 }
 
 
-function sortAndAdd(foodKind,foodName,foodPrice,foodThumbnail,foodId){
+function sortAndAdd(foodKind,foodName,foodPrice,foodThumbnail,foodId,foodNumber,salePrice){
+  moneyInfoUpdates(foodPrice,salePrice,foodNumber);
+  // let foodPriceAfterSale=foodPrice*(1-saleRatio);
 
 switch (foodKind){
-  case "normal" : addToNormal(foodName,foodPrice,foodThumbnail,foodId);
+  case "normal" : addToNormal(foodName,foodPrice,foodThumbnail,foodId,foodNumber);
     break;
 
-  case "frozen" : addToFrozen(foodName,foodPrice,foodThumbnail,foodId);
+  case "frozen" : addToFrozen(foodName,foodPrice,foodThumbnail,foodId,foodNumber);
     break; 
 
-   case "refrigeration": addToRefrigeration(foodName,foodPrice,foodThumbnail,foodId);
+   case "refrigeration": addToRefrigeration(foodName,foodPrice,foodThumbnail,foodId,foodNumber);
     break;
 }
 }
 
 
-function addToNormal(foodName,foodPrice,foodThumbnail,foodId){
+function addToNormal(foodName,foodPrice,foodThumbnail,foodId,foodNumber){
+  let mulPrice=foodPrice*foodNumber
   normalFood.insertAdjacentHTML("beforeend",`
   <li>
   <div class="select_list">
@@ -89,12 +101,12 @@ function addToNormal(foodName,foodPrice,foodThumbnail,foodId){
     <div class="product-counter_wrapper">
       <div class="product-counter_box">
         <button class="minus-counter_button"></button>
-        <span>1</span>                  
+        <span>${foodNumber}</span>                  
         <button class="plus-counter_button"></button>
       </div>
       
       <p>
-        ${foodPrice} 원
+        ${mulPrice} 원
       </p>
       <button class="counter-delete_button"></button>
     </div>
@@ -103,7 +115,8 @@ function addToNormal(foodName,foodPrice,foodThumbnail,foodId){
   `)
 }
 
-function addToFrozen(foodName,foodPrice,foodThumbnail,foodId){
+function addToFrozen(foodName,foodPrice,foodThumbnail,foodId,foodNumber){
+  let mulPrice=foodPrice*foodNumber
   frozenFood.insertAdjacentHTML("beforeend",`
   <li>
   <div class="select_list">
@@ -113,12 +126,12 @@ function addToFrozen(foodName,foodPrice,foodThumbnail,foodId){
     <div class="product-counter_wrapper">
       <div class="product-counter_box">
         <button class="minus-counter_button"></button>
-        <span>1</span>                  
+        <span>${foodNumber}</span>                  
         <button class="plus-counter_button"></button>
       </div>
       
       <p>
-        ${foodPrice} 원
+      ${mulPrice} 원
       </p>
       <button class="counter-delete_button"></button>
     </div>
@@ -128,7 +141,8 @@ function addToFrozen(foodName,foodPrice,foodThumbnail,foodId){
   
 }
 
-function addToRefrigeration(foodName,foodPrice,foodThumbnail,foodId){
+function addToRefrigeration(foodName,foodPrice,foodThumbnail,foodId,foodNumber){
+  let mulPrice=foodPrice*foodNumber
   refrigeratedFood.insertAdjacentHTML("beforeend",`
   <li>
   <div class="select_list">
@@ -138,12 +152,12 @@ function addToRefrigeration(foodName,foodPrice,foodThumbnail,foodId){
     <div class="product-counter_wrapper">
       <div class="product-counter_box">
         <button class="minus-counter_button"></button>
-        <span>1</span>                  
+        <span>${foodNumber}</span>                  
         <button class="plus-counter_button"></button>
       </div>
       
       <p>
-        ${foodPrice} 원
+      ${mulPrice} 원
       </p>
       <button class="counter-delete_button"></button>
     </div>
@@ -151,25 +165,7 @@ function addToRefrigeration(foodName,foodPrice,foodThumbnail,foodId){
   </li>`)
 }
 
-// // 
 
-// refToggle.addEventListener('click',foodToggle());
-
-// function foodToggle(){
-
-//   refToggle.classList.toggle('img_rotate');
-//   // refToggle.sibling.classList.toggle('a11y-hidden');
-// }
-
-// // let refToggle=getNode(".ref_toggle");
-// // let frozenToggle=getNode(".frozen_toggle");
-// // let normalToggle=getNode(".normal_toggle");
-
-
-
-// let refToggleButton = refrigeratedFood.previousSibling.previousSibling;
-// let normalToggleButton = normalFood.previousSibling.previousSibling;
-// let frozenToggleButton = frozenFood.previousSibling.previousSibling;
 refToggleButton.addEventListener('click',()=>{
   refToggleButton.classList.toggle('img_rotate');
   refrigeratedFood.classList.toggle('a11y-hidden');
@@ -186,3 +182,20 @@ frozenToggleButton.addEventListener('click',()=>{
 });
 
 
+//가격 정보 업뎃
+
+function moneyInfoUpdates(foodPrice,salePrice,foodNumber){
+
+}
+
+// let priceInfo = getNode(".price-info");
+// let discountInfo = getNode(".discount-info");
+// let deliveryInfo = getNode(".delivery-info");
+// let resultInfo= getNode("result-info");
+
+
+
+
+
+
+// 가격 버튼 기능

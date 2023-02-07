@@ -137,6 +137,7 @@ background-size: 42px;
   transform: translateX(-47px);
 }
 
+
 /* 헤더 메뉴 */
 .header_menu{
   display: flex;
@@ -370,6 +371,12 @@ background-size: 42px;
   margin:0 4px;
 }
 
+.selected-number,
+.total-number {
+  display:inline-block;
+}
+
+
 .select_list input[type=checkbox],
 .select-all input[type=checkbox]{
   display:none;
@@ -394,7 +401,6 @@ background-size: 42px;
 }
 
 .select_list label{
-
   height: 24px;
 }
 
@@ -567,6 +573,10 @@ background-size: 42px;
 .amount-total{
   padding-top :24px;
   width: 244px;
+}
+
+.money-info{
+  float:right;
 }
 
 .saving-info{
