@@ -101,56 +101,30 @@
       "isLimitedProduct":true
     }
   ],
-  "reviews": [
-    {
-      "title": "rr",
-      "content": "rr",
-      "id": 1
-    },
-    {
-      "title": "qq",
-      "content": "qq",
-      "id": 2
-    },
-    {
-      "title": "33",
-      "content": "333",
-      "id": 3
-    },
-    {
-      "title": "qq",
-      "content": "qqqqq",
-      "id": 4
-    },
-    {
-      "title": "we",
-      "content": "e",
-      "id": 5
-    }
-  ],
+  "reviews": [],
   "basket": [
     {
       "id": "product-ekfk",
-      "number": 1
+      "number": 3
     }
   ],
   "users": [
     {
-      "uniqueId": "gyEGEvxwmW",
-      "curlyId": "fltk0825",
+      "uniqueId": "feNnYHWfXo",
+      "curlyId": "hong12",
       "curlyPw": "d",
-      "userName": "d",
+      "userName": "홍길동",
       "userPhone": "d",
-      "userAddress": "05237 서울 강동구 아리수로 46",
+      "userAddress": "13480 경기 성남시 분당구 대왕판교로 477 ",
       "id": 1
     },
     {
-      "uniqueId": "uzOavhbHJy",
-      "curlyId": "aaa",
+      "uniqueId": "adzBkZxduM",
+      "curlyId": "ddddddd",
       "curlyPw": "d",
       "userName": "d",
       "userPhone": "d",
-      "userAddress": "12513 경기 양평군 용문면 넓은내3길 5 ",
+      "userAddress": "05237 서울 강동구 아리수로 46 ",
       "id": 2
     }
   ]
