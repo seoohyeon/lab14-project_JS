@@ -580,15 +580,15 @@ reviewSubmit.addEventListener("click", ()=>{
   // localStorage.setItem("reviewTitle", reviewTitle.value);
   // localStorage.setItem("reviewContent", reviewContent.value);
   getNode(".product-popup-wrapper").style.display = "none";
-  document.body.classList.remove("no-scroll");
   getNode(".product-review_list-ifnothing").style.display = "none";
+  document.body.classList.remove("no-scroll");
 })
 
-getNode(".form-1").addEventListener("submit", (e) => {
+getNode(".form-1").addEventListener("submit", async (e) => {
 
   e.preventDefault();
 
-  fetch('http://localhost:3000/reviews', {
+  await fetch('http://localhost:3000/reviews', {
     method : "POST",
     body : JSON.stringify({
       title : reviewTitle.value,
@@ -601,7 +601,6 @@ getNode(".form-1").addEventListener("submit", (e) => {
   }).then(function (response){
     return response.json();
   }).then(function (data){
-      // getNode(".product-menu_nav-3").textContent = `후기 (${data.length})`
       getNode(".put-in").insertAdjacentHTML("beforeend",
       `
       <div class="product-review_list-customer">
@@ -619,13 +618,20 @@ getNode(".form-1").addEventListener("submit", (e) => {
       </div>
     `);
     // console.log(data.id)
-    // getNode(".product-menu_nav-3").innerHTML = `후기 (${data.id})`;
+    // getNode(".product-menu_nav-3").innerHTML = `후기 (${data.id})`
+  })
+
+  fetch('http://localhost:3000/reviews').then((res) => { return res.json()})
+  .then((data) => {
+    console.log(data)
+    getNode(".product-menu_nav-3").textContent = `후기 (${data.length})`
   })
     // console.log(data.title)
     // getNode(".product-review_list-customer_product").textContent = data.title;
     // getNode(".product-review_list-customer_product-text").textContent = data.content;
     // getNode(".review-date").textContent = `${year}.${month}.${date}`;
   });
+
 
 
 
