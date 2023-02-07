@@ -36,8 +36,9 @@
   padding: 0 2px 0 2px;
   
   width: 84px;
-  min-height: 200px;
-  height:auto;
+  /* min-height: 200px; */
+  max-width: 209px;
+  /* height:auto; */
   overflow: hidden;
   border: 1px solid #C4C4C4;
 }

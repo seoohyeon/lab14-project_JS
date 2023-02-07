@@ -1,5 +1,4 @@
 
-
 // swiper1
 const mainBannerSwiper = new Swiper('.main-banner_swiper', { //eslint-disable-line 
   loop : true, // 무한 루프 슬라이드, 반복이 되며 슬라이드가 끝이 없다.
@@ -46,7 +45,7 @@ $slides.addEventListener('mouseout', function(){
 });
 
 
-const productDisplaySwiper1 = new Swiper('.product-display_swiper1', { //eslint-disable-line 
+export const productDisplaySwiper1 = new Swiper('.product-display_swiper1', { //eslint-disable-line 
   loop : false, // 무한 루프 슬라이드, 반복이 되며 슬라이드가 끝이 없다.
 	freeMode : false, // 슬라이드 넘길 때 위치 고정 여부
   resistance : false, // 슬라이드 터치에 대한 저항 여부 설정
@@ -56,6 +55,7 @@ const productDisplaySwiper1 = new Swiper('.product-display_swiper1', { //eslint-
   slidesOffsetBefore : 0, // 슬라이드 시작 부분 여백
   slidesOffsetAfter : 0, // 슬라이드 시작 부분 여백
   spaceBetween: 15,
+  
   navigation : {
 		//nextEl : '.swiper-button-next', // 다음 버튼 클래스명
 		nextEl : '.product-display_swiper-button-next', // 다음 버튼 클래스명
@@ -63,7 +63,7 @@ const productDisplaySwiper1 = new Swiper('.product-display_swiper1', { //eslint-
   }
 });
 
-const productDisplaySwiper2 = new Swiper('.product-display_swiper2', { //eslint-disable-line 
+export const productDisplaySwiper2 = new Swiper('.product-display_swiper2', { //eslint-disable-line 
   loop : false, // 무한 루프 슬라이드, 반복이 되며 슬라이드가 끝이 없다.
 	freeMode : false, // 슬라이드 넘길 때 위치 고정 여부
   resistance : false, // 슬라이드 터치에 대한 저항 여부 설정
@@ -78,11 +78,11 @@ const productDisplaySwiper2 = new Swiper('.product-display_swiper2', { //eslint-
 		prevEl : '.product-display2_swiper-button-prev', // 이번 버튼 클래스명
   }
 });
-const recentProductSwiper = new Swiper('.recent-product_swiper', { //eslint-disable-line
+export const recentProductSwiper = new Swiper('.recent-product_swiper', { //eslint-disable-line
   direction:"vertical", 
   slidesPerView:2.4,
   allowTouchMove : false, // false시에 스와이핑이 되지 않으며 버튼으로만 슬라이드 조작이 가능
-  // spaceBetween: 3,
+  spaceBetween: 3,
   navigation : {
 		nextEl : '.recent-product_swiper-button-next', // 다음 버튼 클래스명
 		prevEl : '.recent-product_swiper-button-prev', // 이번 버튼 클래스명

@@ -1,12 +1,15 @@
+import { productDisplaySwiper1, productDisplaySwiper2 } from "./swiper-style.js";
+
 const SERVER_URL = 'http://localhost:3000/';
 
 let productArr;
 
-//option 1 이면 메인페이지, 2면 product-list
+//option 1 이면 메인페이지, 2이면 product-list, 3이면 슬라이드 추가
 function makeCard(option,{image:imageUrl,name:productName,saleRatio,salePrice,price,description,shippingInfo,isKarlyOnly,isLimitedProduct}) {
   imageUrl = imageUrl.thumbnail;
   let newCard = /*html*/
   `
+  ${option==3?`<div class="swiper-slide product-display_swiper-slide"><ul class="product-display_product-cards-container">`:``}
 <li>
   <a class="product-display_product-card" href="./product_detail.html">
     <figure>
@@ -51,6 +54,7 @@ function makeCard(option,{image:imageUrl,name:productName,saleRatio,salePrice,pr
     </div>
   </a>
 </li>
+${option==3?`</ul></div>`:``}
   `;
 
   return newCard;
@@ -66,16 +70,42 @@ function loadCardsToList(option,selector,productIndex){
   .then(res => res.json())
   .then(data =>{
     productArr = data;
-    console.log(productArr);
-
 
     let newCard = makeCard(option,productArr[productIndex]);
     putCard(selector, newCard);
   })
 }
 // 사용예시
-loadCardsToList(1,'.product-display_product-cards-container',4);
+// loadCardsToList(1,'.product-display_product-cards-container',4);
 // loadCardsToList(2,'.product-display_product-cards-container',4);
+
+export function loadAllCardsToSwiper(option,selector,swiper){
+  fetch(`${SERVER_URL}products`)
+  .then(res => res.json())
+  .then(data =>{
+    productArr = data;
+    let newCard,wrapperSelector;
+    for(let i=0;i<productArr.length;i++){
+      if(i%4==0 && i!=0){
+        newCard = makeCard(3,productArr[i]);
+        // wrapperSelector = selector.split(' ')[0]+" .swiper-wrapper";
+        // console.log(newCard);
+        // console.log(wrapperSelector);
+        // putCard(wrapperSelector, newCard);
+        // swiper.removeAllSlides();
+		    swiper.appendSlide(newCard);
+		    swiper.update();
+      }else{
+        newCard = makeCard(option,productArr[i]);
+        putCard(selector, newCard);
+      }
+
+    }
+  })
+}
+
+loadAllCardsToSwiper(1,'.product-display_swiper1 .product-display_product-cards-container',productDisplaySwiper1);
+loadAllCardsToSwiper(1,'.product-display_swiper2 .product-display_product-cards-container',productDisplaySwiper2);
 
 
 

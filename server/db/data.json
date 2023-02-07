@@ -24,9 +24,9 @@
       "id": "product-ekfk",
       "name": "[풀무원] 탱탱쫄면 (4개입)",
       "description": "튀기지 않아 부드럽고 매콤한",
-      "price": 4980,
-      "saleRatio": 0,
-      "salePrice": 0,
+      "price": 6000,
+      "saleRatio": 0.3,
+      "salePrice": 4200,
       "sort": "normal",
       "image": {
         "thumbnail": "tangtang/thumbnail.jpg",
