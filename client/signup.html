@@ -7,8 +7,9 @@
   <link rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
   <link rel="stylesheet" href="./css/style.css" />
-  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-  <script src="./js/main.js" type="module"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script defer src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+  <script src="./js/signup/index.js" type="module"></script>
   <title>Document</title>
 </head>
 
@@ -25,7 +26,7 @@
             <nav class="member-nav">
               <a href="" class="member-nav_sign">회원가입</a>
               <span aria-hidden="true">|</span>
-              <a href="">로그인</a>
+              <a href="" class="header_inner_login_logout">로그인</a>
               <span aria-hidden="true">|</span>
               <a href="">고객센터  ▼</a>
             </nav>
@@ -40,7 +41,7 @@
                 <sup> N</sup>
               </span>
             </h1>
-            <form method="" action="" class="search-form">
+            <form method="POST" class="search-form">
                 <fieldset>
                   <legend aria-hidden="true">검색 폼</legend>
                   <div class="search-form-inner">
@@ -83,7 +84,7 @@
                             <span class="star">*</span>
                             필수입력사항
                         </div>
-                        <div class="registration-form">
+                        <form class="registration-form">
                             <fieldset>
                                 <legend>회원가입 폼</legend>
                                     <div class="form-tr">
@@ -94,9 +95,9 @@
                                             </span>
                                         </span>
                                         <div class="form-tr-input-text">
-                                            <input type="text" required class="signup-input" placeholder="아이디를 입력해주세요." >
+                                            <input id="curlyidField" type="text" required class="signup-input" placeholder="아이디를 입력해주세요." >
                                         </div>
-                                        <button class="doublecheck-button">
+                                        <button id="curlyidsubmit" type="button" class="doublecheck-button">
                                             <span class="jungbok">중복확인</span>
                                         </button>
                                     </div>
@@ -110,7 +111,7 @@
                                             </span>
                                         </span>
                                         <div class="form-tr-input-text">
-                                            <input type="text" required class="signup-input" placeholder="비밀번호를 입력해주세요.">
+                                            <input id="curlypwField" type="password" required class="signup-input" placeholder="비밀번호를 입력해주세요.">
                                         </div>
                                     </div>
 
@@ -123,7 +124,7 @@
                                             </span>
                                         </span>
                                         <div class="form-tr-input-text">
-                                            <input type="text" required class="signup-input" placeholder="비밀번호를 한번 더 입력해주세요.">
+                                            <input id="curlypwcheckField" type="password" required class="signup-input" placeholder="비밀번호를 한번 더 입력해주세요.">
                                         </div>
                                     </div>
 
@@ -136,7 +137,7 @@
                                             </span>
                                         </span>
                                         <div class="form-tr-input-text">
-                                            <input type="text" required class="signup-input" placeholder="이름을 입력해주세요.">
+                                            <input id="curlynameField" type="text" required class="signup-input" placeholder="이름을 입력해주세요.">
                                         </div>
                                     </div>
 
@@ -149,9 +150,9 @@
                                             </span>
                                         </span>
                                         <div class="form-tr-input-text">
-                                            <input type="text" required class="signup-input" placeholder="예: marketkurly@kurly.com">
+                                            <input id="curlyemailField" type="text" required class="signup-input" placeholder="예: marketkurly@kurly.com">
                                         </div>
-                                        <button class="doublecheck-button">
+                                        <button id="curlyemailsubmit" type="button"class="doublecheck-button">
                                             <span class="jungbok">중복확인</span>
                                         </button>
                                     </div>
@@ -164,9 +165,9 @@
                                             </span>
                                         </span>
                                         <div class="form-tr-input-text">
-                                                <input type="text" required class="signup-input" placeholder="예: 숫자만 입력해주세요.">
+                                                <input id="curlynumberField" type="text" required class="signup-input" placeholder="예: 숫자만 입력해주세요.">
                                         </div>
-                                        <button class="phonecheck-button">
+                                        <button type="button" class="phonecheck-button">
                                             <span class="phone-jungbok">인증번호 받기</span>
                                         </button>
                                     </div>
@@ -179,10 +180,13 @@
                                             </span>
                                         </span>
                                         <div class="address-container">
-                                            <button class="address-container-button">
+                                            <button type="button" class="address-container-button">
                                                 <span class="address-container-search">주소 검색</span>
                                             </button>
                                             <span class="address-container-text">배송지에 따라 상품 정보가 달라질 수 있습니다.</span>
+                                            <input id="curlyaddrField_post"  type="text" placeholder="Zip Code" readonly>
+                                            <input id="curlyaddrField_addr" type="text" placeholder="Address" readonly> <br>
+                                            <input id="curlyaddrField_detail" type="text" placeholder="Detailed Address">
                                         </div>
                                     </div>
                     
@@ -292,11 +296,11 @@
                                 </div>
                             </div>
                             <div class="signup-button-size">
-                                <button class="registration-button">
+                                <button type="submit" class="registration-button">
                                     <span class="registration-text">회원가입</span>
                                 </button>
                             </div>
-                        </div>
+                        </form>
                     </div>
             </div>
     </section>

@@ -8,7 +8,7 @@
   href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
   <link rel="stylesheet" href="./css/style.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-  <script src="./js/main.js" type="module"></script>
+  <script src="./js/login/index.js" type="module"></script>
   <title>Document</title>
 </head>
 
@@ -24,7 +24,7 @@
         <nav class="member-nav">
           <a href="" class="member-nav_sign">회원가입</a>
           <span aria-hidden="true">|</span>
-          <a href="">로그인</a>
+          <a href="" class="header_inner_login_logout">로그인</a>
           <span aria-hidden="true">|</span>
           <a href="">고객센터  ▼</a>
         </nav>
@@ -84,8 +84,8 @@
             <form class="signin-form">
               <fieldset>
                 <legend>회원 로그인 폼</legend>
-                  <div class="user-email">
-                    <input type="email" class="userEmail" name="userEmail" placeholder="아이디를 입력해주세요." required>
+                  <div class="user-id">
+                    <input class="userId" name="userId" placeholder="아이디를 입력해주세요." required>
                   </div>
                   <div class="user-pw">
                   <input type="password" class="userPw" name="userPw" placeholder="비밀번호를 입력해주세요." required>
@@ -97,7 +97,7 @@
                   </div>
               </fieldset>
                   <div class="signin-button-size">
-                  <button class="signin-button"><span>로그인</span></button>
+                  <button type="submit" class="signin-button"><span>로그인</span></button>
                   <button onclick="location.href='signup.html'" class="signup-button">
                     <span>
                       회원가입
