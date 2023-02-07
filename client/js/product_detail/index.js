@@ -58,7 +58,8 @@ getNode(".button_add_cart").addEventListener("click", () =>{
   getNode(".cart_bubble_wrapper").style.display = "block";
   setTimeout(() => {
     getNode(".cart_bubble_wrapper").style.display = "none";
-  }, 3000);
+  }, 1000);
+
 
   fetch("http://localhost:3000/basket").then((res) => {
     return res.json();
