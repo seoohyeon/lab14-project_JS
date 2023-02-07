@@ -101,7 +101,13 @@
       "isLimitedProduct": true
     }
   ],
-  "reviews": [],
+  "reviews": [
+    {
+      "title": "ㅇ",
+      "content": "ㅇ",
+      "id": 1
+    }
+  ],
   "basket": [
     {
       "id": "product-rksk",
