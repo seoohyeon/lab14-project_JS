@@ -86,19 +86,19 @@
 .select_list input[type=checkbox]+label,
 .select-all input[type=checkbox]+label{
   cursor: pointer;
-  background-image: url(/lab14-project/client/assets/icons/web-icons/check.png);
+  background-image: url(../assets/icons/web-icons/check.png);
   background-position:-10px -10px;
   background-repeat: no-repeat;
   padding-left: 32px;
 }
 .select_list input[type=checkbox]:checked+label,
 .select-all input[type=checkbox]:checked+label{
-  background-image: url(/lab14-project/client/assets/icons/web-icons/check.png);
+  background-image: url(../assets/icons/web-icons/check.png);
   background-position:-10px -54px;
 }
 .select_list input[type=checkbox]:disabled+label,
 .select-all input[type=checkbox]:disabled+label{
-  background-image: url(/lab14-project/client/assets/icons/web-icons/check.png);
+  background-image: url(../assets/icons/web-icons/check.png);
   background-position:-10px -10px;
 }
 
@@ -171,7 +171,7 @@
   width: 30px;
   height: 30px;
   padding:0px;
-  background-image: url(/lab14-project/client/assets/icons/web-icons/Close-dark.svg);
+  background-image: url(../assets/icons/web-icons/Close-dark.svg);
   background-repeat: no-repeat;
   background-position:50% 50%;
   border:none;
@@ -183,7 +183,7 @@
   width: 30px;
   height: 30px;
   padding:0px;
-  background-image: url(/lab14-project/client/assets/icons/web-icons/Minus.svg);
+  background-image: url(../assets/icons/web-icons/Minus.svg);
   background-repeat: no-repeat;
   background-position:-8px -8px;
   border:none;
@@ -195,7 +195,7 @@
   width: 30px;
   height: 30px;
   padding:0px;
-  background-image: url(/lab14-project/client/assets/icons/web-icons/Plus.svg);
+  background-image: url(../assets/icons/web-icons/Plus.svg);
   background-repeat: no-repeat;
   background-position:-8px -8px;
   border:none;

@@ -16,9 +16,9 @@
         "alt": "유부호 만두"
       },
       "stock": 3,
-      "shippingInfo":"",
-      "isKarlyOnly":true,
-      "isLimitedProduct":false
+      "shippingInfo": "",
+      "isKarlyOnly": true,
+      "isLimitedProduct": false
     },
     {
       "id": "product-ekfk",
@@ -36,9 +36,9 @@
         "alt": "풀무원 탱탱쫄면"
       },
       "stock": 10,
-      "shippingInfo":"샛별배송",
-      "isKarlyOnly":true,
-      "isLimitedProduct":false
+      "shippingInfo": "샛별배송",
+      "isKarlyOnly": true,
+      "isLimitedProduct": false
     },
     {
       "id": "product-akqk",
@@ -56,9 +56,9 @@
         "alt": "홍대 주꾸미"
       },
       "stock": 8,
-      "shippingInfo":"",
-      "isKarlyOnly":false,
-      "isLimitedProduct":true
+      "shippingInfo": "",
+      "isKarlyOnly": false,
+      "isLimitedProduct": true
     },
     {
       "id": "product-tkwk",
@@ -76,9 +76,9 @@
         "alt": "강남면옥 소갈비찜"
       },
       "stock": 2,
-      "shippingInfo":"",
-      "isKarlyOnly":false,
-      "isLimitedProduct":false
+      "shippingInfo": "",
+      "isKarlyOnly": false,
+      "isLimitedProduct": false
     },
     {
       "id": "product-ckzk",
@@ -96,9 +96,9 @@
         "alt": "칼리 한돈 삼겹 베이컨"
       },
       "stock": 13,
-      "shippingInfo":"샛별배송",
-      "isKarlyOnly":true,
-      "isLimitedProduct":true
+      "shippingInfo": "샛별배송",
+      "isKarlyOnly": true,
+      "isLimitedProduct": true
     }
   ],
   "reviews": [],
@@ -106,6 +106,18 @@
     {
       "id": "product-ekfk",
       "number": 3
+    },
+    {
+      "id": "product-tkwk",
+      "number": 3
+    },
+    {
+      "id": "product-rksk",
+      "number": 3
+    },
+    {
+      "id": "product-ckzk",
+      "number": 1
     }
   ],
   "users": [
@@ -126,6 +138,15 @@
       "userPhone": "d",
       "userAddress": "05237 서울 강동구 아리수로 46 ",
       "id": 2
+    },
+    {
+      "uniqueId": "LXzgbhqLHi",
+      "curlyId": "123asd",
+      "curlyPw": "123123",
+      "userName": "123",
+      "userPhone": "123",
+      "userAddress": "05315 서울 강동구 양재대로123길 7 123",
+      "id": 3
     }
   ]
 }

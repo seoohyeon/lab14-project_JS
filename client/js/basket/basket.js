@@ -25,6 +25,43 @@ let resultDiscountInfo=0;
 let resulteDeliveryInfo=0;
 let resultTotalPriceInfo=0;
 let needAddPrice=0;
+let test_123= 0;
+
+
+let urlList = [
+  "http://localhost:3000/products",
+  "http://localhost:3000/reviews",
+  "http://localhost:3000/basket",
+  "http://localhost:3000/users"
+];
+
+Promise.all(
+  urlList.map(
+      url => fetch(url).then(response => {
+          return response.json();
+      })
+  )
+)
+.then(jsonBaseList => {
+  var resBasket=jsonBaseList[2];
+  var resProducts=jsonBaseList[0];
+  let resUsers=jsonBaseList[3];
+
+  
+  let storedData=checkBasketList(resBasket,resProducts);  // 데이터 받아서 상품 분류 및 추가
+  if(resBasket.length>=1){
+    noOption.className +=' a11y-hidden'
+  }
+
+  if(window.localStorage.getItem('Unique ID')){
+    for(let key in resUsers){
+      let userData = resUsers.filter(function(e){
+        return e.uniqueId == JSON.parse(localStorage.getItem('Unique ID'))[0];
+      })
+      basketAddress.innerHTML=`${userData[0].userAddress}`
+    }
+  }
+})
 
 
 
@@ -47,18 +84,18 @@ function kakaoMapLoad(){
 }
 
 
-fetch("/lab14-project/server/db/data.json")
-.then(response => {
-  return response.json();
-})
-.then(res=>{
+// fetch("")
+// .then(response => {
+//   return response.json();
+// })
+// .then(res=>{
  
-  let storedData=checkBasketList(res.basket,res.products);  // 데이터 받아서 상품 분류 및 추가
-  if(res.basket.length>=1){
-    noOption.className += ' a11y-hidden'
-  }
+//   let storedData=checkBasketList(res.basket,res.products);  // 데이터 받아서 상품 분류 및 추가
+//   if(res.basket.length>=1){
+//     noOption.className += ' a11y-hidden'
+//   }
 
-})
+// })
 
 
 //basket obj에 저장되어있는 id를 이용하여 product에 저장되어있는 상세정보를 리턴해주는 함수.
@@ -71,7 +108,7 @@ function checkBasketList(storedDataBasket,storedDataProducts){
     sortAndAdd(pullData[0].sort,pullData[0].name,pullData[0].price,pullData[0].image.thumbnail,pullData[0].id,storedDataBasket[key].number,pullData[0].salePrice);
   }
 
-  // 가격 계산 함수
+  // 가격 출력 함수
   priceInfo.innerHTML=`${resultPriceInfo.toLocaleString()}`
   discountInfo.innerHTML=`${resultDiscountInfo.toLocaleString()}`
   if((resultPriceInfo-resultDiscountInfo)<40000){
@@ -111,7 +148,7 @@ switch (foodKind){
 
 
 function addToNormal(foodName,foodPrice,foodThumbnail,foodId,foodNumber,salePrice){
-  let mulPrice=foodPrice*foodNumber
+  let mulPrice=foodPrice*foodNumber;
 
   normalFood.insertAdjacentHTML("beforeend",`
   <li>
@@ -121,9 +158,9 @@ function addToNormal(foodName,foodPrice,foodThumbnail,foodId,foodNumber,salePric
     <a href="음식 상세페이지"><img class="food-picture" src="assets/${foodThumbnail}" alt="${foodName}이미지" /> ${foodName}</a>
     <div class="product-counter_wrapper">
       <div class="product-counter_box">
-        <button class="minus-counter_button"></button>
-        <span>${foodNumber}</span>                  
-        <button class="plus-counter_button"></button>
+        <button class="minus-counter_button ${foodId}_minus"></button>
+        <span class="${foodId}_number">${foodNumber}</span>                  
+        <button class="plus-counter_button ${foodId}_plus"></button>
       </div>
       
       <p>
@@ -136,10 +173,11 @@ function addToNormal(foodName,foodPrice,foodThumbnail,foodId,foodNumber,salePric
   `)
   resultPriceInfo += mulPrice;
   resultDiscountInfo +=salePrice;
+  normalFood.parentNode.classList.remove('a11y-hidden');
 }
 
 function addToFrozen(foodName,foodPrice,foodThumbnail,foodId,foodNumber,salePrice){
-  let mulPrice=foodPrice*foodNumber
+  let mulPrice=foodPrice*foodNumber;
   frozenFood.insertAdjacentHTML("beforeend",`
   <li>
   <div class="select_list">
@@ -148,9 +186,9 @@ function addToFrozen(foodName,foodPrice,foodThumbnail,foodId,foodNumber,salePric
     <a href="음식 상세페이지"><img class="food-picture" src="assets/${foodThumbnail}" alt="${foodName}이미지" /> ${foodName}</a>
     <div class="product-counter_wrapper">
       <div class="product-counter_box">
-        <button class="minus-counter_button"></button>
-        <span>${foodNumber}</span>                  
-        <button class="plus-counter_button"></button>
+        <button class="minus-counter_button ${foodId}_minus"></button>
+        <span class="${foodId}_number">${foodNumber}</span>                  
+        <button class="plus-counter_button ${foodId}_plus"></button>
       </div>
       
       <p>
@@ -163,10 +201,11 @@ function addToFrozen(foodName,foodPrice,foodThumbnail,foodId,foodNumber,salePric
   `)
   resultPriceInfo += mulPrice;
   resultDiscountInfo +=salePrice;
+  frozenFood.parentNode.classList.remove('a11y-hidden');
 }
 
 function addToRefrigeration(foodName,foodPrice,foodThumbnail,foodId,foodNumber,salePrice){
-  let mulPrice=foodPrice*foodNumber
+  let mulPrice=foodPrice*foodNumber;
   refrigeratedFood.insertAdjacentHTML("beforeend",`
   <li>
   <div class="select_list">
@@ -175,9 +214,9 @@ function addToRefrigeration(foodName,foodPrice,foodThumbnail,foodId,foodNumber,s
     <a href="음식 상세페이지"><img class="food-picture" src="assets/${foodThumbnail}" alt="${foodName}이미지" /> ${foodName}</a>
     <div class="product-counter_wrapper">
       <div class="product-counter_box">
-        <button class="minus-counter_button"></button>
-        <span>${foodNumber}</span>                  
-        <button class="plus-counter_button"></button>
+        <button class="minus-counter_button ${foodId}_minus"></button>
+        <span class="${foodId}_number">${foodNumber}</span>                  
+        <button class="plus-counter_button ${foodId}_plus"></button>
       </div>
       
       <p>
@@ -189,6 +228,7 @@ function addToRefrigeration(foodName,foodPrice,foodThumbnail,foodId,foodNumber,s
   </li>`)
   resultPriceInfo += mulPrice;
   resultDiscountInfo +=salePrice;
+  refrigeratedFood.parentNode.classList.remove('a11y-hidden');
 }
 
 
