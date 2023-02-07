@@ -74,7 +74,7 @@ function checkBasketList(storedDataBasket,storedDataProducts){
 
 
 function sortAndAdd(foodKind,foodName,foodPrice,foodThumbnail,foodId,foodNumber,salePrice){
-  moneyInfoUpdates(foodPrice,salePrice,foodNumber);
+  =moneyInfoUpdates(foodPrice,salePrice,foodNumber);
   // let foodPriceAfterSale=foodPrice*(1-saleRatio);
 
 switch (foodKind){
@@ -185,6 +185,8 @@ frozenToggleButton.addEventListener('click',()=>{
 //가격 정보 업뎃
 
 function moneyInfoUpdates(foodPrice,salePrice,foodNumber){
+
+  return foodPrice
 
 }
 
