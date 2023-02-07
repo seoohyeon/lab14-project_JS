@@ -42,8 +42,7 @@ await fetch("http://localhost:3000/products", {
 
       if(arr[arr.length-1] === data[i].id){
         getNode(".order-img-tag").src = `./assets/${data[i].image.view}`
-        getNode(".order-details_title").textContent = data[i].name
-        getNode(".order-details_title").textContent = data[i].name
+        productTitle.textContent = data[i].name
         getNode(".order-details_subtitle").textContent = data[i].description
         getNode(".order-details_price").textContent = `${price.slice(0,-3)},${price.slice(-3)}원`
         getNode(".product-price").textContent = `${price.slice(0,-3)},${price.slice(-3)}원`
@@ -178,28 +177,7 @@ fetch("http://localhost:3000/basket")
 
 // 헤더 menu, 상품설명 menu scroll동작 구현
 window.addEventListener("scroll", () =>{
-  // let headerMenu = getNode(".header_menu").offsetHeight;
   let menuBar = getNode(".product-menu").offsetHeight;
-  // console.log(headerMenu)
- 
-  // window.onscroll = function () {
-  //  let windowTop = window.scrollY;
- 
-  //  if (windowTop >= headerMenu+72) {
-  //    getNode(".header_menu").classList.add("drop");
-  //    getNode(".header_menu_delivery").style.display = "none";
-  //    getNode(".header_menu_search").style.display = "block";
-  //    getNode(".header_menu_search").style.display = "block";
-  //    getNode(".header_menu_input").style.display = "block";
-  //    getNode(".sticky-ul").style.visibility = "visible";
-  //  } else {
-  //    getNode(".header_menu").classList.remove("drop");
-  //    getNode(".header_menu_delivery").style.disaplay = "block";
-  //    getNode(".header_menu_search").style.display = "none";
-  //    getNode(".header_menu_search").style.display = "none";
-  //    getNode(".header_menu_input").style.display = "none";
-  //    getNode(".sticky-ul").style.visibility = "hidden";
-  //  }
 
    if (windowTop >= menuBar+1340) {
     getNode(".product-menu").classList.add("drop-2");
