@@ -131,5 +131,8 @@ module.exports = {
     'prefer-template': ['warn'],
     // 객체의 프로퍼티 이름은 필요할 때만 따옴표로 감싸야 한다
     'quote-props': ['warn', 'as-needed'],
+
+    'no-undef':'warn',
+    'no-unused-vars':'warn'
   },
 }
