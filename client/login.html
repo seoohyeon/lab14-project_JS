@@ -22,24 +22,24 @@
     <div class="header_inner">
       <div>
         <nav class="member-nav">
-          <a href="" class="member-nav_sign">회원가입</a>
+          <a href="./signup.html" class="member-nav_sign">회원가입</a>
           <span aria-hidden="true">|</span>
-          <a href="" class="header_inner_login_logout">로그인</a>
+          <a href="./login.html" class="header_inner_login_logout">로그인</a>
           <span aria-hidden="true">|</span>
           <a href="">고객센터  ▼</a>
         </nav>
       </div>
       <div class="header_inner_main">
         <h1>
-          <a href=""><img src="./assets/icons/logo.svg" alt="마켓컬리 로고 이미지" /></a>
-          <a href="">마켓칼리</a>
+          <a href="./index.html"><img src="./assets/icons/logo.svg" alt="마켓컬리 로고 이미지" /></a>
+          <a href="./index.html">마켓컬리</a>
           <span class="contents-border" aria-hidden="true"> | </span>
           <span class="beauty-karly-wrapper">
-            <a href="">뷰티칼리</a>
+            <a href="">뷰티컬리</a>
             <sup> N</sup>
           </span>
         </h1>
-        <form method="" action="" class="search-form">
+        <form class="search-form">
             <fieldset>
               <legend aria-hidden="true">검색 폼</legend>
               <div class="search-form-inner">
@@ -53,21 +53,33 @@
         <ul>
           <li><a href=""><img src="./assets/icons/web-icons/Location.svg" alt="핀 모양의 아이콘" /></a></li>
           <li><a href=""><img src="./assets/icons/web-icons/Heart.svg" alt="하트 모양의 아이콘" /></a></li>
-          <li><a href=""><img src="./assets/icons/web-icons/Cart-1.svg" alt="카트 모양의 아이콘" /></a></li>
+          <li><a href="./basket.html"><img src="./assets/icons/web-icons/Cart-1.svg" alt="카트 모양의 아이콘" /></a></li>
         </ul>
       </div>
-      <div>
+      <div class="header_menu_div">
         <ul class="header_menu">
           <div class="header_menu_category">
             <li><a href=""><img src="./assets/icons/web-icons/Hamburger.svg" alt="햄버거 모양의 아이콘" />카테고리</a></li>
           </div>
           <div class="header_menu_wrapper">
-            <li><a href="">신상품</a></li>
-            <li><a href="">베스트</a></li>
-            <li><a href="">알뜰쇼핑</a></li>
-            <li><a href="">특가/혜택</a></li>
+            <li><a href="./product_list.html">신상품</a></li>
+            <li><a href="./product_list.html">베스트</a></li>
+            <li><a href="./product_list.html">알뜰쇼핑</a></li>
+            <li><a href="./product_list.html">특가/혜택</a></li>
           </div>  
-            <li><button><b>샛별·낮</b> 배송안내</button></li>
+            <li class="header_menu_delivery"><button><b>샛별·낮</b> 배송안내</button></li>
+            <div class="header_menu_search">
+              <label for="main-search" class="form-group-label" ><span class="icon-search" aria-hidden="true"></span></label>
+              <input type="search" class="form-group-input header_menu_input" id="main-search" placeholder="검색어를 입력해주세요" />
+            </div>
+            <ul class="sticky-ul">
+              <li><a href=""><img src="./assets/icons/web-icons/Location.svg" alt="핀 모양의 아이콘" /></a></li>
+              <li><a href=""><img src="./assets/icons/web-icons/Heart.svg" alt="하트 모양의 아이콘" /></a></li>
+              <li><a href="./basket.html"><img src="./assets/icons/web-icons/Cart-1.svg" alt="카트 모양의 아이콘" /></a></li>
+            </ul>
+            <svg class="cart-bell" width="24" height="24" viewBox="0 0 24 24" fill="#5F0080" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="11.5" stroke="#5F0080"/>
+              </svg>
         </ul>
       </div>
     </div>
