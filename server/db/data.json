@@ -105,11 +105,11 @@
   "basket": [
     {
       "id": "product-rksk",
-      "number": 1
+      "number": 25
     },
     {
       "id": "product-ekfk",
-      "number": 10
+      "number": 17
     },
     {
       "id": "product-akqk",
@@ -117,7 +117,7 @@
     },
     {
       "id": "product-tkwk",
-      "number": 4
+      "number": 3
     },
     {
       "id": "product-ckzk",
@@ -144,12 +144,12 @@
       "id": 2
     },
     {
-      "uniqueId": "MardEDApNX",
-      "curlyId": "duftlagltkwfk",
-      "curlyPw": "qkrdnjswnsdlqslek",
-      "userName": "박원준",
-      "userPhone": "01026747207",
-      "userAddress": "34672 대전 동구 판교2길 7 ",
+      "uniqueId": "aKOGAATMsy",
+      "curlyId": "fltk0825",
+      "curlyPw": "11111111",
+      "userName": "김서현",
+      "userPhone": "01012345678",
+      "userAddress": "48060 부산 해운대구 APEC로 55 ",
       "id": 3
     }
   ]

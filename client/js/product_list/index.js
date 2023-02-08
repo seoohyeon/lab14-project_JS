@@ -24,20 +24,20 @@ let flag = false;
 filterAccordionItem.forEach(item => {
   item.addEventListener("click", () =>{
     if(TOGGLE === true && item === filterAccordionItem[0]){
-      filterAccordionInventory[0].style.display = "none"
-      filterTitleArrow[0].style.backgroundPosition = "-8px -34px"
+      filterAccordionInventory[0].style.display = "none";
+      filterTitleArrow[0].style.backgroundPosition = "-8px -34px";
       TOGGLE = false;
     }else if(TOGGLE === false && item === filterAccordionItem[0]) {
-      filterAccordionInventory[0].style.display = "block"
-      filterTitleArrow[0].style.backgroundPosition = "-8px -8px"
+      filterAccordionInventory[0].style.display = "block";
+      filterTitleArrow[0].style.backgroundPosition = "-8px -8px";
       TOGGLE = true;
     }else if(TOGGLE === true && item === filterAccordionItem[1]){
-      filterAccordionInventory[1].style.display = "none"
-      filterTitleArrow[1].style.backgroundPosition = "-8px -34px"
+      filterAccordionInventory[1].style.display = "none";
+      filterTitleArrow[1].style.backgroundPosition = "-8px -34px";
       TOGGLE = false;
     }else if(TOGGLE === false && item === filterAccordionItem[1]) {
-      filterAccordionInventory[1].style.display = "block"
-      filterTitleArrow[1].sbesttyle.backgroundPosition = "-8px -8px"
+      filterAccordionInventory[1].style.display = "block";
+      filterTitleArrow[1].sbesttyle.backgroundPosition = "-8px -8px";
       TOGGLE = true;
     }
   })
@@ -47,47 +47,47 @@ let bestListArray = document.querySelectorAll('.best-list_top-array li')
 bestListArray.forEach(item => {
   item.addEventListener('click',()=>{
     if(item === bestListArray[0]){
-      bestListArray[0].style.color = "var(--content)"
-      bestListArray[1].style.color = "var(--gray-300)"
-      bestListArray[2].style.color = "var(--gray-300)"
-      bestListArray[3].style.color = "var(--gray-300)"
-      bestListArray[4].style.color = "var(--gray-300)"
-      bestListArray[5].style.color = "var(--gray-300)"
+      bestListArray[0].style.color = "var(--content)";
+      bestListArray[1].style.color = "var(--gray-300)";
+      bestListArray[2].style.color = "var(--gray-300)";
+      bestListArray[3].style.color = "var(--gray-300)";
+      bestListArray[4].style.color = "var(--gray-300)";
+      bestListArray[5].style.color = "var(--gray-300)";
     }else if(item === bestListArray[1]){
-      bestListArray[0].style.color = "var(--gray-300)"
-      bestListArray[1].style.color = "var(--content)"
-      bestListArray[2].style.color = "var(--gray-300)"
-      bestListArray[3].style.color = "var(--gray-300)"
-      bestListArray[4].style.color = "var(--gray-300)"
-      bestListArray[5].style.color = "var(--gray-300)"
+      bestListArray[0].style.color = "var(--gray-300)";
+      bestListArray[1].style.color = "var(--content)";
+      bestListArray[2].style.color = "var(--gray-300)";
+      bestListArray[3].style.color = "var(--gray-300)";
+      bestListArray[4].style.color = "var(--gray-300)";
+      bestListArray[5].style.color = "var(--gray-300)";
     }else if(item === bestListArray[2]){
-      bestListArray[0].style.color = "var(--gray-300)"
-      bestListArray[1].style.color = "var(--gray-300)"
-      bestListArray[2].style.color = "var(--content)"
-      bestListArray[3].style.color = "var(--gray-300)"
-      bestListArray[4].style.color = "var(--gray-300)"
-      bestListArray[5].style.color = "var(--gray-300)"
+      bestListArray[0].style.color = "var(--gray-300)";
+      bestListArray[1].style.color = "var(--gray-300)";
+      bestListArray[2].style.color = "var(--content)";
+      bestListArray[3].style.color = "var(--gray-300)";
+      bestListArray[4].style.color = "var(--gray-300)";
+      bestListArray[5].style.color = "var(--gray-300)";
     }else if(item === bestListArray[3]){
-      bestListArray[0].style.color = "var(--gray-300)"
-      bestListArray[1].style.color = "var(--gray-300)"
-      bestListArray[2].style.color = "var(--gray-300)"
-      bestListArray[3].style.color = "var(--content)"
-      bestListArray[4].style.color = "var(--gray-300)"
-      bestListArray[5].style.color = "var(--gray-300)"
+      bestListArray[0].style.color = "var(--gray-300)";
+      bestListArray[1].style.color = "var(--gray-300)";
+      bestListArray[2].style.color = "var(--gray-300)";
+      bestListArray[3].style.color = "var(--content)";
+      bestListArray[4].style.color = "var(--gray-300)";
+      bestListArray[5].style.color = "var(--gray-300)";
     }else if(item === bestListArray[4]){
-      bestListArray[0].style.color = "var(--gray-300)"
-      bestListArray[1].style.color = "var(--gray-300)"
-      bestListArray[2].style.color = "var(--gray-300)"
-      bestListArray[3].style.color = "var(--gray-300)"
-      bestListArray[4].style.color = "var(--content)"
-      bestListArray[5].style.color = "var(--gray-300)"
+      bestListArray[0].style.color = "var(--gray-300)";
+      bestListArray[1].style.color = "var(--gray-300)";
+      bestListArray[2].style.color = "var(--gray-300)";
+      bestListArray[3].style.color = "var(--gray-300)";
+      bestListArray[4].style.color = "var(--content)";
+      bestListArray[5].style.color = "var(--gray-300)";
     }else if(item === bestListArray[5]){
-      bestListArray[0].style.color = "var(--gray-300)"
-      bestListArray[1].style.color = "var(--gray-300)"
-      bestListArray[2].style.color = "var(--gray-300)"
-      bestListArray[3].style.color = "var(--gray-300)"
-      bestListArray[4].style.color = "var(--gray-300)"
-      bestListArray[5].style.color = "var(--content)"
+      bestListArray[0].style.color = "var(--gray-300)";
+      bestListArray[1].style.color = "var(--gray-300)";
+      bestListArray[2].style.color = "var(--gray-300)";
+      bestListArray[3].style.color = "var(--gray-300)";
+      bestListArray[4].style.color = "var(--gray-300)";
+      bestListArray[5].style.color = "var(--content)";
     }
   })
 })
@@ -126,39 +126,39 @@ bestListInventoryProduct.onclick = (e) => {
     let arr = JSON.parse(output);
 
     for(let i=0; i<data.length; i++){
-      let price = String(data[i].price);
+      let price = String(data[i].salePrice);
 
 
       if(arr[arr.length-1] === data[i].id){
         number = 1;
-        getNode(".cart-popup_product").textContent = `${price.slice(0,-3)},${price.slice(-3)}원`
-        getNode(".cart-popup_content-title").textContent = data[i].name
-        totalPrice.textContent = `${price.slice(0,-3)},${price.slice(-3)}`
+        getNode(".cart-popup_product").textContent = `${price.slice(0,-3)},${price.slice(-3)}원`;
+        getNode(".cart-popup_content-title").textContent = data[i].name;
+        totalPrice.textContent = `${price.slice(0,-3)},${price.slice(-3)}`;
 
 
         function haveMinus() {
           console.log(number)
           if(number > 1){
-            minus.style.cursor = "pointer"
+            minus.style.cursor = "pointer";
             number -= 1;
-            totalNum = String(data[i].price*number);
-            totalNum = `${totalNum.slice(0,-3)},${totalNum.slice(-3)}`
+            totalNum = String(data[i].salePrice*number);
+            totalNum = `${totalNum.slice(0,-3)},${totalNum.slice(-3)}`;
             orderNumber.textContent = number;
             totalPrice.textContent = totalNum;
           }
           if(number === 1){
             getNode(".order-details_minus_path").style.fill = "var(--gray-300)";
             orderNumber.textContent = 1;
-            minus.style.cursor = "default"
+            minus.style.cursor = "default";
           }
 
         }
         
         function havePlus() {
-          console.log(number)
+          console.log(number);
             number += 1;
-            totalNum = String(data[i].price*number);
-            totalNum = `${totalNum.slice(0,-3)},${totalNum.slice(-3)}`
+            totalNum = String(data[i].salePrice*number);
+            totalNum = `${totalNum.slice(0,-3)},${totalNum.slice(-3)}`;
             orderNumber.textContent = number;
             totalPrice.textContent = totalNum;
         }
@@ -181,7 +181,7 @@ bestListInventoryProduct.onclick = (e) => {
           }
 
         })
-        getProductItem = data[i]
+        getProductItem = data[i];
       }
       
     }
@@ -207,7 +207,7 @@ cartAdd.addEventListener('click', async () => {
    }).then((newData) => {
      return savedProductItem = newData;
    })
-   console.log(savedProductItem)
+   console.log(savedProductItem);
    for(let i=0; i<savedProductItem.length; i++){
     // console.log(savedProductItem[i].id) // 장부 2가지
     // console.log(getProductItem.id) // 내가 가져온애
@@ -219,7 +219,7 @@ cartAdd.addEventListener('click', async () => {
     }  
   }
 
-  console.log(flag)
+  console.log(flag);
 
 
   if(flag){
@@ -253,44 +253,6 @@ cartAdd.addEventListener('click', async () => {
 })
 
 
-
-
-
-
-// let minusButton = getNode('.cart-popup_count-minus');
-// let plusButton = getNode('.cart-popup_count-plus');
-// let countTotal = getNode('.cart-popup_content-total');
-// let total = +getNode('.cart-popup_count-total').textContent;
-// let popupSumPrice = getNode('.cart-popup_price');
-// let sumPrice = +popupSumPrice.textContent.replace(",","");
-
-// function countMinus() {
-//   if(total > 1){
-//     total -= 1;
-//     sumPrice = String(4980*total);
-//     sumPrice = `${sumPrice.slice(0,-3)},${sumPrice.slice(-3)}`;
-//     countTotal.textContent = total;
-//     popupSumPrice.textContent = sumPrice;
-//   }
-//   if(total === 1){
-//     minusButton.style.backgroundPosition = "-8px -47px";
-//     countTotal.textContent = 1;
-//   }
-// }
-// function countPlus() {
-//   total += 1;
-//   sumPrice = String(4980*total);
-//   sumPrice = `${sumPrice.slice(0,-3)},${sumPrice.slice(-3)}`;
-//   countTotal.textContent = total;
-//   popupSumPrice.textContent = sumPrice;
-
-//   if(total > 1){
-//     minusButton.style.backgroundPosition = "-8px -8px";
-//   }
-// }
-
-// minusButton.addEventListener('click',countMinus);
-// plusButton.addEventListener('click',countPlus);
 
 const SERVER_URL = 'http://localhost:3000/';
 
