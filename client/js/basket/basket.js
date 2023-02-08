@@ -643,4 +643,3 @@ function priceInitSecond(){
 
 }
 
-addLogoutFunc();
