@@ -17,18 +17,17 @@ let frozenToggleButton = frozenFood.previousSibling.previousSibling;
 
 let selectList=getNode(".select-list");
 
-var priceInfo = getNode(".price-info");
-var discountInfo = getNode(".discount-info");
-var deliveryInfo = getNode(".delivery-info");
-var resultInfo= getNode(".result-info");
-var deliveryExplain=getNode(".delivery-explain");
-var needAddMoney=getNode(".need-add");
-
-var resultPriceInfo=0;
-var resultDiscountInfo=0;
-var resulteDeliveryInfo=0;
-var resultTotalPriceInfo=0;
-var needAddPrice=0;
+let priceInfo = getNode(".price-info");
+let discountInfo = getNode(".discount-info");
+let deliveryInfo = getNode(".delivery-info");
+let resultInfo= getNode(".result-info");
+let deliveryExplain=getNode(".delivery-explain");
+let needAddMoney=getNode(".need-add");
+let resultPriceInfo=0;
+let resultDiscountInfo=0;
+let resulteDeliveryInfo=0;
+let resultTotalPriceInfo=0;
+let needAddPrice=0;
 
 
 var everyData=new Array();

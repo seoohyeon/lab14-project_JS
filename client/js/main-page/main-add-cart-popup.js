@@ -15,10 +15,10 @@ let cartPopupTotalCount = document.querySelector('.cart-popup_count-total');
 let cartPopupSinglePrice = document.querySelector('.cart-popup_content-count span');
 let cartPopupTitle = document.querySelector('.cart-popup_content-title span');
 
-let cartPopupCancelBtn = document.querySelector('.cart-popup_cancel-button');
-let cartPopupAddBtn = document.querySelector('.cart-popup_add-button');
-let cartPopupPlusBtn = document.querySelector('.cart-popup_count-plus');
-let cartPopupMinusBtn = document.querySelector('.cart-popup_count-minus');
+// let cartPopupCancelBtn = document.querySelector('.cart-popup_cancel-button');
+// let cartPopupAddBtn = document.querySelector('.cart-popup_add-button');
+// let cartPopupPlusBtn = document.querySelector('.cart-popup_count-plus');
+// let cartPopupMinusBtn = document.querySelector('.cart-popup_count-minus');
 
 let seletedId;
 
