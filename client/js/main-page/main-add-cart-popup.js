@@ -71,6 +71,7 @@ cartPopupWrapper.addEventListener('click',(e)=>{
   totalPrice = productCount * productPrice;
   if(e.target.classList.contains('cart-popup_cancel-button')){
     // 꺼지는 이벤트가 이미 있음
+    productCount =1; 
     // console.log('closed');
   }else if(e.target.classList.contains('cart-popup_add-button')){
     console.log(seletedId);
@@ -118,6 +119,7 @@ cartPopupWrapper.addEventListener('click',(e)=>{
         })
       } 
     })
+    productCount =1;
   }else if(e.target.classList.contains('cart-popup_count-plus')){
     productCount++;
     totalPrice = productCount * productPrice;
