@@ -210,4 +210,3 @@ await loadAllCardsToSwiper(2,'.recent-product_swiper-wrapper',recentProductSwipe
 // tempDiv.addEventListener()
 
 // newdiv.insertAdjacentElement('beforeend',tempDiv);
-

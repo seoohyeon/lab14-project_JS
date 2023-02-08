@@ -209,6 +209,9 @@ background-size: 42px;
 }
 
 /* footer style */
+.footer {
+  position: relative;
+}
 
 .footer_section{
   display: flex;
@@ -330,4 +333,13 @@ background-size: 42px;
 
 .toss-text{
   transform: translateX(9px);
+}
+
+.top-button {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  border: none;
+  width: 60px;
+  height: 60px;
 }

@@ -21,7 +21,6 @@ let getProductItem = 0;
 let savedProductItem = 0;
 let flag = false;
 
-// console.log(localStorage.getItem("id"))
 
 await fetch("http://localhost:3000/products", {
     method : 'GET',
@@ -167,7 +166,8 @@ fetch("http://localhost:3000/basket")
  .then((res) => {
   return res.json();
 }).then((data) => {
-  if(data){
+  console.log(data.length)
+  if(data.length){
     getNode(".cart-bell").style.visibility = "visible";
   }
 })
@@ -178,6 +178,7 @@ fetch("http://localhost:3000/basket")
 // 헤더 menu, 상품설명 menu scroll동작 구현
 window.addEventListener("scroll", () =>{
   let menuBar = getNode(".product-menu").offsetHeight;
+  let windowTop = window.scrollY;
 
    if (windowTop >= menuBar+1340) {
     getNode(".product-menu").classList.add("drop-2");
@@ -712,4 +713,3 @@ lockChecker.addEventListener("click", () =>{
     TOGGLE = true;
   }
 })
-
