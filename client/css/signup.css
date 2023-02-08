@@ -331,6 +331,14 @@ order: 0;
 flex-grow: 0;
 }
 
+.pw-condition, .pwcheck-condition {
+  position: absolute;
+  font-size: 13px;
+  color: rgb(240, 63, 64);
+  margin-top: 4px;
+
+}
+
 .form-tr-name-detail {
 /* 이름 부분의 라벨의 글꼴 크기 수정 */
 width: 28px;
@@ -537,6 +545,11 @@ color: #000000;
 flex: none;
 order: 1;
 flex-grow: 0;
+}
+#curlyaddrField_post,
+#curlyaddrField_addr,
+#curlyaddrField_detail {
+  display: none;
 }
 
 .form-tr-sub {

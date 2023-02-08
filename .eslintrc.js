@@ -135,4 +135,6 @@ module.exports = {
     'no-undef':'warn',
     'no-unused-vars':'warn'
   },
+  // ES6~7을 파싱하다가 생긴 문제 해결을 위한 플러그인 인터폴레이션 구문에 일반 코드 사용가능
+  parser:"babel-eslints"
 }

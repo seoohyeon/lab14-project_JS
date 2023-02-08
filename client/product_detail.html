@@ -8,7 +8,7 @@
   href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
   <link rel="stylesheet" href="./css/style.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-  <script src="./js/main.js" type="module"></script>
+  <script src="./js/product_detail/index.js" type="module"></script>
   <title>Document</title>
 </head>
 
@@ -22,24 +22,24 @@
     <div class="header_inner">
       <div>
         <nav class="member-nav">
-          <a href="" class="member-nav_sign">회원가입</a>
+          <a href="./signup.html" class="member-nav_sign">회원가입</a>
           <span aria-hidden="true">|</span>
-          <a href="">로그인</a>
+          <a href="./login.html" class="header_inner_login_logout">로그인</a>
           <span aria-hidden="true">|</span>
           <a href="">고객센터  ▼</a>
         </nav>
       </div>
       <div class="header_inner_main">
         <h1>
-          <a href=""><img src="./assets/icons/logo.svg" alt="마켓컬리 로고 이미지" /></a>
-          <a href="">마켓칼리</a>
+          <a href="./index.html"><img src="./assets/icons/logo.svg" alt="마켓컬리 로고 이미지" /></a>
+          <a href="./index.html">마켓컬리</a>
           <span class="contents-border" aria-hidden="true"> | </span>
           <span class="beauty-karly-wrapper">
-            <a href="">뷰티칼리</a>
+            <a href="">뷰티컬리</a>
             <sup> N</sup>
           </span>
         </h1>
-        <form method="" action="" class="search-form">
+        <form class="search-form">
             <fieldset>
               <legend aria-hidden="true">검색 폼</legend>
               <div class="search-form-inner">
@@ -53,21 +53,33 @@
         <ul>
           <li><a href=""><img src="./assets/icons/web-icons/Location.svg" alt="핀 모양의 아이콘" /></a></li>
           <li><a href=""><img src="./assets/icons/web-icons/Heart.svg" alt="하트 모양의 아이콘" /></a></li>
-          <li><a href=""><img src="./assets/icons/web-icons/Cart-1.svg" alt="카트 모양의 아이콘" /></a></li>
+          <li><a href="./basket.html"><img src="./assets/icons/web-icons/Cart-1.svg" alt="카트 모양의 아이콘" /></a></li>
         </ul>
       </div>
-      <div>
+      <div class="header_menu_div">
         <ul class="header_menu">
           <div class="header_menu_category">
             <li><a href=""><img src="./assets/icons/web-icons/Hamburger.svg" alt="햄버거 모양의 아이콘" />카테고리</a></li>
           </div>
           <div class="header_menu_wrapper">
-            <li><a href="">신상품</a></li>
-            <li><a href="">베스트</a></li>
-            <li><a href="">알뜰쇼핑</a></li>
-            <li><a href="">특가/혜택</a></li>
+            <li><a href="./product_list.html">신상품</a></li>
+            <li><a href="./product_list.html">베스트</a></li>
+            <li><a href="./product_list.html">알뜰쇼핑</a></li>
+            <li><a href="./product_list.html">특가/혜택</a></li>
           </div>  
-            <li><button><b>샛별·낮</b> 배송안내</button></li>
+            <li class="header_menu_delivery"><button><b>샛별·낮</b> 배송안내</button></li>
+            <div class="header_menu_search">
+              <label for="main-search" class="form-group-label" ><span class="icon-search" aria-hidden="true"></span></label>
+              <input type="search" class="form-group-input header_menu_input" id="main-search" placeholder="검색어를 입력해주세요" />
+            </div>
+            <ul class="sticky-ul">
+              <li><a href=""><img src="./assets/icons/web-icons/Location.svg" alt="핀 모양의 아이콘" /></a></li>
+              <li><a href=""><img src="./assets/icons/web-icons/Heart.svg" alt="하트 모양의 아이콘" /></a></li>
+              <li><a href="./basket.html"><img src="./assets/icons/web-icons/Cart-1.svg" alt="카트 모양의 아이콘" /></a></li>
+            </ul>
+            <svg class="cart-bell" width="24" height="24" viewBox="0 0 24 24" fill="#5F0080" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="11.5" stroke="#5F0080"/>
+              </svg>
         </ul>
       </div>
     </div>
@@ -81,7 +93,7 @@
         <h2 class="a11y-hidden">[풀무원] 탱탱쫄면 제품 상세페이지</h2>
         <figure class="order-img">
           <figcaption class="a11y-hidden">[풀무원] 탱탱쫄면 product-detail</figcaption>
-          <img src="./assets/tangtang/detail_view.jpg" alt="[풀무원] 탱탱쫄면" />
+          <img class="order-img-tag" alt="product name" />
         </figure>
         <div class="order-details">
           <p class="order-details_deliver">샛별배송</p>
@@ -142,7 +154,7 @@
                       <path d="M16 10V14H20V16H16V20H14V16H10V14H14V10H16Z" fill="#333333"/>
                       </svg>
                   </div>
-                    <p>4,980원</p>
+                    <p class="product-price">4,980원</p>
                 </div>
             </div>
           </div>
@@ -171,10 +183,12 @@
             <button type="button" class="button_add_cart">
               장바구니 담기
             </button>
+
+            <!-- 장바구니 미니팝업창 -->
                 <div class="cart_bubble_wrapper">
                   <img class="cart_bubble_triangle" src="./assets/tangtang/cart_triangle.png" alt="" />
                   <div class="cart_bubble">
-                    <img src="./assets/tangtang/thumbnail.jpg" alt="탱탱쫄면" />
+                    <img class="cart_bubble_img" src="./assets/tangtang/thumbnail.jpg" alt="탱탱쫄면" />
                     <div class="cart_bubble_title-form">
                       <p class="cart_bubble_title"></p>
                       <p>장바구니에 상품을 담았습니다.</p>
@@ -189,9 +203,9 @@
       <!-- section 2 = 상품설명 -->    
       <section class="product-details">
         <div id="details" class="product-menu">
-          <a class="product-menu_nav" href="#details">상품설명</a>
+          <a class="product-menu_nav product-menu_nav-1" href="#details">상품설명</a>
           <a class="product-menu_nav" href="#information">상세정보</a>
-          <a class="product-menu_nav" href="#review">후기 (num)</a>
+          <a class="product-menu_nav product-menu_nav-3" href="#review">후기 (num)</a>
           <a class="product-menu_nav" href="#qna">문의</a>
         </div>
         <figure class="product-img">
@@ -276,13 +290,13 @@
               <path d="M26.2567 29.9388L24.8559 29.13L23.4551 28.3212L24.8559 27.5124L26.2567 26.7036" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
             <p class="product-detail_whykarly_list_title">환경을 생각하는 지속 가능한 유통</p>
-            <p class="product-detail_whykarly_list_p">친환경 포장재부터 생산자가 상품에만 집중할 수 있는 직매입 유통구조까지, 지속 가능한 유통을 고민하며 컬리를 있게하는 모든 환경(생산자,커뮤니티,직원)이 더 나아질 수 있도록 노력합니다.</p>
+            <p id="review" class="product-detail_whykarly_list_p">친환경 포장재부터 생산자가 상품에만 집중할 수 있는 직매입 유통구조까지, 지속 가능한 유통을 고민하며 컬리를 있게하는 모든 환경(생산자,커뮤니티,직원)이 더 나아질 수 있도록 노력합니다.</p>
           </li>
         </ul>    
       </section>
   
       <!-- section 3 = 상품후기 -->
-      <section id="review" class="product-review">
+      <section class="product-review">
         <div class="product-review_header">
           <h3 class="product-review_title">상품후기</h3>
           <button type="button" class="product-review_register">후기 작성하기</button>
@@ -394,38 +408,29 @@
           </div>
 
           <!-- 후기 있을 경우 UI -->
-          <div class="product-review_list-customer">
-            <div class="product-review_list-customer_boxes">
-              <span class="product-review_list-customer_box-best">베스트</span>
-              <span class="product-review_list-customer_box-level">퍼플</span>
-              <span class="product-review_list-customer_name">김*현</span>
-            </div>
-            <div>
-              <p class="product-review_list-customer_product">[풀무원] 탱탱쫄면 (4개입)</p>
-              <pre class="product-review_list-customer_product-text">
-              너무 맛있어여~
-              면이 쫄깃하고 양념도 짱맛나요!!</pre>
-              <p class="product-review_list-customer_product">2022.11.10</p>
-            </div>
-          </div>
-          <div class="product-review_list-customer">
-            <div class="product-review_list-customer_boxes">
-              <span class="product-review_list-customer_box-best">베스트</span>
-              <span class="product-review_list-customer_box-level">퍼플</span>
-              <span class="product-review_list-customer_name">김*현</span>
-            </div>
-            <div>
-              <p class="product-review_list-customer_product">[풀무원] 탱탱쫄면 (4개입)</p>
-              <pre class="product-review_list-customer_product-text">
-              너무 맛있어여~
-              면이 쫄깃하고 양념도 짱맛나요!!</pre>
-              <p class="product-review_list-customer_product">2022.11.10</p>
-            </div>
-          </div>
+            <!-- <div class="product-review-lists">
+              <div class="product-review_list-customer">
+                <div class="product-review_list-customer_boxes">
+                  <span class="product-review_list-customer_box-best">베스트</span>
+                  <span class="product-review_list-customer_box-level">퍼플</span>
+                  <span class="product-review_list-customer_name">김*현</span>
+                </div>
+                <div>
+                  <p class="product-review_list-customer_product">[풀무원] 탱탱쫄면 (4개입)</p>
+                  <pre class="product-review_list-customer_product-text">
+                  너무 맛있어여~
+                  면이 쫄깃하고 양념도 짱맛나요!!</pre>
+                  <p class="product-review_list-customer_product review-date">2022.11.10</p>
+                </div>
+              </div>
+            </div> -->
+
+          <div class="put-in"></div>
+
         </div>
         <div class="product-review_arrow">
           <button type="button" class="product-review_arrow-left"></button>
-          <button type="button" class="product-review_arrow-right"></button>
+          <button id="qna" type="button" class="product-review_arrow-right"></button>
         </div>
 
         <!-- 후기 작성 popup -->
@@ -442,17 +447,17 @@
                 <div class="product-popup_contents_title">
                 <figure>
                   <figcaption class="a11y-hidden">[풀무원] 탱탱쫄면</figcaption>
-                  <img src="./assets/tangtang/thumbnail.jpg" alt="탱탱쫄면" />
+                  <img class="review-popup" src="./assets/tangtang/thumbnail.jpg" alt="탱탱쫄면" />
                 </figure>
-                <span>[풀무원] 탱탱쫄면 (4개입)</span>
+                <span class="review-popup-text">[풀무원] 탱탱쫄면 (4개입)</span>
               </div>
               </li>
               <li class="product-popup_contents_li">
-                  <form action="" method="">
+                  <form method="POST" class="form-1">
                     <div class="product-popup_contents_li">
                     <div class="forminput-title">
                       <label class="forminput-label" for="forminput-title_title">제목</label>
-                      <input id="forminput-title_title" name="forminput-title_title" class="forminput-input" type="text" placeholder="제목을 입력해 주세요" required/>
+                      <input id="forminput-title_title" name="forminput-title_title" class="review-title forminput-input" type="text" placeholder="제목을 입력해 주세요" required/>
                     </div>
                     <div class="textarea-placeholder">
                       <div tabindex="0" class="placeholder-1">
@@ -476,7 +481,7 @@
                     <div class="forminput-content">
                       <label class="forminput-label" for="forminput-content_title">내용</label>
                       <div class="textarea-wrapper">
-                        <textarea id="forminput-content_title" name="forminput-content_title" class="forminput-textarea" maxlength="4999" cols="30" rows="10" required></textarea>
+                        <textarea id="forminput-content_title" name="forminput-content_title" class="review-content forminput-textarea" maxlength="4999" cols="30" rows="10" required></textarea>
                         <span class="forminput-textarea_limit"><span class="forminput-textarea_limit-number">0</span> / 5000</span>
                     </div>
                     </div> 
@@ -485,7 +490,7 @@
                       <button type="button" class="forminput_cancel-button forminput-button">
                         취소
                       </button>
-                      <button type="submit" class="forminput_submit-button forminput-button">
+                      <button type="submit" class="review-submit-button forminput_submit-button forminput-button">
                         등록
                       </button>
                     </div>
@@ -497,7 +502,7 @@
       </section>
 
       <!-- section 4 = 상품문의 -->
-      <section id="qna" class="product-answer">
+      <section class="product-answer">
         <div class="product-answer_header">
           <h3 class="product-answer_title">상품문의</h3>
           <button type="button" class="product-answer_register">문의하기</button>
