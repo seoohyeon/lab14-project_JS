@@ -100,10 +100,10 @@ await fetch("http://localhost:3000/products")
           }
         })
         // 변수에 찾은 데이터를 받아옴
-        return getProductItem = data[i];
+        getProductItem = data[i];
       }
     }
-   
+    console.log(getProductItem)
     // 데이터에 따른 상품설명 창 변경
     getNode('.product-img-banner').src = `./assets/${getProductItem.image.banner}`;
     getNode('.product-detail_title-p').textContent = getProductItem.description;

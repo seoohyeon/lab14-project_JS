@@ -11,9 +11,9 @@ window.addEventListener("scroll", () =>{
   let windowTop = window.scrollY;
 
    if (windowTop >= menuBar+1340) {
-    productMenu.classList.add("drop-2");
+    productMenu.classList.add("drop");
   } else {
-    productMenu.classList.remove("drop-2");
+    productMenu.classList.remove("drop");
   }
  })
 

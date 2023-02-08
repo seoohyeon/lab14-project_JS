@@ -1,4 +1,3 @@
-export * from '../global.js'
 export * from './getData.js'
 export * from '../product_detail/productMenuBar.js';
 export * from '../product_detail/acordian.js';
