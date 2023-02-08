@@ -102,24 +102,7 @@
     }
   ],
   "reviews": [],
-  "basket": [
-    {
-      "id": "product-ekfk",
-      "number": 3
-    },
-    {
-      "id": "product-tkwk",
-      "number": 3
-    },
-    {
-      "id": "product-rksk",
-      "number": 3
-    },
-    {
-      "id": "product-ckzk",
-      "number": 3
-    }
-  ],
+  "basket": [],
   "users": [
     {
       "uniqueId": "feNnYHWfXo",

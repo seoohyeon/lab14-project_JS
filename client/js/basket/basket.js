@@ -13,6 +13,8 @@ let refToggleButton = refrigeratedFood.previousSibling.previousSibling;
 let normalToggleButton = normalFood.previousSibling.previousSibling;
 let frozenToggleButton = frozenFood.previousSibling.previousSibling;
 
+let selectList=getNode(".select-list");
+
 var priceInfo = getNode(".price-info");
 var discountInfo = getNode(".discount-info");
 var deliveryInfo = getNode(".delivery-info");
@@ -27,8 +29,12 @@ var resultTotalPriceInfo=0;
 var needAddPrice=0;
 
 
+var everyData=new Array();
+
+
 let listSelectedNumber =getNodes('.selected-number');
 let listTotalNumber = getNodes('.total-number');
+
 
 
 
@@ -51,6 +57,9 @@ Promise.all(
   var resProducts=jsonBaseList[0];
   let resUsers=jsonBaseList[3];
 
+  //데이터 밖에서 사용
+  everyData.push(jsonBaseList);
+
  
   let storedData=checkBasketList(resBasket,resProducts);  // 데이터 받아서 상품 분류 및 추가
   if(resBasket.length>=1){
@@ -67,9 +76,15 @@ Promise.all(
   }
 
   buttonInit(storedData);
-  var basketSelectAll=document.querySelectorAll('input[name="basket-select-all"]');
-  var basketSelectedList=document.querySelectorAll('input[name="basket-checker"]');
-  var basketCheckedList=document.querySelectorAll('input[name="basket-checker"]:checked');
+ 
+  
+var basketSelectAll=document.querySelectorAll('input[name="basket-select-all"]');
+var basketSelectedList=document.querySelectorAll('input[name="basket-checker"]');
+var basketCheckedList=document.querySelectorAll('input[name="basket-checker"]:checked');
+
+
+
+ 
   getNode('.selected-number').innerHTML=`${basketCheckedList.length}`;
   getNode('.total-number').innerHTML=`${basketSelectedList.length}`;
 
@@ -82,12 +97,20 @@ Promise.all(
     element.innerHTML=`${basketSelectedList.length}`;
   })
   //-------------------------------------------------------------  
-
   basketCheckBox(basketSelectAll,basketSelectedList,basketCheckedList);
   buttonStyleChange(basketCheckedList);
-  // selectCheckAndChange(basketSelectAll,basketSelectedList,basketCheckedList);
-  
+  onoffSlectAll(basketSelectAll,basketSelectedList,basketCheckedList);
+
+
+
+  let counterDeleteButton= getNodes('.counter-delete_button');
+  let selectDeleteButton = getNodes('.select-delete_button');
+ counterDeleteFunction(counterDeleteButton,listSelectedNumber,basketSelectAll,basketSelectedList,basketCheckedList,selectList);
+ selectDeleteFunction(selectDeleteButton,listSelectedNumber,basketSelectAll,basketSelectedList,basketCheckedList);
 })
+
+console.log(everyData);
+
 
 //  카카오 api 호출 , 주소 변경
 kakaoMap.addEventListener("click",kakaoMapLoad)
@@ -126,7 +149,7 @@ function checkBasketList(storedDataBasket,storedDataProducts){
   // 가격 출력 함수
   priceInfo.innerHTML=`${resultPriceInfo.toLocaleString()}`
   discountInfo.innerHTML=`${resultDiscountInfo.toLocaleString()}`
-  if((resultPriceInfo-resultDiscountInfo)<40000){
+  if((resultPriceInfo-resultDiscountInfo)<40000 && (resultPriceInfo-resultDiscountInfo)>0){
     resulteDeliveryInfo=3000;
     deliveryInfo.innerHTML=`+ ${resulteDeliveryInfo.toLocaleString()}`;
   }
@@ -134,7 +157,7 @@ function checkBasketList(storedDataBasket,storedDataProducts){
   resultInfo.innerHTML=`${resultTotalPriceInfo.toLocaleString()}`
 
   if(resultTotalPriceInfo<40000){
-    needAddPrice=40000-resultTotalPriceInfo;
+    needAddPrice=40000-resultPriceInfo-resultDiscountInfo;
     needAddMoney.innerHTML=`${needAddPrice.toLocaleString()}`;
     deliveryExplain.classList.remove('a11y-hidden');
   }  
@@ -314,6 +337,7 @@ function count(type,basicNode,storedData) {
     resultDiscountInfo += findData.price*findData.saleRatio;
     resultPriceInfo+=findData.price;
     priceInit();
+    // priceInitSecond()
 
   }else if(type === 'minus'&&number>1)  {
     number = parseInt(number) - 1;
@@ -323,10 +347,12 @@ function count(type,basicNode,storedData) {
     resultDiscountInfo -= findData.price*findData.saleRatio;
 
     priceInit();
+    // priceInitSecond()
   }
-  
+
   // 결과 출력
   resultElement.innerText = number;
+  priceInitSecond();
 }
 
 
@@ -351,7 +377,7 @@ function basketCheckBox(basketSelectAll,basketSelectedList,basketCheckedList){
 
   for(let i=0;i<basketSelectedList.length;i++){
     basketSelectedList[i].addEventListener('click',(e)=>{
-
+  
       // 클릭 할 때마다 리스트들 선택여부 갱신----------------------------------------------
       basketSelectAll=document.querySelectorAll('input[name="basket-select-all"]');
       basketSelectedList=document.querySelectorAll('input[name="basket-checker"]');
@@ -408,49 +434,208 @@ function selectCheckAndChange(basketSelectAll,basketSelectedList,basketCheckedLi
 
 }
 
+
 // 전체선택 버튼으로 전부 껏다 켜는 함수
-onoffSlectAll()
-function onoffSlectAll(){
+
+function onoffSlectAll(basketSelectAll,basketSelectedList,basketCheckedList){
+  console.log(basketSelectedList);
   let firstSelectAllButton=getNode('#basket-checker1');
   let secondSelectAllButton=getNode('#basket-checker2');
 
-  firstSelectAllButton.addEventListener('click',(firstSelectAllButton)=>{
+ 
 
-    console.log('hello',firstSelectAllButton);
-    // switch(firstSelectAllButton.checked){
+  firstSelectAllButton.addEventListener('click',(e)=>{
+    changeAllButton(firstSelectAllButton.checked,basketSelectedList);
+     // 클릭 할 때마다 리스트들 선택여부 갱신----------------------------------------------
+     basketSelectAll=document.querySelectorAll('input[name="basket-select-all"]');
+     basketSelectedList=document.querySelectorAll('input[name="basket-checker"]');
+     basketCheckedList=document.querySelectorAll('input[name="basket-checker"]:checked');
+     // --------------------------------------------------------------------------------
 
+     // (선택/전체) 내용 갱신------------------------------------------------------
 
-    // }
+     listSelectedNumber.forEach(element=>{
+       element.innerHTML=`${basketCheckedList.length}`;
+     })
 
-  
+     listTotalNumber.forEach(element=>{
+       element.innerHTML=`${basketSelectedList.length}`;
+     })
+     
+     //--------------------------------------------------------------------------
+    
     
   });
-  secondSelectAllButton.addEventListener('click',()=>{
+  secondSelectAllButton.addEventListener('click',(e)=>{
+    changeAllButton(secondSelectAllButton.checked,basketSelectedList);
+     // 클릭 할 때마다 리스트들 선택여부 갱신----------------------------------------------
+     basketSelectAll=document.querySelectorAll('input[name="basket-select-all"]');
+     basketSelectedList=document.querySelectorAll('input[name="basket-checker"]');
+     basketCheckedList=document.querySelectorAll('input[name="basket-checker"]:checked');
+     // --------------------------------------------------------------------------------
 
+     // (선택/전체) 내용 갱신------------------------------------------------------
 
-  });
+     listSelectedNumber.forEach(element=>{
+       element.innerHTML=`${basketCheckedList.length}`;
+     })
 
-
-
+     listTotalNumber.forEach(element=>{
+       element.innerHTML=`${basketSelectedList.length}`;
+     })
+     
+     //--------------------------------------------------------------------------
+    });
+    
+    function changeAllButton(checkedStatus,basketSelectedList){
   
-
+     
+  
+      if(checkedStatus===true){
+        basketSelectedList.forEach(element=>{
+          element.checked = true; 
+        })
+        firstSelectAllButton.checked =true;
+        secondSelectAllButton.checked =true;
+        buttonStyleChange(0,1);
+        
+      }
+      else{
+        basketSelectedList.forEach(element=>{
+          element.checked = false;
+        })
+        firstSelectAllButton.checked =false;
+        secondSelectAllButton.checked =false;
+        buttonStyleChange(0,0);
+      }
+  
+  }
 }
 
 
 
 // 버튼 스타일 바꾸는 함수.------------------------
 
-function buttonStyleChange(basketCheckedList){
+function buttonStyleChange(basketCheckedList,num){
 
   let targetButton = getNode('.order-button');
 
-  if(basketCheckedList.length>0){
+  if(basketCheckedList.length>0 || num==1){
     targetButton.innerHTML = "주문하기";
     targetButton.style.backgroundColor="#5f0080";
+    
   }
   else{
     targetButton.innerHTML = "상품을 담아주세요";
     targetButton.style.backgroundColor="var(--gray-200)";
   }
+
 }
 // --------------------------------------------------
+
+
+// delete list 리스트 지우는 기능 with 가격 제거
+
+
+
+
+
+// 체크 해제 시 가격 제거  -> 증감 버튼 이벤트발생하는 함수 안에 다 넣기
+
+
+function counterDeleteFunction(counterDeleteButton,listSelectedNumber,basketSelectAll,basketSelectedList,basketCheckedList){
+
+
+  for(let i = 0; i<counterDeleteButton.length;i++){
+
+    counterDeleteButton[i].addEventListener('click',(e)=>{
+
+      let closeButton =e.target.closest('.counter-delete_button');
+      let closeParentNode= closeButton.parentNode.parentNode.parentNode;
+      closeParentNode.innerHTML="";
+      
+      let findInputId=closeButton.parentNode.parentNode.firstChild.nextSibling.id;
+     // 클릭 할 때마다 리스트들 선택여부 갱신----------------------------------------------
+     basketSelectAll=document.querySelectorAll('input[name="basket-select-all"]');
+     basketSelectedList=document.querySelectorAll('input[name="basket-checker"]');
+     basketCheckedList=document.querySelectorAll('input[name="basket-checker"]:checked');
+     // --------------------------------------------------------------------------------
+
+     // (선택/전체) 내용 갱신------------------------------------------------------
+
+     listSelectedNumber.forEach(element=>{
+       element.innerHTML=`${parseInt(basketCheckedList.length)}`;
+     })
+
+     listTotalNumber.forEach(element=>{
+       element.innerHTML=`${parseInt(basketSelectedList.length)}`;
+     })
+      
+
+      fetch(`http://localhost:3000/basket/${findInputId}`, {
+        method: "DELETE",
+      })
+
+      location.reload();
+
+
+    })
+  }
+
+}
+
+
+function selectDeleteFunction(selectDeleteButton,listSelectedNumber,basketSelectAll,basketSelectedList,basketCheckedList,selectList){
+
+  for (let i=0;i<selectDeleteButton.length;i++){
+    console.log(selectDeleteButton);
+    selectDeleteButton[i].addEventListener('click',(e)=>{
+
+      console.log(selectDeleteButton[i]);
+      basketSelectAll=document.querySelectorAll('input[name="basket-select-all"]');
+      basketSelectedList=document.querySelectorAll('input[name="basket-checker"]');
+      basketCheckedList=document.querySelectorAll('input[name="basket-checker"]:checked');
+      basketCheckedList.forEach((element)=>{
+
+        
+        fetch(`http://localhost:3000/basket/${element.id}`, {
+              method: "DELETE",
+            })
+            location.reload();
+      
+      })
+
+    }
+    )
+
+
+  }
+}
+
+
+
+
+function priceInitSecond(){
+
+  priceInfo.innerHTML=`${resultPriceInfo.toLocaleString()}`
+    discountInfo.innerHTML=`${resultDiscountInfo.toLocaleString()}`
+    if((resultPriceInfo-resultDiscountInfo)<40000 && (resultPriceInfo-resultDiscountInfo)>0){
+      resulteDeliveryInfo=3000;
+      deliveryInfo.innerHTML=`+ ${resulteDeliveryInfo.toLocaleString()}`;
+    }else{
+      resulteDeliveryInfo=0;
+      deliveryInfo.innerHTML=`${resulteDeliveryInfo.toLocaleString()}`;
+    }
+
+    resultTotalPriceInfo=resultPriceInfo-resultDiscountInfo+resulteDeliveryInfo;
+    resultInfo.innerHTML=`${resultTotalPriceInfo.toLocaleString()}`
+  
+    // if((resultPriceInfo-resultDiscountInfo)< 40000 && needAddPrice>0){
+    //   needAddPrice=40000-(resultPriceInfo-resultDiscountInfo);
+    //   needAddMoney.innerHTML=`${needAddPrice.toLocaleString()}`;
+    //   deliveryExplain.classList.remove('a11y-hidden');
+    // }else{
+    //   deliveryExplain.classList.add('a11y-hidden');
+    // }
+
+}

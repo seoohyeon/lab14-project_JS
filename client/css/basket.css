@@ -73,6 +73,10 @@
   margin:0 4px;
 }
 
+.select-delete_button{
+  display:inline-block;
+}
+
 .selected-number,
 .total-number {
   display:inline-block;
