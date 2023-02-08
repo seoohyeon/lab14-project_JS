@@ -11,16 +11,19 @@ if(localStorage.getItem('Unique ID')){
   logoutButton.textContent = `로그인`;
 }
 
+console.log('is global');
 
-if(localStorage.getItem('Unique ID')){
-  logoutButton.addEventListener("click", () => {
-    localStorage.removeItem("Unique ID");
-    alert("로그아웃 되었습니다.")
-    console.log('로그아웃')
-  })
+export function addLogoutFunc() {
+  if(localStorage.getItem('Unique ID')){
+    logoutButton.addEventListener("click", () => {
+      localStorage.removeItem("Unique ID");
+      alert("로그아웃 되었습니다.")
+      console.log('로그아웃')
+    })
+  }
 }
 
-
+addLogoutFunc();
 
 
 window.addEventListener("scroll", () =>{

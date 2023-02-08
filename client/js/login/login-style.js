@@ -45,9 +45,11 @@ signinButton.addEventListener("click", (e) => {
   })
 })
 // localStorage에 uniqueID가 있는경우 실행
-if(localStorage.getItem('Unique ID')){
-  loginNout.addEventListener("click", () => {
-    localStorage.removeItem("Unique ID");
-    alert("로그아웃 되었습니다.");
-  })
-}
+// if(localStorage.getItem('Unique ID')){
+//   console.log('로그아웃 버튼에 이벤트리스너가 들어갔습니다.');
+//   loginNout.addEventListener("click", () => {
+//     localStorage.removeItem("Unique ID");
+//     alert("로그아웃 되었습니다.");
+//   })
+  
+// }
