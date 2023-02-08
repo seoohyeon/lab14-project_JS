@@ -486,8 +486,6 @@
   height: 66px;
 }
 .cart-popup_content-title {
-  width: 167px;
-  height: 24px;
   font-weight: 600;
   font-size: 16px;
   line-height: 150%;
@@ -536,13 +534,17 @@
   width: 356px;
   height: 68px;
 }
-.cart-popup_content-middle > div > div{
+/* .cart-popup_content-middle > div > div{
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: flex-end;
   width: 352px;
   height: 40px;
+} */
+.cart-popup_totals {
+  display: flex;
+  justify-content: space-between;
 }
 .cart-popup_sum {
   width: 28px;
