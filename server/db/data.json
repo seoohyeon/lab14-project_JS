@@ -104,12 +104,24 @@
   "reviews": [],
   "basket": [
     {
-      "id": "product-akqk",
-      "number": 3
+      "id": "product-rksk",
+      "number": 24
     },
     {
       "id": "product-ekfk",
-      "number": 3
+      "number": 10
+    },
+    {
+      "id": "product-akqk",
+      "number": 1
+    },
+    {
+      "id": "product-tkwk",
+      "number": 1
+    },
+    {
+      "id": "product-ckzk",
+      "number": 1
     }
   ],
   "users": [
