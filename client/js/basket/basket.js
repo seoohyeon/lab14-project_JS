@@ -8,6 +8,7 @@ let frozenFood =getNode(".frozen-contents");
 let noOption=getNode(".no-option");
 let selectedNumber=getNodes(".selected-number");
 let totalNumber=getNodes(".total-number");
+let loginNout = getNode(".header_inner_login_logout");
 
 let refToggleButton = refrigeratedFood.previousSibling.previousSibling;
 let normalToggleButton = normalFood.previousSibling.previousSibling;
@@ -67,6 +68,7 @@ Promise.all(
   }
 
   if(window.localStorage.getItem('Unique ID')){
+    loginNout.textContent = `로그아웃`;
     for(let key in resUsers){
       let userData = resUsers.filter(function(e){
         return e.uniqueId == JSON.parse(localStorage.getItem('Unique ID'))[0];
