@@ -26,7 +26,7 @@
       "description": "튀기지 않아 부드럽고 매콤한",
       "price": 4980,
       "saleRatio": 0,
-      "salePrice": 0,
+      "salePrice": 4980,
       "sort": "normal",
       "image": {
         "thumbnail": "tangtang/thumbnail.jpg",
@@ -66,7 +66,7 @@
       "description": "보는 맛과 먹는 맛 모두 푸짐",
       "price": 29800,
       "saleRatio": 0,
-      "salePrice": 0,
+      "salePrice": 29800,
       "sort": "frozen",
       "image": {
         "thumbnail": "kangnam/thumbnail.jpg",
