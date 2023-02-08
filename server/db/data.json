@@ -102,48 +102,10 @@
     }
   ],
   "reviews": [
-    {
-      "title": "ㅇ",
-      "content": "ㅇ",
-      "id": 1
-    },
-    {
-      "title": "d",
-      "content": "df",
-      "id": 2
-    },
-    {
-      "title": "ss",
-      "content": "ss",
-      "id": 3
-    },
-    {
-      "title": "s",
-      "content": "d",
-      "id": 4
-    },
-    {
-      "title": "r",
-      "content": "r",
-      "id": 5
-    },
-    {
-      "title": "d",
-      "content": "d",
-      "id": 6
-    },
-    {
-      "title": "ss",
-      "content": "ss",
-      "id": 7
-    },
-    {
-      "title": "ss",
-      "content": "ss",
-      "id": 8
-    }
+    
   ],
   "basket": [
+<<<<<<< HEAD
     {
       "id": "product-rksk",
       "number": 2
@@ -164,6 +126,9 @@
       "id": "product-tkwk",
       "number": 9
     }
+=======
+    
+>>>>>>> b0956cb9756a4d0ef9f321dab7b68a8a4389be5a
   ],
   "users": [
     {
