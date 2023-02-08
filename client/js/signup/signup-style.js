@@ -14,6 +14,9 @@ let userAdrDetail = getNode("#curlyaddrField_detail");
 let emailsubmitCheck = getNode('#curlyemailsubmit');
 let curlypwChecked = getNode("#curlyPwcheckField");
 let registerButton = getNode(".registration-button");
+let pwValidationText = getNode(".pw-condition")
+let pwcheckValidationText = getNode(".pwcheck-condition")
+
 
 
 function clickIdHandler(e) {
@@ -31,7 +34,7 @@ function clickIdHandler(e) {
   }else{
     alert('중복된 아이디가 없습니다.')
 
-    returne
+    return
   }
 }
 
@@ -94,6 +97,33 @@ let checkAll = document.getElementById('chk-all');
     });
   });
 
+//비밀번호 글자수 확인 
+function pwNumberHandler(e){
+  let pwerror = getInputValue('#curlypwField')
+
+  if (pwerror.length < 8) {
+    pwValidationText.innerHTML = "8자리 이상 입력해주세요."
+  } else {
+    pwValidationText.innerHTML = ""
+  }
+
+}
+
+curlyPw.addEventListener("keyup", pwNumberHandler);
+
+/* //비밀번호 확인란
+function pwCheckHandler(e) {
+  let pwenter = getInputValue('#curlypwField')
+  let pwcheckenter = getInputValue('#curlypwcheckField')
+
+  if (pwenter.value !== pwcheckenter.value) {
+    pwcheckValidationText.innerHTML = "동일하지 않은 비밀번호 입니다."
+  } else {
+    pwcheckValidationText.innerHTML = "비밀번호가 일치합니다"
+  }
+  
+}
+curlypwChecked.addEventListener("keyup", pwCheckHandler); */
 
   
 // 주소 검색 API 사용
