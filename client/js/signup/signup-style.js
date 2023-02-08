@@ -186,8 +186,7 @@ const generateRandomString = (num) => {
 registerButton.addEventListener("click", (e) => {
   e.preventDefault();
   // 필수사항 체크하는 변수 생성
-  let inputCheck = curlyId.value && curlyPw.value && userName.value;
-  && userPhone.value && userAdrPost.value && userAdrAddr.value;
+  let inputCheck = curlyId.value && curlyPw.value && userName.value && userPhone.value && userAdrPost.value && userAdrAddr.value;
 
   // 필수사항 체크
   if(!inputCheck){
