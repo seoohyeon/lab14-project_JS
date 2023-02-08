@@ -62,7 +62,8 @@ productDisplaySwiper2.addEventListener('click',(e)=>{
 /*                                 팝업에서의 프로세스                          */
 /* -------------------------------------------------------------------------- */
 
-
+let flag = false;
+let productCountSum = 0;
 
 cartPopupWrapper.addEventListener('click',(e)=>{
   e.preventDefault();
@@ -72,22 +73,63 @@ cartPopupWrapper.addEventListener('click',(e)=>{
     // 꺼지는 이벤트가 이미 있음
     // console.log('closed');
   }else if(e.target.classList.contains('cart-popup_add-button')){
-    // 꺼지는 이벤트가 이미 있음
-    console.log('상품을 장바구니에 담아야함');
-    
+    console.log(seletedId);
 
+    // console.log('상품을 장바구니에 담아야함');
+    fetch("http://localhost:3000/basket").then((res) => {
+      return res.json();
+    }).then((data) => {
+      for(let i=0; i<data.length; i++){
+        if(data[i].id === seletedId){
+          flag = true;
+          productCountSum = data[i].number;
+        }
+      }
+      if(flag){
+        productCountSum += productCount;
+
+        fetch(`http://localhost:3000/basket/${seletedId}`,{
+          method : "PUT",
+          headers: {
+            'Content-Type': 'application/json'
+            },
+          body : JSON.stringify({
+            id : seletedId,
+            number : productCountSum,
+          })
+         }).then((res) => {
+          return res.json();
+         }).then((data)=>{
+          console.log("기존에 값이 있어 거기다 더해짐")
+         })
+      } else {
+        // POST방식으로 create
+        fetch("http://localhost:3000/basket",{
+          method : "POST",
+          headers: {
+            'Content-Type': 'application/json'
+            },
+          body : JSON.stringify({
+            id : seletedId,
+            number : productCount,
+          })
+        }).then((res) =>{
+          return res.json();
+        })
+      } 
+    })
   }else if(e.target.classList.contains('cart-popup_count-plus')){
     productCount++;
     totalPrice = productCount * productPrice;
     e.currentTarget.querySelector('.cart-popup_count-total').textContent = productCount;
     e.currentTarget.querySelector('.cart-popup_price').textContent = changePriceToString(totalPrice);
-
+    // console.log(productCount)
   }else if(e.target.classList.contains('cart-popup_count-minus') && productCount>1){
     productCount--;
     totalPrice = productCount * productPrice;
     e.currentTarget.querySelector('.cart-popup_count-total').textContent = productCount;
     e.currentTarget.querySelector('.cart-popup_price').textContent = changePriceToString(totalPrice);
-    
+    // console.log(productCount)
 
   }else{
     // 버튼이 아닌곳을 눌렀을 때
