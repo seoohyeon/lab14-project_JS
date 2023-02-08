@@ -11,7 +11,6 @@ if(localStorage.getItem('Unique ID')){
   logoutButton.textContent = `로그인`;
 }
 
-console.log('is global');
 
 export function addLogoutFunc() {
   if(localStorage.getItem('Unique ID')){
