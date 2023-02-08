@@ -1,4 +1,4 @@
-import { getNode } from "../../lib/index.js";
+import { getNode, putLocalStorage } from "../../lib/index.js";
 
 let filterAccordionItem = document.querySelectorAll('.filter_accordion-item')
 let filterAccordionInventory = document.querySelectorAll('.filter_accordion-inventory');
@@ -21,7 +21,7 @@ filterAccordionItem.forEach(item => {
       TOGGLE = false;
     }else if(TOGGLE === false && item === filterAccordionItem[1]) {
       filterAccordionInventory[1].style.display = "block"
-      filterTitleArrow[1].style.backgroundPosition = "-8px -8px"
+      filterTitleArrow[1].sbesttyle.backgroundPosition = "-8px -8px"
       TOGGLE = true;
     }
   })
@@ -81,7 +81,7 @@ let bestListInventoryProduct = document.querySelector('.best-list_inventory-prod
 bestListInventoryProduct.addEventListener('click',(e)=>{
   e.preventDefault();
   let curSlide = e.target.closest('li');
-
+  putLocalStorage('id',curSlide.querySelector('.product-display_product-id').textContent);
 
   
   if(e.target.classList.contains('product-display_cart-icon')){

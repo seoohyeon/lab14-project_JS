@@ -93,7 +93,7 @@ productDisplaySwiper1.addEventListener('click',(e)=>{
   // 장바구니 아이콘을 클릭한경우
   if(e.target.classList.contains('product-display_cart-icon')){
     
-    console.log("장바구니 팝업 띄워야함");
+    // console.log("장바구니 팝업 띄워야함");
     document.querySelector('.cart-popup_wrapper').style.display = "block";
     document.body.classList.add('no-scroll');
   }else{
@@ -115,7 +115,7 @@ productDisplaySwiper2.addEventListener('click',(e)=>{
   loadAllCardsToSwiper(2,'.recent-product_swiper-wrapper',recentProductSwiper);
   // 장바구니 아이콘을 클릭한경우
   if(e.target.classList.contains('product-display_cart-icon')){
-    console.log("장바구니 팝업 띄워야함");
+    // console.log("장바구니 팝업 띄워야함");
     document.querySelector('.cart-popup_wrapper').style.display = "block";
     document.body.classList.add('no-scroll');
   }else{
