@@ -534,14 +534,6 @@
   width: 356px;
   height: 68px;
 }
-/* .cart-popup_content-middle > div > div{
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: flex-end;
-  width: 352px;
-  height: 40px;
-} */
 .cart-popup_totals {
   display: flex;
   justify-content: space-between;
