@@ -101,12 +101,8 @@
       "isLimitedProduct": true
     }
   ],
-  "reviews": [
-    
-  ],
-  "basket": [
-    
-  ],
+  "reviews": [],
+  "basket": [],
   "users": [
     {
       "uniqueId": "feNnYHWfXo",
@@ -116,6 +112,15 @@
       "userPhone": "d",
       "userAddress": "13480 경기 성남시 분당구 대왕판교로 477 ",
       "id": 1
+    },
+    {
+      "uniqueId": "ycwggFZENK",
+      "curlyId": "ymymym",
+      "curlyPw": "12341234",
+      "userName": "최영민",
+      "userPhone": "01012345678",
+      "userAddress": "16379 경기 수원시 권선구 금곡로73번길 80-100 당수동",
+      "id": 2
     }
   ]
 }

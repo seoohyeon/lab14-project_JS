@@ -32,7 +32,7 @@ await fetch("http://localhost:3000/products", {
   }).then((res) => {
     return res.json();
   }).then((data) => {
-    let output = localStorage.getItem("key");
+    let output = localStorage.getItem("id");
     let arr = JSON.parse(output);
     // console.log(arr[arr.length-1]) 
 
