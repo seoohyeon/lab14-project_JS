@@ -10,6 +10,7 @@ let loginNout = getNode(".header_inner_login_logout");
 if(localStorage.getItem('Unique ID')){
   loginNout.textContent = `로그아웃`;
 }
+console.log(localStorage.getItem('Unique ID'))
 
 // 로그인 버튼 클릭시 이벤트 발생
 signinButton.addEventListener("click", (e) => {
