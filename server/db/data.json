@@ -4,7 +4,7 @@
       "id": "product-rksk",
       "name": "[대구 반할만떡] 유부호만두",
       "description": "유부로 속을 든든히 채운 군만두",
-      "price": 6900,
+      "price": 6000,
       "saleRatio": 0.24,
       "salePrice": 5244,
       "sort": "frozen",
@@ -101,11 +101,16 @@
       "isLimitedProduct": true
     }
   ],
-  "reviews": [
-    
-  ],
+  "reviews": [],
   "basket": [
-    
+    {
+      "id": "product-akqk",
+      "number": 3
+    },
+    {
+      "id": "product-ekfk",
+      "number": 3
+    }
   ],
   "users": [
     {

@@ -9,6 +9,9 @@ let productArr;
 // 3이면 슬라이드 추가, 4면 recent-product의 슬라이드 추가
 function makeCard(option,{id,image:imageUrl,name:productName,saleRatio,salePrice,price,description,shippingInfo,isKarlyOnly,isLimitedProduct}) {
   imageUrl = imageUrl.thumbnail;
+  if(saleRatio == 0 ){
+    salePrice = price;
+  }
   let salePriceStr = String(salePrice);
 
   salePriceStr = `${salePriceStr.slice(0,-3)}${salePriceStr.slice(0,-3).length>0?
