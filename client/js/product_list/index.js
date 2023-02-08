@@ -110,42 +110,122 @@ cartCancel.addEventListener('click',()=>{
   document.body.classList.remove('no-scroll');
 })
 
-cartAdd.addEventListener('click',() => {
+let minus = getNode(".cart-popup_count-minus");
+let plus = getNode(".cart-popup_count-plus");
+let number = +getNode(".cart-popup_count-total").textContent;
+let totalPrice = getNode(".cart-popup_price");
+let totalNum = +totalPrice.textContent.replace(",","");
+let orderNumber = getNode(".cart-popup_count-total");
+let productCount = 1;
+
+
+cartAdd.addEventListener('click',(e) => {
+
+  e.preventDefault();
+
   document.querySelector('.cart-popup_wrapper').style.display = "none";
   document.body.classList.remove('no-scroll');
+
+  fetch("http://localhost:3000/products").then((res) => {
+    return res.json();
+  }).then((data) => {
+    console.log(data)
+    let output = localStorage.getItem("id");
+    let arr = JSON.parse(output);
+
+    for(let i=0; i<data.length; i++){
+      let price = String(data[i].price);
+
+      if(arr[arr.length-1] === data[i].id){
+        getNode(".cart-popup_product").textContent = `${price.slice(0,-3)},${price.slice(-3)}원`
+        totalPrice.textContent = `${price.slice(0,-3)},${price.slice(-3)}원`
+
+
+        function haveMinus() {
+          if(number > 1){
+            minus.style.cursor = "pointer"
+            number -= 1;
+            totalNum = String(data[i].price*number);
+            totalNum = `${totalNum.slice(0,-3)},${totalNum.slice(-3)}`
+            orderNumber.textContent = number;
+            totalPrice.textContent = totalNum;
+            productCount -= 1;
+          }
+          if(number === 1){
+            getNode(".order-details_minus_path").style.fill = "var(--gray-300)";
+            orderNumber.textContent = 1;
+            minus.style.cursor = "default"
+          }
+        }
+        
+        function havePlus() {
+            number += 1;
+            totalNum = String(data[i].price*number);
+            totalNum = `${totalNum.slice(0,-3)},${totalNum.slice(-3)}`
+            orderNumber.textContent = number;
+            totalPrice.textContent = totalNum;
+            productCount +=1;
+          
+            if(number >1){
+              getNode(".order-details_minus_path").style.fill = "var(--content)";
+            }
+        }
+        
+        
+        // 상품 갯수 선택에 따른 총 가격
+        minus.addEventListener("click", () => {
+          console.log('마이너스')
+        })
+        
+        minus.addEventListener("keyup", (e) => {
+          if(e.keyCode == 13){
+            haveMinus();
+          }
+        })
+        
+        plus.addEventListener("click", havePlus);
+        
+        plus.addEventListener("keyup", (e) => {
+          if(e.keyCode == 13 ){
+            havePlus();
+          }
+        })
+      }
+    }
+  })
 })
 
-let minusButton = getNode('.cart-popup_count-minus');
-let plusButton = getNode('.cart-popup_count-plus');
-let countTotal = getNode('.cart-popup_content-total');
-let total = +getNode('.cart-popup_count-total').textContent;
-let popupSumPrice = getNode('.cart-popup_price');
-let sumPrice = +popupSumPrice.textContent.replace(",","");
+// let minusButton = getNode('.cart-popup_count-minus');
+// let plusButton = getNode('.cart-popup_count-plus');
+// let countTotal = getNode('.cart-popup_content-total');
+// let total = +getNode('.cart-popup_count-total').textContent;
+// let popupSumPrice = getNode('.cart-popup_price');
+// let sumPrice = +popupSumPrice.textContent.replace(",","");
 
-function countMinus() {
-  if(total > 1){
-    total -= 1;
-    sumPrice = String(4980*total);
-    sumPrice = `${sumPrice.slice(0,-3)},${sumPrice.slice(-3)}`;
-    countTotal.textContent = total;
-    popupSumPrice.textContent = sumPrice;
-  }
-  if(total === 1){
-    minusButton.style.backgroundPosition = "-8px -47px";
-    countTotal.textContent = 1;
-  }
-}
-function countPlus() {
-  total += 1;
-  sumPrice = String(4980*total);
-  sumPrice = `${sumPrice.slice(0,-3)},${sumPrice.slice(-3)}`;
-  countTotal.textContent = total;
-  popupSumPrice.textContent = sumPrice;
+// function countMinus() {
+//   if(total > 1){
+//     total -= 1;
+//     sumPrice = String(4980*total);
+//     sumPrice = `${sumPrice.slice(0,-3)},${sumPrice.slice(-3)}`;
+//     countTotal.textContent = total;
+//     popupSumPrice.textContent = sumPrice;
+//   }
+//   if(total === 1){
+//     minusButton.style.backgroundPosition = "-8px -47px";
+//     countTotal.textContent = 1;
+//   }
+// }
+// function countPlus() {
+//   total += 1;
+//   sumPrice = String(4980*total);
+//   sumPrice = `${sumPrice.slice(0,-3)},${sumPrice.slice(-3)}`;
+//   countTotal.textContent = total;
+//   popupSumPrice.textContent = sumPrice;
 
-  if(total > 1){
-    minusButton.style.backgroundPosition = "-8px -8px";
-  }
-}
+//   if(total > 1){
+//     minusButton.style.backgroundPosition = "-8px -8px";
+//   }
+// }
 
-minusButton.addEventListener('click',countMinus);
-plusButton.addEventListener('click',countPlus);
+// minusButton.addEventListener('click',countMinus);
+// plusButton.addEventListener('click',countPlus);
