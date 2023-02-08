@@ -1,9 +1,9 @@
 //import lib
-import { getInputValue, getNode } from '../../lib/index.js'
+import { getInputValue, getNode } from '../../lib/index.js';
 
 
 //중복된 아이디 기능 말고,,, 그냥 alert를 이용해 중복확인 버튼을 눌렀을 때, 이벤트가 발생하게끔 한 것
-let idsubmitCheck = getNode('#curlyidsubmit')
+let idsubmitCheck = getNode('#curlyidsubmit');
 let curlyId = getNode("#curlyidField");
 let curlyPw = getNode("#curlypwField");
 let userName = getNode("#curlynameField");
@@ -13,29 +13,46 @@ let userAdrAddr = getNode("#curlyaddrField_addr");
 let userAdrDetail = getNode("#curlyaddrField_detail");
 let emailsubmitCheck = getNode('#curlyemailsubmit');
 let curlypwChecked = getNode("#curlyPwcheckField");
+let curlypwSubmit = getNode("#curlypwSubmit");
 let registerButton = getNode(".registration-button");
+let pwValidationText = getNode(".pw-condition");
+let pwcheckValidationText = getNode(".pwcheck-condition");
+let addressContainerBtn = getNode(".address-container-button");
+
 
 
 function clickIdHandler(e) {
-  let curlyid = getInputValue('#curlyidField')
+  let curlyid = getInputValue('#curlyidField');
   e.preventDefault();
 
   if (!curlyid) {
-    alert('아이디를 입력해주세요')
+    alert('아이디를 입력해주세요');
 
-    return
+    return;
   }
-
+  
   if (curlyid.length<6) {
-    alert('6글자 이상 입력해주세요')
+    alert('6글자 이상 입력해주세요');
   }else{
-    alert('중복된 아이디가 없습니다.')
+  // 아이디 중복 체크 
+  fetch("http://localhost:3000/users").then((res) => { return res.json()})
+    .then((data) => {
 
-    returne
+      for(let i=0; i<data.length; i++){
+        
+         if(data[i].curlyId === curlyid){
+          alert("중복된 아이디가 있습니다. 다른 아이디로 작성해주세요.");
+          return;
+        }else{
+          alert('중복된 아이디가 없습니다.');
+          return;
+        }
+      }
+    })
   }
 }
 
-idsubmitCheck.addEventListener('click',clickIdHandler)
+idsubmitCheck.addEventListener('click',clickIdHandler);
 
 
   //#2. 정규 표현식 이벤트(이메일 체크)
@@ -44,28 +61,26 @@ idsubmitCheck.addEventListener('click',clickIdHandler)
 
   function clickEmailHandler(e) {
     e.preventDefault();
-    let curlyemail = getInputValue('#curlyemailField')
-    const regexget = document.getElementById('curlyemailField').value.match(regex)
+    let curlyemail = getInputValue('#curlyemailField');
+    const regexget = document.getElementById('curlyemailField').value.match(regex);
     console.log();
   
     if (!curlyemail) {
-      alert('이메일을 입력해주세요')
+      alert('이메일을 입력해주세요');
   
-      return
-    } else
+      return;
+    } else if (!regexget) {
   
-    if (!regexget) {
-  
-      alert('올바른 이메일 방식을 입력해주세요.')
+      alert('올바른 이메일 방식을 입력해주세요.');
   
     }else{
-      alert('중복된 이메일이 없습니다.')
+      alert('중복된 이메일이 없습니다.');
   
-      return
+      return;
     }
   }
   
-  emailsubmitCheck.addEventListener('click',clickEmailHandler)
+  emailsubmitCheck.addEventListener('click',clickEmailHandler);
 
 
 //Checkbox 전체선택 / 전체선택 해제 함수
@@ -94,6 +109,34 @@ let checkAll = document.getElementById('chk-all');
     });
   });
 
+//비밀번호 글자수 확인 
+function pwNumberHandler(e){
+  let pwerror = getInputValue('#curlypwField');
+
+  if (pwerror.length < 8) {
+    pwValidationText.innerHTML = "8자리 이상 입력해주세요.";
+  } else {
+    pwValidationText.innerHTML = "";
+  }
+
+}
+
+curlyPw.addEventListener("keyup", pwNumberHandler);
+
+
+//비밀번호 확인란
+function test() {
+  var p1 = document.getElementById('curlypwField').value;
+  var p2 = document.getElementById('curlypwcheckField').value;
+  if( p1 != p2 ) {
+    alert("비밀번호가 일치 하지 않습니다");
+    return false;
+  } else{
+    alert("비밀번호가 일치합니다");
+    return true;
+  }
+}
+curlypwSubmit.addEventListener("click",test);
 
   
 // 주소 검색 API 사용
@@ -101,9 +144,9 @@ function findAddr(){
   new daum.Postcode({
         oncomplete: function(data) {
           
-          userAdrPost.style.display = "block"
-          userAdrAddr.style.display = "block"
-          userAdrDetail.style.display = "block"
+          userAdrPost.style.display = "block";
+          userAdrAddr.style.display = "block";
+          userAdrDetail.style.display = "block";
           
             // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
             // 도로명 주소의 노출 규칙에 따라 주소를 표시한다.
@@ -117,13 +160,13 @@ function findAddr(){
             }else if(jibunAddr !== ''){
                 userAdrAddr.value = jibunAddr;
             }
-            getNode(".address-container-button").style.display = "none"
-            getNode(".address-container-text").style.display = "none"
+            addressContainerBtn.style.display = "none";
+            getNode(".address-container-text").style.display = "none";
         }
     }).open();
 }
 
-getNode(".address-container-button").addEventListener("click", findAddr)
+addressContainerBtn.addEventListener("click", findAddr);
 
 
 // uniqueId를 위한 랜덤한 숫자 만들기
@@ -137,17 +180,20 @@ const generateRandomString = (num) => {
 
   return result;
 }
-// registerButton.addEventListener("submit", (e) => {
-//   e.preventDefault();})
 
+
+// 회원가입 버튼 클릭할때 이벤트 생성
 registerButton.addEventListener("click", (e) => {
   e.preventDefault();
-  let inputCheck = curlyId.value && curlyPw.value && userName.value 
+  // 필수사항 체크하는 변수 생성
+  let inputCheck = curlyId.value && curlyPw.value && userName.value;
   && userPhone.value && userAdrPost.value && userAdrAddr.value;
 
+  // 필수사항 체크
   if(!inputCheck){
-    alert("필수사항을 모두 입력해주세요.")
+    alert("필수사항을 모두 입력해주세요.");
   } else {
+    // 필수사항 만족시 POST방식 통해 create
     fetch('http://localhost:3000/users', {
     method : "POST",
     body : JSON.stringify({

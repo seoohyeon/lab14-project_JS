@@ -88,8 +88,36 @@ export function deleteStorage(key){
 // storage.removeItem('name')
 
 
+export function putLocalStorage(key,input) {
+  if(!localStorage.getItem(key)){
+    console.log('empty local storage');
+    let arr = []
+    arr.push(input);
+    localStorage.setItem(key,JSON.stringify(arr));
+  }else{
+    let arr = JSON.parse(localStorage.getItem(key));
+    let hasSameId = false;
+    let matchedIndex;
+    arr.forEach((element,index) => {
+      if(element == input){
+        console.log('일치하는 값이 존재합니다!');
+        matchedIndex = index;
+        hasSameId =true;
+      }
+    });
+    if (hasSameId) {
+      arr.splice(matchedIndex,1);
+      arr.push(input);
+      localStorage.setItem(key,JSON.stringify(arr));
+    }else if(arr.length<6){
+      arr.push(input);
+      localStorage.setItem(key,JSON.stringify(arr));
+    }else{
 
+    }
 
+  }
+}
 
 
 

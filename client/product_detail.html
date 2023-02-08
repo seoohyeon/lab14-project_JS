@@ -22,20 +22,20 @@
     <div class="header_inner">
       <div>
         <nav class="member-nav">
-          <a href="" class="member-nav_sign">회원가입</a>
+          <a href="./signup.html" class="member-nav_sign">회원가입</a>
           <span aria-hidden="true">|</span>
-          <a href="" class="header_inner_login_logout">로그인</a>
+          <a href="./login.html" class="header_inner_login_logout">로그인</a>
           <span aria-hidden="true">|</span>
           <a href="">고객센터  ▼</a>
         </nav>
       </div>
       <div class="header_inner_main">
         <h1>
-          <a href=""><img src="./assets/icons/logo.svg" alt="마켓컬리 로고 이미지" /></a>
-          <a href="">마켓칼리</a>
+          <a href="./index.html"><img src="./assets/icons/logo.svg" alt="마켓컬리 로고 이미지" /></a>
+          <a href="./index.html">마켓컬리</a>
           <span class="contents-border" aria-hidden="true"> | </span>
           <span class="beauty-karly-wrapper">
-            <a href="">뷰티칼리</a>
+            <a href="">뷰티컬리</a>
             <sup> N</sup>
           </span>
         </h1>
@@ -53,7 +53,7 @@
         <ul>
           <li><a href=""><img src="./assets/icons/web-icons/Location.svg" alt="핀 모양의 아이콘" /></a></li>
           <li><a href=""><img src="./assets/icons/web-icons/Heart.svg" alt="하트 모양의 아이콘" /></a></li>
-          <li><a href=""><img src="./assets/icons/web-icons/Cart-1.svg" alt="카트 모양의 아이콘" /></a></li>
+          <li><a href="./basket.html"><img src="./assets/icons/web-icons/Cart-1.svg" alt="카트 모양의 아이콘" /></a></li>
         </ul>
       </div>
       <div class="header_menu_div">
@@ -62,10 +62,10 @@
             <li><a href=""><img src="./assets/icons/web-icons/Hamburger.svg" alt="햄버거 모양의 아이콘" />카테고리</a></li>
           </div>
           <div class="header_menu_wrapper">
-            <li><a href="">신상품</a></li>
-            <li><a href="">베스트</a></li>
-            <li><a href="">알뜰쇼핑</a></li>
-            <li><a href="">특가/혜택</a></li>
+            <li><a href="./product_list.html">신상품</a></li>
+            <li><a href="./product_list.html">베스트</a></li>
+            <li><a href="./product_list.html">알뜰쇼핑</a></li>
+            <li><a href="./product_list.html">특가/혜택</a></li>
           </div>  
             <li class="header_menu_delivery"><button><b>샛별·낮</b> 배송안내</button></li>
             <div class="header_menu_search">
@@ -75,8 +75,11 @@
             <ul class="sticky-ul">
               <li><a href=""><img src="./assets/icons/web-icons/Location.svg" alt="핀 모양의 아이콘" /></a></li>
               <li><a href=""><img src="./assets/icons/web-icons/Heart.svg" alt="하트 모양의 아이콘" /></a></li>
-              <li><a href=""><img src="./assets/icons/web-icons/Cart-1.svg" alt="카트 모양의 아이콘" /></a></li>
+              <li><a href="./basket.html"><img src="./assets/icons/web-icons/Cart-1.svg" alt="카트 모양의 아이콘" /></a></li>
             </ul>
+            <svg class="cart-bell" width="24" height="24" viewBox="0 0 24 24" fill="#5F0080" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="11.5" stroke="#5F0080"/>
+              </svg>
         </ul>
       </div>
     </div>
@@ -90,7 +93,7 @@
         <h2 class="a11y-hidden">[풀무원] 탱탱쫄면 제품 상세페이지</h2>
         <figure class="order-img">
           <figcaption class="a11y-hidden">[풀무원] 탱탱쫄면 product-detail</figcaption>
-          <img src="./assets/tangtang/detail_view.jpg" alt="[풀무원] 탱탱쫄면" />
+          <img class="order-img-tag" alt="product name" src="#"/>
         </figure>
         <div class="order-details">
           <p class="order-details_deliver">샛별배송</p>
@@ -151,7 +154,7 @@
                       <path d="M16 10V14H20V16H16V20H14V16H10V14H14V10H16Z" fill="#333333"/>
                       </svg>
                   </div>
-                    <p>4,980원</p>
+                    <p class="product-price">4,980원</p>
                 </div>
             </div>
           </div>
@@ -185,7 +188,7 @@
                 <div class="cart_bubble_wrapper">
                   <img class="cart_bubble_triangle" src="./assets/tangtang/cart_triangle.png" alt="" />
                   <div class="cart_bubble">
-                    <img src="./assets/tangtang/thumbnail.jpg" alt="탱탱쫄면" />
+                    <img class="cart_bubble_img" src="./assets/tangtang/thumbnail.jpg" alt="탱탱쫄면" />
                     <div class="cart_bubble_title-form">
                       <p class="cart_bubble_title"></p>
                       <p>장바구니에 상품을 담았습니다.</p>
@@ -206,12 +209,12 @@
           <a class="product-menu_nav" href="#qna">문의</a>
         </div>
         <figure class="product-img">
-          <figcaption class="a11y-hidden">[풀무원] 탱탱쫄면 product-banner</figcaption>
-          <img src="./assets/tangtang/detail_banner.jpg" alt="[풀무원] 탱탱쫄면" />
+          <figcaption class="a11y-hidden">product-banner</figcaption>
+          <img class="product-img-banner" src="./assets/tangtang/detail_banner.jpg" alt="배너" />
         </figure>
         <p class="product-detail_title-p">튀기지 않아 부담 없는 매콤함</p>
         <h3 class="product-detail_title">[풀무원] 탱탱쫄면</h3>
-        <p class="product-detail_content">쫄면의 진가는 매콤새콤한 양념과 탱탱한 면발에서 찾을 수 있지요. 풀무원은 이 맛을 더 부담 없이 즐길 수 있도록 튀기지 않고 만든 탱탱쫄면을 선보입니다. 밀가루와 감자 전분을 적절히 배합해 탄력이 좋고, 입에 넣었을 때는 찰지게 씹히죠. 고추장을 넣어 숙성한 비빔장은 자연스럽고 깊은 맛을 냅니다. 간단하게 조리해 마지막 한 가닥까지 탱탱한 식감을 즐겨보세요. 취향에 따라 다양한 고명을 올려 드셔도 좋아요.</p>
+        <p class="product-detail_content">ㅇㅇ의 진가는 매콤새콤한 양념과 탱탱한 ㅇㅇ에서 찾을 수 있지요. 풀무원은 이 맛을 더 부담 없이 즐길 수 있도록 튀기지 않고 만든 탱탱ㅇㅇ을 선보입니다. 밀가루와 감자 전분을 적절히 배합해 탄력이 좋고, 입에 넣었을 때는 찰지게 씹히죠. 고추장을 넣어 숙성한 비빔장은 자연스럽고 깊은 맛을 냅니다. 간단하게 조리해 마지막 한 가닥까지 탱탱한 식감을 즐겨보세요. 취향에 따라 다양한 고명을 올려 드셔도 좋아요.</p>
         <h4 class="a11y-hidden">Karly's Check Point</h4>
         <hr class="product-detail_checkpoint-hr"/>
         <figure class="product-detail_checkpoint-pic">
@@ -219,8 +222,8 @@
           <img src="./assets/tangtang/karly_check_point.png" alt="karly's check point" />
         </figure>
         <figure id="information" class="product-detail_nutrient-table">
-          <figcaption class="a11y-hidden">[풀무원] 탱탱쫄면 product-detail</figcaption>
-          <img src="./assets/tangtang/detail_info.jpg" alt="쫄면 성분표" />
+          <figcaption class="a11y-hidden"> product-detail</figcaption>
+          <img class="product-detail_info" src="./assets/tangtang/detail_info.jpg" alt="성분표" />
         </figure>
 
         <h4 class="product-detail_whykarly">Why Karly</h4>
@@ -444,9 +447,9 @@
                 <div class="product-popup_contents_title">
                 <figure>
                   <figcaption class="a11y-hidden">[풀무원] 탱탱쫄면</figcaption>
-                  <img src="./assets/tangtang/thumbnail.jpg" alt="탱탱쫄면" />
+                  <img class="review-popup" src="./assets/tangtang/thumbnail.jpg" alt="탱탱쫄면" />
                 </figure>
-                <span>[풀무원] 탱탱쫄면 (4개입)</span>
+                <span class="review-popup-text">[풀무원] 탱탱쫄면 (4개입)</span>
               </div>
               </li>
               <li class="product-popup_contents_li">
@@ -868,6 +871,9 @@
         <p class="copyright">© KURLY CORP.ALL RIGHTS RESERVED</p>
     </div>
 
+    <button type="button" class="top-button">
+      <img class="top-button-img" src="./assets/icons/web-icons/GoToTop.png" alt="top-button" />  
+    </button>
 
   </footer>
 </body>
