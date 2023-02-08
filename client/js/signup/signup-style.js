@@ -13,6 +13,7 @@ let userAdrAddr = getNode("#curlyaddrField_addr");
 let userAdrDetail = getNode("#curlyaddrField_detail");
 let emailsubmitCheck = getNode('#curlyemailsubmit');
 let curlypwChecked = getNode("#curlyPwcheckField");
+let curlypwSubmit = getNode("#curlypwSubmit");
 let registerButton = getNode(".registration-button");
 let pwValidationText = getNode(".pw-condition")
 let pwcheckValidationText = getNode(".pwcheck-condition")
@@ -28,13 +29,25 @@ function clickIdHandler(e) {
 
     return
   }
-
+  
   if (curlyid.length<6) {
     alert('6글자 이상 입력해주세요')
   }else{
-    alert('중복된 아이디가 없습니다.')
+  // 아이디 중복 체크 
+  fetch("http://localhost:3000/users").then((res) => { return res.json()})
+    .then((data) => {
 
-    return
+      for(let i=0; i<data.length; i++){
+        
+         if(data[i].curlyId === curlyid){
+          alert("중복된 아이디가 있습니다. 다른 아이디로 작성해주세요.")
+          return;
+        }else{
+          alert('중복된 아이디가 없습니다.')
+          return;
+        }
+      }
+    })
   }
 }
 
@@ -111,19 +124,20 @@ function pwNumberHandler(e){
 
 curlyPw.addEventListener("keyup", pwNumberHandler);
 
-/* //비밀번호 확인란
-function pwCheckHandler(e) {
-  let pwenter = getInputValue('#curlypwField')
-  let pwcheckenter = getInputValue('#curlypwcheckField')
 
-  if (pwenter.value !== pwcheckenter.value) {
-    pwcheckValidationText.innerHTML = "동일하지 않은 비밀번호 입니다."
-  } else {
-    pwcheckValidationText.innerHTML = "비밀번호가 일치합니다"
+//비밀번호 확인란
+function test() {
+  var p1 = document.getElementById('curlypwField').value;
+  var p2 = document.getElementById('curlypwcheckField').value;
+  if( p1 != p2 ) {
+    alert("비밀번호가 일치 하지 않습니다");
+    return false;
+  } else{
+    alert("비밀번호가 일치합니다");
+    return true;
   }
-  
 }
-curlypwChecked.addEventListener("keyup", pwCheckHandler); */
+curlypwSubmit.addEventListener("click",test)
 
   
 // 주소 검색 API 사용

@@ -101,12 +101,9 @@
       "isLimitedProduct": true
     }
   ],
-
-  "reviews": [
-  ],
-  "basket": [
-  ],
-   "users": [
+  "reviews": [],
+  "basket": [],
+  "users": [
     {
       "uniqueId": "feNnYHWfXo",
       "curlyId": "hong12",

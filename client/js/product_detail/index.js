@@ -178,6 +178,7 @@ fetch("http://localhost:3000/basket")
 // 헤더 menu, 상품설명 menu scroll동작 구현
 window.addEventListener("scroll", () =>{
   let menuBar = getNode(".product-menu").offsetHeight;
+  let windowTop = window.scrollY;
 
    if (windowTop >= menuBar+1340) {
     getNode(".product-menu").classList.add("drop-2");
@@ -712,4 +713,3 @@ lockChecker.addEventListener("click", () =>{
     TOGGLE = true;
   }
 })
-
