@@ -11,6 +11,8 @@ function makeCard(option,{id,image:imageUrl,name:productName,saleRatio,salePrice
   imageUrl = imageUrl.thumbnail;
   if(saleRatio == 0 ){
     salePrice = price;
+    price =""
+    saleRatio=""
   }
   let salePriceStr = String(salePrice);
 
