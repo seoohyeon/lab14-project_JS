@@ -37,6 +37,9 @@ let listSelectedNumber =getNodes('.selected-number');
 let listTotalNumber = getNodes('.total-number');
 
 
+loginNout.addEventListener("click", () =>{
+  console.log('클릭')
+})
 
 
 let urlList = [
@@ -68,7 +71,6 @@ Promise.all(
   }
 
   if(window.localStorage.getItem('Unique ID')){
-    loginNout.textContent = `로그아웃`;
     for(let key in resUsers){
       let userData = resUsers.filter(function(e){
         return e.uniqueId == JSON.parse(localStorage.getItem('Unique ID'))[0];
