@@ -642,4 +642,3 @@ function priceInitSecond(){
     // }
 
 }
-
