@@ -24,28 +24,28 @@ if(localStorage.getItem('Unique ID')){
 
 
 window.addEventListener("scroll", () =>{
-  let headerMenu = getNode(".header_menu").offsetHeight;
+  // let headerMenu = getNode(".header_menu").offsetHeight;
 
 
-  window.addEventListener('scroll',()=>{
-    let windowTop = window.scrollY;
+  // window.addEventListener('scroll',()=>{
+  //   let windowTop = window.scrollY;
   
-   if (windowTop >= headerMenu+72) {
-     getNode(".header_menu").classList.add("drop");
-     getNode(".header_menu_delivery").style.display = "none";
-     getNode(".header_menu_search").style.display = "block";
-     getNode(".header_menu_search").style.display = "block";
-     getNode(".header_menu_input").style.display = "block";
-     getNode(".sticky-ul").style.visibility = "visible";
-   } else {
-     getNode(".header_menu").classList.remove("drop");
-     getNode(".header_menu_delivery").style.disaplay = "block";
-     getNode(".header_menu_search").style.display = "none";
-     getNode(".header_menu_search").style.display = "none";
-     getNode(".header_menu_input").style.display = "none";
-     getNode(".sticky-ul").style.visibility = "hidden";
-   }
-  }) 
+  //  if (windowTop >= headerMenu+72) {
+  //    getNode(".header_menu").classList.add("drop");
+  //    getNode(".header_menu_delivery").style.display = "none";
+  //    getNode(".header_menu_search").style.display = "block";
+  //    getNode(".header_menu_search").style.display = "block";
+  //    getNode(".header_menu_input").style.display = "block";
+  //    getNode(".sticky-ul").style.visibility = "visible";
+  //  } else {
+  //    getNode(".header_menu").classList.remove("drop");
+  //    getNode(".header_menu_delivery").style.disaplay = "block";
+  //    getNode(".header_menu_search").style.display = "none";
+  //    getNode(".header_menu_search").style.display = "none";
+  //    getNode(".header_menu_input").style.display = "none";
+  //    getNode(".sticky-ul").style.visibility = "hidden";
+  //  }
+  // }) 
 
   let windowTop_global = window.scrollY;
   console.log(windowTop_global);
