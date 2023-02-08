@@ -1,5 +1,6 @@
 import { getNode } from '../../lib/index.js'
 // import { keepYOfRecentProduct } from './main-page/recent-product.js';
+// import { keepYOfRecentProduct } from './main-page/recent-product.js';
 
 
 let logoutButton = getNode(".header_inner_login_logout");
@@ -22,6 +23,7 @@ if(localStorage.getItem('Unique ID')){
 window.addEventListener("scroll", () =>{
   let headerMenu = getNode(".header_menu").offsetHeight;
 
+
   window.addEventListener('scroll',()=>{
     let windowTop = window.scrollY;
   
@@ -42,4 +44,8 @@ window.addEventListener("scroll", () =>{
    }
   }) 
 
+})
+
+getNode(".top-button").addEventListener("click", () => {
+  window.scrollTo(0,0);
 })
