@@ -78,7 +78,6 @@
   display:inline-block;
 }
 
-
 .select_list input[type=checkbox],
 .select-all input[type=checkbox]{
   display:none;
@@ -95,11 +94,6 @@
 .select-all input[type=checkbox]:checked+label{
   background-image: url(../assets/icons/web-icons/check.png);
   background-position:-10px -54px;
-}
-.select_list input[type=checkbox]:disabled+label,
-.select-all input[type=checkbox]:disabled+label{
-  background-image: url(../assets/icons/web-icons/check.png);
-  background-position:-10px -10px;
 }
 
 .select_list label{
