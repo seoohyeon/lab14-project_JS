@@ -37,7 +37,7 @@ filterAccordionItem.forEach(item => {
       TOGGLE = false;
     }else if(TOGGLE === false && item === filterAccordionItem[1]) {
       filterAccordionInventory[1].style.display = "block"
-      filterTitleArrow[1].style.backgroundPosition = "-8px -8px"
+      filterTitleArrow[1].sbesttyle.backgroundPosition = "-8px -8px"
       TOGGLE = true;
     }
   })

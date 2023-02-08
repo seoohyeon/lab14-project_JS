@@ -1,5 +1,6 @@
 import { getNode } from '../../lib/index.js'
 // import { keepYOfRecentProduct } from './main-page/recent-product.js';
+// import { keepYOfRecentProduct } from './main-page/recent-product.js';
 
 
 let logoutButton = getNode(".header_inner_login_logout");
@@ -18,6 +19,8 @@ if(localStorage.getItem('Unique ID')){
     console.log('로그아웃')
   })
 }
+
+
 
 window.addEventListener("scroll", () =>{
   let headerMenu = getNode(".header_menu").offsetHeight;
@@ -43,8 +46,20 @@ window.addEventListener("scroll", () =>{
    }
   }) 
 
+  let windowTop_global = window.scrollY;
+  console.log(windowTop_global);
+  if(windowTop_global>700){// have to stop 
+    // console.log(560);
+    
+    $gotoTopBtn.classList.add('top-button__active');
+  }else{
+    $gotoTopBtn.classList.remove('top-button__active');
+  }
 })
 
-getNode(".top-button").addEventListener("click", () => {
+let $gotoTopBtn = getNode(".top-button");
+
+$gotoTopBtn.addEventListener("click", () => {
   window.scrollTo(0,0);
 })
+
