@@ -47,20 +47,28 @@ window.addEventListener("scroll", () =>{
   //  }
   // }) 
 
-  let windowTop_global = window.scrollY;
-  console.log(windowTop_global);
-  if(windowTop_global>700){// have to stop 
-    // console.log(560);
+  try {
+    let windowTop_global = window.scrollY;
+    console.log(windowTop_global);
+    if(windowTop_global>700){// have to stop 
+      // console.log(560);
+      
+      $gotoTopBtn.classList.add('top-button__active');
+    }else{
+      $gotoTopBtn.classList.remove('top-button__active');
+    }
+  } catch (error) {
     
-    $gotoTopBtn.classList.add('top-button__active');
-  }else{
-    $gotoTopBtn.classList.remove('top-button__active');
   }
 })
 
-let $gotoTopBtn = getNode(".top-button");
+try {
+  let $gotoTopBtn = getNode(".top-button");
 
 $gotoTopBtn.addEventListener("click", () => {
   window.scrollTo(0,0);
 })
 
+} catch (error) {
+  
+}
