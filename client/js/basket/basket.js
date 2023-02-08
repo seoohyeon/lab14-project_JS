@@ -8,6 +8,7 @@ let frozenFood =getNode(".frozen-contents");
 let noOption=getNode(".no-option");
 let selectedNumber=getNodes(".selected-number");
 let totalNumber=getNodes(".total-number");
+let loginNout = getNode(".header_inner_login_logout");
 
 let refToggleButton = refrigeratedFood.previousSibling.previousSibling;
 let normalToggleButton = normalFood.previousSibling.previousSibling;
@@ -36,6 +37,9 @@ let listSelectedNumber =getNodes('.selected-number');
 let listTotalNumber = getNodes('.total-number');
 
 
+loginNout.addEventListener("click", () =>{
+  console.log('클릭')
+})
 
 
 let urlList = [

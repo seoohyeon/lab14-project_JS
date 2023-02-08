@@ -6,10 +6,6 @@ let userPw = getNode(".userPw");
 let loginNout = getNode(".header_inner_login_logout");
 
 
-// localStorage에서 uniqueID 확인 
-if(localStorage.getItem('Unique ID')){
-  loginNout.textContent = `로그아웃`;
-}
 
 // 로그인 버튼 클릭시 이벤트 발생
 signinButton.addEventListener("click", (e) => {
@@ -44,9 +40,10 @@ signinButton.addEventListener("click", (e) => {
   })
 })
 // localStorage에 uniqueID가 있는경우 실행
-if(localStorage.getItem('Unique ID')){
-  loginNout.addEventListener("click", () => {
-    localStorage.removeItem("Unique ID");
-    alert("로그아웃 되었습니다.");
-  })
-}
+// if(localStorage.getItem('Unique ID')){
+//   loginNout.textContent = `로그아웃`;
+//   loginNout.addEventListener("click", () => {
+//     localStorage.removeItem("Unique ID");
+//     alert("로그아웃 되었습니다.");
+//   })
+// }

@@ -16,8 +16,8 @@ let curlypwChecked = getNode("#curlyPwcheckField");
 let curlypwSubmit = getNode("#curlypwSubmit");
 let registerButton = getNode(".registration-button");
 let pwValidationText = getNode(".pw-condition");
-let pwcheckValidationText = getNode(".pwcheck-condition");
 let addressContainerBtn = getNode(".address-container-button");
+let allCheck = getNode("#chk-all");
 
 
 
@@ -186,7 +186,8 @@ const generateRandomString = (num) => {
 registerButton.addEventListener("click", (e) => {
   e.preventDefault();
   // 필수사항 체크하는 변수 생성
-  let inputCheck = curlyId.value && curlyPw.value && userName.value && userPhone.value && userAdrPost.value && userAdrAddr.value;
+  let inputCheck = curlyId.value && curlyPw.value && userName.value
+  && userPhone.value && userAdrPost.value && userAdrAddr.value && allCheck.checked;
 
   // 필수사항 체크
   if(!inputCheck){

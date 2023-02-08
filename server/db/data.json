@@ -113,7 +113,16 @@
       "id": 2
     }
   ],
-  "basket": [],
+  "basket": [
+    {
+      "id": "product-akqk",
+      "number": 7
+    },
+    {
+      "id": "product-ekfk",
+      "number": 1
+    }
+  ],
   "users": [
     {
       "uniqueId": "feNnYHWfXo",
@@ -150,6 +159,15 @@
       "userPhone": "123",
       "userAddress": "36752 경북 안동시 강남1길 9 ",
       "id": 4
+    },
+    {
+      "uniqueId": "UCFcZRrWvw",
+      "curlyId": "ddddddd",
+      "curlyPw": "11111111",
+      "userName": "한가인",
+      "userPhone": "01012345678",
+      "userAddress": "46042 부산 기장군 일광읍 이천2길 7-8 2층",
+      "id": 5
     }
   ]
 }
