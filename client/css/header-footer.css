@@ -1,4 +1,5 @@
 .header_inner,	
+.header_menu,	
 .top-banner_inner,	
 .footer_inner,	
 .footer_section {	
@@ -132,15 +133,14 @@ background-size: 42px;
 /* 헤더 메뉴 */
 .header_menu{
   margin: 0;
-  width: 1150px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 0px;
+  padding: 20px 0px 16px 0px;
   font-weight:600 ;
   background-color: var(--white);
-  z-index: 20;
+
 }
 
 .header_menu_category{
@@ -174,8 +174,7 @@ background-size: 42px;
   background-color:transparent;
   font-weight: 400;
 }
-.header_menu_delivery {
-}
+
 /* 스크롤 내릴때 생기는 메뉴바 */
 .header_menu_search {
   width: 238px;
