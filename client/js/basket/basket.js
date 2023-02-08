@@ -1,4 +1,5 @@
 import { getNode, getNodes } from '../../lib/index.js'
+import { addLogoutFunc } from '../global.js';
 
 let kakaoMap = getNode(".kakaomap_button");
 let basketAddress=getNode(".basket_address");
@@ -641,3 +642,5 @@ function priceInitSecond(){
     // }
 
 }
+
+addLogoutFunc();
