@@ -1,3 +1,7 @@
+.no-scroll {
+  overflow: hidden;
+}
+
 .product-list-main {
   width: var(--container-width);
   display: flex;
@@ -441,7 +445,8 @@
 }
 
 /* 장바구니 팝업 */
-.cart-popup-wrapper {
+
+.cart-popup_wrapper {
   display:none;
   width:100%;
   height:100%;
@@ -451,10 +456,9 @@
   right:0;
   background: rgba(0, 0, 0, 0.6);
   z-index:999;
-  
 }
+
 .cart-popup {
-  /* display: none; */
   position: absolute;
   top: 50%;
   left: 50%;
