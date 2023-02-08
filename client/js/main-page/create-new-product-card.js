@@ -18,7 +18,7 @@ function makeCard(option,{id,image:imageUrl,name:productName,saleRatio,salePrice
 
   salePriceStr = `${salePriceStr.slice(0,-3)}${salePriceStr.slice(0,-3).length>0?
     `,`:``}${salePriceStr.slice(-3)}원`;
-  console.log(salePriceStr);
+  // console.log(salePriceStr);
   let newCard = /*html*/
   `
   ${option==3?`<div class="swiper-slide product-display_swiper-slide"><ul class="product-display_product-cards-container">`:``}
@@ -87,7 +87,7 @@ function putCard(selector,card){
   document.querySelector(selector).insertAdjacentHTML("beforeend",card)
 }
 
-
+// selector == 카드를 넣을 (1촌) 부모요소의 선택자
 function loadCardsToList(option,selector,productIndex){
   fetch(`${SERVER_URL}products`)
   .then(res => res.json())
@@ -101,6 +101,8 @@ function loadCardsToList(option,selector,productIndex){
 // 사용예시
 // loadCardsToList(1,'.product-display_product-cards-container',4);
 // loadCardsToList(2,'.product-display_product-cards-container',4);
+
+
 
 // 1번옵션 == product-display에 카드 뿌리기
 // 2번옵션 == recent-product에 카드 뿌리기

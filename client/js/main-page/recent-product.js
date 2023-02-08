@@ -1,4 +1,4 @@
-import { hrefLink, putLocalStorage } from "../../lib/index.js";
+import { getNode, hrefLink, putLocalStorage } from "../../lib/index.js";
 import { loadAllCardsToSwiper } from "./create-new-product-card.js";
 import { recentProductSwiper } from "./swiper-style.js";
 
@@ -24,17 +24,20 @@ function getRelativeLeft(targetElem){
   return relativeLeft
 }
 
-function keepYOfRecentProduct(){
+export function keepYOfRecentProduct(){
   let windowTop = window.scrollY;
   // let windowBottom = window.scroll
   if(getRelativeTop(footer)<585){
+    console.log(585);
     recentProduct.classList.remove('recent-product__fixed');
     recentProduct.classList.add('recent-product__meet-bottom');
     // console.log('footer rt',getRelativeTop(footer));
   }else if(windowTop>560){// have to stop 
+    console.log(560);
     recentProduct.classList.remove('recent-product__meet-bottom');
     recentProduct.classList.add('recent-product__fixed');
   }else{
+    console.log('else');
     recentProduct.classList.remove('recent-product__meet-bottom');
     recentProduct.classList.remove('recent-product__fixed');
   }
@@ -52,10 +55,9 @@ function vanishRecentProductWhenCrushed() {
   }
 }
 
-window.onscroll = function () {
+window.addEventListener('scroll',()=>{
   keepYOfRecentProduct();
-  
-};
+}) 
 
 window.onload = function() {
   keepYOfRecentProduct();
@@ -92,7 +94,8 @@ productDisplaySwiper1.addEventListener('click',(e)=>{
   if(e.target.classList.contains('product-display_cart-icon')){
     
     console.log("장바구니 팝업 띄워야함");
-
+    document.querySelector('.cart-popup_wrapper').style.display = "block";
+    document.body.classList.add('no-scroll');
   }else{
     
     // console.log(typeof curSlide);
@@ -113,11 +116,25 @@ productDisplaySwiper2.addEventListener('click',(e)=>{
   // 장바구니 아이콘을 클릭한경우
   if(e.target.classList.contains('product-display_cart-icon')){
     console.log("장바구니 팝업 띄워야함");
-
+    document.querySelector('.cart-popup_wrapper').style.display = "block";
+    document.body.classList.add('no-scroll');
   }else{
     hrefLink('http://localhost:5500/product_detail.html');
   }
 
+})
+
+let cartCancel = getNode('.cart-cancel');
+let cartAdd = getNode('.cart-add');
+
+cartCancel.addEventListener('click',()=>{
+  document.querySelector('.cart-popup_wrapper').style.display = "none";
+  document.body.classList.remove('no-scroll');
+})
+
+cartAdd.addEventListener('click',() => {
+  document.querySelector('.cart-popup_wrapper').style.display = "none";
+  document.body.classList.remove('no-scroll');
 })
 
 
