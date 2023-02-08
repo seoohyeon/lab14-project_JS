@@ -44,3 +44,7 @@ window.addEventListener("scroll", () =>{
   }) 
 
 })
+
+getNode(".top-button").addEventListener("click", () => {
+  window.scrollTo(0,0);
+})
