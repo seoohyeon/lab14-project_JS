@@ -113,14 +113,14 @@
       "id": 2
     }
   ],
-  "basket": [
-    {
-      "id": "product-akqk",
-      "number": 7
+  "basket": [{
+    "id": "product-ckzk",
+    "number":10  
     },
     {
-      "id": "product-ekfk",
-      "number": 1
+      "id": "product-rksk",
+     "number":10  
+
     }
   ],
   "users": [
