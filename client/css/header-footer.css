@@ -348,7 +348,6 @@ background-size: 42px;
 
 .top-button__active{
   display: block;
-  transition: 2200s;
 }
 
 .top-button-img{
