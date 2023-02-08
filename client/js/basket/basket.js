@@ -109,7 +109,7 @@ var basketCheckedList=document.querySelectorAll('input[name="basket-checker"]:ch
  selectDeleteFunction(selectDeleteButton,listSelectedNumber,basketSelectAll,basketSelectedList,basketCheckedList);
 })
 
-console.log(everyData);
+
 
 
 //  카카오 api 호출 , 주소 변경
@@ -138,7 +138,7 @@ function checkBasketList(storedDataBasket,storedDataProducts){
   let pullData;
   let allPullData=new Array;
   for(let key in storedDataBasket){
-    // console.log(key,objOfBasket[key].id,objOfBasket[key].number);
+    
     pullData=storedDataProducts.filter(function(e){
       return e.id === storedDataBasket[key].id
     })
@@ -318,7 +318,7 @@ function count(type,basicNode,storedData) {
 
   let findData;
   for(let key in storedData){
-    // console.log(key,objOfBasket[key].id,objOfBasket[key].number);
+   
     findData=storedData.filter(function(e){
       return e.id === resultElement.id
     })[0]
@@ -326,7 +326,7 @@ function count(type,basicNode,storedData) {
 
   // 현재 화면에 표시된 값
   let number = resultElement.innerText;
-  console.log(number);
+ 
   let wonNode=getNode(`.${findData.id}-won`)
  
   // 더하기/빼기
@@ -399,7 +399,6 @@ function basketCheckBox(basketSelectAll,basketSelectedList,basketCheckedList){
 
       let clickedCheckBox= e.target.closest('.list-bar');
       selectCheckAndChange(basketSelectAll,basketSelectedList,basketCheckedList);
-      console.log(basketSelectedList[i],basketSelectedList[i].checked);
     })
 
    
@@ -410,22 +409,21 @@ function basketCheckBox(basketSelectAll,basketSelectedList,basketCheckedList){
 
 // 전체선택 버튼 관련
 function selectCheckAndChange(basketSelectAll,basketSelectedList,basketCheckedList){
-  console.log('요기1',basketCheckedList.length);
-  console.log('test',basketSelectAll);
+ 
 
  
 
   if(basketSelectedList.length === basketCheckedList.length){
     basketSelectAll.forEach(element => {
       element.checked = true;
-      console.log('요기2');
+     
     });
   
     
   }else {
     basketSelectAll.forEach(element => {
       element.checked = false;
-      console.log('요기3');
+   
     });
   
   } 
@@ -438,7 +436,7 @@ function selectCheckAndChange(basketSelectAll,basketSelectedList,basketCheckedLi
 // 전체선택 버튼으로 전부 껏다 켜는 함수
 
 function onoffSlectAll(basketSelectAll,basketSelectedList,basketCheckedList){
-  console.log(basketSelectedList);
+
   let firstSelectAllButton=getNode('#basket-checker1');
   let secondSelectAllButton=getNode('#basket-checker2');
 
@@ -588,10 +586,10 @@ function counterDeleteFunction(counterDeleteButton,listSelectedNumber,basketSele
 function selectDeleteFunction(selectDeleteButton,listSelectedNumber,basketSelectAll,basketSelectedList,basketCheckedList,selectList){
 
   for (let i=0;i<selectDeleteButton.length;i++){
-    console.log(selectDeleteButton);
+   
     selectDeleteButton[i].addEventListener('click',(e)=>{
 
-      console.log(selectDeleteButton[i]);
+    
       basketSelectAll=document.querySelectorAll('input[name="basket-select-all"]');
       basketSelectedList=document.querySelectorAll('input[name="basket-checker"]');
       basketCheckedList=document.querySelectorAll('input[name="basket-checker"]:checked');
