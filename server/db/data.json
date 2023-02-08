@@ -113,7 +113,16 @@
       "id": 2
     }
   ],
-  "basket": [],
+  "basket": [{
+    "id": "product-ckzk",
+    "number":10  
+    },
+    {
+      "id": "product-rksk",
+     "number":10  
+
+    }
+  ],
   "users": [
     {
       "uniqueId": "feNnYHWfXo",
