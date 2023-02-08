@@ -21,7 +21,6 @@ let getProductItem = 0;
 let savedProductItem = 0;
 let flag = false;
 
-// console.log(localStorage.getItem("id"))
 
 await fetch("http://localhost:3000/products", {
     method : 'GET',
@@ -167,7 +166,8 @@ fetch("http://localhost:3000/basket")
  .then((res) => {
   return res.json();
 }).then((data) => {
-  if(data){
+  console.log(data.length)
+  if(data.length){
     getNode(".cart-bell").style.visibility = "visible";
   }
 })
