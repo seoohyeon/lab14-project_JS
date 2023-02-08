@@ -302,10 +302,13 @@ let productArr;
 // 3이면 슬라이드 추가, 4면 recent-product의 슬라이드 추가
 function makeCard(option,{id,image:imageUrl,name:productName,saleRatio,salePrice,price,description,shippingInfo,isKarlyOnly,isLimitedProduct}) {
   imageUrl = imageUrl.thumbnail;
+  let isSaling = true;
+
   if(saleRatio == 0 ){
     salePrice = price;
     price =""
     saleRatio=""
+    isSaling = false;
   }
   let salePriceStr = String(salePrice);
 
@@ -333,7 +336,7 @@ function makeCard(option,{id,image:imageUrl,name:productName,saleRatio,salePrice
         ${productName} 
       </mark>
       <div class="product-display_price-wrapper">
-        <mark class="product-display_discount-rate">${saleRatio*100}%</mark>
+        ${isSaling?`<mark class="product-display_discount-rate">${saleRatio*100}%</mark>`:``}        
         
         <mark class="product-display_sell-price">${salePriceStr}</mark>
       </div>
