@@ -28,16 +28,16 @@ export function keepYOfRecentProduct(){
   let windowTop = window.scrollY;
   // let windowBottom = window.scroll
   if(getRelativeTop(footer)<585){
-    console.log(585);
+    // console.log(585);
     recentProduct.classList.remove('recent-product__fixed');
     recentProduct.classList.add('recent-product__meet-bottom');
     // console.log('footer rt',getRelativeTop(footer));
-  }else if(windowTop>560){// have to stop 
-    console.log(560);
+  }else if(windowTop>480){// have to stop 
+    // console.log(560);
     recentProduct.classList.remove('recent-product__meet-bottom');
     recentProduct.classList.add('recent-product__fixed');
   }else{
-    console.log('else');
+    // console.log('else');
     recentProduct.classList.remove('recent-product__meet-bottom');
     recentProduct.classList.remove('recent-product__fixed');
   }
