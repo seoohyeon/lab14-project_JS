@@ -1,6 +1,6 @@
 # Project Karly
 ### LikeLion Front-End School 4th LAB 14 Vanilla Project - 'Karly'
-Organization github =  https://github.com/likelion-lab14/lab14-project
+Organization github =  https://github.com/likelion-lab14/lab14-project  
 Organization Notion = https://www.notion.so/3b559ba8f0f340b18a13e2bb02e6bb09
 
 <div><h2> 🗓️ 기간</h2></div>
