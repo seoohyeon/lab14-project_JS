@@ -292,7 +292,7 @@ for(let i = 0;i<numberClickedButton.length;i++){
 
   // 증감
   numberClickedButton[i].addEventListener('click',(e)=>{
-  
+
     e.preventDefault();
   
     let clickedPlusButton =e.target.closest('.plus-counter_button');
@@ -301,7 +301,7 @@ for(let i = 0;i<numberClickedButton.length;i++){
   })
   
   numberClickedButton[i].addEventListener('click',(e)=>{
-  
+
     e.preventDefault();
   
     let clickedMinusButton =e.target.closest('.minus-counter_button');
@@ -381,6 +381,7 @@ function basketCheckBox(basketSelectAll,basketSelectedList,basketCheckedList){
 
   for(let i=0;i<basketSelectedList.length;i++){
     basketSelectedList[i].addEventListener('click',(e)=>{
+ 
   
       // 클릭 할 때마다 리스트들 선택여부 갱신----------------------------------------------
       basketSelectAll=document.querySelectorAll('input[name="basket-select-all"]');
@@ -447,6 +448,7 @@ function onoffSlectAll(basketSelectAll,basketSelectedList,basketCheckedList){
  
 
   firstSelectAllButton.addEventListener('click',(e)=>{
+    makeZero();
     changeAllButton(firstSelectAllButton.checked,basketSelectedList);
      // 클릭 할 때마다 리스트들 선택여부 갱신----------------------------------------------
      basketSelectAll=document.querySelectorAll('input[name="basket-select-all"]');
@@ -469,6 +471,8 @@ function onoffSlectAll(basketSelectAll,basketSelectedList,basketCheckedList){
     
   });
   secondSelectAllButton.addEventListener('click',(e)=>{
+    console.log('hello');
+    makeZero();
     changeAllButton(secondSelectAllButton.checked,basketSelectedList);
      // 클릭 할 때마다 리스트들 선택여부 갱신----------------------------------------------
      basketSelectAll=document.querySelectorAll('input[name="basket-select-all"]');
@@ -551,7 +555,7 @@ function counterDeleteFunction(counterDeleteButton,listSelectedNumber,basketSele
   for(let i = 0; i<counterDeleteButton.length;i++){
 
     counterDeleteButton[i].addEventListener('click',(e)=>{
-
+ 
       let closeButton =e.target.closest('.counter-delete_button');
       let closeParentNode= closeButton.parentNode.parentNode.parentNode;
       closeParentNode.innerHTML="";
@@ -593,7 +597,6 @@ function selectDeleteFunction(selectDeleteButton,listSelectedNumber,basketSelect
    
     selectDeleteButton[i].addEventListener('click',(e)=>{
 
-    
       basketSelectAll=document.querySelectorAll('input[name="basket-select-all"]');
       basketSelectedList=document.querySelectorAll('input[name="basket-checker"]');
       basketCheckedList=document.querySelectorAll('input[name="basket-checker"]:checked');
@@ -641,3 +644,22 @@ function priceInitSecond(){
     // }
 
 }
+
+function makeZero(){
+  let basketCheckedList=document.querySelectorAll('input[name="basket-checker"]:checked');
+  let basketSelectedList=document.querySelectorAll('input[name="basket-checker"]');
+  console.log(basketCheckedList.length);
+  
+  if(basketCheckedList.length==0){
+    
+    priceInitSecond()
+  }
+  else{getNode(".price-info").innerHTML ="0";
+  getNode(".discount-info").innerHTML="0";
+  getNode(".delivery-info").innerHTML="0";
+  getNode(".result-info").innerHTML="0";
+  }
+  
+
+}
+
