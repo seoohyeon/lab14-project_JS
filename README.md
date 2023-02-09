@@ -1,7 +1,7 @@
 # Project Karly
 ### LikeLion Front-End School 4th LAB 14 Vanilla Project - 'Karly'
 Organization github =  https://github.com/likelion-lab14/lab14-project
-
+Organization Notion = https://www.notion.so/3b559ba8f0f340b18a13e2bb02e6bb09
 
 <div><h2> 🗓️ 기간</h2></div>
 2023년 01월 27일 ~ 2023년 02월 09일
@@ -87,6 +87,9 @@ Organization github =  https://github.com/likelion-lab14/lab14-project
 <img src="https://user-images.githubusercontent.com/38703262/217724365-bfa95a4e-19d1-4a97-a6dd-bb376bd2da32.png"> 
 <img src="https://user-images.githubusercontent.com/38703262/217723998-287b65e0-4c81-4e52-843d-a70d51e08772.png"> 
 
+<hr>
+<hr>
+*구현과제 목표
 <hr>
 
 # Vanilla 프로젝트
