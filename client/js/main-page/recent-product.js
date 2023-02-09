@@ -32,7 +32,7 @@ export function keepYOfRecentProduct(){
     recentProduct.classList.remove('recent-product__fixed');
     recentProduct.classList.add('recent-product__meet-bottom');
     // console.log('footer rt',getRelativeTop(footer));
-  }else if(windowTop>480){// have to stop 
+  }else if(windowTop>550){// have to stop 
     // console.log(560);
     recentProduct.classList.remove('recent-product__meet-bottom');
     recentProduct.classList.add('recent-product__fixed');

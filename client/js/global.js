@@ -24,6 +24,16 @@ export function addLogoutFunc() {
 
 addLogoutFunc();
 
+let $gotoTopBtn;
+try {
+  $gotoTopBtn = getNode(".top-button");
+
+  $gotoTopBtn.addEventListener("click", () => {
+  window.scrollTo(0,0);
+})
+} catch (error) {
+  
+}
 
 window.addEventListener("scroll", () =>{
   // let headerMenu = getNode(".header_menu").offsetHeight;
@@ -51,7 +61,7 @@ window.addEventListener("scroll", () =>{
 
   try {
     let windowTop_global = window.scrollY;
-    console.log(windowTop_global);
+    // console.log(windowTop_global);
     if(windowTop_global>700){// have to stop 
       // console.log(560);
       
@@ -64,13 +74,4 @@ window.addEventListener("scroll", () =>{
   }
 })
 
-try {
-  let $gotoTopBtn = getNode(".top-button");
 
-$gotoTopBtn.addEventListener("click", () => {
-  window.scrollTo(0,0);
-})
-
-} catch (error) {
-  
-}

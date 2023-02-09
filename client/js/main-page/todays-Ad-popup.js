@@ -29,7 +29,7 @@ async function initAd(){
 
 window.addEventListener('load',async()=>{
   let isAdPopupActive =await JSON.parse(localStorage.getItem('isAdPopupActive'));
-  console.log(isAdPopupActive);
+  // console.log(isAdPopupActive);
   if(isAdPopupActive == null){
     initAd();
   }else if(isAdPopupActive){

@@ -165,6 +165,7 @@
 }
 .best-list_top-array > li:first-child {
   color: #333333;
+  width: 79px;
 }
 .best-list_top-array > li::after {
   position: absolute;
