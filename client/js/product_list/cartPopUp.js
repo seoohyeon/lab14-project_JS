@@ -34,7 +34,7 @@ bestListInventoryProduct.onclick = (e) => {
   fetch("http://localhost:3000/products").then((res) => {
     return res.json();
   }).then((data) => {
-    console.log(data)
+    // console.log(data)
     let output = localStorage.getItem("id");
     let arr = JSON.parse(output);
 
