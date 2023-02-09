@@ -180,16 +180,6 @@ await fetch("http://localhost:3000/products")
   } 
  })
 
- // 장바구니에 물건이 있다면 cart에 불이 들어옴
-fetch("http://localhost:3000/basket")
- .then((res) => {
-  return res.json();
-}).then((data) => {
-  console.log(data.length)
-  if(data.length){
-    getNode(".cart-bell").style.visibility = "visible";
-  }
-})
 
 
 
